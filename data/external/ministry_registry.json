@@ -6,7 +6,7 @@
     "pib_releases_since_2024_06": 809,
     "minister_name": "Shri Jagat Prakash Nadda",
     "minister_designation": "Minister",
-    "wp_json": [],
+    "wp_json": {},
     "parivesh": false,
     "niti_iced_path": ""
   },
@@ -17,7 +17,7 @@
     "pib_releases_since_2024_06": 570,
     "minister_name": "Shri Ashwini Vaishnaw",
     "minister_designation": "Minister",
-    "wp_json": [],
+    "wp_json": {},
     "parivesh": false,
     "niti_iced_path": ""
   },
@@ -28,7 +28,7 @@
     "pib_releases_since_2024_06": 506,
     "minister_name": "Shri Pralhad Joshi",
     "minister_designation": "Minister",
-    "wp_json": [],
+    "wp_json": {},
     "parivesh": false,
     "niti_iced_path": ""
   },
@@ -39,7 +39,7 @@
     "pib_releases_since_2024_06": 1052,
     "minister_name": "Shri Shivraj Singh Chouhan",
     "minister_designation": "Minister",
-    "wp_json": [],
+    "wp_json": {},
     "parivesh": false,
     "niti_iced_path": ""
   },
@@ -50,7 +50,7 @@
     "pib_releases_since_2024_06": 1033,
     "minister_name": "Smt. Nirmala Sitharaman",
     "minister_designation": "Minister",
-    "wp_json": [],
+    "wp_json": {},
     "parivesh": false,
     "niti_iced_path": ""
   },
@@ -61,7 +61,7 @@
     "pib_releases_since_2024_06": 188,
     "minister_name": "Shri Kinjarapu Rammohan Naidu",
     "minister_designation": "Minister",
-    "wp_json": [],
+    "wp_json": {},
     "parivesh": false,
     "niti_iced_path": ""
   },
@@ -72,7 +72,7 @@
     "pib_releases_since_2024_06": 471,
     "minister_name": "Shri Nitin Jairam Gadkari",
     "minister_designation": "Minister",
-    "wp_json": [],
+    "wp_json": {},
     "parivesh": false,
     "niti_iced_path": ""
   },
@@ -83,7 +83,7 @@
     "pib_releases_since_2024_06": 585,
     "minister_name": "Shri C R Patil",
     "minister_designation": "Minister",
-    "wp_json": [],
+    "wp_json": {},
     "parivesh": false,
     "niti_iced_path": ""
   },
@@ -94,7 +94,7 @@
     "pib_releases_since_2024_06": 303,
     "minister_name": "Shri Manohar Lal",
     "minister_designation": "Minister",
-    "wp_json": [],
+    "wp_json": {},
     "parivesh": false,
     "niti_iced_path": ""
   },
@@ -105,7 +105,7 @@
     "pib_releases_since_2024_06": 699,
     "minister_name": "Shri Bhupender Yadav",
     "minister_designation": "Minister",
-    "wp_json": [],
+    "wp_json": {},
     "parivesh": true,
     "niti_iced_path": "climate-environment/ghg-emissions"
   },
@@ -116,7 +116,7 @@
     "pib_releases_since_2024_06": 505,
     "minister_name": "Dr. Mansukh Mandaviya",
     "minister_designation": "Minister",
-    "wp_json": [],
+    "wp_json": {},
     "parivesh": false,
     "niti_iced_path": ""
   },
@@ -127,7 +127,7 @@
     "pib_releases_since_2024_06": 483,
     "minister_name": "Shri Shivraj Singh Chouhan",
     "minister_designation": "Minister",
-    "wp_json": [],
+    "wp_json": {},
     "parivesh": false,
     "niti_iced_path": ""
   },
@@ -138,10 +138,11 @@
     "pib_releases_since_2024_06": 1178,
     "minister_name": "Shri Piyush Goyal",
     "minister_designation": "Minister",
-    "wp_json": [
-      "dpiit.gov.in",
-      "cms/wp-json"
-    ],
+    "wp_json": {
+      "site": "dpiit.gov.in",
+      "schema": "post_page",
+      "path": "cms/wp-json/post-page/schemes_and_services"
+    },
     "parivesh": false,
     "niti_iced_path": ""
   },
@@ -152,7 +153,7 @@
     "pib_releases_since_2024_06": 393,
     "minister_name": "Shri Pralhad Joshi",
     "minister_designation": "Minister",
-    "wp_json": [],
+    "wp_json": {},
     "parivesh": false,
     "niti_iced_path": ""
   },
@@ -163,7 +164,7 @@
     "pib_releases_since_2024_06": 485,
     "minister_name": "Smt. Annpurna Devi",
     "minister_designation": "Minister",
-    "wp_json": [],
+    "wp_json": {},
     "parivesh": false,
     "niti_iced_path": ""
   },
@@ -174,7 +175,7 @@
     "pib_releases_since_2024_06": 424,
     "minister_name": "Shri Jagat Prakash Nadda",
     "minister_designation": "Minister",
-    "wp_json": [],
+    "wp_json": {},
     "parivesh": false,
     "niti_iced_path": ""
   },
@@ -185,7 +186,7 @@
     "pib_releases_since_2024_06": 563,
     "minister_name": "Shri Jadhav Prataprao Ganpatrao",
     "minister_designation": "Minister of State (Independent Charge)",
-    "wp_json": [],
+    "wp_json": {},
     "parivesh": false,
     "niti_iced_path": ""
   },
@@ -196,7 +197,7 @@
     "pib_releases_since_2024_06": 257,
     "minister_name": "Shri Hardeep Singh Puri",
     "minister_designation": "Minister",
-    "wp_json": [],
+    "wp_json": {},
     "parivesh": false,
     "niti_iced_path": "energy/fuel-sources"
   },
@@ -207,7 +208,7 @@
     "pib_releases_since_2024_06": 270,
     "minister_name": "Shri Jitan Ram Manjhi",
     "minister_designation": "Minister",
-    "wp_json": [],
+    "wp_json": {},
     "parivesh": false,
     "niti_iced_path": ""
   },
@@ -218,7 +219,7 @@
     "pib_releases_since_2024_06": 1040,
     "minister_name": "Shri Jyotiraditya M. Scindia",
     "minister_designation": "Minister",
-    "wp_json": [],
+    "wp_json": {},
     "parivesh": false,
     "niti_iced_path": ""
   },
@@ -229,7 +230,7 @@
     "pib_releases_since_2024_06": 400,
     "minister_name": "Shri Gajendra Singh Shekhawat",
     "minister_designation": "Minister",
-    "wp_json": [],
+    "wp_json": {},
     "parivesh": false,
     "niti_iced_path": ""
   },
@@ -240,7 +241,7 @@
     "pib_releases_since_2024_06": 769,
     "minister_name": "Shri Gajendra Singh Shekhawat",
     "minister_designation": "Minister",
-    "wp_json": [],
+    "wp_json": {},
     "parivesh": false,
     "niti_iced_path": ""
   },
@@ -251,7 +252,7 @@
     "pib_releases_since_2024_06": 1147,
     "minister_name": "Shri Amit Shah",
     "minister_designation": "Minister",
-    "wp_json": [],
+    "wp_json": {},
     "parivesh": false,
     "niti_iced_path": ""
   },
@@ -262,7 +263,7 @@
     "pib_releases_since_2024_06": 619,
     "minister_name": "Dr. Virendra Kumar",
     "minister_designation": "Minister",
-    "wp_json": [],
+    "wp_json": {},
     "parivesh": false,
     "niti_iced_path": ""
   },
@@ -273,7 +274,7 @@
     "pib_releases_since_2024_06": 2,
     "minister_name": "Dr. Subrahmanyam Jaishankar",
     "minister_designation": "Minister",
-    "wp_json": [],
+    "wp_json": {},
     "parivesh": false,
     "niti_iced_path": ""
   },
@@ -284,7 +285,7 @@
     "pib_releases_since_2024_06": 612,
     "minister_name": "Dr. Mansukh Mandaviya",
     "minister_designation": "Minister",
-    "wp_json": [],
+    "wp_json": {},
     "parivesh": false,
     "niti_iced_path": ""
   },
@@ -295,7 +296,7 @@
     "pib_releases_since_2024_06": 654,
     "minister_name": "Shri Rajiv Ranjan Singh alias Lalan Singh",
     "minister_designation": "Minister",
-    "wp_json": [],
+    "wp_json": {},
     "parivesh": false,
     "niti_iced_path": ""
   },
@@ -306,7 +307,7 @@
     "pib_releases_since_2024_06": 261,
     "minister_name": "Shri Pralhad Joshi",
     "minister_designation": "Minister",
-    "wp_json": [],
+    "wp_json": {},
     "parivesh": false,
     "niti_iced_path": "energy/fuel-sources"
   },
@@ -317,10 +318,11 @@
     "pib_releases_since_2024_06": 672,
     "minister_name": "",
     "minister_designation": "",
-    "wp_json": [
-      "meity.gov.in",
-      "cms/wp-json/wp/v2/schemes_and_services"
-    ],
+    "wp_json": {
+      "site": "meity.gov.in",
+      "schema": "wp_core",
+      "path": "cms/wp-json/wp/v2/schemes_and_services"
+    },
     "parivesh": false,
     "niti_iced_path": ""
   },
@@ -331,7 +333,7 @@
     "pib_releases_since_2024_06": 426,
     "minister_name": "Shri Arjun Ram Meghwal",
     "minister_designation": "Minister of State (Independent Charge)",
-    "wp_json": [],
+    "wp_json": {},
     "parivesh": false,
     "niti_iced_path": ""
   },
@@ -342,7 +344,7 @@
     "pib_releases_since_2024_06": 445,
     "minister_name": "Shri Jayant Chaudhary",
     "minister_designation": "Minister of State (Independent Charge)",
-    "wp_json": [],
+    "wp_json": {},
     "parivesh": false,
     "niti_iced_path": ""
   },
@@ -353,7 +355,7 @@
     "pib_releases_since_2024_06": 315,
     "minister_name": "Shri Manohar Lal",
     "minister_designation": "Minister",
-    "wp_json": [],
+    "wp_json": {},
     "parivesh": false,
     "niti_iced_path": "energy/electricity"
   },
@@ -364,7 +366,7 @@
     "pib_releases_since_2024_06": 524,
     "minister_name": "Shri Jual Oram",
     "minister_designation": "Minister",
-    "wp_json": [],
+    "wp_json": {},
     "parivesh": false,
     "niti_iced_path": ""
   },
@@ -375,7 +377,7 @@
     "pib_releases_since_2024_06": 204,
     "minister_name": "Shri Chirag Paswan",
     "minister_designation": "Minister",
-    "wp_json": [],
+    "wp_json": {},
     "parivesh": false,
     "niti_iced_path": ""
   },
@@ -386,7 +388,7 @@
     "pib_releases_since_2024_06": 577,
     "minister_name": "Shri Sarbananda Sonowal",
     "minister_designation": "Minister",
-    "wp_json": [],
+    "wp_json": {},
     "parivesh": false,
     "niti_iced_path": ""
   },
@@ -397,7 +399,7 @@
     "pib_releases_since_2024_06": 176,
     "minister_name": "Smt. Nirmala Sitharaman",
     "minister_designation": "Minister",
-    "wp_json": [],
+    "wp_json": {},
     "parivesh": false,
     "niti_iced_path": ""
   },
@@ -408,7 +410,7 @@
     "pib_releases_since_2024_06": 444,
     "minister_name": "Shri Amit Shah",
     "minister_designation": "Minister",
-    "wp_json": [],
+    "wp_json": {},
     "parivesh": false,
     "niti_iced_path": ""
   },
@@ -419,7 +421,7 @@
     "pib_releases_since_2024_06": 470,
     "minister_name": "Shri Giriraj Singh",
     "minister_designation": "Minister",
-    "wp_json": [],
+    "wp_json": {},
     "parivesh": false,
     "niti_iced_path": ""
   },
@@ -430,7 +432,7 @@
     "pib_releases_since_2024_06": 464,
     "minister_name": "Shri G. Kishan Reddy",
     "minister_designation": "Minister",
-    "wp_json": [],
+    "wp_json": {},
     "parivesh": false,
     "niti_iced_path": "energy/fuel-sources/coal"
   },
@@ -441,7 +443,7 @@
     "pib_releases_since_2024_06": 298,
     "minister_name": "Shri Rajiv Ranjan Singh alias Lalan Singh",
     "minister_designation": "Minister",
-    "wp_json": [],
+    "wp_json": {},
     "parivesh": false,
     "niti_iced_path": ""
   },
@@ -452,7 +454,7 @@
     "pib_releases_since_2024_06": 252,
     "minister_name": "Shri Kiren Rijiju",
     "minister_designation": "Minister",
-    "wp_json": [],
+    "wp_json": {},
     "parivesh": false,
     "niti_iced_path": ""
   },
@@ -463,7 +465,7 @@
     "pib_releases_since_2024_06": 974,
     "minister_name": "Shri Ashwini Vaishnaw",
     "minister_designation": "Minister",
-    "wp_json": [],
+    "wp_json": {},
     "parivesh": false,
     "niti_iced_path": ""
   },
@@ -474,7 +476,7 @@
     "pib_releases_since_2024_06": 203,
     "minister_name": "Dr. Jitendra Singh",
     "minister_designation": "Minister of State",
-    "wp_json": [],
+    "wp_json": {},
     "parivesh": false,
     "niti_iced_path": ""
   },
@@ -485,7 +487,7 @@
     "pib_releases_since_2024_06": 1418,
     "minister_name": "Dr. Jitendra Singh",
     "minister_designation": "Minister of State (Independent Charge)",
-    "wp_json": [],
+    "wp_json": {},
     "parivesh": false,
     "niti_iced_path": ""
   },
@@ -496,7 +498,7 @@
     "pib_releases_since_2024_06": 235,
     "minister_name": "Shri G. Kishan Reddy",
     "minister_designation": "Minister",
-    "wp_json": [],
+    "wp_json": {},
     "parivesh": false,
     "niti_iced_path": ""
   },
@@ -507,7 +509,7 @@
     "pib_releases_since_2024_06": 377,
     "minister_name": "Dr. Jitendra Singh",
     "minister_designation": "Minister",
-    "wp_json": [],
+    "wp_json": {},
     "parivesh": false,
     "niti_iced_path": ""
   },
@@ -518,7 +520,7 @@
     "pib_releases_since_2024_06": 273,
     "minister_name": "Shri H. D. Kumaraswamy",
     "minister_designation": "Minister",
-    "wp_json": [],
+    "wp_json": {},
     "parivesh": false,
     "niti_iced_path": ""
   },
@@ -529,7 +531,7 @@
     "pib_releases_since_2024_06": 349,
     "minister_name": "Shri H. D. Kumaraswamy",
     "minister_designation": "Minister",
-    "wp_json": [],
+    "wp_json": {},
     "parivesh": false,
     "niti_iced_path": ""
   },
@@ -540,7 +542,7 @@
     "pib_releases_since_2024_06": 480,
     "minister_name": "Shri Rao Inderjit Singh",
     "minister_designation": "Minister of State (Independent Charge)",
-    "wp_json": [],
+    "wp_json": {},
     "parivesh": false,
     "niti_iced_path": ""
   },
@@ -551,7 +553,7 @@
     "pib_releases_since_2024_06": 808,
     "minister_name": "Dr. Jitendra Singh",
     "minister_designation": "Minister of State",
-    "wp_json": [],
+    "wp_json": {},
     "parivesh": false,
     "niti_iced_path": ""
   },
@@ -562,7 +564,7 @@
     "pib_releases_since_2024_06": 164,
     "minister_name": "Dr. Jitendra Singh",
     "minister_designation": "Minister of State",
-    "wp_json": [],
+    "wp_json": {},
     "parivesh": false,
     "niti_iced_path": ""
   },
@@ -573,7 +575,7 @@
     "pib_releases_since_2024_06": 0,
     "minister_name": "",
     "minister_designation": "",
-    "wp_json": [],
+    "wp_json": {},
     "parivesh": false,
     "niti_iced_path": ""
   },
@@ -584,7 +586,7 @@
     "pib_releases_since_2024_06": 2234,
     "minister_name": "Shri Raj Nath Singh",
     "minister_designation": "Minister",
-    "wp_json": [],
+    "wp_json": {},
     "parivesh": false,
     "niti_iced_path": ""
   },
@@ -595,7 +597,7 @@
     "pib_releases_since_2024_06": 159,
     "minister_name": "",
     "minister_designation": "",
-    "wp_json": [],
+    "wp_json": {},
     "parivesh": false,
     "niti_iced_path": ""
   },
@@ -606,7 +608,7 @@
     "pib_releases_since_2024_06": 139,
     "minister_name": "Shri Kiren Rijiju",
     "minister_designation": "Minister",
-    "wp_json": [],
+    "wp_json": {},
     "parivesh": false,
     "niti_iced_path": ""
   },
@@ -617,7 +619,7 @@
     "pib_releases_since_2024_06": 0,
     "minister_name": "",
     "minister_designation": "",
-    "wp_json": [],
+    "wp_json": {},
     "parivesh": false,
     "niti_iced_path": ""
   }

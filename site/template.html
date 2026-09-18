@@ -431,14 +431,20 @@
     </div>
 
     <div class="panel">
-      <h3>MeitY schemes: PQ scrutiny vs. the ministry's own catalogue</h3>
-      <p class="note-inline" style="margin-bottom:12px">MeitY runs a JS-shell site with no crawlable page content, but its scheme content is served underneath by a public WordPress API (<code id="meity-source"></code>) &mdash; <span id="meity-total-schemes"></span> schemes, each matched against PQ text by its acronym or distinguishing title words. <b><span id="meity-zero-count"></span></b> have zero PQ mentions by name in this window, including some well-known ones (a heuristic keyword match, not proof of zero attention &mdash; see caveats). <span id="meity-stale-count"></span></p>
+      <h3>Ministry scheme catalogues vs. PQ scrutiny</h3>
+      <p class="note-inline" style="margin-bottom:12px">MeitY, DoT and DPIIT run JS-shell sites with no crawlable page content, but each serves its scheme catalogue underneath through a public WordPress-backed API &mdash; two different API shapes across the three, verified independently rather than assumed identical. <b><span id="meity-summary"></span></b> Each scheme is matched against PQ text by its acronym (only when genuinely scheme-specific) or distinguishing title words &mdash; a heuristic match, a lower bound, not proof of zero attention where it shows 0.</p>
+      <div class="controls">
+        <select id="meity-ministry-select">
+          <option value="">All ministries</option>
+        </select>
+      </div>
       <div class="table-scroll">
         <table id="meity-table">
           <thead><tr>
+            <th data-key="ministry" data-type="str">Ministry<span class="arrow">▾</span></th>
             <th data-key="scheme" data-type="str">Scheme<span class="arrow">▾</span></th>
             <th data-key="pq_mentions" data-type="num" class="num" aria-sort="descending">PQ mentions<span class="arrow">▾</span></th>
-            <th data-key="months_since_update" data-type="num" class="num">Months since MeitY update<span class="arrow">▾</span></th>
+            <th data-key="months_since_update" data-type="num" class="num">Months since site update<span class="arrow">▾</span></th>
             <th data-key="outlay" data-type="num" class="num">Outlay mentioned (₹cr)<span class="arrow">▾</span></th>
           </tr></thead>
           <tbody></tbody>
@@ -525,8 +531,14 @@
   })();
 
   // ---------- Sortable table helper ----------
+  // Re-callable on the same table (e.g. a filter dropdown re-invoking this
+  // with new `rows`): sort state and the click listeners persist on the
+  // element itself across calls, bound exactly once, so re-filtering never
+  // stacks duplicate handlers -- each click always runs the *latest* call's
+  // render closure via tableEl.__sortRender.
   function makeSortable(tableEl, rows, renderRow, defaultKey, defaultDir){
-    var state = {key: defaultKey, dir: defaultDir || 'desc'};
+    if (!tableEl.__sortState) tableEl.__sortState = {key: defaultKey, dir: defaultDir || 'desc'};
+    var state = tableEl.__sortState;
     function sortRows(){
       var ths = tableEl.querySelectorAll('th[data-key]');
       var type = 'str';
@@ -548,13 +560,18 @@
         if (th.dataset.key === state.key) th.setAttribute('aria-sort', state.dir==='asc'?'ascending':'descending');
       });
     }
-    tableEl.querySelectorAll('th[data-key]').forEach(function(th){
-      th.addEventListener('click', function(){
-        if (state.key === th.dataset.key){ state.dir = state.dir==='asc'?'desc':'asc'; }
-        else { state.key = th.dataset.key; state.dir = th.dataset.type==='num' ? 'desc':'asc'; }
-        render();
+    tableEl.__sortRender = render;
+    if (!tableEl.__sortBound){
+      tableEl.__sortBound = true;
+      tableEl.querySelectorAll('th[data-key]').forEach(function(th){
+        th.addEventListener('click', function(){
+          var s = tableEl.__sortState;
+          if (s.key === th.dataset.key){ s.dir = s.dir==='asc'?'desc':'asc'; }
+          else { s.key = th.dataset.key; s.dir = th.dataset.type==='num' ? 'desc':'asc'; }
+          tableEl.__sortRender();
+        });
       });
-    });
+    }
     render();
     return { rerender: render, getRows: function(){ return rows; } };
   }
@@ -810,28 +827,46 @@
         '<td class="num tabular">'+(r.disbursed_pct==null?'—':r.disbursed_pct.toFixed(1)+'%')+'</td></tr>';
     }, 'gradeRank', 'asc');
 
-    document.getElementById('meity-source').textContent = MEITY.source_url || '';
-    document.getElementById('meity-total-schemes').textContent = (MEITY.rows||[]).length;
-    var zeroCount = (MEITY.rows||[]).filter(function(r){ return r.pq_mentions === 0; }).length;
-    document.getElementById('meity-zero-count').textContent = zeroCount + ' of ' + (MEITY.rows||[]).length;
-    var staleCount = (MEITY.rows||[]).filter(function(r){ return (r.months_since_update||0) > 12; }).length;
-    document.getElementById('meity-stale-count').textContent = staleCount + ' of ' + (MEITY.rows||[]).length + " haven't been touched on MeitY's own site in over a year.";
-    var meityRows = (MEITY.rows||[]).map(function(r){
+    var byMinistry = MEITY.by_ministry || {};
+    var ministryKeys = Object.keys(byMinistry);
+    var totalSchemes = ministryKeys.reduce(function(s,k){ return s + byMinistry[k].scheme_count; }, 0);
+    var totalZero = ministryKeys.reduce(function(s,k){ return s + byMinistry[k].zero_pq_count; }, 0);
+    var totalStale = ministryKeys.reduce(function(s,k){ return s + byMinistry[k].stale_count; }, 0);
+    document.getElementById('meity-summary').textContent =
+      totalSchemes + ' schemes across ' + ministryKeys.length + ' ministries: ' + totalZero +
+      ' have zero PQ mentions by name in this window, ' + totalStale + " haven't been updated on their own ministry's site in over a year.";
+
+    var sel = document.getElementById('meity-ministry-select');
+    ministryKeys.forEach(function(k){
+      var opt = document.createElement('option');
+      opt.value = k;
+      opt.textContent = k + ' (' + byMinistry[k].scheme_count + ')';
+      sel.appendChild(opt);
+    });
+
+    var allMeityRows = (MEITY.rows||[]).map(function(r){
       return {
+        ministry: r.ministry,
         scheme: r.scheme,
         pq_mentions: r.pq_mentions,
         months_since_update: r.months_since_update,
         outlay: r.outlay_rs_cr_mentioned,
-        page: r.meity_page,
+        page: r.scheme_page,
       };
     });
-    makeSortable(document.getElementById('meity-table'), meityRows, function(r){
-      var label = r.page ? '<a href="'+esc(r.page)+'" target="_blank" rel="noopener">'+esc(r.scheme)+'</a>' : esc(r.scheme);
-      return '<tr><td>'+label+'</td>' +
-        '<td class="num tabular">'+fmt.format(r.pq_mentions)+'</td>' +
-        '<td class="num tabular">'+(r.months_since_update==null?'—':r.months_since_update)+'</td>' +
-        '<td class="num tabular">'+(r.outlay==null?'—':fmt.format(r.outlay))+'</td></tr>';
-    }, 'pq_mentions', 'desc');
+    var meityTable = document.getElementById('meity-table');
+    function renderMeityTable(){
+      var filtered = sel.value ? allMeityRows.filter(function(r){ return r.ministry === sel.value; }) : allMeityRows;
+      makeSortable(meityTable, filtered, function(r){
+        var label = r.page ? '<a href="'+esc(r.page)+'" target="_blank" rel="noopener">'+esc(r.scheme)+'</a>' : esc(r.scheme);
+        return '<tr><td>'+esc(r.ministry)+'</td><td>'+label+'</td>' +
+          '<td class="num tabular">'+fmt.format(r.pq_mentions)+'</td>' +
+          '<td class="num tabular">'+(r.months_since_update==null?'—':r.months_since_update)+'</td>' +
+          '<td class="num tabular">'+(r.outlay==null?'—':fmt.format(r.outlay))+'</td></tr>';
+      }, 'pq_mentions', 'desc');
+    }
+    sel.addEventListener('change', renderMeityTable);
+    renderMeityTable();
   }
 
   // ---------- Footer ----------

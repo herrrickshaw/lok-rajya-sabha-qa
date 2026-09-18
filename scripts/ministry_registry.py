@@ -25,7 +25,7 @@ Usage:
     registry = load_registry()              # {pq_ministry: MinistryRecord}
     registry["JAL SHAKTI"].pib_label         # -> "Ministry of Jal Shakti"
     registry["JAL SHAKTI"].minister_name     # -> "Shri C R Patil"
-    registry["ELECTRONICS AND INFORMATION TECHNOLOGY"].wp_json_slug  # -> "meity"
+    registry["ELECTRONICS AND INFORMATION TECHNOLOGY"].wp_json     # -> {"site": "meity.gov.in", ...}
 """
 import csv
 import json
@@ -61,17 +61,35 @@ PIB_LABEL_ALIASES = {
     "DEVELOPMENT OF NORTH EASTERN REGION": ["Ministry of Development of North-East Region"],
 }
 
-# Integration hooks for ministry-level sources this repo has *surveyed but
-# not yet integrated* (see README "Comparable data sources"). Filling these
-# in is what "organising data ministry-wise" buys a future pass: a new
-# compare_meity.py / compare_parivesh.py / compare_niti_iced.py reads its
-# target ministries straight from here instead of rediscovering which PQ
-# ministry maps to which source.
+# Integration hooks for ministry-level sources this repo pulls from beyond
+# the PQ/PIB/PLI data itself. Filling these in is what "organising data
+# ministry-wise" buys a future pass: compare_wp_json_schemes.py reads every
+# entry here instead of rediscovering which PQ ministry maps to which site.
+#
+# Two response shapes exist behind the same "wp-json" label, verified live
+# 2026-09-18 (the reference_india_ministry_site_access memory's assumption
+# that DoT/DPIIT match MeitY's shape was WRONG -- always verify per site,
+# don't extrapolate one ministry's API shape to another's):
+#   "wp_core"   -- MeitY: standard WP REST route (wp/v2/<post_type>),
+#                  ?per_page=N, bare JSON array response, fields at the
+#                  top level (title.rendered, modified, acf.*).
+#   "post_page" -- DoT, DPIIT: a custom "post-page" route (not core WP
+#                  REST), ?limit=N&page=N&orderby=menu_order,
+#                  {"posts":[...], "total_items", "total_pages"} response,
+#                  snake_case fields (post_title, post_modified, acf_data.*).
 WP_JSON_MINISTRIES = {
-    # PQ ministry -> (site, wp-json namespace) per reference_india_ministry_site_access
-    "ELECTRONICS AND INFORMATION TECHNOLOGY": ("meity.gov.in", "cms/wp-json/wp/v2/schemes_and_services"),
-    "COMMUNICATION": ("dot.gov.in", "cms/wp-json"),
-    "COMMERCE AND INDUSTRY": ("dpiit.gov.in", "cms/wp-json"),
+    "ELECTRONICS AND INFORMATION TECHNOLOGY": {
+        "site": "meity.gov.in", "schema": "wp_core",
+        "path": "cms/wp-json/wp/v2/schemes_and_services",
+    },
+    "COMMUNICATION": {
+        "site": "dot.gov.in", "schema": "post_page",
+        "path": "cms/wp-json/post-page/schemes_and_services",
+    },
+    "COMMERCE AND INDUSTRY": {
+        "site": "dpiit.gov.in", "schema": "post_page",
+        "path": "cms/wp-json/post-page/schemes_and_services",
+    },
 }
 PARIVESH_MINISTRIES = {"ENVIRONMENT, FOREST AND CLIMATE CHANGE"}
 NITI_ICED_MINISTRIES = {
@@ -92,7 +110,7 @@ class MinistryRecord:
     pib_releases_since_2024_06: int = 0
     minister_name: str = ""
     minister_designation: str = ""
-    wp_json: list = field(default_factory=list)   # [site, namespace] or []
+    wp_json: dict = field(default_factory=dict)   # {"site", "schema", "path"} or {}
     parivesh: bool = False
     niti_iced_path: str = ""
 
@@ -169,7 +187,6 @@ def build_registry():
         pq_ministry = m["ministry"]
         pib_label, pib_count = _resolve_pib_label(pq_ministry, pib_counts_raw, pib_norm_counts)
         minister_name, minister_designation = minister_lookup.get(normalize(pq_ministry), ("", ""))
-        wp = WP_JSON_MINISTRIES.get(pq_ministry)
         records[pq_ministry] = MinistryRecord(
             pq_ministry=pq_ministry,
             pq_total_questions=int(m["questions"]),
@@ -177,7 +194,7 @@ def build_registry():
             pib_releases_since_2024_06=pib_count,
             minister_name=minister_name,
             minister_designation=minister_designation,
-            wp_json=list(wp) if wp else [],
+            wp_json=dict(WP_JSON_MINISTRIES.get(pq_ministry, {})),
             parivesh=pq_ministry in PARIVESH_MINISTRIES,
             niti_iced_path=NITI_ICED_MINISTRIES.get(pq_ministry, ""),
         )
