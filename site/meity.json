@@ -1,0 +1,206 @@
+{
+  "ministry": "ELECTRONICS AND INFORMATION TECHNOLOGY",
+  "ministry_total_pq": 971,
+  "source_url": "https://www.meity.gov.in/cms/wp-json/wp/v2/schemes_and_services",
+  "rows": [
+    {
+      "scheme": "Production Linked Incentive Scheme \u2013 PLI 2.0 for IT Hardware",
+      "category": "Scheme",
+      "meity_last_modified": "2026-05-21",
+      "months_since_update": 3.9,
+      "outlay_rs_cr_mentioned": null,
+      "pq_mentions": 9,
+      "meity_page": "https://cms-meity.digifootprint.gov.in/schemes_and_services/production-linked-incentive-scheme-pli-2-0-for-it-hardware/"
+    },
+    {
+      "scheme": "Production Linked Incentive Scheme (PLI) for IT Hardware",
+      "category": "Scheme",
+      "meity_last_modified": "2026-05-21",
+      "months_since_update": 3.9,
+      "outlay_rs_cr_mentioned": null,
+      "pq_mentions": 9,
+      "meity_page": "https://cms-meity.digifootprint.gov.in/schemes_and_services/production-linked-incentive-scheme-pli-for-it-hardware/"
+    },
+    {
+      "scheme": "Electronic Manufacturing Clusters (EMC) Scheme",
+      "category": "Scheme",
+      "meity_last_modified": "2026-06-04",
+      "months_since_update": 3.5,
+      "outlay_rs_cr_mentioned": 50.0,
+      "pq_mentions": 8,
+      "meity_page": "https://cms-meity.digifootprint.gov.in/schemes_and_services/electronic-manufacturing-clusters-emc-scheme/"
+    },
+    {
+      "scheme": "Electronics Component Manufacturing Scheme",
+      "category": "Scheme",
+      "meity_last_modified": "2025-07-30",
+      "months_since_update": 13.6,
+      "outlay_rs_cr_mentioned": null,
+      "pq_mentions": 7,
+      "meity_page": "https://cms-meity.digifootprint.gov.in/schemes_and_services/electronics-component-manufacturing-scheme/"
+    },
+    {
+      "scheme": "Modified Electronics Manufacturing Clusters (EMC 2.0) Scheme",
+      "category": "Scheme",
+      "meity_last_modified": "2026-02-12",
+      "months_since_update": 7.2,
+      "outlay_rs_cr_mentioned": null,
+      "pq_mentions": 4,
+      "meity_page": "https://cms-meity.digifootprint.gov.in/schemes_and_services/modified-electronics-manufacturing-clusters-emc-2-0-scheme/"
+    },
+    {
+      "scheme": "Modified Special Incentive Package Scheme (M-SIPS)",
+      "category": "Scheme",
+      "meity_last_modified": "2025-06-09",
+      "months_since_update": 15.3,
+      "outlay_rs_cr_mentioned": null,
+      "pq_mentions": 4,
+      "meity_page": "https://cms-meity.digifootprint.gov.in/schemes_and_services/modified-special-incentive-package-scheme-m-sips/"
+    },
+    {
+      "scheme": "Digital India Internship Scheme 2026",
+      "category": "Scheme",
+      "meity_last_modified": "2026-04-10",
+      "months_since_update": 5.3,
+      "outlay_rs_cr_mentioned": null,
+      "pq_mentions": 4,
+      "meity_page": "https://cms-meity.digifootprint.gov.in/schemes_and_services/digital-india-internship-scheme-2026/"
+    },
+    {
+      "scheme": "TECHNICAL INTERNSHIP PROGRAMME 2025",
+      "category": "Scheme",
+      "meity_last_modified": "2025-06-09",
+      "months_since_update": 15.3,
+      "outlay_rs_cr_mentioned": null,
+      "pq_mentions": 4,
+      "meity_page": "https://cms-meity.digifootprint.gov.in/schemes_and_services/technical-internship-programme-2025/"
+    },
+    {
+      "scheme": "CSC Scheme 2.0 \u2013 A Way Forward [ Part of e-Governance Division]",
+      "category": "Scheme",
+      "meity_last_modified": "2025-06-09",
+      "months_since_update": 15.3,
+      "outlay_rs_cr_mentioned": null,
+      "pq_mentions": 3,
+      "meity_page": "https://cms-meity.digifootprint.gov.in/schemes_and_services/csc-scheme-2-0-a-way-forward-part-of-e-governance-division/"
+    },
+    {
+      "scheme": "BPO promotion Schemes",
+      "category": "Scheme",
+      "meity_last_modified": "2025-06-09",
+      "months_since_update": 15.3,
+      "outlay_rs_cr_mentioned": 543.0,
+      "pq_mentions": 3,
+      "meity_page": "https://cms-meity.digifootprint.gov.in/schemes_and_services/india-bpo-promotion-schemes/"
+    },
+    {
+      "scheme": "Scheme for Financial Assistance to select States/UTs for Skill Development in Electronics System Design and Manufacturing (ESDM) sector",
+      "category": "Scheme",
+      "meity_last_modified": "2025-06-09",
+      "months_since_update": 15.3,
+      "outlay_rs_cr_mentioned": 113.77,
+      "pq_mentions": 3,
+      "meity_page": "https://cms-meity.digifootprint.gov.in/schemes_and_services/scheme-for-financial-assistance-to-select-states-uts-for-skill-development-in-electronics-system-design-and-manufacturing-esdm-sector/"
+    },
+    {
+      "scheme": "GEN-NEXT Support for Innovative Startups (GENESIS)",
+      "category": "Scheme",
+      "meity_last_modified": "2025-06-09",
+      "months_since_update": 15.3,
+      "outlay_rs_cr_mentioned": 490.0,
+      "pq_mentions": 2,
+      "meity_page": "https://cms-meity.digifootprint.gov.in/schemes_and_services/gen-next-support-for-innovative-startups-genesis/"
+    },
+    {
+      "scheme": "Visvesvaraya PhD Scheme",
+      "category": "Scheme",
+      "meity_last_modified": "2026-05-18",
+      "months_since_update": 4.0,
+      "outlay_rs_cr_mentioned": 481.93,
+      "pq_mentions": 2,
+      "meity_page": "https://cms-meity.digifootprint.gov.in/schemes_and_services/visvesvaraya-phd-scheme/"
+    },
+    {
+      "scheme": "Technology Incubation and Development of Entrepreneurs",
+      "category": "Scheme",
+      "meity_last_modified": "2025-06-09",
+      "months_since_update": 15.3,
+      "outlay_rs_cr_mentioned": null,
+      "pq_mentions": 0,
+      "meity_page": "https://cms-meity.digifootprint.gov.in/schemes_and_services/technology-incubation-and-development-of-entrepreneurs/"
+    },
+    {
+      "scheme": "Scheme for Promotion of Manufacturing of Electronic Components and Semiconductors (SPECS)",
+      "category": "Scheme",
+      "meity_last_modified": "2025-06-09",
+      "months_since_update": 15.3,
+      "outlay_rs_cr_mentioned": null,
+      "pq_mentions": 0,
+      "meity_page": "https://cms-meity.digifootprint.gov.in/schemes_and_services/scheme-for-promotion-of-manufacturing-of-electronic-components-and-semiconductors-specs/"
+    },
+    {
+      "scheme": "Production Linked Incentive Scheme (PLI) for Large Scale Electronics Manufacturing",
+      "category": "Scheme",
+      "meity_last_modified": "2025-06-09",
+      "months_since_update": 15.3,
+      "outlay_rs_cr_mentioned": null,
+      "pq_mentions": 0,
+      "meity_page": "https://cms-meity.digifootprint.gov.in/schemes_and_services/production-linked-incentive-scheme-pli-for-large-scale-electronics-manufacturing/"
+    },
+    {
+      "scheme": "Visvesvaraya PhD Scheme for Electronics &amp; IT",
+      "category": "Scheme",
+      "meity_last_modified": "2025-06-13",
+      "months_since_update": 15.2,
+      "outlay_rs_cr_mentioned": 481.93,
+      "pq_mentions": 0,
+      "meity_page": "https://cms-meity.digifootprint.gov.in/schemes_and_services/visvesvaraya-phd-scheme-for-electronics-it/"
+    },
+    {
+      "scheme": "Electronic Hardware Schemes",
+      "category": "Scheme",
+      "meity_last_modified": "2025-06-09",
+      "months_since_update": 15.3,
+      "outlay_rs_cr_mentioned": null,
+      "pq_mentions": 0,
+      "meity_page": "https://cms-meity.digifootprint.gov.in/schemes_and_services/electronic-hardware-schemes/"
+    },
+    {
+      "scheme": "Scheme of financial assistance for setting up of Electronics and ICT Academies",
+      "category": "Scheme",
+      "meity_last_modified": "2025-06-09",
+      "months_since_update": 15.3,
+      "outlay_rs_cr_mentioned": 147.48,
+      "pq_mentions": 0,
+      "meity_page": "https://cms-meity.digifootprint.gov.in/schemes_and_services/scheme-of-financial-assistance-for-setting-up-of-electronics-and-ict-academies/"
+    },
+    {
+      "scheme": "Scheme for \u2018Skill Development in ESDM for Digital India\u2019",
+      "category": "Scheme",
+      "meity_last_modified": "2025-06-09",
+      "months_since_update": 15.3,
+      "outlay_rs_cr_mentioned": 411.0,
+      "pq_mentions": 0,
+      "meity_page": "https://cms-meity.digifootprint.gov.in/schemes_and_services/scheme-for-skill-development-in-esdm-for-digital-india/"
+    },
+    {
+      "scheme": "NeGD\u2019s Non-Technical (Summer) Internship Programme",
+      "category": "Scheme",
+      "meity_last_modified": "2026-05-20",
+      "months_since_update": 3.9,
+      "outlay_rs_cr_mentioned": null,
+      "pq_mentions": 0,
+      "meity_page": "https://cms-meity.digifootprint.gov.in/schemes_and_services/negds-non-technical-summer-internship-programme/"
+    },
+    {
+      "scheme": "Guidelines for implementation of Scheme for reimbursement of Testing and Certification Charges for Start-ups and Telecom MSEs",
+      "category": "Scheme",
+      "meity_last_modified": "2025-06-09",
+      "months_since_update": 15.3,
+      "outlay_rs_cr_mentioned": null,
+      "pq_mentions": 0,
+      "meity_page": "https://cms-meity.digifootprint.gov.in/schemes_and_services/guidelines-for-implementation-of-scheme-for-reimbursement-of-testing-and-certification-charges-for-start-ups-and-telecom-mses/"
+    }
+  ],
+  "note": "MeitY's own scheme catalogue (public WordPress REST API behind its JS-shell site, 22 schemes as of this run), matched against PQ text by each scheme's parenthetical acronym (if it has one) or its first significant title words -- a heuristic match, not a verified extraction; treat pq_mentions as a lower bound. months_since_update is time since MeitY's own CMS last touched that scheme's page, not evidence the scheme itself is inactive."
+}

@@ -63,6 +63,7 @@ def main():
     load_table(con, "pib_ministry_comparison", "pib_ministry_comparison.csv")
     load_table(con, "pib_scheme_comparison", "pib_scheme_comparison.csv")
     load_table(con, "pli_scheme_scrutiny", "pli_scheme_scrutiny.csv")
+    load_table(con, "meity_scheme_scrutiny", "meity_scheme_scrutiny.csv")
 
     # A single tidy view across both chambers -- the "queries and answers" table.
     con.execute(
@@ -178,6 +179,7 @@ def build_markdown(con):
     top_bridges = sorted(bridges, key=lambda r: -int(r["joint_questions"]))[:10]
     pib_ministry = read_csv("pib_ministry_comparison.csv")
     pli_rows = read_csv("pli_scheme_scrutiny.csv")
+    meity_rows = read_csv("meity_scheme_scrutiny.csv")
     pib_scheme = read_csv("pib_scheme_comparison.csv")
 
     by_comm = defaultdict(list)
@@ -334,6 +336,36 @@ def build_markdown(con):
         "₹6,940cr) is the most-scrutinised scheme in the table (34 mentions), consistent with it",
         "being a live China-dependency policy flashpoint independent of its own disbursal grade.",
         "",
+        "## MeitY's own scheme catalogue vs. PQ scrutiny",
+        "",
+        "MeitY runs a JS-shell site with no crawlable page content, but its scheme content is",
+        "served underneath by a public WordPress REST API",
+        "(`https://www.meity.gov.in/cms/wp-json/wp/v2/schemes_and_services`, `scripts/compare_meity.py`)",
+        "— the first of the surveyed-but-unintegrated ministry-website sources actually wired in.",
+        "22 schemes, matched against PQ text by acronym or distinguishing title words (heuristic,",
+        "a lower bound — see caveats):",
+        "",
+        "| Scheme | PQ mentions | Months since MeitY update | Outlay mentioned (₹cr) |",
+        "|---|---:|---:|---:|",
+    ]
+    for r in meity_rows[:15]:
+        months = r.get("months_since_update") or "—"
+        outlay = r.get("outlay_rs_cr_mentioned") or "—"
+        lines.append(f"| {r['scheme']} | {r['pq_mentions']} | {months} | {outlay} |")
+    zero_meity = sum(1 for r in meity_rows if r["pq_mentions"] == "0")
+    stale_meity = sum(1 for r in meity_rows if r.get("months_since_update") and float(r["months_since_update"]) > 12)
+    lines += [
+        "",
+        f"**{zero_meity} of {len(meity_rows)} MeitY schemes draw zero PQ mentions by name** in this window",
+        "— including SPECS (semiconductor/electronics-component manufacturing promotion) and the",
+        "Large Scale Electronics Manufacturing component of the PLI program, both genuinely verified",
+        "zero (not a matching artifact — checked directly against the raw corpus). Either PQs about",
+        "these use language this heuristic doesn't catch, or they draw essentially no",
+        f"scheme-specific parliamentary attention. **{stale_meity} of {len(meity_rows)}** haven't been",
+        "touched on MeitY's own site in over a year — a smaller staleness signal than the",
+        "ministry-site-access memory's prior finding of frozen, present-tense scheme pages, but the",
+        "same phenomenon.",
+        "",
         "## Known gaps",
         "",
         "- **Lok Sabha question/answer full text is not in this dataset.** The `api_ls` listing endpoint used to "
@@ -362,6 +394,13 @@ def build_markdown(con):
         "- **PLI scheme_pq_mentions is a keyword-pattern count, not a verified extraction** — a PQ about a "
         "scheme that doesn't use one of the matched phrases (e.g. asks about \"Advanced Chemistry Cell "
         "manufacturing\" without saying \"ACC Battery\") is missed. Treat these counts as a lower bound.",
+        "- **MeitY scheme matching is auto-derived per scheme** (parenthetical acronym if genuinely "
+        "scheme-specific, else the title's distinguishing words after \"for\"/\"of\") rather than hand-curated "
+        "like the PLI table — lower precision. Two \"PLI for IT Hardware\" entries (1.0 and 2.0) get identical "
+        "counts because PQ text can't be told which version it means; this is a real ambiguity in the source "
+        "data, not a bug.",
+        "- **`months_since_update` is time since MeitY's CMS last touched that scheme's page**, not evidence "
+        "the scheme itself is inactive — a scheme can be fully live with a stale page, or vice versa.",
         "",
     ]
     (DOCS / "ANALYSIS.md").write_text("\n".join(lines))

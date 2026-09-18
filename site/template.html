@@ -429,6 +429,22 @@
       </div>
       <p class="note-inline" id="pli-criteria"></p>
     </div>
+
+    <div class="panel">
+      <h3>MeitY schemes: PQ scrutiny vs. the ministry's own catalogue</h3>
+      <p class="note-inline" style="margin-bottom:12px">MeitY runs a JS-shell site with no crawlable page content, but its scheme content is served underneath by a public WordPress API (<code id="meity-source"></code>) &mdash; <span id="meity-total-schemes"></span> schemes, each matched against PQ text by its acronym or distinguishing title words. <b><span id="meity-zero-count"></span></b> have zero PQ mentions by name in this window, including some well-known ones (a heuristic keyword match, not proof of zero attention &mdash; see caveats). <span id="meity-stale-count"></span></p>
+      <div class="table-scroll">
+        <table id="meity-table">
+          <thead><tr>
+            <th data-key="scheme" data-type="str">Scheme<span class="arrow">▾</span></th>
+            <th data-key="pq_mentions" data-type="num" class="num" aria-sort="descending">PQ mentions<span class="arrow">▾</span></th>
+            <th data-key="months_since_update" data-type="num" class="num">Months since MeitY update<span class="arrow">▾</span></th>
+            <th data-key="outlay" data-type="num" class="num">Outlay mentioned (₹cr)<span class="arrow">▾</span></th>
+          </tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
   </section>
 
   <footer>
@@ -442,6 +458,7 @@
 <script id="graph-data" type="application/json">{{GRAPH_JSON}}</script>
 <script id="pib-data" type="application/json">{{PIB_JSON}}</script>
 <script id="pli-data" type="application/json">{{PLI_JSON}}</script>
+<script id="meity-data" type="application/json">{{MEITY_JSON}}</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
 <script>
 (function(){
@@ -450,6 +467,7 @@
   var GRAPH = JSON.parse(document.getElementById('graph-data').textContent);
   var PIB = JSON.parse(document.getElementById('pib-data').textContent);
   var PLI = JSON.parse(document.getElementById('pli-data').textContent);
+  var MEITY = JSON.parse(document.getElementById('meity-data').textContent);
 
   var fmt = new Intl.NumberFormat('en-IN');
   function esc(s){ return String(s==null?'':s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
@@ -791,6 +809,29 @@
         '<td class="num tabular">'+fmt.format(r.outlay)+'</td>' +
         '<td class="num tabular">'+(r.disbursed_pct==null?'—':r.disbursed_pct.toFixed(1)+'%')+'</td></tr>';
     }, 'gradeRank', 'asc');
+
+    document.getElementById('meity-source').textContent = MEITY.source_url || '';
+    document.getElementById('meity-total-schemes').textContent = (MEITY.rows||[]).length;
+    var zeroCount = (MEITY.rows||[]).filter(function(r){ return r.pq_mentions === 0; }).length;
+    document.getElementById('meity-zero-count').textContent = zeroCount + ' of ' + (MEITY.rows||[]).length;
+    var staleCount = (MEITY.rows||[]).filter(function(r){ return (r.months_since_update||0) > 12; }).length;
+    document.getElementById('meity-stale-count').textContent = staleCount + ' of ' + (MEITY.rows||[]).length + " haven't been touched on MeitY's own site in over a year.";
+    var meityRows = (MEITY.rows||[]).map(function(r){
+      return {
+        scheme: r.scheme,
+        pq_mentions: r.pq_mentions,
+        months_since_update: r.months_since_update,
+        outlay: r.outlay_rs_cr_mentioned,
+        page: r.meity_page,
+      };
+    });
+    makeSortable(document.getElementById('meity-table'), meityRows, function(r){
+      var label = r.page ? '<a href="'+esc(r.page)+'" target="_blank" rel="noopener">'+esc(r.scheme)+'</a>' : esc(r.scheme);
+      return '<tr><td>'+label+'</td>' +
+        '<td class="num tabular">'+fmt.format(r.pq_mentions)+'</td>' +
+        '<td class="num tabular">'+(r.months_since_update==null?'—':r.months_since_update)+'</td>' +
+        '<td class="num tabular">'+(r.outlay==null?'—':fmt.format(r.outlay))+'</td></tr>';
+    }, 'pq_mentions', 'desc');
   }
 
   // ---------- Footer ----------

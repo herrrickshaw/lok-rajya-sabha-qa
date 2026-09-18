@@ -201,6 +201,43 @@ relative to the scale of the shortfall. PLI Bulk Drugs (B grade but only 0.8% di
 ₹6,940cr) is the most-scrutinised scheme in the table (34 mentions), consistent with it
 being a live China-dependency policy flashpoint independent of its own disbursal grade.
 
+## MeitY's own scheme catalogue vs. PQ scrutiny
+
+MeitY runs a JS-shell site with no crawlable page content, but its scheme content is
+served underneath by a public WordPress REST API
+(`https://www.meity.gov.in/cms/wp-json/wp/v2/schemes_and_services`, `scripts/compare_meity.py`)
+— the first of the surveyed-but-unintegrated ministry-website sources actually wired in.
+22 schemes, matched against PQ text by acronym or distinguishing title words (heuristic,
+a lower bound — see caveats):
+
+| Scheme | PQ mentions | Months since MeitY update | Outlay mentioned (₹cr) |
+|---|---:|---:|---:|
+| Production Linked Incentive Scheme – PLI 2.0 for IT Hardware | 9 | 3.9 | — |
+| Production Linked Incentive Scheme (PLI) for IT Hardware | 9 | 3.9 | — |
+| Electronic Manufacturing Clusters (EMC) Scheme | 8 | 3.5 | 50.0 |
+| Electronics Component Manufacturing Scheme | 7 | 13.6 | — |
+| Modified Electronics Manufacturing Clusters (EMC 2.0) Scheme | 4 | 7.2 | — |
+| Modified Special Incentive Package Scheme (M-SIPS) | 4 | 15.3 | — |
+| Digital India Internship Scheme 2026 | 4 | 5.3 | — |
+| TECHNICAL INTERNSHIP PROGRAMME 2025 | 4 | 15.3 | — |
+| CSC Scheme 2.0 – A Way Forward [ Part of e-Governance Division] | 3 | 15.3 | — |
+| BPO promotion Schemes | 3 | 15.3 | 543.0 |
+| Scheme for Financial Assistance to select States/UTs for Skill Development in Electronics System Design and Manufacturing (ESDM) sector | 3 | 15.3 | 113.77 |
+| GEN-NEXT Support for Innovative Startups (GENESIS) | 2 | 15.3 | 490.0 |
+| Visvesvaraya PhD Scheme | 2 | 4.0 | 481.93 |
+| Technology Incubation and Development of Entrepreneurs | 0 | 15.3 | — |
+| Scheme for Promotion of Manufacturing of Electronic Components and Semiconductors (SPECS) | 0 | 15.3 | — |
+
+**9 of 22 MeitY schemes draw zero PQ mentions by name** in this window
+— including SPECS (semiconductor/electronics-component manufacturing promotion) and the
+Large Scale Electronics Manufacturing component of the PLI program, both genuinely verified
+zero (not a matching artifact — checked directly against the raw corpus). Either PQs about
+these use language this heuristic doesn't catch, or they draw essentially no
+scheme-specific parliamentary attention. **15 of 22** haven't been
+touched on MeitY's own site in over a year — a smaller staleness signal than the
+ministry-site-access memory's prior finding of frozen, present-tense scheme pages, but the
+same phenomenon.
+
 ## Known gaps
 
 - **Lok Sabha question/answer full text is not in this dataset.** The `api_ls` listing endpoint used to fetch all 34,720 LS questions only exposes the subject line, not the question or answer body — those live only in per-question PDFs (a different URL per question, with a random filename suffix on the 18th LS). Fetching and OCR'ing ~34,700 PDFs was out of scope for this pass; `docs/parties/*.md` and the topic tab work from subject-line text only for the Lok Sabha side.
@@ -211,3 +248,5 @@ being a live China-dependency policy flashpoint independent of its own disbursal
 - The scheme/topic-vs-PIB comparison matches on release **titles only** via substring search, not full release body text — a real undercount of PIB coverage, especially for acronym-heavy PQ terms (e.g. PM-SGMBY, PM-SHRI) that PIB headlines likely spell out in full.
 - "Ministry of Planning" and the one "Prime Minister" ministry-label row genuinely have ~0 matching PIB releases in this window — not a matching bug, just a near-dormant PIB presence for Planning and a mislabelled single row for PM.
 - **PLI scheme_pq_mentions is a keyword-pattern count, not a verified extraction** — a PQ about a scheme that doesn't use one of the matched phrases (e.g. asks about "Advanced Chemistry Cell manufacturing" without saying "ACC Battery") is missed. Treat these counts as a lower bound.
+- **MeitY scheme matching is auto-derived per scheme** (parenthetical acronym if genuinely scheme-specific, else the title's distinguishing words after "for"/"of") rather than hand-curated like the PLI table — lower precision. Two "PLI for IT Hardware" entries (1.0 and 2.0) get identical counts because PQ text can't be told which version it means; this is a real ambiguity in the source data, not a bug.
+- **`months_since_update` is time since MeitY's CMS last touched that scheme's page**, not evidence the scheme itself is inactive — a scheme can be fully live with a stale page, or vice versa.

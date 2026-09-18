@@ -429,6 +429,22 @@
       </div>
       <p class="note-inline" id="pli-criteria"></p>
     </div>
+
+    <div class="panel">
+      <h3>MeitY schemes: PQ scrutiny vs. the ministry's own catalogue</h3>
+      <p class="note-inline" style="margin-bottom:12px">MeitY runs a JS-shell site with no crawlable page content, but its scheme content is served underneath by a public WordPress API (<code id="meity-source"></code>) &mdash; <span id="meity-total-schemes"></span> schemes, each matched against PQ text by its acronym or distinguishing title words. <b><span id="meity-zero-count"></span></b> have zero PQ mentions by name in this window, including some well-known ones (a heuristic keyword match, not proof of zero attention &mdash; see caveats). <span id="meity-stale-count"></span></p>
+      <div class="table-scroll">
+        <table id="meity-table">
+          <thead><tr>
+            <th data-key="scheme" data-type="str">Scheme<span class="arrow">▾</span></th>
+            <th data-key="pq_mentions" data-type="num" class="num" aria-sort="descending">PQ mentions<span class="arrow">▾</span></th>
+            <th data-key="months_since_update" data-type="num" class="num">Months since MeitY update<span class="arrow">▾</span></th>
+            <th data-key="outlay" data-type="num" class="num">Outlay mentioned (₹cr)<span class="arrow">▾</span></th>
+          </tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
   </section>
 
   <footer>
@@ -11436,6 +11452,212 @@
   ],
   "note": "PLI disbursal report card copied from a separate project (india-trade-sector-policy-recommendations), grades and figures are that repo's own PIB-sourced judgment, not re-verified here. scheme_pq_mentions counts Lok Sabha subject lines + Rajya Sabha subject lines/full question text matching scheme-specific keyword patterns (see SCHEME_MAP in compare_pli.py) -- a conservative undercount, since PQs about a scheme don't always name it explicitly."
 }</script>
+<script id="meity-data" type="application/json">{
+  "ministry": "ELECTRONICS AND INFORMATION TECHNOLOGY",
+  "ministry_total_pq": 971,
+  "source_url": "https://www.meity.gov.in/cms/wp-json/wp/v2/schemes_and_services",
+  "rows": [
+    {
+      "scheme": "Production Linked Incentive Scheme \u2013 PLI 2.0 for IT Hardware",
+      "category": "Scheme",
+      "meity_last_modified": "2026-05-21",
+      "months_since_update": 3.9,
+      "outlay_rs_cr_mentioned": null,
+      "pq_mentions": 9,
+      "meity_page": "https://cms-meity.digifootprint.gov.in/schemes_and_services/production-linked-incentive-scheme-pli-2-0-for-it-hardware/"
+    },
+    {
+      "scheme": "Production Linked Incentive Scheme (PLI) for IT Hardware",
+      "category": "Scheme",
+      "meity_last_modified": "2026-05-21",
+      "months_since_update": 3.9,
+      "outlay_rs_cr_mentioned": null,
+      "pq_mentions": 9,
+      "meity_page": "https://cms-meity.digifootprint.gov.in/schemes_and_services/production-linked-incentive-scheme-pli-for-it-hardware/"
+    },
+    {
+      "scheme": "Electronic Manufacturing Clusters (EMC) Scheme",
+      "category": "Scheme",
+      "meity_last_modified": "2026-06-04",
+      "months_since_update": 3.5,
+      "outlay_rs_cr_mentioned": 50.0,
+      "pq_mentions": 8,
+      "meity_page": "https://cms-meity.digifootprint.gov.in/schemes_and_services/electronic-manufacturing-clusters-emc-scheme/"
+    },
+    {
+      "scheme": "Electronics Component Manufacturing Scheme",
+      "category": "Scheme",
+      "meity_last_modified": "2025-07-30",
+      "months_since_update": 13.6,
+      "outlay_rs_cr_mentioned": null,
+      "pq_mentions": 7,
+      "meity_page": "https://cms-meity.digifootprint.gov.in/schemes_and_services/electronics-component-manufacturing-scheme/"
+    },
+    {
+      "scheme": "Modified Electronics Manufacturing Clusters (EMC 2.0) Scheme",
+      "category": "Scheme",
+      "meity_last_modified": "2026-02-12",
+      "months_since_update": 7.2,
+      "outlay_rs_cr_mentioned": null,
+      "pq_mentions": 4,
+      "meity_page": "https://cms-meity.digifootprint.gov.in/schemes_and_services/modified-electronics-manufacturing-clusters-emc-2-0-scheme/"
+    },
+    {
+      "scheme": "Modified Special Incentive Package Scheme (M-SIPS)",
+      "category": "Scheme",
+      "meity_last_modified": "2025-06-09",
+      "months_since_update": 15.3,
+      "outlay_rs_cr_mentioned": null,
+      "pq_mentions": 4,
+      "meity_page": "https://cms-meity.digifootprint.gov.in/schemes_and_services/modified-special-incentive-package-scheme-m-sips/"
+    },
+    {
+      "scheme": "Digital India Internship Scheme 2026",
+      "category": "Scheme",
+      "meity_last_modified": "2026-04-10",
+      "months_since_update": 5.3,
+      "outlay_rs_cr_mentioned": null,
+      "pq_mentions": 4,
+      "meity_page": "https://cms-meity.digifootprint.gov.in/schemes_and_services/digital-india-internship-scheme-2026/"
+    },
+    {
+      "scheme": "TECHNICAL INTERNSHIP PROGRAMME 2025",
+      "category": "Scheme",
+      "meity_last_modified": "2025-06-09",
+      "months_since_update": 15.3,
+      "outlay_rs_cr_mentioned": null,
+      "pq_mentions": 4,
+      "meity_page": "https://cms-meity.digifootprint.gov.in/schemes_and_services/technical-internship-programme-2025/"
+    },
+    {
+      "scheme": "CSC Scheme 2.0 \u2013 A Way Forward [ Part of e-Governance Division]",
+      "category": "Scheme",
+      "meity_last_modified": "2025-06-09",
+      "months_since_update": 15.3,
+      "outlay_rs_cr_mentioned": null,
+      "pq_mentions": 3,
+      "meity_page": "https://cms-meity.digifootprint.gov.in/schemes_and_services/csc-scheme-2-0-a-way-forward-part-of-e-governance-division/"
+    },
+    {
+      "scheme": "BPO promotion Schemes",
+      "category": "Scheme",
+      "meity_last_modified": "2025-06-09",
+      "months_since_update": 15.3,
+      "outlay_rs_cr_mentioned": 543.0,
+      "pq_mentions": 3,
+      "meity_page": "https://cms-meity.digifootprint.gov.in/schemes_and_services/india-bpo-promotion-schemes/"
+    },
+    {
+      "scheme": "Scheme for Financial Assistance to select States/UTs for Skill Development in Electronics System Design and Manufacturing (ESDM) sector",
+      "category": "Scheme",
+      "meity_last_modified": "2025-06-09",
+      "months_since_update": 15.3,
+      "outlay_rs_cr_mentioned": 113.77,
+      "pq_mentions": 3,
+      "meity_page": "https://cms-meity.digifootprint.gov.in/schemes_and_services/scheme-for-financial-assistance-to-select-states-uts-for-skill-development-in-electronics-system-design-and-manufacturing-esdm-sector/"
+    },
+    {
+      "scheme": "GEN-NEXT Support for Innovative Startups (GENESIS)",
+      "category": "Scheme",
+      "meity_last_modified": "2025-06-09",
+      "months_since_update": 15.3,
+      "outlay_rs_cr_mentioned": 490.0,
+      "pq_mentions": 2,
+      "meity_page": "https://cms-meity.digifootprint.gov.in/schemes_and_services/gen-next-support-for-innovative-startups-genesis/"
+    },
+    {
+      "scheme": "Visvesvaraya PhD Scheme",
+      "category": "Scheme",
+      "meity_last_modified": "2026-05-18",
+      "months_since_update": 4.0,
+      "outlay_rs_cr_mentioned": 481.93,
+      "pq_mentions": 2,
+      "meity_page": "https://cms-meity.digifootprint.gov.in/schemes_and_services/visvesvaraya-phd-scheme/"
+    },
+    {
+      "scheme": "Technology Incubation and Development of Entrepreneurs",
+      "category": "Scheme",
+      "meity_last_modified": "2025-06-09",
+      "months_since_update": 15.3,
+      "outlay_rs_cr_mentioned": null,
+      "pq_mentions": 0,
+      "meity_page": "https://cms-meity.digifootprint.gov.in/schemes_and_services/technology-incubation-and-development-of-entrepreneurs/"
+    },
+    {
+      "scheme": "Scheme for Promotion of Manufacturing of Electronic Components and Semiconductors (SPECS)",
+      "category": "Scheme",
+      "meity_last_modified": "2025-06-09",
+      "months_since_update": 15.3,
+      "outlay_rs_cr_mentioned": null,
+      "pq_mentions": 0,
+      "meity_page": "https://cms-meity.digifootprint.gov.in/schemes_and_services/scheme-for-promotion-of-manufacturing-of-electronic-components-and-semiconductors-specs/"
+    },
+    {
+      "scheme": "Production Linked Incentive Scheme (PLI) for Large Scale Electronics Manufacturing",
+      "category": "Scheme",
+      "meity_last_modified": "2025-06-09",
+      "months_since_update": 15.3,
+      "outlay_rs_cr_mentioned": null,
+      "pq_mentions": 0,
+      "meity_page": "https://cms-meity.digifootprint.gov.in/schemes_and_services/production-linked-incentive-scheme-pli-for-large-scale-electronics-manufacturing/"
+    },
+    {
+      "scheme": "Visvesvaraya PhD Scheme for Electronics &amp; IT",
+      "category": "Scheme",
+      "meity_last_modified": "2025-06-13",
+      "months_since_update": 15.2,
+      "outlay_rs_cr_mentioned": 481.93,
+      "pq_mentions": 0,
+      "meity_page": "https://cms-meity.digifootprint.gov.in/schemes_and_services/visvesvaraya-phd-scheme-for-electronics-it/"
+    },
+    {
+      "scheme": "Electronic Hardware Schemes",
+      "category": "Scheme",
+      "meity_last_modified": "2025-06-09",
+      "months_since_update": 15.3,
+      "outlay_rs_cr_mentioned": null,
+      "pq_mentions": 0,
+      "meity_page": "https://cms-meity.digifootprint.gov.in/schemes_and_services/electronic-hardware-schemes/"
+    },
+    {
+      "scheme": "Scheme of financial assistance for setting up of Electronics and ICT Academies",
+      "category": "Scheme",
+      "meity_last_modified": "2025-06-09",
+      "months_since_update": 15.3,
+      "outlay_rs_cr_mentioned": 147.48,
+      "pq_mentions": 0,
+      "meity_page": "https://cms-meity.digifootprint.gov.in/schemes_and_services/scheme-of-financial-assistance-for-setting-up-of-electronics-and-ict-academies/"
+    },
+    {
+      "scheme": "Scheme for \u2018Skill Development in ESDM for Digital India\u2019",
+      "category": "Scheme",
+      "meity_last_modified": "2025-06-09",
+      "months_since_update": 15.3,
+      "outlay_rs_cr_mentioned": 411.0,
+      "pq_mentions": 0,
+      "meity_page": "https://cms-meity.digifootprint.gov.in/schemes_and_services/scheme-for-skill-development-in-esdm-for-digital-india/"
+    },
+    {
+      "scheme": "NeGD\u2019s Non-Technical (Summer) Internship Programme",
+      "category": "Scheme",
+      "meity_last_modified": "2026-05-20",
+      "months_since_update": 3.9,
+      "outlay_rs_cr_mentioned": null,
+      "pq_mentions": 0,
+      "meity_page": "https://cms-meity.digifootprint.gov.in/schemes_and_services/negds-non-technical-summer-internship-programme/"
+    },
+    {
+      "scheme": "Guidelines for implementation of Scheme for reimbursement of Testing and Certification Charges for Start-ups and Telecom MSEs",
+      "category": "Scheme",
+      "meity_last_modified": "2025-06-09",
+      "months_since_update": 15.3,
+      "outlay_rs_cr_mentioned": null,
+      "pq_mentions": 0,
+      "meity_page": "https://cms-meity.digifootprint.gov.in/schemes_and_services/guidelines-for-implementation-of-scheme-for-reimbursement-of-testing-and-certification-charges-for-start-ups-and-telecom-mses/"
+    }
+  ],
+  "note": "MeitY's own scheme catalogue (public WordPress REST API behind its JS-shell site, 22 schemes as of this run), matched against PQ text by each scheme's parenthetical acronym (if it has one) or its first significant title words -- a heuristic match, not a verified extraction; treat pq_mentions as a lower bound. months_since_update is time since MeitY's own CMS last touched that scheme's page, not evidence the scheme itself is inactive."
+}</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
 <script>
 (function(){
@@ -11444,6 +11666,7 @@
   var GRAPH = JSON.parse(document.getElementById('graph-data').textContent);
   var PIB = JSON.parse(document.getElementById('pib-data').textContent);
   var PLI = JSON.parse(document.getElementById('pli-data').textContent);
+  var MEITY = JSON.parse(document.getElementById('meity-data').textContent);
 
   var fmt = new Intl.NumberFormat('en-IN');
   function esc(s){ return String(s==null?'':s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
@@ -11785,6 +12008,29 @@
         '<td class="num tabular">'+fmt.format(r.outlay)+'</td>' +
         '<td class="num tabular">'+(r.disbursed_pct==null?'—':r.disbursed_pct.toFixed(1)+'%')+'</td></tr>';
     }, 'gradeRank', 'asc');
+
+    document.getElementById('meity-source').textContent = MEITY.source_url || '';
+    document.getElementById('meity-total-schemes').textContent = (MEITY.rows||[]).length;
+    var zeroCount = (MEITY.rows||[]).filter(function(r){ return r.pq_mentions === 0; }).length;
+    document.getElementById('meity-zero-count').textContent = zeroCount + ' of ' + (MEITY.rows||[]).length;
+    var staleCount = (MEITY.rows||[]).filter(function(r){ return (r.months_since_update||0) > 12; }).length;
+    document.getElementById('meity-stale-count').textContent = staleCount + ' of ' + (MEITY.rows||[]).length + " haven't been touched on MeitY's own site in over a year.";
+    var meityRows = (MEITY.rows||[]).map(function(r){
+      return {
+        scheme: r.scheme,
+        pq_mentions: r.pq_mentions,
+        months_since_update: r.months_since_update,
+        outlay: r.outlay_rs_cr_mentioned,
+        page: r.meity_page,
+      };
+    });
+    makeSortable(document.getElementById('meity-table'), meityRows, function(r){
+      var label = r.page ? '<a href="'+esc(r.page)+'" target="_blank" rel="noopener">'+esc(r.scheme)+'</a>' : esc(r.scheme);
+      return '<tr><td>'+label+'</td>' +
+        '<td class="num tabular">'+fmt.format(r.pq_mentions)+'</td>' +
+        '<td class="num tabular">'+(r.months_since_update==null?'—':r.months_since_update)+'</td>' +
+        '<td class="num tabular">'+(r.outlay==null?'—':fmt.format(r.outlay))+'</td></tr>';
+    }, 'pq_mentions', 'desc');
   }
 
   // ---------- Footer ----------
