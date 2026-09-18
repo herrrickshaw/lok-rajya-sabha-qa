@@ -239,6 +239,44 @@ parliamentary attention. **15 of 44** haven't been touched
 on their own ministry's site in over a year — operationalizing what the ministry-site-access
 research had only asserted qualitatively (frozen, present-tense scheme pages). By ministry: COMMERCE AND INDUSTRY 0/13 stale; COMMUNICATION 0/9 stale; ELECTRONICS AND INFORMATION TECHNOLOGY 15/22 stale.
 
+## PARIVESH environmental clearances vs. PQ scrutiny
+
+PARIVESH's open, no-auth `getProposals` endpoint (`scripts/compare_parivesh.py`) gives every Environmental Clearance (EC) proposal in this window — project name, state, investment cost, approval-stage status. Two things the source memory got wrong, verified live rather than trusted: the documented `status=Received|Granted` query parameter is a no-op (byte-identical responses for both values, confirmed by MD5); an empty date range now 500s.
+
+**By state**, comparing EC proposal volume against Environment-ministry PQ volume (already computed for the party/ministry rankings, no new matching needed):
+
+| State/UT | EC proposals | Environment PQs | PQ per EC proposal |
+|---|---:|---:|---:|
+| Gujarat | 897 | 74 | 0.082 |
+| Maharashtra | 699 | 180 | 0.258 |
+| Chhattisgarh | 368 | 39 | 0.106 |
+| Rajasthan | 285 | 131 | 0.46 |
+| Karnataka | 277 | 65 | 0.235 |
+| Odisha | 272 | 84 | 0.309 |
+| Madhya Pradesh | 272 | 53 | 0.195 |
+| Andhra Pradesh | 229 | 115 | 0.502 |
+| Haryana | 227 | 29 | 0.128 |
+| West Bengal | 203 | 138 | 0.68 |
+
+Gujarat and Maharashtra dominate EC proposal volume (nearly 900 and 700 respectively) but sit at the low end of PQ-per-proposal — high regulatory activity, proportionally less parliamentary follow-up per proposal than smaller states draw.
+
+**The 25 largest EC proposals by investment**, checked for whether the applicant company (where the proposal title names one) is mentioned anywhere in PQ text:
+
+| Company | Investment (₹cr) | Named in a PQ? |
+|---|---:|---|
+| *(none named in title)* | 77414.0 | — |
+| Adani Power Limited | 56030.0 | No |
+| APSEZ | 55714.0 | No |
+| Dholera Special Investment Regional Development Authority (DSIRDA) | 40000.0 | No |
+| Vedanta Aluminium Metal Limited | 35017.0 | No |
+| *(none named in title)* | 35000.0 | — |
+| *(none named in title)* | 33710.0 | — |
+| *(none named in title)* | 28847.0 | — |
+| *(none named in title)* | 27153.0 | — |
+| *(none named in title)* | 25658.0 | — |
+
+None of the largest EC proposals with a named applicant — Adani Power, APSEZ, Vedanta, DVC-CIL, Evonith Metallics — are mentioned by company name anywhere in the PQ corpus in this window. Individual mega-project scrutiny by name appears essentially absent, in contrast to how PLI scheme beneficiaries surface in PQ text (see the PLI section above).
+
 ## Known gaps
 
 - **Lok Sabha question/answer full text is not in this dataset.** The `api_ls` listing endpoint used to fetch all 34,720 LS questions only exposes the subject line, not the question or answer body — those live only in per-question PDFs (a different URL per question, with a random filename suffix on the 18th LS). Fetching and OCR'ing ~34,700 PDFs was out of scope for this pass; `docs/parties/*.md` and the topic tab work from subject-line text only for the Lok Sabha side.
@@ -252,3 +290,5 @@ research had only asserted qualitatively (frozen, present-tense scheme pages). B
 - **MeitY/DoT/DPIIT scheme matching is auto-derived per scheme** (parenthetical acronym if genuinely scheme-specific, else the title's distinguishing words after "for"/"of") rather than hand-curated like the PLI table — lower precision. Two "PLI for IT Hardware" entries (1.0 and 2.0) get identical counts because PQ text can't be told which version it means; this is a real ambiguity in the source data, not a bug.
 - **`months_since_update` is time since that ministry's CMS last touched the scheme's page**, not evidence the scheme itself is inactive — a scheme can be fully live with a stale page, or vice versa.
 - **DoT and DPIIT use a different, undocumented "post-page" API route from MeitY's standard WP REST route** — both were verified live rather than assumed to match MeitY's shape (an earlier assumption that they did was wrong). If either ministry's site changes its API again, `compare_wp_json_schemes.py` needs re-verifying against the live site, not just a retry.
+- **PARIVESH covers Environmental Clearance (EC) only** — every record returned by `getProposals` had `workgroup_name: "Environmental Clearance"`; Forest Clearance (FC) proposals, if they exist on a different route, aren't included here.
+- **PARIVESH mega-project company extraction is a "by [M/s] Company" pattern match**, not NER — titles that name no company, or that lead with the company instead of trailing it (e.g. "Newzone India Pvt Limited proposed expansion..."), come back with no company and are excluded from the mention check rather than falsely counted as unmentioned.

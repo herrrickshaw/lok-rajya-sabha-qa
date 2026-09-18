@@ -64,6 +64,9 @@ def main():
     load_table(con, "pib_scheme_comparison", "pib_scheme_comparison.csv")
     load_table(con, "pli_scheme_scrutiny", "pli_scheme_scrutiny.csv")
     load_table(con, "ministry_scheme_scrutiny", "ministry_scheme_scrutiny.csv")
+    load_table(con, "parivesh_state_comparison", "parivesh_state_comparison.csv")
+    load_table(con, "parivesh_activity_summary", "parivesh_activity_summary.csv")
+    load_table(con, "parivesh_mega_projects", "parivesh_mega_projects.csv")
 
     # A single tidy view across both chambers -- the "queries and answers" table.
     con.execute(
@@ -180,6 +183,8 @@ def build_markdown(con):
     pib_ministry = read_csv("pib_ministry_comparison.csv")
     pli_rows = read_csv("pli_scheme_scrutiny.csv")
     scheme_site_rows = read_csv("ministry_scheme_scrutiny.csv")
+    parivesh_state_rows = read_csv("parivesh_state_comparison.csv")
+    parivesh_mega_rows = read_csv("parivesh_mega_projects.csv")
     pib_scheme = read_csv("pib_scheme_comparison.csv")
 
     by_comm = defaultdict(list)
@@ -373,6 +378,47 @@ def build_markdown(con):
         )
         + ".",
         "",
+        "## PARIVESH environmental clearances vs. PQ scrutiny",
+        "",
+        "PARIVESH's open, no-auth `getProposals` endpoint (`scripts/compare_parivesh.py`) gives every "
+        "Environmental Clearance (EC) proposal in this window — project name, state, investment cost, "
+        "approval-stage status. Two things the source memory got wrong, verified live rather than "
+        "trusted: the documented `status=Received|Granted` query parameter is a no-op (byte-identical "
+        "responses for both values, confirmed by MD5); an empty date range now 500s.",
+        "",
+        "**By state**, comparing EC proposal volume against Environment-ministry PQ volume (already "
+        "computed for the party/ministry rankings, no new matching needed):",
+        "",
+        "| State/UT | EC proposals | Environment PQs | PQ per EC proposal |",
+        "|---|---:|---:|---:|",
+    ]
+    for r in sorted(parivesh_state_rows, key=lambda r: -int(r["ec_proposals"]))[:10]:
+        ratio = r.get("pq_per_ec_proposal") or "—"
+        lines.append(f"| {r['state']} | {r['ec_proposals']} | {r['environment_pqs']} | {ratio} |")
+    lines += [
+        "",
+        "Gujarat and Maharashtra dominate EC proposal volume (nearly 900 and 700 respectively) but sit "
+        "at the low end of PQ-per-proposal — high regulatory activity, proportionally less parliamentary "
+        "follow-up per proposal than smaller states draw.",
+        "",
+        "**The 25 largest EC proposals by investment**, checked for whether the applicant company (where "
+        "the proposal title names one) is mentioned anywhere in PQ text:",
+        "",
+        "| Company | Investment (₹cr) | Named in a PQ? |",
+        "|---|---:|---|",
+    ]
+    for r in sorted(parivesh_mega_rows, key=lambda r: -float(r["investment_cost_rs"] or 0))[:10]:
+        company = r.get("company") or "*(none named in title)*"
+        cr = round(float(r["investment_cost_rs"]) / 1e7, 0) if r.get("investment_cost_rs") else "—"
+        named = "—" if not r.get("company") else ("Yes" if r["company_mentioned_in_pq"] == "True" else "No")
+        lines.append(f"| {company} | {cr} | {named} |")
+    lines += [
+        "",
+        "None of the largest EC proposals with a named applicant — Adani Power, APSEZ, Vedanta, "
+        "DVC-CIL, Evonith Metallics — are mentioned by company name anywhere in the PQ corpus in this "
+        "window. Individual mega-project scrutiny by name appears essentially absent, in contrast to "
+        "how PLI scheme beneficiaries surface in PQ text (see the PLI section above).",
+        "",
         "## Known gaps",
         "",
         "- **Lok Sabha question/answer full text is not in this dataset.** The `api_ls` listing endpoint used to "
@@ -412,6 +458,13 @@ def build_markdown(con):
         "route** — both were verified live rather than assumed to match MeitY's shape (an earlier assumption "
         "that they did was wrong). If either ministry's site changes its API again, `compare_wp_json_schemes.py` "
         "needs re-verifying against the live site, not just a retry.",
+        "- **PARIVESH covers Environmental Clearance (EC) only** — every record returned by "
+        "`getProposals` had `workgroup_name: \"Environmental Clearance\"`; Forest Clearance (FC) proposals, "
+        "if they exist on a different route, aren't included here.",
+        "- **PARIVESH mega-project company extraction is a \"by [M/s] Company\" pattern match**, not NER — "
+        "titles that name no company, or that lead with the company instead of trailing it (e.g. \"Newzone "
+        "India Pvt Limited proposed expansion...\"), come back with no company and are excluded from the "
+        "mention check rather than falsely counted as unmentioned.",
         "",
     ]
     (DOCS / "ANALYSIS.md").write_text("\n".join(lines))

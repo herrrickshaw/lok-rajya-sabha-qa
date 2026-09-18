@@ -40,6 +40,7 @@ facts against a reliable secondary source, not as data.)
 | PIB (Press Information Bureau) press-release index | 124,857 releases, 2017–present, by ministry, refreshed to match this dataset's window (June 2024–present) | **External** — built for a separate project (`india-trade-sector-policy-recommendations/scripts/pib_index.py`), not part of this repo's own fetch scripts. `scripts/ministry_registry.py` reads that project's `data/pib_index.sqlite` by local path; anyone reproducing this outside that environment needs an equivalent PIB index (see that script's docstring for the release-listing endpoint it scrapes) |
 | PLI disbursal report card | 13 PLI sub-schemes graded A–F on incentive disbursal, PIB-sourced | **Included** — `data/external/pli_report_card.json`, a copied 21KB snapshot from the same sibling project (small enough to ship directly, unlike the PIB index) |
 | MeitY/DoT/DPIIT scheme catalogues | 44 schemes across 3 ministries: description, launch/approval narrative, last-modified date | **Live-fetched** — public WordPress-backed APIs behind each ministry's JS-shell site (undocumented; two different API shapes, verified independently per site — see the architecture note below), fetched fresh by `scripts/compare_wp_json_schemes.py` on every run, cached to `data/raw/wp_json_schemes.json` as a fallback if a live fetch fails |
+| PARIVESH environmental clearances | 4,762 Environmental Clearance proposals in this window: project/company name, state, investment cost, approval-stage status | **Live-fetched** — an open, no-auth bulk endpoint on PARIVESH's public MIS dashboard (undocumented), fetched fresh by `scripts/compare_parivesh.py` on every run, cached to `data/raw/parivesh_proposals.json` as a fallback |
 | Ministry-official directory (minister-in-charge) | Current minister/designation per ministry | **External** — `india-govt-yellow-pages/data/pib_ministry_contacts.csv`, read by local path in `scripts/ministry_registry.py`; not copied in (it's a live-updated scrape, a snapshot would go stale) |
 
 ### Architecture: one ministry registry, not one join per script
@@ -74,10 +75,11 @@ a `{"posts": [...]}` wrapper, snake_case fields). The registry now records a
 by two small adapter functions instead of either crashing on the assumption
 or silently returning wrong data.
 
-It also carries integration *hooks* (not yet wired up) for
-`PARIVESH_MINISTRIES` and `NITI_ICED_MINISTRIES`, so a future
-`compare_parivesh.py` looks its target ministries up here rather than
-rediscovering the mapping.
+`compare_parivesh.py` also reads its target ministry from
+`PARIVESH_MINISTRIES` rather than hardcoding it. `NITI_ICED_MINISTRIES`
+remains an integration *hook*, not yet wired up, for the same reason the
+others existed before their scripts did — so a future pass reads it here
+rather than rediscovering the mapping.
 
 None of these are documented public APIs — see the inline comments in
 `scripts/build.py` for the exact endpoints and how they were found (mining the
@@ -107,13 +109,16 @@ python3 scripts/build_graph.py    # -> data/processed/kg_*.csv, graph.graphml, s
 #    but running it explicitly first is clearer)
 python3 scripts/ministry_registry.py   # -> data/external/ministry_registry.json
 
-# 5. Compare against PIB press releases, the PLI disbursal report card, and
-#    MeitY/DoT/DPIIT's own scheme catalogues (needs network access -- fetches live)
-#    (site/pib.json / site/pli.json / site/meity.json just need to exist,
-#    even as {}, for the next step to render if you skip any of these)
+# 5. Compare against PIB press releases, the PLI disbursal report card,
+#    MeitY/DoT/DPIIT's own scheme catalogues, and PARIVESH environmental
+#    clearances (needs network access -- fetches live)
+#    (site/pib.json / site/pli.json / site/meity.json / site/parivesh.json
+#    just need to exist, even as {}, for the next step to render if you
+#    skip any of these)
 python3 scripts/compare_pib.py    # -> data/processed/pib_*.csv, site/pib.json
 python3 scripts/compare_pli.py    # -> data/processed/pli_scheme_scrutiny.csv, site/pli.json
 python3 scripts/compare_wp_json_schemes.py  # -> data/processed/ministry_scheme_scrutiny.csv, site/meity.json
+python3 scripts/compare_parivesh.py  # -> data/processed/parivesh_*.csv, site/parivesh.json
 
 # 6. Render the dashboard
 python3 scripts/render_site.py    # -> site/index.html
@@ -240,20 +245,46 @@ catalogues were bulk-refreshed recently, MeitY's largely wasn't. Full
 table: `data/processed/ministry_scheme_scrutiny.csv`, `docs/ANALYSIS.md`,
 or the dashboard's "vs. PIB" tab (with a ministry filter).
 
-**Comparable data sources surveyed but not (yet) integrated** — other
-ministry-level sources on this machine that could extend this further:
-PARIVESH (`parivesh.nic.in`) has an open, no-auth bulk endpoint for
-environment/forest clearance proposals — a natural cross-check for
-Environment/Forest-ministry PQs; NITI Aayog's India Climate & Energy
-Dashboard (`iced.niti.gov.in`, AES-encrypted API) has official coal/energy/
-GHG series for Coal- and Environment-ministry PQ fact-checking; and a prior
-PLI *company-name* harvest (as opposed to the scheme-grade report card
-integrated above) has verified per-beneficiary rosters (Tata Electronics,
-Foxconn, individual PLI-Auto/Pharma/Textiles applicants, etc.) that could
-name the actual companies behind each scheme's PQ mentions — not pulled in
-here since it exists only as prose in a past session's now-gone scratchpad,
-not a structured file. None of these are wired in — a menu for a follow-up
-pass, not a claim that this repo uses them.
+### PARIVESH environmental clearances vs. PQ scrutiny, by state
+
+PARIVESH's public MIS dashboard has an open, no-auth bulk endpoint
+(`admin_api/dashboard/getProposals`, `scripts/compare_parivesh.py`) that
+returns every Environmental Clearance (EC) proposal in a date window —
+project/company name, state, investment cost, and a granular approval-stage
+`status`. Two things the source research got wrong or hadn't checked,
+verified live rather than trusted: the documented `status=Received|Granted`
+query parameter is a **no-op** — both values return byte-identical
+responses (confirmed by MD5) — so granted-vs-not is classified from each
+proposal's own `status` field instead (19 distinct values: "EC Granted",
+"Under Examination", "Proposal pulled back (withdrawn)", etc.); an empty
+`fromDate`/`toDate` now **500s**, where the documented example omitted them.
+
+**By state**, reusing `state_ministry_matrix.csv` (already built, no new
+matching needed): Gujarat (897 EC proposals) and Maharashtra (699) dominate
+clearance volume but sit at the *low* end of PQ-per-proposal (0.08x, 0.26x)
+— high regulatory activity, proportionally less parliamentary follow-up per
+proposal than smaller states draw. Full table:
+`data/processed/parivesh_state_comparison.csv`.
+
+**The 25 largest EC proposals by investment**, checked for whether the
+applicant company (extracted from a "by [M/s] Company" clause in the
+proposal title, where one exists) is named anywhere in PQ text: **none of
+them are** — Adani Power, APSEZ, the Dholera investment region authority,
+Vedanta Aluminium, DVC-CIL, Evonith Metallics. Individual mega-project
+scrutiny by company name appears essentially absent, unlike how PLI scheme
+beneficiaries surface in PQ text. Full table:
+`data/processed/parivesh_mega_projects.csv`.
+
+**Comparable data sources surveyed but not (yet) integrated**: NITI Aayog's
+India Climate & Energy Dashboard (`iced.niti.gov.in`, AES-encrypted API) has
+official coal/energy/GHG series for Coal- and Environment-ministry PQ
+fact-checking; and a prior PLI *company-name* harvest (as opposed to the
+scheme-grade report card integrated above) has verified per-beneficiary
+rosters (Tata Electronics, Foxconn, individual PLI-Auto/Pharma/Textiles
+applicants, etc.) that could name the actual companies behind each scheme's
+PQ mentions — not pulled in here since it exists only as prose in a past
+session's now-gone scratchpad, not a structured file. Neither is wired in —
+a menu for a follow-up pass, not a claim that this repo uses them.
 
 ## Known gaps
 
@@ -307,3 +338,14 @@ pass, not a claim that this repo uses them.
   offline reproducibility guarantee if an endpoint changes shape or goes
   down; `data/raw/wp_json_schemes.json` is the cached fallback from this
   run.
+- **PARIVESH covers Environmental Clearance (EC) only** — every record
+  returned by `getProposals` had `workgroup_name: "Environmental
+  Clearance"`; Forest Clearance (FC) proposals, if they exist on a
+  different route, aren't included here.
+- **PARIVESH mega-project company extraction is a "by [M/s] Company"
+  pattern match, not NER** — titles that name no company, or lead with the
+  company instead of trailing it, come back with no company and are
+  excluded from the mention check rather than falsely counted as
+  unmentioned.
+- **PARIVESH also fetches live** — cached fallback is
+  `data/raw/parivesh_proposals.json`.

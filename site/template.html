@@ -451,6 +451,38 @@
         </table>
       </div>
     </div>
+
+    <div class="panel">
+      <h3>PARIVESH environmental clearances vs. PQ scrutiny, by state</h3>
+      <p class="note-inline" style="margin-bottom:12px" id="parivesh-summary"></p>
+      <div class="table-scroll" style="max-height:420px; overflow-y:auto">
+        <table id="parivesh-state-table">
+          <thead><tr>
+            <th data-key="state" data-type="str">State/UT<span class="arrow">▾</span></th>
+            <th data-key="ec_proposals" data-type="num" class="num" aria-sort="descending">EC proposals<span class="arrow">▾</span></th>
+            <th data-key="environment_pqs" data-type="num" class="num">Environment-ministry PQs<span class="arrow">▾</span></th>
+            <th data-key="ratio" data-type="num" class="num">PQ per EC proposal<span class="arrow">▾</span></th>
+          </tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3>Largest environmental-clearance projects: named in Parliament?</h3>
+      <p class="note-inline" style="margin-bottom:12px">The 25 highest-investment EC proposals in this window, with the applicant company (where the title states one — a "by [M/s] Company" pattern, a heuristic extraction) checked against PQ text. Blank company = no company named in the proposal title itself, not a matching failure.</p>
+      <div class="table-scroll">
+        <table id="parivesh-mega-table">
+          <thead><tr>
+            <th data-key="project_name" data-type="str">Project<span class="arrow">▾</span></th>
+            <th data-key="company" data-type="str">Company<span class="arrow">▾</span></th>
+            <th data-key="investment_cost" data-type="num" class="num" aria-sort="descending">Investment (₹)<span class="arrow">▾</span></th>
+            <th data-key="mentioned" data-type="str">Named in a PQ?<span class="arrow">▾</span></th>
+          </tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
   </section>
 
   <footer>
@@ -465,6 +497,7 @@
 <script id="pib-data" type="application/json">{{PIB_JSON}}</script>
 <script id="pli-data" type="application/json">{{PLI_JSON}}</script>
 <script id="meity-data" type="application/json">{{MEITY_JSON}}</script>
+<script id="parivesh-data" type="application/json">{{PARIVESH_JSON}}</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
 <script>
 (function(){
@@ -474,6 +507,7 @@
   var PIB = JSON.parse(document.getElementById('pib-data').textContent);
   var PLI = JSON.parse(document.getElementById('pli-data').textContent);
   var MEITY = JSON.parse(document.getElementById('meity-data').textContent);
+  var PARIVESH = JSON.parse(document.getElementById('parivesh-data').textContent);
 
   var fmt = new Intl.NumberFormat('en-IN');
   function esc(s){ return String(s==null?'':s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
@@ -867,6 +901,34 @@
     }
     sel.addEventListener('change', renderMeityTable);
     renderMeityTable();
+
+    document.getElementById('parivesh-summary').innerHTML =
+      fmt.format(PARIVESH.total_ec_proposals) + ' Environmental Clearance proposals since ' + PARIVESH.since +
+      ' (' + fmt.format(PARIVESH.granted_count) + ' in a granted status) vs. ' + fmt.format(PARIVESH.ministry_pq) +
+      ' ' + esc(PARIVESH.ministry) + ' PQs (' + PARIVESH.pq_per_ec_proposal + 'x). <b>' + esc(PARIVESH.note) + '</b>';
+
+    var parRows = (PARIVESH.state_rows || []).map(function(r){
+      return { state: r.state, ec_proposals: r.ec_proposals, environment_pqs: r.environment_pqs, ratio: r.pq_per_ec_proposal };
+    });
+    makeSortable(document.getElementById('parivesh-state-table'), parRows, function(r){
+      return '<tr><td>'+esc(r.state)+'</td><td class="num tabular">'+fmt.format(r.ec_proposals)+'</td>' +
+        '<td class="num tabular">'+fmt.format(r.environment_pqs)+'</td>' +
+        '<td class="num tabular">'+(r.ratio==null?'—':r.ratio.toFixed(2)+'x')+'</td></tr>';
+    }, 'ec_proposals', 'desc');
+
+    var megaRows = (PARIVESH.mega_projects || []).map(function(r){
+      return {
+        project_name: r.project_name,
+        company: r.company || '—',
+        investment_cost: r.investment_cost_rs,
+        mentioned: r.company ? (r.company_mentioned_in_pq ? 'Yes' : 'No') : '(no company named)',
+      };
+    });
+    makeSortable(document.getElementById('parivesh-mega-table'), megaRows, function(r){
+      return '<tr><td>'+esc(r.project_name)+'</td><td>'+esc(r.company)+'</td>' +
+        '<td class="num tabular">'+fmt.format(Math.round(r.investment_cost))+'</td>' +
+        '<td>'+esc(r.mentioned)+'</td></tr>';
+    }, 'investment_cost', 'desc');
   }
 
   // ---------- Footer ----------

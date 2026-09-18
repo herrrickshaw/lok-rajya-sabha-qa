@@ -1,0 +1,562 @@
+{
+  "since": "2024-06-01",
+  "ministry": "ENVIRONMENT, FOREST AND CLIMATE CHANGE",
+  "ministry_pq": 1809,
+  "total_ec_proposals": 4762,
+  "granted_count": 2599,
+  "pq_per_ec_proposal": 0.38,
+  "state_rows": [
+    {
+      "state": "Gujarat",
+      "environment_pqs": 74,
+      "ec_proposals": 897,
+      "pq_per_ec_proposal": 0.082
+    },
+    {
+      "state": "Maharashtra",
+      "environment_pqs": 180,
+      "ec_proposals": 699,
+      "pq_per_ec_proposal": 0.258
+    },
+    {
+      "state": "Chhattisgarh",
+      "environment_pqs": 39,
+      "ec_proposals": 368,
+      "pq_per_ec_proposal": 0.106
+    },
+    {
+      "state": "Rajasthan",
+      "environment_pqs": 131,
+      "ec_proposals": 285,
+      "pq_per_ec_proposal": 0.46
+    },
+    {
+      "state": "Karnataka",
+      "environment_pqs": 65,
+      "ec_proposals": 277,
+      "pq_per_ec_proposal": 0.235
+    },
+    {
+      "state": "Odisha",
+      "environment_pqs": 84,
+      "ec_proposals": 272,
+      "pq_per_ec_proposal": 0.309
+    },
+    {
+      "state": "Madhya Pradesh",
+      "environment_pqs": 53,
+      "ec_proposals": 272,
+      "pq_per_ec_proposal": 0.195
+    },
+    {
+      "state": "Andhra Pradesh",
+      "environment_pqs": 115,
+      "ec_proposals": 229,
+      "pq_per_ec_proposal": 0.502
+    },
+    {
+      "state": "Haryana",
+      "environment_pqs": 29,
+      "ec_proposals": 227,
+      "pq_per_ec_proposal": 0.128
+    },
+    {
+      "state": "West Bengal",
+      "environment_pqs": 138,
+      "ec_proposals": 203,
+      "pq_per_ec_proposal": 0.68
+    },
+    {
+      "state": "Jharkhand",
+      "environment_pqs": 57,
+      "ec_proposals": 169,
+      "pq_per_ec_proposal": 0.337
+    },
+    {
+      "state": "Uttar Pradesh",
+      "environment_pqs": 160,
+      "ec_proposals": 155,
+      "pq_per_ec_proposal": 1.032
+    },
+    {
+      "state": "Tamil Nadu",
+      "environment_pqs": 147,
+      "ec_proposals": 142,
+      "pq_per_ec_proposal": 1.035
+    },
+    {
+      "state": "Telangana",
+      "environment_pqs": 64,
+      "ec_proposals": 82,
+      "pq_per_ec_proposal": 0.78
+    },
+    {
+      "state": "Punjab",
+      "environment_pqs": 64,
+      "ec_proposals": 79,
+      "pq_per_ec_proposal": 0.81
+    },
+    {
+      "state": "Delhi",
+      "environment_pqs": 27,
+      "ec_proposals": 78,
+      "pq_per_ec_proposal": 0.346
+    },
+    {
+      "state": "Bihar",
+      "environment_pqs": 86,
+      "ec_proposals": 54,
+      "pq_per_ec_proposal": 1.593
+    },
+    {
+      "state": "Kerala",
+      "environment_pqs": 142,
+      "ec_proposals": 52,
+      "pq_per_ec_proposal": 2.731
+    },
+    {
+      "state": "Assam",
+      "environment_pqs": 28,
+      "ec_proposals": 40,
+      "pq_per_ec_proposal": 0.7
+    },
+    {
+      "state": "Uttarakhand",
+      "environment_pqs": 16,
+      "ec_proposals": 32,
+      "pq_per_ec_proposal": 0.5
+    },
+    {
+      "state": "Himachal Pradesh",
+      "environment_pqs": 28,
+      "ec_proposals": 22,
+      "pq_per_ec_proposal": 1.273
+    },
+    {
+      "state": "Arunachal Pradesh",
+      "environment_pqs": 0,
+      "ec_proposals": 21,
+      "pq_per_ec_proposal": 0.0
+    },
+    {
+      "state": "Meghalaya",
+      "environment_pqs": 0,
+      "ec_proposals": 19,
+      "pq_per_ec_proposal": 0.0
+    },
+    {
+      "state": "Jammu And Kashmir",
+      "environment_pqs": 0,
+      "ec_proposals": 19,
+      "pq_per_ec_proposal": 0.0
+    },
+    {
+      "state": "Goa",
+      "environment_pqs": 12,
+      "ec_proposals": 12,
+      "pq_per_ec_proposal": 1.0
+    },
+    {
+      "state": "Dadra and Nagar Haveli and Daman and Diu",
+      "environment_pqs": 13,
+      "ec_proposals": 10,
+      "pq_per_ec_proposal": 1.3
+    },
+    {
+      "state": "Sikkim",
+      "environment_pqs": 3,
+      "ec_proposals": 9,
+      "pq_per_ec_proposal": 0.333
+    },
+    {
+      "state": "Lakshadweep",
+      "environment_pqs": 3,
+      "ec_proposals": 9,
+      "pq_per_ec_proposal": 0.333
+    },
+    {
+      "state": "Puducherry",
+      "environment_pqs": 6,
+      "ec_proposals": 9,
+      "pq_per_ec_proposal": 0.667
+    },
+    {
+      "state": "Tripura",
+      "environment_pqs": 3,
+      "ec_proposals": 8,
+      "pq_per_ec_proposal": 0.375
+    },
+    {
+      "state": "Andaman And Nicobar Islands",
+      "environment_pqs": 0,
+      "ec_proposals": 5,
+      "pq_per_ec_proposal": 0.0
+    },
+    {
+      "state": "Chandigarh",
+      "environment_pqs": 5,
+      "ec_proposals": 4,
+      "pq_per_ec_proposal": 1.25
+    },
+    {
+      "state": "Ladakh",
+      "environment_pqs": 2,
+      "ec_proposals": 1,
+      "pq_per_ec_proposal": 2.0
+    },
+    {
+      "state": "Mizoram",
+      "environment_pqs": 0,
+      "ec_proposals": 1,
+      "pq_per_ec_proposal": 0.0
+    },
+    {
+      "state": "Nagaland",
+      "environment_pqs": 1,
+      "ec_proposals": 1,
+      "pq_per_ec_proposal": 1.0
+    },
+    {
+      "state": "Jammu and Kashmir",
+      "environment_pqs": 7,
+      "ec_proposals": 0,
+      "pq_per_ec_proposal": null
+    },
+    {
+      "state": "Manipur",
+      "environment_pqs": 2,
+      "ec_proposals": 0,
+      "pq_per_ec_proposal": null
+    },
+    {
+      "state": "Andaman and Nicobar Islands",
+      "environment_pqs": 0,
+      "ec_proposals": 0,
+      "pq_per_ec_proposal": null
+    },
+    {
+      "state": "Unknown",
+      "environment_pqs": 6,
+      "ec_proposals": 0,
+      "pq_per_ec_proposal": null
+    },
+    {
+      "state": "Nominated",
+      "environment_pqs": 19,
+      "ec_proposals": 0,
+      "pq_per_ec_proposal": null
+    }
+  ],
+  "top_activities": [
+    {
+      "activity": "5(f) Synthetic organic chemicals industry ",
+      "ec_proposals": 919
+    },
+    {
+      "activity": "1(a) Mining of minerals",
+      "ec_proposals": 820
+    },
+    {
+      "activity": "3(a) Metallurgical Industries (ferrous and non ferrous)",
+      "ec_proposals": 767
+    },
+    {
+      "activity": "5(g) Distilleries",
+      "ec_proposals": 260
+    },
+    {
+      "activity": "1(c) River Valley/Irrigation projects",
+      "ec_proposals": 241
+    },
+    {
+      "activity": "8(a) Building / Construction ",
+      "ec_proposals": 213
+    },
+    {
+      "activity": "1(d) Thermal Power Plants",
+      "ec_proposals": 206
+    },
+    {
+      "activity": "5(b) Pesticides industry and pesticide specific intermediates (excluding formulations)",
+      "ec_proposals": 178
+    },
+    {
+      "activity": "3(b) Cement plants ",
+      "ec_proposals": 144
+    },
+    {
+      "activity": "7(e) Ports, harbors, breakwaters, dredging",
+      "ec_proposals": 126
+    },
+    {
+      "activity": "7(f) Road",
+      "ec_proposals": 114
+    },
+    {
+      "activity": "8(b) Townships/ Area Development Projects / Rehabilitation Centres",
+      "ec_proposals": 106
+    },
+    {
+      "activity": "1(b) Off-shore and onshore oil and gas exploration,  development and production",
+      "ec_proposals": 102
+    },
+    {
+      "activity": "7(c ) Industrial estates/ parks/ complexes/ areas, export processing Zones (EPZs), Special Economic Zones ",
+      "ec_proposals": 80
+    },
+    {
+      "activity": "5(a) Chemical fertilizers ",
+      "ec_proposals": 76
+    },
+    {
+      "activity": "2(a) Coal washeries",
+      "ec_proposals": 44
+    },
+    {
+      "activity": "7(a) Airports",
+      "ec_proposals": 43
+    },
+    {
+      "activity": "5(e ) Petroleum products and petrochemical based processing such as production of carbon black and electrode grade graphite (processes other than cracking ",
+      "ec_proposals": 40
+    },
+    {
+      "activity": "4(a) Petroleum refining industry",
+      "ec_proposals": 31
+    },
+    {
+      "activity": "5(c) Petro-chemical complexes (industries based on processing of petroleum fractions ",
+      "ec_proposals": 28
+    }
+  ],
+  "mega_projects": [
+    {
+      "project_name": "Expansion of existing integrated steel plant from 3.6 MTPA to 12.6 MTPA Crude steel at Raigarh, Chhattisgarh",
+      "company": "",
+      "state": "Chhattisgarh",
+      "investment_cost_rs": 774140000000.0,
+      "status": "Proposal Accepted and Referred to EAC",
+      "start_date": "2026-09-03",
+      "company_mentioned_in_pq": null
+    },
+    {
+      "project_name": "Proposed 4800 (6x800) MW Coal Based Ultra Super-Critical Thermal Power Project at Salka, Kathmunda, Narayanpur, Mudgaon and adjacent villages, Tehsil/ Block Premnagar and Udaypur, District Surguja and Surajpur, Chhattisgarh by Adani Power Limited.",
+      "company": "Adani Power Limited",
+      "state": "Chhattisgarh",
+      "investment_cost_rs": 560300030000.0,
+      "status": "Under Examination",
+      "start_date": "2026-09-17",
+      "company_mentioned_in_pq": false
+    },
+    {
+      "project_name": "Expansion of Waterfront Development Plan for Mundra Port by APSEZ, Mundra, Gujarat",
+      "company": "APSEZ",
+      "state": "Gujarat",
+      "investment_cost_rs": 557140020000.0,
+      "status": "Under Examination",
+      "start_date": "2026-09-17",
+      "company_mentioned_in_pq": false
+    },
+    {
+      "project_name": "Development of Dholera Special Investment Region (DSIR) In Gujarat by M/s. Dholera Special Investment Regional Development Authority (DSIRDA)",
+      "company": "Dholera Special Investment Regional Development Authority (DSIRDA)",
+      "state": "Gujarat",
+      "investment_cost_rs": 399999992000.0,
+      "status": "Forwarded to DD",
+      "start_date": "2026-08-28",
+      "company_mentioned_in_pq": false
+    },
+    {
+      "project_name": "Proposed 6.0 MTPA Alumina Refinery with 280 MW Co-gen Power Plant at villages - Alanda, Dengasil, Dinatodara, Dumuripadar, Karalima, Karapa, Kendugura, Kolamui, Krishtapatragura, Kusumasila, Sulapadarunder Kalyansinghpur Tahasil in Rayagada District, Odisha by M/s Vedanta Aluminium Metal Limited",
+      "company": "Vedanta Aluminium Metal Limited",
+      "state": "Odisha",
+      "investment_cost_rs": 350169989000.0,
+      "status": "Standard ToR Granted",
+      "start_date": "2026-09-02",
+      "company_mentioned_in_pq": false
+    },
+    {
+      "project_name": "Setting up of 6 MTPA Greenfield Integrated Steel Plant at  District Dhenkanal, Odisha ",
+      "company": "",
+      "state": "Odisha",
+      "investment_cost_rs": 349999989000.0,
+      "status": "ADS Raised",
+      "start_date": "2026-09-03",
+      "company_mentioned_in_pq": null
+    },
+    {
+      "project_name": "Newzone India Pvt Limited proposed expansion of additional 1x800 MW Ultra super critical thermal power plant village Raksa, kolmi, Daikhal, Anuppur Madhya Pradesh",
+      "company": "",
+      "state": "Madhya Pradesh",
+      "investment_cost_rs": 337100014000.0,
+      "status": "Under Examination",
+      "start_date": "2026-09-10",
+      "company_mentioned_in_pq": null
+    },
+    {
+      "project_name": "Enhancing production capacity by adopting technological improvement and change in raw material mix for Hot Metal from 4.50 MTPA to 5.40 MTPA, Crude Steel from 4.20 MTPA to 5.04 MTPA, Coke from 2.17 MTPA to 2.60 MTPA, Sinter from 6.76 MTPA to 7.20 MTPA & Saleable Steel from 4.325 to 5.10 MTPA including Hot Strip Mill production from 3.00 MTPA to 3.20 MTPA and Limiting Plate Mills Production from 2.135 MTPA 1.90 MTPA from existing facilities of SAIL \u2013 Rourkela Steel Plant",
+      "company": "",
+      "state": "Odisha",
+      "investment_cost_rs": 288470401000.0,
+      "status": "EDS Raised",
+      "start_date": "2026-09-17",
+      "company_mentioned_in_pq": null
+    },
+    {
+      "project_name": "Project for Wainganga Nalganga River Project (Link-II: Lower Wardha to Katepurna)",
+      "company": "",
+      "state": "Maharashtra",
+      "investment_cost_rs": 271530000000.0,
+      "status": "ToR Granted",
+      "start_date": "2026-07-28",
+      "company_mentioned_in_pq": null
+    },
+    {
+      "project_name": "Expansion of 2x250 MW (Phase IV) & 1x660 MW (Phase V) -Proposed 2nd unit of 660 MW Ultra Super-critical Satpura Thermal Power Project (Phase-V, Unit no. 13) at Village Brahmanwada Ryt, Tehsil Ghoradongri, Sarni, District Betul, Madhya Pradesh",
+      "company": "",
+      "state": "Madhya Pradesh",
+      "investment_cost_rs": 256575193000.0,
+      "status": "Proposal returned in present form",
+      "start_date": "2026-08-18",
+      "company_mentioned_in_pq": null
+    },
+    {
+      "project_name": "Construction of Vadhavan Bandar connecting Highway to Maharashtra Samruddhi Mahamarg from Tawa on NH-48 to Bharvir on Maharashtra Samruddhi Mahamarg freight corridor in the state of Maharashtra ",
+      "company": "",
+      "state": "Maharashtra",
+      "investment_cost_rs": 249386893000.0,
+      "status": "ADS Raised",
+      "start_date": "2026-08-15",
+      "company_mentioned_in_pq": null
+    },
+    {
+      "project_name": "5400 MW Pumped Storage Project at Taluka: Bhor & Mahad, District: Pune & Raigad, Maharashtra",
+      "company": "",
+      "state": "Maharashtra",
+      "investment_cost_rs": 233238299000.0,
+      "status": "Under Examination",
+      "start_date": "2026-09-17",
+      "company_mentioned_in_pq": null
+    },
+    {
+      "project_name": "Proposed 2x800 MW Ultra Super Critical Coal Fired Thermal Power Project By M/s Torrent Power Limited at Deori & Dumarpali village in Raigarh District of Chhattisgarh",
+      "company": "",
+      "state": "Chhattisgarh",
+      "investment_cost_rs": 229151293000.0,
+      "status": "ToR Granted",
+      "start_date": "2026-07-31",
+      "company_mentioned_in_pq": null
+    },
+    {
+      "project_name": "Sawalkot HE Project (1856 MW)",
+      "company": "",
+      "state": "Jammu And Kashmir",
+      "investment_cost_rs": 219999994000.0,
+      "status": "ToR Granted",
+      "start_date": "2025-08-20",
+      "company_mentioned_in_pq": null
+    },
+    {
+      "project_name": "Sawalkot HE Project (1856 MW)",
+      "company": "",
+      "state": "Jammu And Kashmir",
+      "investment_cost_rs": 219999994000.0,
+      "status": "EC Granted",
+      "start_date": "2025-11-17",
+      "company_mentioned_in_pq": null
+    },
+    {
+      "project_name": "Subansiri Upper HE Project",
+      "company": "",
+      "state": "Arunachal Pradesh",
+      "investment_cost_rs": 218149994000.0,
+      "status": "ToR Granted",
+      "start_date": "2024-09-07",
+      "company_mentioned_in_pq": null
+    },
+    {
+      "project_name": "Subansiri Upper HE Project",
+      "company": "",
+      "state": "Arunachal Pradesh",
+      "investment_cost_rs": 218149994000.0,
+      "status": "Proposal Accepted and Referred to EAC",
+      "start_date": "2026-09-04",
+      "company_mentioned_in_pq": null
+    },
+    {
+      "project_name": "Kamala Hydro Electric Project",
+      "company": "",
+      "state": "Arunachal Pradesh",
+      "investment_cost_rs": 218149994000.0,
+      "status": "DELISTED_BY_SYSTEM",
+      "start_date": "2026-09-04",
+      "company_mentioned_in_pq": null
+    },
+    {
+      "project_name": "Proposed Expansion by addition of 2x800 MW Coal Based Thermal Power Units to existing 2x250 MW Chandrapura Thermal Power Station (CTPS) by DVC-CIL Power Private Limited, a Joint Venture of Damodar Vally Corporation and Coal India Limited at Chandrapura, District Bokaro, Jharkhand.",
+      "company": "DVC-CIL Power Private Limited",
+      "state": "Jharkhand",
+      "investment_cost_rs": 217969099000.0,
+      "status": "Proposal returned in present form",
+      "start_date": "2026-08-18",
+      "company_mentioned_in_pq": false
+    },
+    {
+      "project_name": "3 x 800 MW (Phase-I) Patratu Super Thermal Power Project at Patratu, District Ramgarh, Jharkhand.",
+      "company": "",
+      "state": "Jharkhand",
+      "investment_cost_rs": 203015700000.0,
+      "status": "DELISTED_BY_SYSTEM",
+      "start_date": "2026-08-03",
+      "company_mentioned_in_pq": null
+    },
+    {
+      "project_name": "Expansion of existing EC by enhancing Ammonia & Urea production capacity through revision of Phase-II capacities while retaining existing operational Phase-I plant & new installation of Technical Ammonium Nitrate plant with Nitric acid plant, establishment of Chemical Cluster along with Cogeneration Power Plant, Grain-based Distillery along with Bioethanol Downstream Products at Panagarh Industrial Park, Panagarh, Kanksa Block, District Purba Bardhaman, West Bengal ",
+      "company": "",
+      "state": "West Bengal",
+      "investment_cost_rs": 197770002000.0,
+      "status": "Standard ToR Granted",
+      "start_date": "2026-09-01",
+      "company_mentioned_in_pq": null
+    },
+    {
+      "project_name": "Transfer of Environmental Clearance (Change in Name) subsequently to NCLT Order from Mirzapur Thermal Energy (UP) Private Limited to Adani Power Limited for 1600 (2x800) MW coal based Ultra Super Critical Thermal Power Project at Village Dadri Khurd, Tehsil Mirzapur Sadar, District Mirzapur, Uttar Pradesh.",
+      "company": "",
+      "state": "Uttar Pradesh",
+      "investment_cost_rs": 183000007000.0,
+      "status": "Under Examination",
+      "start_date": "2026-09-17",
+      "company_mentioned_in_pq": null
+    },
+    {
+      "project_name": "Project for Wainganga Nalganga River Project  (Link-III: Katepurna to Nalganga)",
+      "company": "",
+      "state": "Maharashtra",
+      "investment_cost_rs": 147179995000.0,
+      "status": "ToR Granted",
+      "start_date": "2026-07-28",
+      "company_mentioned_in_pq": null
+    },
+    {
+      "project_name": "Expansion of existing 2x600 MW coal based thermal unit by installing new 1x800 MW Ultra Supercritical unit at Rajiv Gandhi Thermal Power Plant (RGTPP), Hisar, Haryana.",
+      "company": "",
+      "state": "Haryana",
+      "investment_cost_rs": 141872300000.0,
+      "status": "Under Examination",
+      "start_date": "2026-09-03",
+      "company_mentioned_in_pq": null
+    },
+    {
+      "project_name": "Expansion and Modernization of Existing Integrated Steel Plant by Enhancing the Capacity of Blast Furnace, Sinter Plant, Coke Oven Plant, Captive Power Plant and Addition of Blast Furnace (2300 Cum), Sinter Plant (220 Sqm), Coke Oven Plant (0.2 MTPA), Ground Granulated Blast Furnace Slag Plant (2.0 MTPA) and Oxygen Plant (Air Separation Unit 1500 TPD) by M/s Evonith Metallics Limited",
+      "company": "Evonith Metallics Limited",
+      "state": "Maharashtra",
+      "investment_cost_rs": 123674698000.0,
+      "status": "EDS Raised",
+      "start_date": "2026-09-10",
+      "company_mentioned_in_pq": false
+    }
+  ],
+  "mega_projects_mentioned": 0,
+  "mega_projects_with_company": 6,
+  "note": "PARIVESH's admin_api/dashboard/getProposals, Environmental Clearance (EC) proposals only -- Forest Clearance isn't covered by this endpoint as verified. The status=Received/Granted query parameter is a no-op (confirmed byte-identical responses); granted-vs-not is classified from each proposal's own status field instead. Company names for the largest proposals are extracted from a \"by [M/s] <Company>\" clause in the project title where one exists (many titles name no company at all, or lead with the company instead of trailing it -- those show blank, not a false negative); the mention check itself is a plain substring match, a heuristic not a verified extraction."
+}
