@@ -410,6 +410,24 @@
         </table>
       </div>
     </div>
+
+    <div class="panel">
+      <h3>PLI scheme scrutiny vs. actual disbursal</h3>
+      <p class="note-inline" style="margin-bottom:12px">A separate research asset (<code>india-trade-sector-policy-recommendations</code>, retrieved <span id="pli-retrieved"></span>) grades all 13 Production Linked Incentive sub-schemes A&ndash;F on whether the government's own incentive money is actually flowing &mdash; not just approved &mdash; with every figure traced to a PIB release ID. Joined here against how often each scheme is specifically named in PQ text: are the worst-performing schemes (D/F) getting proportionate parliamentary scrutiny, or flying under the radar?</p>
+      <div class="table-scroll">
+        <table id="pli-table">
+          <thead><tr>
+            <th data-key="grade" data-type="str" aria-sort="ascending">Grade<span class="arrow">▾</span></th>
+            <th data-key="scheme" data-type="str">Scheme<span class="arrow">▾</span></th>
+            <th data-key="pq_mentions" data-type="num" class="num">PQ mentions<span class="arrow">▾</span></th>
+            <th data-key="outlay" data-type="num" class="num">Outlay (₹cr)<span class="arrow">▾</span></th>
+            <th data-key="disbursed_pct" data-type="num" class="num">Disbursed<span class="arrow">▾</span></th>
+          </tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="note-inline" id="pli-criteria"></p>
+    </div>
   </section>
 
   <footer>
@@ -422,6 +440,7 @@
 <script id="app-data" type="application/json">{{DATA_JSON}}</script>
 <script id="graph-data" type="application/json">{{GRAPH_JSON}}</script>
 <script id="pib-data" type="application/json">{{PIB_JSON}}</script>
+<script id="pli-data" type="application/json">{{PLI_JSON}}</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
 <script>
 (function(){
@@ -429,6 +448,7 @@
   var DATA = JSON.parse(document.getElementById('app-data').textContent);
   var GRAPH = JSON.parse(document.getElementById('graph-data').textContent);
   var PIB = JSON.parse(document.getElementById('pib-data').textContent);
+  var PLI = JSON.parse(document.getElementById('pli-data').textContent);
 
   var fmt = new Intl.NumberFormat('en-IN');
   function esc(s){ return String(s==null?'':s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
@@ -748,6 +768,27 @@
       return '<tr><td>'+esc(r.term)+'</td><td class="num tabular">'+fmt.format(r.pq_mentions)+'</td>' +
         '<td class="num tabular">'+fmt.format(r.pib_release_mentions)+'</td></tr>';
     }, 'pq_mentions', 'desc');
+
+    document.getElementById('pli-retrieved').textContent = PLI.retrieved || 'n/a';
+    document.getElementById('pli-criteria').textContent = 'Grading: ' + (PLI.grade_criteria || '');
+    var gradeRank = {'A':0,'A-':1,'B':2,'B-':3,'C+':4,'C':4,'D+':5,'D':6,'F':7};
+    var pliRows = (PLI.rows || []).map(function(r){
+      return {
+        grade: r.grade,
+        gradeRank: gradeRank[r.grade] != null ? gradeRank[r.grade] : 99,
+        scheme: r.scheme,
+        pq_mentions: r.scheme_pq_mentions,
+        outlay: r.outlay_rs_cr,
+        disbursed_pct: r.disbursed_pct,
+      };
+    });
+    var pliTable = document.getElementById('pli-table');
+    var pliSort = makeSortable(pliTable, pliRows, function(r){
+      return '<tr><td><b>'+esc(r.grade)+'</b></td><td>'+esc(r.scheme)+'</td>' +
+        '<td class="num tabular">'+fmt.format(r.pq_mentions)+'</td>' +
+        '<td class="num tabular">'+fmt.format(r.outlay)+'</td>' +
+        '<td class="num tabular">'+(r.disbursed_pct==null?'—':r.disbursed_pct.toFixed(1)+'%')+'</td></tr>';
+    }, 'gradeRank', 'asc');
   }
 
   // ---------- Footer ----------

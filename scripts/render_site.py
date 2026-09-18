@@ -9,11 +9,14 @@ data_json = (SITE / "data.json").read_text()
 graph_json = (SITE / "graph.json").read_text()
 pib_path = SITE / "pib.json"
 pib_json = pib_path.read_text() if pib_path.exists() else '{"since": null, "ministry_comparison": [], "scheme_comparison": [], "note": "PIB comparison not run for this build."}'
+pli_path = SITE / "pli.json"
+pli_json = pli_path.read_text() if pli_path.exists() else '{"retrieved": null, "grade_criteria": "", "rows": [], "note": "PLI comparison not run for this build."}'
 
 out = (
     template.replace("{{DATA_JSON}}", data_json)
     .replace("{{GRAPH_JSON}}", graph_json)
     .replace("{{PIB_JSON}}", pib_json)
+    .replace("{{PLI_JSON}}", pli_json)
 )
 (SITE / "index.html").write_text(out)
 print("wrote", SITE / "index.html", len(out), "bytes")

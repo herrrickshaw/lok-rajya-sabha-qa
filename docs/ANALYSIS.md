@@ -169,6 +169,38 @@ abbreviations PQ text uses that PIB's own headlines likely spell out differently
 `data/processed/pib_scheme_comparison.csv` and the full-text PDF before citing a specific scheme as
 uncovered.
 
+## PLI schemes — scrutiny vs. actual disbursal
+
+A separate PIB-sourced research asset (`india-trade-sector-policy-recommendations`,
+copied into `data/external/pli_report_card.json`, retrieved 2026-07-19, grades and figures
+are that repo's own judgment, not re-verified here) grades all 13 Production Linked
+Incentive sub-schemes A–F on whether the government's own incentive money is actually
+flowing, not just approved. Joined against how often PQ text specifically names each
+scheme (`scripts/compare_pli.py`, keyword patterns per scheme — a conservative undercount):
+
+| Grade | Scheme | PQ mentions | Outlay (₹cr) | Disbursed |
+|---|---|---:|---:|---:|
+| A | PLI Pharmaceuticals (formulations) | 7 | 15000 | 36.2% |
+| A- | Electronics (LSEM + IT Hardware) | 9 | 11324 | 137.3% |
+| B | PLI Bulk Drugs (KSMs/APIs) | 34 | 6940 | 0.8% |
+| B | PLI Medical Devices | 5 | 3420 | 4.6% |
+| B | PLI Food Processing | 29 | 10900 | 9.9% |
+| B | PLI Telecom & Networking | 11 | 12195 | 9.6% |
+| B- | PLI White Goods (ACs & LEDs) | 2 | 6238 | 4.5% |
+| B- | PLI Solar PV Modules | 20 | 24000 | 0.0% |
+| C+ | PLI Drones | 9 | 120 | 25.0% |
+| D+ | PLI Automobile & Auto Components | 28 | 25938 | 9.2% |
+| D | PLI Specialty Steel | 14 | 6322 | 0.8% |
+| D | PLI Textiles (MMF/technical) | 17 | 10683 | 0.5% |
+| F | PLI ACC Battery Storage | 11 | 18100 | 0.0% |
+
+The two worst grades (D and F) are not the two most heavily questioned — **PLI ACC Battery
+Storage (F, ₹18,100cr outlay, 0% disbursed) draws only 11 PQ mentions**, and **PLI White
+Goods (B-, only 4.5% disbursed) draws just 2** — both plausibly flying under the radar
+relative to the scale of the shortfall. PLI Bulk Drugs (B grade but only 0.8% disbursed on
+₹6,940cr) is the most-scrutinised scheme in the table (34 mentions), consistent with it
+being a live China-dependency policy flashpoint independent of its own disbursal grade.
+
 ## Known gaps
 
 - **Lok Sabha question/answer full text is not in this dataset.** The `api_ls` listing endpoint used to fetch all 34,720 LS questions only exposes the subject line, not the question or answer body — those live only in per-question PDFs (a different URL per question, with a random filename suffix on the 18th LS). Fetching and OCR'ing ~34,700 PDFs was out of scope for this pass; `docs/parties/*.md` and the topic tab work from subject-line text only for the Lok Sabha side.
@@ -178,3 +210,4 @@ uncovered.
 - **The PIB comparison's Ministry of External Affairs count (2 releases since June 2024) is a data gap, not reality** — MEA is one of PIB's most active posters; the underlying index (`pib_index.sqlite`, built for a separate project) under-captures MEA specifically throughout its history, not just this window. Treat MEA's row in `pib_ministry_comparison.csv` as missing, not low.
 - The scheme/topic-vs-PIB comparison matches on release **titles only** via substring search, not full release body text — a real undercount of PIB coverage, especially for acronym-heavy PQ terms (e.g. PM-SGMBY, PM-SHRI) that PIB headlines likely spell out in full.
 - "Ministry of Planning" and the one "Prime Minister" ministry-label row genuinely have ~0 matching PIB releases in this window — not a matching bug, just a near-dormant PIB presence for Planning and a mislabelled single row for PM.
+- **PLI scheme_pq_mentions is a keyword-pattern count, not a verified extraction** — a PQ about a scheme that doesn't use one of the matched phrases (e.g. asks about "Advanced Chemistry Cell manufacturing" without saying "ACC Battery") is missed. Treat these counts as a lower bound.

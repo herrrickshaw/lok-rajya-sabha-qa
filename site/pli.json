@@ -1,0 +1,151 @@
+{
+  "retrieved": "2026-07-19",
+  "method": "PIB releases fetched directly (browser user-agent + redirect-following defeated the 403s) and verified against release text with exact PRIDs; ministry-primary figures from this repo's earlier 9-ministry pass reused where PIB has no newer number; Exim Bank of India's 'India's International Trade and Investment' (May 2026) and CEAT Industry Tracker (June 2026) used as an independent government-institution cross-check. Letter grades are this repo's stated judgment on two axes -- disbursal progress vs. outlay, and delivery of the scheme's own outcome targets -- with the reasoning shown per row.",
+  "grade_criteria": "A = incentive flowing at scale AND scheme outcome targets met/exceeded; B = real disbursal or commissioned production, partial delivery; C = scheme operating but disbursal thin or outcome data not public; D = disbursal negligible relative to outlay years into the window, or material beneficiary attrition; F = zero disbursal and implementation stalled. Grades are this repo's judgment -- the evidence column is the checkable part.",
+  "rows": [
+    {
+      "scheme": "PLI Pharmaceuticals (formulations)",
+      "pq_ministry": "CHEMICALS AND FERTILIZERS",
+      "ministry_total_pq": 1235,
+      "scheme_pq_mentions": 7,
+      "outlay_rs_cr": 15000,
+      "disbursed_rs_cr": 5433,
+      "disbursed_pct": 36.22,
+      "grade": "A",
+      "grade_evidence": "Combined pharma-PLI sales Rs 3.19 lakh cr incl. Rs 2.04 lakh cr exports since inception (PRID 2204595); 191 KSMs/DIs/APIs produced in India for the first time; actual investment 237% of commitment. The largest genuine disbursal-to-outlay ratio of any big scheme."
+    },
+    {
+      "scheme": "Electronics (LSEM + IT Hardware)",
+      "pq_ministry": "ELECTRONICS AND INFORMATION TECHNOLOGY",
+      "ministry_total_pq": 971,
+      "scheme_pq_mentions": 9,
+      "outlay_rs_cr": 11324,
+      "disbursed_rs_cr": 15554,
+      "disbursed_pct": 137.35,
+      "grade": "A-",
+      "grade_evidence": "The program's flagship by every outcome metric (PRID 2247771, 1 Apr 2026): investment Rs 17,519cr = 250% of target; production Rs 11.02 lakh cr = 136%; exports Rs 6.21 lakh cr = 127%; smartphones India's #1 export item in CY2025 (Rs 2,62,452cr). Docked from A: MeitY's own Parliament submission shows only 2 of 5 domestic-category mobile applicants performing, and 92% of the jobs target."
+    },
+    {
+      "scheme": "PLI Bulk Drugs (KSMs/APIs)",
+      "pq_ministry": "CHEMICALS AND FERTILIZERS",
+      "ministry_total_pq": 1235,
+      "scheme_pq_mentions": 34,
+      "outlay_rs_cr": 6940,
+      "disbursed_rs_cr": 54.81,
+      "disbursed_pct": 0.79,
+      "grade": "B",
+      "grade_evidence": "GRADE REVISED A- -> B on new Parliament-era data: the disbursal number finally surfaced and it is 0.8% of outlay -- outcomes are real (Penicillin-G back after ~30 years, imports avoided Rs 3,591cr, 27 plants commissioned) but by this card's own criteria a scheme paying 0.8% cannot sit in the A family. The outcome/payout asymmetry now mirrors Steel's."
+    },
+    {
+      "scheme": "PLI Medical Devices",
+      "pq_ministry": "CHEMICALS AND FERTILIZERS",
+      "ministry_total_pq": 1235,
+      "scheme_pq_mentions": 5,
+      "outlay_rs_cr": 3420,
+      "disbursed_rs_cr": 157.15,
+      "disbursed_pct": 4.6,
+      "grade": "B",
+      "grade_evidence": "GRADE REVISED B+ -> B: the gap filled -- 4.6% of outlay disbursed, thin like White Goods. Delivery remains the stronger half: 28 applicants, eligible sales Rs 13,624.52cr incl. Rs 6,425.48cr exports till Dec 2025; 44 products incl. linear accelerators/MRI/CT first-time made in India."
+    },
+    {
+      "scheme": "PLI Food Processing",
+      "pq_ministry": "FOOD PROCESSING INDUSTRIES",
+      "ministry_total_pq": 770,
+      "scheme_pq_mentions": 29,
+      "outlay_rs_cr": 10900,
+      "disbursed_rs_cr": 1084,
+      "disbursed_pct": 9.94,
+      "grade": "B",
+      "grade_evidence": "171 approved applications, >Rs 9,200cr invested (PRID 2230621). One of the few schemes actually paying out at scale -- but PIB names not a single beneficiary company (the Britannia/ITC/Nestle names live only on MoFPI's own PDF), an odd opacity for a consumer-facing sector."
+    },
+    {
+      "scheme": "PLI Telecom & Networking",
+      "pq_ministry": "COMMUNICATIONS",
+      "ministry_total_pq": 1120,
+      "scheme_pq_mentions": 11,
+      "outlay_rs_cr": 12195,
+      "disbursed_rs_cr": 1175,
+      "disbursed_pct": 9.64,
+      "grade": "B",
+      "grade_evidence": "Gap filled: ~9.6% of outlay paid through FY25 and accelerating (FY26 RE alone Rs 1,944cr). Sales >6x FY20; exports Rs 21,033cr; 42 named beneficiaries; BSNL indigenous 4G stack deployed. Grade B holds with payout evidence now attached."
+    },
+    {
+      "scheme": "PLI White Goods (ACs & LEDs)",
+      "pq_ministry": "COMMERCE AND INDUSTRY",
+      "ministry_total_pq": 1356,
+      "scheme_pq_mentions": 2,
+      "outlay_rs_cr": 6238,
+      "disbursed_rs_cr": 281.4,
+      "disbursed_pct": 4.51,
+      "grade": "B-",
+      "grade_evidence": "Domestic manufacturing 'has commenced' for compressors, motors, copper tubes and LED drivers (PRID 2230621) with 30+ investors named verbatim (Daikin, Voltas, Hindalco, Amber, LG, Blue Star, Dixon, Signify...). 4.5% of outlay disbursed, and DPIIT still publishes no per-company production status."
+    },
+    {
+      "scheme": "PLI Solar PV Modules",
+      "pq_ministry": "NEW AND RENEWABLE ENERGY",
+      "ministry_total_pq": 995,
+      "scheme_pq_mentions": 20,
+      "outlay_rs_cr": 24000,
+      "disbursed_rs_cr": 0,
+      "disbursed_pct": 0.0,
+      "grade": "B-",
+      "grade_evidence": "GRADE REVISED C+ -> B-: the same Parliament reply reveals real delivery -- ~30 GW module + ~10.5 GW cell + ~2 GW ingot-wafer capacity COMMISSIONED against LoAs for 48,337 MW. A designed-zero payout with commissioned capacity is the opposite of ACC's zero (execution failure); the two zeros must not be read alike."
+    },
+    {
+      "scheme": "PLI Drones",
+      "pq_ministry": "CIVIL AVIATION",
+      "ministry_total_pq": 2129,
+      "scheme_pq_mentions": 9,
+      "outlay_rs_cr": 120,
+      "disbursed_rs_cr": 30,
+      "disbursed_pct": 25.0,
+      "grade": "C+",
+      "grade_evidence": "Sector turnover up 7x; 23 provisional beneficiaries (Asteria, Garuda, IdeaForge...). A tiny scheme that broadly did what a tiny scheme could."
+    },
+    {
+      "scheme": "PLI Automobile & Auto Components",
+      "pq_ministry": "HEAVY INDUSTRIES",
+      "ministry_total_pq": 406,
+      "scheme_pq_mentions": 28,
+      "outlay_rs_cr": 25938,
+      "disbursed_rs_cr": 2377.56,
+      "disbursed_pct": 9.17,
+      "grade": "D+",
+      "grade_evidence": "~9% of outlay disbursed 4+ years in; incremental sales Rs 13,126cr by 72 companies in FY26-to-Dec -- far off the Rs 2.31 lakh cr trajectory. 8 OEMs DVA-certified for 94 variants (names not published). Tata Motors and Mahindra credited by PIB with 'massive investments in EV production capacity' (PRID 2115609)."
+    },
+    {
+      "scheme": "PLI Specialty Steel",
+      "pq_ministry": "STEEL",
+      "ministry_total_pq": 334,
+      "scheme_pq_mentions": 14,
+      "outlay_rs_cr": 6322,
+      "disbursed_rs_cr": 48,
+      "disbursed_pct": 0.76,
+      "grade": "D",
+      "grade_evidence": "Rs 48cr disbursed = 0.8% of outlay -- and PIB discloses 14 of 58 Round-1 projects WITHDREW, a beneficiary-attrition figure the Ministry's own site never states. Rs 20,000cr invested of Rs 27,106cr committed and 9,000 jobs are real, but the incentive mechanism itself is barely functioning."
+    },
+    {
+      "scheme": "PLI Textiles (MMF/technical)",
+      "pq_ministry": "TEXTILES",
+      "ministry_total_pq": 699,
+      "scheme_pq_mentions": 17,
+      "outlay_rs_cr": 10683,
+      "disbursed_rs_cr": 54.5,
+      "disbursed_pct": 0.51,
+      "grade": "D",
+      "grade_evidence": "0.5% of outlay disbursed 4 years in; only 26 of 74 Round-1/2 applicants had commenced production at last ministry count; zero beneficiary names in any PIB release."
+    },
+    {
+      "scheme": "PLI ACC Battery Storage",
+      "pq_ministry": "HEAVY INDUSTRIES",
+      "ministry_total_pq": 406,
+      "scheme_pq_mentions": 11,
+      "outlay_rs_cr": 18100,
+      "disbursed_rs_cr": 0,
+      "disbursed_pct": 0.0,
+      "grade": "F",
+      "grade_evidence": "Zero incentive disbursed; Ola's 1 GWh (of 40 allocated) still in 'pilot production' since March 2024, 'working toward stabilizing operations for full-scale commercial production' per PIB's own words; one original awardee (Hyundai Global Motors, 20 GWh) exited without the word 'withdrew' ever appearing in a government document."
+    }
+  ],
+  "note": "PLI disbursal report card copied from a separate project (india-trade-sector-policy-recommendations), grades and figures are that repo's own PIB-sourced judgment, not re-verified here. scheme_pq_mentions counts Lok Sabha subject lines + Rajya Sabha subject lines/full question text matching scheme-specific keyword patterns (see SCHEME_MAP in compare_pli.py) -- a conservative undercount, since PQs about a scheme don't always name it explicitly."
+}

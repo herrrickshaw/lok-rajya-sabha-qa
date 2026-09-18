@@ -38,6 +38,8 @@ facts against a reliable secondary source, not as data.)
 | `sansad.in` `api_ls`/`api_rs` member endpoints | Both houses' current *and* former member rosters: party, state, constituency | Undocumented JSON API |
 | `rsdoc.nic.in` `Question/Search_Questions` | All Rajya Sabha questions for sessions 265–271 (24,661): full question text, ministry, MP code, type, date — answer text is `null` for every record; answers are PDF-only | Raw parametrised-SQL `whereclause` query param |
 | PIB (Press Information Bureau) press-release index | 124,857 releases, 2017–present, by ministry, refreshed to match this dataset's window (June 2024–present) | **External** — built for a separate project (`india-trade-sector-policy-recommendations/scripts/pib_index.py`), not part of this repo's own fetch scripts. `scripts/compare_pib.py` reads that project's `data/pib_index.sqlite` by local path; anyone reproducing this outside that environment needs an equivalent PIB index (see that script's docstring for the release-listing endpoint it scrapes) |
+| PLI disbursal report card | 13 PLI sub-schemes graded A–F on incentive disbursal, PIB-sourced | **Included** — `data/external/pli_report_card.json`, a copied 21KB snapshot from the same sibling project (small enough to ship directly, unlike the PIB index) |
+| Ministry-official directory (minister-in-charge) | Current minister/designation per ministry | **External** — `india-govt-yellow-pages/data/pib_ministry_contacts.csv`, read by local path in `scripts/compare_pib.py`; not copied in (it's a live-updated scrape, a snapshot would go stale) |
 
 None of these are documented public APIs — see the inline comments in
 `scripts/build.py` for the exact endpoints and how they were found (mining the
@@ -74,6 +76,10 @@ python3 scripts/build_db.py       # -> data/pq_ledger.duckdb, docs/ANALYSIS.md, 
 
 # 7. Build the Excel workbook
 python3 scripts/build_xlsx.py     # -> Lok_Rajya_Sabha_PQ_Analysis.xlsx
+
+# 8. Join the PLI disbursal report card (run before step 5, so the vs.-PIB
+#    tab's PLI table has data -- included here at the end only for readability)
+python3 scripts/compare_pli.py    # -> data/processed/pli_scheme_scrutiny.csv, site/pli.json
 ```
 
 Requires `networkx` and `duckdb` (both pure-Python-installable; no `scipy` —
@@ -147,6 +153,26 @@ Full tables: `docs/ANALYSIS.md`, `pib_ministry_comparison.csv` /
 `pib_scheme_comparison.csv`, or the `pib_ministry_comparison` /
 `pib_scheme_comparison` DuckDB tables.
 
+### PLI scheme scrutiny vs. actual disbursal
+
+Integrated a separate, already-built research asset — a PIB-sourced report
+card (`data/external/pli_report_card.json`, from
+`india-trade-sector-policy-recommendations`, copied in 21KB and small enough
+to ship directly rather than reference externally) grading all 13 Production
+Linked Incentive sub-schemes A–F on whether the government's own incentive
+money is *actually flowing*, not just approved, every claim traced to a PIB
+release ID — joined against how often each scheme is specifically named in
+PQ text (`scripts/compare_pli.py`, keyword patterns per scheme).
+
+The two worst grades aren't the two most-scrutinised: **PLI ACC Battery
+Storage (F, ₹18,100cr outlay, 0% disbursed) draws only 11 PQ mentions**, and
+**PLI White Goods (B-, 4.5% disbursed) draws just 2** — both plausibly flying
+under the radar relative to the scale of their shortfall. PLI Bulk Drugs (B
+grade, but only 0.8% disbursed on ₹6,940cr) is the most-scrutinised scheme in
+the table (34 mentions) — a live China-dependency flashpoint independent of
+its own grade. Full table: `data/processed/pli_scheme_scrutiny.csv`,
+`docs/ANALYSIS.md`, or the dashboard's "vs. PIB" tab.
+
 **Comparable data sources surveyed but not (yet) integrated** — other
 ministry-level sources on this machine that could extend this further:
 MeitY/DoT/DPIIT publish full scheme content behind a headless `wp-json` CMS
@@ -155,12 +181,14 @@ PARIVESH (`parivesh.nic.in`) has an open, no-auth bulk endpoint for
 environment/forest clearance proposals — a natural cross-check for
 Environment/Forest-ministry PQs; NITI Aayog's India Climate & Energy
 Dashboard (`iced.niti.gov.in`, AES-encrypted API) has official coal/energy/
-GHG series for Coal- and Environment-ministry PQ fact-checking; a prior PLI
-beneficiary-roster harvest (Lok/Rajya Sabha Q&A + PIB, `LEAD_LIST.md` in
-`india-trade-sector-policy-recommendations`) already has verified per-scheme
-company rosters for many of the exact schemes this repo's topic extraction
-surfaces (PLI, Semiconductor Mission, etc.). None of these are wired in here
-— they're a menu for a follow-up pass, not a claim that this repo uses them.
+GHG series for Coal- and Environment-ministry PQ fact-checking; and a prior
+PLI *company-name* harvest (as opposed to the scheme-grade report card
+integrated above) has verified per-beneficiary rosters (Tata Electronics,
+Foxconn, individual PLI-Auto/Pharma/Textiles applicants, etc.) that could
+name the actual companies behind each scheme's PQ mentions — not pulled in
+here since it exists only as prose in a past session's now-gone scratchpad,
+not a structured file. None of these are wired in — a menu for a follow-up
+pass, not a claim that this repo uses them.
 
 ## Known gaps
 
@@ -190,3 +218,9 @@ surfaces (PLI, Semiconductor Mission, etc.). None of these are wired in here
   scrape** (`india-govt-yellow-pages`), not refreshed by anything in this
   repo — a reshuffle after that scrape won't be reflected here. 4 of 56
   ministries have no matched minister row.
+- **PLI `scheme_pq_mentions` is a keyword-pattern count, not a verified
+  extraction** — a PQ about a scheme that doesn't use one of the matched
+  phrases is missed; treat these as a lower bound. Grades/outlay/disbursal
+  figures are `india-trade-sector-policy-recommendations`'s own PIB-sourced
+  judgment (methodology stated in the report card), not independently
+  re-verified in this repo.

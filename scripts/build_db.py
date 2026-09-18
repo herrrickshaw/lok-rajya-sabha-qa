@@ -62,6 +62,7 @@ def main():
     load_table(con, "kg_mp_coasking_bridges", "kg_mp_coasking_bridges.csv")
     load_table(con, "pib_ministry_comparison", "pib_ministry_comparison.csv")
     load_table(con, "pib_scheme_comparison", "pib_scheme_comparison.csv")
+    load_table(con, "pli_scheme_scrutiny", "pli_scheme_scrutiny.csv")
 
     # A single tidy view across both chambers -- the "queries and answers" table.
     con.execute(
@@ -176,6 +177,7 @@ def build_markdown(con):
     top_pagerank_ministries = [r for r in pagerank if r["type"] == "ministry"][:10]
     top_bridges = sorted(bridges, key=lambda r: -int(r["joint_questions"]))[:10]
     pib_ministry = read_csv("pib_ministry_comparison.csv")
+    pli_rows = read_csv("pli_scheme_scrutiny.csv")
     pib_scheme = read_csv("pib_scheme_comparison.csv")
 
     by_comm = defaultdict(list)
@@ -307,6 +309,30 @@ def build_markdown(con):
         "`data/processed/pib_scheme_comparison.csv` and the full-text PDF before citing a specific scheme as",
         "uncovered.",
         "",
+        "## PLI schemes — scrutiny vs. actual disbursal",
+        "",
+        "A separate PIB-sourced research asset (`india-trade-sector-policy-recommendations`,",
+        "copied into `data/external/pli_report_card.json`, retrieved 2026-07-19, grades and figures",
+        "are that repo's own judgment, not re-verified here) grades all 13 Production Linked",
+        "Incentive sub-schemes A–F on whether the government's own incentive money is actually",
+        "flowing, not just approved. Joined against how often PQ text specifically names each",
+        "scheme (`scripts/compare_pli.py`, keyword patterns per scheme — a conservative undercount):",
+        "",
+        "| Grade | Scheme | PQ mentions | Outlay (₹cr) | Disbursed |",
+        "|---|---|---:|---:|---:|",
+    ]
+    for r in pli_rows:
+        disb = f"{float(r['disbursed_pct']):.1f}%" if r.get("disbursed_pct") else "—"
+        lines.append(f"| {r['grade']} | {r['scheme']} | {r['scheme_pq_mentions']} | {r['outlay_rs_cr']} | {disb} |")
+    lines += [
+        "",
+        "The two worst grades (D and F) are not the two most heavily questioned — **PLI ACC Battery",
+        "Storage (F, ₹18,100cr outlay, 0% disbursed) draws only 11 PQ mentions**, and **PLI White",
+        "Goods (B-, only 4.5% disbursed) draws just 2** — both plausibly flying under the radar",
+        "relative to the scale of the shortfall. PLI Bulk Drugs (B grade but only 0.8% disbursed on",
+        "₹6,940cr) is the most-scrutinised scheme in the table (34 mentions), consistent with it",
+        "being a live China-dependency policy flashpoint independent of its own disbursal grade.",
+        "",
         "## Known gaps",
         "",
         "- **Lok Sabha question/answer full text is not in this dataset.** The `api_ls` listing endpoint used to "
@@ -332,6 +358,9 @@ def build_markdown(con):
         "- \"Ministry of Planning\" and the one \"Prime Minister\" ministry-label row genuinely have ~0 matching "
         "PIB releases in this window — not a matching bug, just a near-dormant PIB presence for Planning and "
         "a mislabelled single row for PM.",
+        "- **PLI scheme_pq_mentions is a keyword-pattern count, not a verified extraction** — a PQ about a "
+        "scheme that doesn't use one of the matched phrases (e.g. asks about \"Advanced Chemistry Cell "
+        "manufacturing\" without saying \"ACC Battery\") is missed. Treat these counts as a lower bound.",
         "",
     ]
     (DOCS / "ANALYSIS.md").write_text("\n".join(lines))
