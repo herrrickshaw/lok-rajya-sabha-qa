@@ -1,0 +1,856 @@
+{
+  "since": "2024-06-01",
+  "ministry_comparison": [
+    {
+      "ministry": "EXTERNAL AFFAIRS",
+      "minister_in_charge": "Dr. Subrahmanyam Jaishankar",
+      "minister_designation": "Minister",
+      "pq_questions": 1026,
+      "pib_releases_since_2024_06": 2,
+      "pq_per_pib_release": 513.0
+    },
+    {
+      "ministry": "CIVIL AVIATION",
+      "minister_in_charge": "Shri Kinjarapu Rammohan Naidu",
+      "minister_designation": "Minister",
+      "pq_questions": 2129,
+      "pib_releases_since_2024_06": 188,
+      "pq_per_pib_release": 11.324
+    },
+    {
+      "ministry": "HOUSING AND URBAN AFFAIRS",
+      "minister_in_charge": "Shri Manohar Lal",
+      "minister_designation": "Minister",
+      "pq_questions": 1823,
+      "pib_releases_since_2024_06": 303,
+      "pq_per_pib_release": 6.017
+    },
+    {
+      "ministry": "EDUCATION",
+      "minister_in_charge": "Shri Pralhad Joshi",
+      "minister_designation": "Minister",
+      "pq_questions": 2802,
+      "pib_releases_since_2024_06": 506,
+      "pq_per_pib_release": 5.538
+    },
+    {
+      "ministry": "RAILWAYS",
+      "minister_in_charge": "Shri Ashwini Vaishnaw",
+      "minister_designation": "Minister",
+      "pq_questions": 2900,
+      "pib_releases_since_2024_06": 570,
+      "pq_per_pib_release": 5.088
+    },
+    {
+      "ministry": "PETROLEUM AND NATURAL GAS",
+      "minister_in_charge": "Shri Hardeep Singh Puri",
+      "minister_designation": "Minister",
+      "pq_questions": 1138,
+      "pib_releases_since_2024_06": 257,
+      "pq_per_pib_release": 4.428
+    },
+    {
+      "ministry": "HEALTH AND FAMILY WELFARE",
+      "minister_in_charge": "Shri Jagat Prakash Nadda",
+      "minister_designation": "Minister",
+      "pq_questions": 3550,
+      "pib_releases_since_2024_06": 809,
+      "pq_per_pib_release": 4.388
+    },
+    {
+      "ministry": "ROAD TRANSPORT AND HIGHWAYS",
+      "minister_in_charge": "Shri Nitin Jairam Gadkari",
+      "minister_designation": "Minister",
+      "pq_questions": 2061,
+      "pib_releases_since_2024_06": 471,
+      "pq_per_pib_release": 4.376
+    },
+    {
+      "ministry": "MICRO, SMALL AND MEDIUM ENTERPRISES",
+      "minister_in_charge": "Shri Jitan Ram Manjhi",
+      "minister_designation": "Minister",
+      "pq_questions": 1131,
+      "pib_releases_since_2024_06": 270,
+      "pq_per_pib_release": 4.189
+    },
+    {
+      "ministry": "CORPORATE AFFAIRS",
+      "minister_in_charge": "Smt. Nirmala Sitharaman",
+      "minister_designation": "Minister",
+      "pq_questions": 737,
+      "pib_releases_since_2024_06": 176,
+      "pq_per_pib_release": 4.188
+    },
+    {
+      "ministry": "NEW AND RENEWABLE ENERGY",
+      "minister_in_charge": "Shri Pralhad Joshi",
+      "minister_designation": "Minister",
+      "pq_questions": 995,
+      "pib_releases_since_2024_06": 261,
+      "pq_per_pib_release": 3.812
+    },
+    {
+      "ministry": "FOOD PROCESSING INDUSTRIES",
+      "minister_in_charge": "Shri Chirag Paswan",
+      "minister_designation": "Minister",
+      "pq_questions": 770,
+      "pib_releases_since_2024_06": 204,
+      "pq_per_pib_release": 3.775
+    },
+    {
+      "ministry": "JAL SHAKTI",
+      "minister_in_charge": "Shri C R Patil",
+      "minister_designation": "Minister",
+      "pq_questions": 1997,
+      "pib_releases_since_2024_06": 585,
+      "pq_per_pib_release": 3.414
+    },
+    {
+      "ministry": "CONSUMER AFFAIRS, FOOD AND PUBLIC DISTRIBUTION",
+      "minister_in_charge": "Shri Pralhad Joshi",
+      "minister_designation": "Minister",
+      "pq_questions": 1332,
+      "pib_releases_since_2024_06": 393,
+      "pq_per_pib_release": 3.389
+    },
+    {
+      "ministry": "LABOUR AND EMPLOYMENT",
+      "minister_in_charge": "Dr. Mansukh Mandaviya",
+      "minister_designation": "Minister",
+      "pq_questions": 1570,
+      "pib_releases_since_2024_06": 505,
+      "pq_per_pib_release": 3.109
+    },
+    {
+      "ministry": "CHEMICALS AND FERTILIZERS",
+      "minister_in_charge": "Shri Jagat Prakash Nadda",
+      "minister_designation": "Minister",
+      "pq_questions": 1235,
+      "pib_releases_since_2024_06": 424,
+      "pq_per_pib_release": 2.913
+    },
+    {
+      "ministry": "RURAL DEVELOPMENT",
+      "minister_in_charge": "Shri Shivraj Singh Chouhan",
+      "minister_designation": "Minister",
+      "pq_questions": 1389,
+      "pib_releases_since_2024_06": 483,
+      "pq_per_pib_release": 2.876
+    },
+    {
+      "ministry": "TOURISM",
+      "minister_in_charge": "Shri Gajendra Singh Shekhawat",
+      "minister_designation": "Minister",
+      "pq_questions": 1076,
+      "pib_releases_since_2024_06": 400,
+      "pq_per_pib_release": 2.69
+    },
+    {
+      "ministry": "POWER",
+      "minister_in_charge": "Shri Manohar Lal",
+      "minister_designation": "Minister",
+      "pq_questions": 830,
+      "pib_releases_since_2024_06": 315,
+      "pq_per_pib_release": 2.635
+    },
+    {
+      "ministry": "WOMEN AND CHILD DEVELOPMENT",
+      "minister_in_charge": "Smt. Annpurna Devi",
+      "minister_designation": "Minister",
+      "pq_questions": 1271,
+      "pib_releases_since_2024_06": 485,
+      "pq_per_pib_release": 2.621
+    },
+    {
+      "ministry": "AGRICULTURE AND FARMERS WELFARE",
+      "minister_in_charge": "Shri Shivraj Singh Chouhan",
+      "minister_designation": "Minister",
+      "pq_questions": 2754,
+      "pib_releases_since_2024_06": 1052,
+      "pq_per_pib_release": 2.618
+    },
+    {
+      "ministry": "ENVIRONMENT, FOREST AND CLIMATE CHANGE",
+      "minister_in_charge": "Shri Bhupender Yadav",
+      "minister_designation": "Minister",
+      "pq_questions": 1809,
+      "pib_releases_since_2024_06": 699,
+      "pq_per_pib_release": 2.588
+    },
+    {
+      "ministry": "FINANCE",
+      "minister_in_charge": "Smt. Nirmala Sitharaman",
+      "minister_designation": "Minister",
+      "pq_questions": 2253,
+      "pib_releases_since_2024_06": 1033,
+      "pq_per_pib_release": 2.181
+    },
+    {
+      "ministry": "ATOMIC ENERGY",
+      "minister_in_charge": "Dr. Jitendra Singh",
+      "minister_designation": "Minister of State",
+      "pq_questions": 437,
+      "pib_releases_since_2024_06": 203,
+      "pq_per_pib_release": 2.153
+    },
+    {
+      "ministry": "LAW AND JUSTICE",
+      "minister_in_charge": "Shri Arjun Ram Meghwal",
+      "minister_designation": "Minister of State (Independent Charge)",
+      "pq_questions": 911,
+      "pib_releases_since_2024_06": 426,
+      "pq_per_pib_release": 2.138
+    },
+    {
+      "ministry": "MINORITY AFFAIRS",
+      "minister_in_charge": "Shri Kiren Rijiju",
+      "minister_designation": "Minister",
+      "pq_questions": 535,
+      "pib_releases_since_2024_06": 252,
+      "pq_per_pib_release": 2.123
+    },
+    {
+      "ministry": "AYUSH",
+      "minister_in_charge": "Shri Jadhav Prataprao Ganpatrao",
+      "minister_designation": "Minister of State (Independent Charge)",
+      "pq_questions": 1138,
+      "pib_releases_since_2024_06": 563,
+      "pq_per_pib_release": 2.021
+    },
+    {
+      "ministry": "SKILL DEVELOPMENT AND ENTREPRENEURSHIP",
+      "minister_in_charge": "Shri Jayant Chaudhary",
+      "minister_designation": "Minister of State (Independent Charge)",
+      "pq_questions": 882,
+      "pib_releases_since_2024_06": 445,
+      "pq_per_pib_release": 1.982
+    },
+    {
+      "ministry": "PANCHAYATI RAJ",
+      "minister_in_charge": "Shri Rajiv Ranjan Singh alias Lalan Singh",
+      "minister_designation": "Minister",
+      "pq_questions": 573,
+      "pib_releases_since_2024_06": 298,
+      "pq_per_pib_release": 1.923
+    },
+    {
+      "ministry": "MINES",
+      "minister_in_charge": "Shri G. Kishan Reddy",
+      "minister_designation": "Minister",
+      "pq_questions": 429,
+      "pib_releases_since_2024_06": 235,
+      "pq_per_pib_release": 1.826
+    },
+    {
+      "ministry": "SOCIAL JUSTICE AND EMPOWERMENT",
+      "minister_in_charge": "Dr. Virendra Kumar",
+      "minister_designation": "Minister",
+      "pq_questions": 1048,
+      "pib_releases_since_2024_06": 619,
+      "pq_per_pib_release": 1.693
+    },
+    {
+      "ministry": "YOUTH AFFAIRS AND SPORTS",
+      "minister_in_charge": "Dr. Mansukh Mandaviya",
+      "minister_designation": "Minister",
+      "pq_questions": 1024,
+      "pib_releases_since_2024_06": 612,
+      "pq_per_pib_release": 1.673
+    },
+    {
+      "ministry": "COOPERATION",
+      "minister_in_charge": "Shri Amit Shah",
+      "minister_designation": "Minister",
+      "pq_questions": 731,
+      "pib_releases_since_2024_06": 444,
+      "pq_per_pib_release": 1.646
+    },
+    {
+      "ministry": "FISHERIES, ANIMAL HUSBANDRY AND DAIRYING",
+      "minister_in_charge": "Shri Rajiv Ranjan Singh alias Lalan Singh",
+      "minister_designation": "Minister",
+      "pq_questions": 1021,
+      "pib_releases_since_2024_06": 654,
+      "pq_per_pib_release": 1.561
+    },
+    {
+      "ministry": "TRIBAL AFFAIRS",
+      "minister_in_charge": "Shri Jual Oram",
+      "minister_designation": "Minister",
+      "pq_questions": 796,
+      "pib_releases_since_2024_06": 524,
+      "pq_per_pib_release": 1.519
+    },
+    {
+      "ministry": "TEXTILES",
+      "minister_in_charge": "Shri Giriraj Singh",
+      "minister_designation": "Minister",
+      "pq_questions": 699,
+      "pib_releases_since_2024_06": 470,
+      "pq_per_pib_release": 1.487
+    },
+    {
+      "ministry": "HEAVY INDUSTRIES",
+      "minister_in_charge": "Shri H. D. Kumaraswamy",
+      "minister_designation": "Minister",
+      "pq_questions": 406,
+      "pib_releases_since_2024_06": 273,
+      "pq_per_pib_release": 1.487
+    },
+    {
+      "ministry": "SPACE",
+      "minister_in_charge": "Dr. Jitendra Singh",
+      "minister_designation": "Minister of State",
+      "pq_questions": 238,
+      "pib_releases_since_2024_06": 164,
+      "pq_per_pib_release": 1.451
+    },
+    {
+      "ministry": "ELECTRONICS AND INFORMATION TECHNOLOGY",
+      "minister_in_charge": "",
+      "minister_designation": "",
+      "pq_questions": 971,
+      "pib_releases_since_2024_06": 672,
+      "pq_per_pib_release": 1.445
+    },
+    {
+      "ministry": "COAL",
+      "minister_in_charge": "Shri G. Kishan Reddy",
+      "minister_designation": "Minister",
+      "pq_questions": 661,
+      "pib_releases_since_2024_06": 464,
+      "pq_per_pib_release": 1.425
+    },
+    {
+      "ministry": "CULTURE",
+      "minister_in_charge": "Shri Gajendra Singh Shekhawat",
+      "minister_designation": "Minister",
+      "pq_questions": 1069,
+      "pib_releases_since_2024_06": 769,
+      "pq_per_pib_release": 1.39
+    },
+    {
+      "ministry": "PORTS, SHIPPING AND WATERWAYS",
+      "minister_in_charge": "Shri Sarbananda Sonowal",
+      "minister_designation": "Minister",
+      "pq_questions": 769,
+      "pib_releases_since_2024_06": 577,
+      "pq_per_pib_release": 1.333
+    },
+    {
+      "ministry": "COMMERCE AND INDUSTRY",
+      "minister_in_charge": "Shri Piyush Goyal",
+      "minister_designation": "Minister",
+      "pq_questions": 1356,
+      "pib_releases_since_2024_06": 1178,
+      "pq_per_pib_release": 1.151
+    },
+    {
+      "ministry": "EARTH SCIENCES",
+      "minister_in_charge": "Dr. Jitendra Singh",
+      "minister_designation": "Minister",
+      "pq_questions": 425,
+      "pib_releases_since_2024_06": 377,
+      "pq_per_pib_release": 1.127
+    },
+    {
+      "ministry": "DEVELOPMENT OF NORTH EASTERN REGION",
+      "minister_in_charge": "",
+      "minister_designation": "",
+      "pq_questions": 176,
+      "pib_releases_since_2024_06": 159,
+      "pq_per_pib_release": 1.107
+    },
+    {
+      "ministry": "COMMUNICATIONS",
+      "minister_in_charge": "Shri Jyotiraditya M. Scindia",
+      "minister_designation": "Minister",
+      "pq_questions": 1120,
+      "pib_releases_since_2024_06": 1040,
+      "pq_per_pib_release": 1.077
+    },
+    {
+      "ministry": "STEEL",
+      "minister_in_charge": "Shri H. D. Kumaraswamy",
+      "minister_designation": "Minister",
+      "pq_questions": 334,
+      "pib_releases_since_2024_06": 349,
+      "pq_per_pib_release": 0.957
+    },
+    {
+      "ministry": "HOME AFFAIRS",
+      "minister_in_charge": "Shri Amit Shah",
+      "minister_designation": "Minister",
+      "pq_questions": 1051,
+      "pib_releases_since_2024_06": 1147,
+      "pq_per_pib_release": 0.916
+    },
+    {
+      "ministry": "STATISTICS AND PROGRAMME IMPLEMENTATION",
+      "minister_in_charge": "Shri Rao Inderjit Singh",
+      "minister_designation": "Minister of State (Independent Charge)",
+      "pq_questions": 314,
+      "pib_releases_since_2024_06": 480,
+      "pq_per_pib_release": 0.654
+    },
+    {
+      "ministry": "PARLIAMENTARY AFFAIRS",
+      "minister_in_charge": "Shri Kiren Rijiju",
+      "minister_designation": "Minister",
+      "pq_questions": 67,
+      "pib_releases_since_2024_06": 139,
+      "pq_per_pib_release": 0.482
+    },
+    {
+      "ministry": "INFORMATION AND BROADCASTING",
+      "minister_in_charge": "Shri Ashwini Vaishnaw",
+      "minister_designation": "Minister",
+      "pq_questions": 465,
+      "pib_releases_since_2024_06": 974,
+      "pq_per_pib_release": 0.477
+    },
+    {
+      "ministry": "PERSONNEL, PUBLIC GRIEVANCES AND PENSIONS",
+      "minister_in_charge": "Dr. Jitendra Singh",
+      "minister_designation": "Minister of State",
+      "pq_questions": 305,
+      "pib_releases_since_2024_06": 808,
+      "pq_per_pib_release": 0.377
+    },
+    {
+      "ministry": "SCIENCE AND TECHNOLOGY",
+      "minister_in_charge": "Dr. Jitendra Singh",
+      "minister_designation": "Minister of State (Independent Charge)",
+      "pq_questions": 430,
+      "pib_releases_since_2024_06": 1418,
+      "pq_per_pib_release": 0.303
+    },
+    {
+      "ministry": "DEFENCE",
+      "minister_in_charge": "Shri Raj Nath Singh",
+      "minister_designation": "Minister",
+      "pq_questions": 186,
+      "pib_releases_since_2024_06": 2234,
+      "pq_per_pib_release": 0.083
+    },
+    {
+      "ministry": "PLANNING",
+      "minister_in_charge": "",
+      "minister_designation": "",
+      "pq_questions": 235,
+      "pib_releases_since_2024_06": 0,
+      "pq_per_pib_release": null
+    },
+    {
+      "ministry": "PRIME MINISTER",
+      "minister_in_charge": "",
+      "minister_designation": "",
+      "pq_questions": 1,
+      "pib_releases_since_2024_06": 0,
+      "pq_per_pib_release": null
+    }
+  ],
+  "scheme_comparison": [
+    {
+      "term": "Jal Jeevan Mission",
+      "pq_mentions": 376,
+      "pib_release_mentions": 68
+    },
+    {
+      "term": "PMAY-U",
+      "pq_mentions": 315,
+      "pib_release_mentions": 14
+    },
+    {
+      "term": "Pradhan Mantri Awas Yojana",
+      "pq_mentions": 303,
+      "pib_release_mentions": 19
+    },
+    {
+      "term": "PMAY-G",
+      "pq_mentions": 249,
+      "pib_release_mentions": 32
+    },
+    {
+      "term": "PM-KISAN",
+      "pq_mentions": 206,
+      "pib_release_mentions": 37
+    },
+    {
+      "term": "Pradhan Mantri Jan Arogya Yojana",
+      "pq_mentions": 191,
+      "pib_release_mentions": 8
+    },
+    {
+      "term": "Pradhan Mantri Kaushal Vikas Yojana",
+      "pq_mentions": 188,
+      "pib_release_mentions": 9
+    },
+    {
+      "term": "Pradhan Mantri Fasal Bima Yojana",
+      "pq_mentions": 182,
+      "pib_release_mentions": 13
+    },
+    {
+      "term": "National Mission",
+      "pq_mentions": 175,
+      "pib_release_mentions": 56
+    },
+    {
+      "term": "Smart Cities Mission",
+      "pq_mentions": 164,
+      "pib_release_mentions": 8
+    },
+    {
+      "term": "PM-KUSUM",
+      "pq_mentions": 155,
+      "pib_release_mentions": 7
+    },
+    {
+      "term": "Pradhan Mantri Gram Sadak Yojana",
+      "pq_mentions": 152,
+      "pib_release_mentions": 13
+    },
+    {
+      "term": "Pradhan Mantri Matsya Sampada Yojana",
+      "pq_mentions": 147,
+      "pib_release_mentions": 11
+    },
+    {
+      "term": "Pradhan Mantri Ujjwala Yojana",
+      "pq_mentions": 124,
+      "pib_release_mentions": 4
+    },
+    {
+      "term": "PMGKAY",
+      "pq_mentions": 121,
+      "pib_release_mentions": 5
+    },
+    {
+      "term": "National AYUSH Mission",
+      "pq_mentions": 111,
+      "pib_release_mentions": 13
+    },
+    {
+      "term": "Pradhan Mantri Kisan Sampada Yojana",
+      "pq_mentions": 110,
+      "pib_release_mentions": 5
+    },
+    {
+      "term": "Swachh Bharat Mission",
+      "pq_mentions": 107,
+      "pib_release_mentions": 45
+    },
+    {
+      "term": "National Health Mission",
+      "pq_mentions": 92,
+      "pib_release_mentions": 7
+    },
+    {
+      "term": "Samagra Shiksha Abhiyan",
+      "pq_mentions": 81,
+      "pib_release_mentions": 0
+    },
+    {
+      "term": "Pradhan Mantri Krishi Sinchayee Yojana",
+      "pq_mentions": 78,
+      "pib_release_mentions": 6
+    },
+    {
+      "term": "Pradhan Mantri Mudra Yojana",
+      "pq_mentions": 76,
+      "pib_release_mentions": 6
+    },
+    {
+      "term": "PLI Scheme",
+      "pq_mentions": 74,
+      "pib_release_mentions": 64
+    },
+    {
+      "term": "PM-ABHIM",
+      "pq_mentions": 70,
+      "pib_release_mentions": 7
+    },
+    {
+      "term": "PM-SYM",
+      "pq_mentions": 70,
+      "pib_release_mentions": 1
+    },
+    {
+      "term": "Muft Bijli Yojana",
+      "pq_mentions": 69,
+      "pib_release_mentions": 17
+    },
+    {
+      "term": "National Green Hydrogen Mission",
+      "pq_mentions": 68,
+      "pib_release_mentions": 15
+    },
+    {
+      "term": "PM-SGMBY",
+      "pq_mentions": 65,
+      "pib_release_mentions": 0
+    },
+    {
+      "term": "Atal Bhujal Yojana",
+      "pq_mentions": 63,
+      "pib_release_mentions": 12
+    },
+    {
+      "term": "PM-JANMAN",
+      "pq_mentions": 62,
+      "pib_release_mentions": 28
+    },
+    {
+      "term": "PM-SHRI",
+      "pq_mentions": 60,
+      "pib_release_mentions": 0
+    },
+    {
+      "term": "Pradhan Mantri Kisan Samman Nidhi",
+      "pq_mentions": 55,
+      "pib_release_mentions": 2
+    },
+    {
+      "term": "PM-DevINE",
+      "pq_mentions": 54,
+      "pib_release_mentions": 7
+    },
+    {
+      "term": "Digital Agriculture Mission",
+      "pq_mentions": 52,
+      "pib_release_mentions": 8
+    },
+    {
+      "term": "Pradhan Mantri Matru Vandana Yojana",
+      "pq_mentions": 50,
+      "pib_release_mentions": 4
+    },
+    {
+      "term": "PMSGMBY",
+      "pq_mentions": 48,
+      "pib_release_mentions": 1
+    },
+    {
+      "term": "Pradhan Mantri Jan Dhan Yojana",
+      "pq_mentions": 47,
+      "pib_release_mentions": 4
+    },
+    {
+      "term": "Rashtriya Gokul Mission",
+      "pq_mentions": 46,
+      "pib_release_mentions": 14
+    },
+    {
+      "term": "Pradhan Mantri Jan Vikas Karyakram",
+      "pq_mentions": 44,
+      "pib_release_mentions": 3
+    },
+    {
+      "term": "Rashtriya Gram Swaraj Abhiyan",
+      "pq_mentions": 44,
+      "pib_release_mentions": 9
+    },
+    {
+      "term": "Smart City Mission",
+      "pq_mentions": 44,
+      "pib_release_mentions": 1
+    },
+    {
+      "term": "PM-AJAY",
+      "pq_mentions": 41,
+      "pib_release_mentions": 17
+    },
+    {
+      "term": "Ayushman Bharat Digital Mission",
+      "pq_mentions": 41,
+      "pib_release_mentions": 9
+    },
+    {
+      "term": "Pradhan Mantri Awaas Yojana",
+      "pq_mentions": 41,
+      "pib_release_mentions": 9
+    },
+    {
+      "term": "PM-DAKSH",
+      "pq_mentions": 40,
+      "pib_release_mentions": 9
+    },
+    {
+      "term": "IndiaAI Mission",
+      "pq_mentions": 40,
+      "pib_release_mentions": 17
+    },
+    {
+      "term": "PM-PRANAM",
+      "pq_mentions": 38,
+      "pib_release_mentions": 6
+    },
+    {
+      "term": "Pradhan Mantri Garib Kalyan Anna Yojana",
+      "pq_mentions": 37,
+      "pib_release_mentions": 3
+    },
+    {
+      "term": "Mantri Garib Kalyan Anna Yojana",
+      "pq_mentions": 37,
+      "pib_release_mentions": 3
+    },
+    {
+      "term": "Skill India Mission",
+      "pq_mentions": 36,
+      "pib_release_mentions": 11
+    },
+    {
+      "term": "Pradhan Mantri Awas Yojana-Urban",
+      "pq_mentions": 36,
+      "pib_release_mentions": 3
+    },
+    {
+      "term": "PM Vishwakarma Yojana",
+      "pq_mentions": 35,
+      "pib_release_mentions": 2
+    },
+    {
+      "term": "PM-SETU",
+      "pq_mentions": 34,
+      "pib_release_mentions": 21
+    },
+    {
+      "term": "PMGSY-IV",
+      "pq_mentions": 34,
+      "pib_release_mentions": 8
+    },
+    {
+      "term": "National Livestock Mission",
+      "pq_mentions": 33,
+      "pib_release_mentions": 5
+    },
+    {
+      "term": "Jal Shakti Abhiyan",
+      "pq_mentions": 33,
+      "pib_release_mentions": 4
+    },
+    {
+      "term": "PMAY-Urban",
+      "pq_mentions": 33,
+      "pib_release_mentions": 3
+    },
+    {
+      "term": "PMDDKY",
+      "pq_mentions": 30,
+      "pib_release_mentions": 1
+    },
+    {
+      "term": "PM-JAY",
+      "pq_mentions": 28,
+      "pib_release_mentions": 26
+    },
+    {
+      "term": "Atal Mission",
+      "pq_mentions": 27,
+      "pib_release_mentions": 0
+    },
+    {
+      "term": "PM-SVANidhi",
+      "pq_mentions": 26,
+      "pib_release_mentions": 0
+    },
+    {
+      "term": "India Semiconductor Mission",
+      "pq_mentions": 26,
+      "pib_release_mentions": 8
+    },
+    {
+      "term": "PM-USHA",
+      "pq_mentions": 25,
+      "pib_release_mentions": 2
+    },
+    {
+      "term": "Cruise Bharat Mission",
+      "pq_mentions": 25,
+      "pib_release_mentions": 3
+    },
+    {
+      "term": "Pradhan Mantri Formalisation",
+      "pq_mentions": 25,
+      "pib_release_mentions": 1
+    },
+    {
+      "term": "Deep Ocean Mission",
+      "pq_mentions": 24,
+      "pib_release_mentions": 12
+    },
+    {
+      "term": "Pradhan Mantri Swasthya Suraksha Yojana",
+      "pq_mentions": 24,
+      "pib_release_mentions": 0
+    },
+    {
+      "term": "PMGDISHA",
+      "pq_mentions": 24,
+      "pib_release_mentions": 2
+    },
+    {
+      "term": "Pradhan Mantri Gramin Sadak Yojana",
+      "pq_mentions": 24,
+      "pib_release_mentions": 0
+    },
+    {
+      "term": "PM-POSHAN",
+      "pq_mentions": 23,
+      "pib_release_mentions": 1
+    },
+    {
+      "term": "PM-AASHA",
+      "pq_mentions": 23,
+      "pib_release_mentions": 7
+    },
+    {
+      "term": "PMGSY-III",
+      "pq_mentions": 22,
+      "pib_release_mentions": 3
+    },
+    {
+      "term": "National Critical Mineral Mission",
+      "pq_mentions": 21,
+      "pib_release_mentions": 8
+    },
+    {
+      "term": "PMJJBY",
+      "pq_mentions": 21,
+      "pib_release_mentions": 3
+    },
+    {
+      "term": "National Broadband Mission",
+      "pq_mentions": 21,
+      "pib_release_mentions": 2
+    },
+    {
+      "term": "PM-VIKAS",
+      "pq_mentions": 21,
+      "pib_release_mentions": 2
+    },
+    {
+      "term": "Export Promotion Mission",
+      "pq_mentions": 21,
+      "pib_release_mentions": 9
+    },
+    {
+      "term": "National Quantum Mission",
+      "pq_mentions": 20,
+      "pib_release_mentions": 17
+    },
+    {
+      "term": "Green India Mission",
+      "pq_mentions": 20,
+      "pib_release_mentions": 2
+    },
+    {
+      "term": "Nagar Van Yojana",
+      "pq_mentions": 20,
+      "pib_release_mentions": 0
+    }
+  ],
+  "note": "PIB (Press Information Bureau) press-release index built for a separate project, 124,857 releases 2017-present, refreshed to match this dataset's window. External Affairs' near-zero release count is a known gap in that index for MEA specifically, not a real signal. Scheme matching is release-title text only (a floor on PIB coverage, not a ceiling)."
+}

@@ -3,7 +3,7 @@
 **Total Parliament Questions:** 1,271  
 **Lok Sabha:** 494 · **Rajya Sabha:** 777
 
-**Knowledge-graph community:** 2 (see `docs/ANALYSIS.md` for what the communities mean)
+**Knowledge-graph community:** 3 (see `docs/ANALYSIS.md` for what the communities mean)
 
 **Starred vs. unstarred:** 98 starred / 1,173 unstarred (7.7% starred — starred questions get an oral answer and floor follow-up; each MP may ask only one per sitting day).
 
@@ -15,12 +15,12 @@ Ministries this party asks about disproportionately more than its overall share 
 |---|---:|---:|
 | ATOMIC ENERGY | 26 | 2.78x |
 | SPACE | 11 | 2.16x |
-| COMMUNICATIONS | 36 | 2.12x |
+| COMMUNICATIONS | 46 | 1.92x |
 | PORTS, SHIPPING AND WATERWAYS | 31 | 1.88x |
 | ELECTRONICS AND INFORMATION TECHNOLOGY | 37 | 1.78x |
 | CHEMICALS AND FERTILIZERS | 44 | 1.67x |
 | FISHERIES, ANIMAL HUSBANDRY AND DAIRYING | 36 | 1.65x |
-| ROAD TRANSPORT & HIGH WAYS | 26 | 1.57x |
+| EARTH SCIENCES | 14 | 1.54x |
 
 ## Recurring subject-line topics
 

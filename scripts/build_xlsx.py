@@ -21,7 +21,10 @@ BODY_FONT = Font(name=FONT_NAME, size=10)
 
 
 def df(name):
-    return pd.read_csv(PROC / name)
+    path = PROC / name
+    if not path.exists():
+        return pd.DataFrame()
+    return pd.read_csv(path)
 
 
 def main():
@@ -37,6 +40,8 @@ def main():
         "KG Party Communities": df("kg_party_communities.csv"),
         "KG Ministry Co-occurrence": df("kg_ministry_cooccurrence.csv"),
         "KG Cross-Party Bridges": df("kg_mp_coasking_bridges.csv"),
+        "PIB Ministry Comparison": df("pib_ministry_comparison.csv"),
+        "PIB Scheme Comparison": df("pib_scheme_comparison.csv"),
         "Unmatched Members": df("unmatched_members.csv"),
         "LS Questions (raw)": df("ls_questions_enriched.csv"),
         "RS Questions (raw)": df("rs_questions_enriched.csv"),
@@ -70,6 +75,11 @@ def main():
         ("  community clusters, ministry co-occurrence, and cross-party MP co-asking pairs.", False, 10),
         ("  Unmatched Members — the 138 LS questions (0.4%) whose asking MP's name could not", False, 10),
         ("    be matched to the member roster; excluded from party/state breakdowns.", False, 10),
+        ("  PIB Ministry/Scheme Comparison — PQ volume vs PIB (Press Information Bureau) press", False, 10),
+        ("    releases over the same window: which ministries/schemes get heavy parliamentary", False, 10),
+        ("    scrutiny relative to how much they self-publicize, and vice versa. See caveats in", False, 10),
+        ("    docs/ANALYSIS.md — the External Affairs row is a known PIB-index gap, not reality,", False, 10),
+        ("    and scheme matching is title-text-only (a floor on PIB coverage, not a ceiling).", False, 10),
         ("  LS/RS Questions (raw) — one row per question, enriched with party/state.", False, 10),
         ("    question_text/answer_text are populated for Rajya Sabha only — the Lok Sabha API", False, 10),
         ("    used here doesn't expose full text, only subject lines (see repo README).", False, 10),

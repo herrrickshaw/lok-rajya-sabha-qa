@@ -3,7 +3,7 @@
 **Total Parliament Questions:** 135  
 **Lok Sabha:** 0 · **Rajya Sabha:** 135
 
-**Knowledge-graph community:** 2 (see `docs/ANALYSIS.md` for what the communities mean)
+**Knowledge-graph community:** 3 (see `docs/ANALYSIS.md` for what the communities mean)
 
 **Starred vs. unstarred:** 13 starred / 122 unstarred (9.6% starred — starred questions get an oral answer and floor follow-up; each MP may ask only one per sitting day).
 

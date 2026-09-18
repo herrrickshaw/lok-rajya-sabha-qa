@@ -22,11 +22,16 @@ PARTY_DOCS.mkdir(exist_ok=True)
 
 
 def read_csv(name):
-    with open(PROC / name, newline="", encoding="utf-8") as f:
+    path = PROC / name
+    if not path.exists():
+        return []
+    with open(path, newline="", encoding="utf-8") as f:
         return list(csv.DictReader(f))
 
 
 def load_table(con, name, csv_name):
+    if not (PROC / csv_name).exists():
+        return
     con.execute(f"DROP TABLE IF EXISTS {name}")
     con.execute(
         f"CREATE TABLE {name} AS SELECT * FROM read_csv_auto(?, header=true, sample_size=-1)",
@@ -55,6 +60,8 @@ def main():
     load_table(con, "kg_party_communities", "kg_party_communities.csv")
     load_table(con, "kg_ministry_cooccurrence", "kg_ministry_cooccurrence.csv")
     load_table(con, "kg_mp_coasking_bridges", "kg_mp_coasking_bridges.csv")
+    load_table(con, "pib_ministry_comparison", "pib_ministry_comparison.csv")
+    load_table(con, "pib_scheme_comparison", "pib_scheme_comparison.csv")
 
     # A single tidy view across both chambers -- the "queries and answers" table.
     con.execute(
@@ -168,6 +175,8 @@ def build_markdown(con):
     top_states = sorted(state_summary, key=lambda r: -int(r["questions"]))[:15]
     top_pagerank_ministries = [r for r in pagerank if r["type"] == "ministry"][:10]
     top_bridges = sorted(bridges, key=lambda r: -int(r["joint_questions"]))[:10]
+    pib_ministry = read_csv("pib_ministry_comparison.csv")
+    pib_scheme = read_csv("pib_scheme_comparison.csv")
 
     by_comm = defaultdict(list)
     for r in communities:
@@ -249,6 +258,55 @@ def build_markdown(con):
 
     lines += [
         "",
+        "## Parliament questions as a text source, cross-checked against PIB",
+        "",
+        "Treating the PQ corpus as real text (not just metadata rows) rather than only counting it opens a",
+        "direct comparison against what ministries proactively publish through the Press Information Bureau",
+        "over the same window (June 2024 – present, PIB index refreshed to match). Two cuts:",
+        "",
+        "**Ministry level — PQ questions per PIB release.** A high ratio means a ministry draws a lot of",
+        "parliamentary scrutiny relative to how much it self-publicizes; a low ratio means the opposite —",
+        "heavy self-promotion, comparatively little PQ pressure.",
+        "",
+        "| Ministry | PQ questions | PIB releases | PQ per PIB release |",
+        "|---|---:|---:|---:|",
+    ]
+    ranked = [r for r in pib_ministry if r["pq_per_pib_release"]]
+    for r in sorted(ranked, key=lambda r: -float(r["pq_per_pib_release"]))[:8]:
+        lines.append(f"| {r['ministry']} | {int(r['pq_questions']):,} | {r['pib_releases_since_2024_06']} | {float(r['pq_per_pib_release']):.1f}x |")
+    lines += ["", "*(most self-publicized relative to PQ scrutiny — low end of the same ratio)*", "", "| Ministry | PQ questions | PIB releases | PQ per PIB release |", "|---|---:|---:|---:|"]
+    for r in sorted(ranked, key=lambda r: float(r["pq_per_pib_release"]))[:8]:
+        lines.append(f"| {r['ministry']} | {int(r['pq_questions']):,} | {r['pib_releases_since_2024_06']} | {float(r['pq_per_pib_release']):.2f}x |")
+
+    pq_only = [r for r in pib_scheme if int(r["pib_release_mentions"]) == 0][:12]
+    overlap = [r for r in pib_scheme if int(r["pib_release_mentions"]) > 0][:12]
+    lines += [
+        "",
+        "*Note: External Affairs' near-zero PIB count (2 releases) is a known gap in the underlying PIB index",
+        "for that ministry specifically, not a real signal — see caveats below.*",
+        "",
+        "**Named scheme/programme level.** Scheme and programme names extracted directly from PQ subject",
+        "lines and (for Rajya Sabha) full question text via pattern-matching (`Pradhan Mantri ... Yojana`,",
+        "`... Mission`, `... Abhiyan`, `PM-<X>` acronyms), then checked for whether that exact term also",
+        "appears in a PIB release *title* in the same window:",
+        "",
+        "| Scheme/programme (from PQ text) | PQ mentions | PIB release-title mentions |",
+        "|---|---:|---:|",
+    ]
+    for r in overlap:
+        lines.append(f"| {r['term']} | {r['pq_mentions']} | {r['pib_release_mentions']} |")
+    lines += ["", "*PQ-scrutinised terms with no matching PIB release title in the same window:*", ""]
+    for r in pq_only:
+        lines.append(f"- {r['term']} ({r['pq_mentions']} PQ mentions)")
+    lines += [
+        "",
+        "This is a **title-text match, not a content match** — a PIB release can genuinely cover a scheme",
+        "without using its exact name (or using a different abbreviation) in the headline, so the PQ-only",
+        "list above is a floor, not proof of zero coverage. Several of these (PM-SGMBY, PM-SHRI) are",
+        "abbreviations PQ text uses that PIB's own headlines likely spell out differently — check",
+        "`data/processed/pib_scheme_comparison.csv` and the full-text PDF before citing a specific scheme as",
+        "uncovered.",
+        "",
         "## Known gaps",
         "",
         "- **Lok Sabha question/answer full text is not in this dataset.** The `api_ls` listing endpoint used to "
@@ -264,6 +322,16 @@ def build_markdown(con):
         "excluded from party/state breakdowns.",
         "- Party attribution for a jointly-tabled Lok Sabha question uses the first-listed (lead) member only, "
         "to avoid one question inflating multiple parties' counts.",
+        "- **The PIB comparison's Ministry of External Affairs count (2 releases since June 2024) is a data "
+        "gap, not reality** — MEA is one of PIB's most active posters; the underlying index "
+        "(`pib_index.sqlite`, built for a separate project) under-captures MEA specifically throughout its "
+        "history, not just this window. Treat MEA's row in `pib_ministry_comparison.csv` as missing, not low.",
+        "- The scheme/topic-vs-PIB comparison matches on release **titles only** via substring search, not full "
+        "release body text — a real undercount of PIB coverage, especially for acronym-heavy PQ terms (e.g. "
+        "PM-SGMBY, PM-SHRI) that PIB headlines likely spell out in full.",
+        "- \"Ministry of Planning\" and the one \"Prime Minister\" ministry-label row genuinely have ~0 matching "
+        "PIB releases in this window — not a matching bug, just a near-dormant PIB presence for Planning and "
+        "a mislabelled single row for PM.",
         "",
     ]
     (DOCS / "ANALYSIS.md").write_text("\n".join(lines))

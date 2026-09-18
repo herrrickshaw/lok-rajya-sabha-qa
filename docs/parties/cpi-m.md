@@ -17,10 +17,10 @@ Ministries this party asks about disproportionately more than its overall share 
 | EXTERNAL AFFAIRS | 40 | 2.10x |
 | FINANCE | 87 | 2.08x |
 | PETROLEUM AND NATURAL GAS | 37 | 1.75x |
-| ROAD TRANSPORT & HIGH WAYS | 21 | 1.46x |
 | LABOUR AND EMPLOYMENT | 42 | 1.44x |
 | CIVIL AVIATION | 56 | 1.42x |
 | RAILWAYS | 76 | 1.41x |
+| CORPORATE AFFAIRS | 19 | 1.39x |
 
 ## Recurring subject-line topics
 

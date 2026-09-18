@@ -13,14 +13,14 @@ Ministries this party asks about disproportionately more than its overall share 
 
 | Ministry | Questions | Lift |
 |---|---:|---:|
-| PERSONNEL,PUBLIC GRIEVANCES AND PENSIONS | 15 | 2.22x |
+| PERSONNEL, PUBLIC GRIEVANCES AND PENSIONS | 25 | 2.09x |
 | PLANNING | 19 | 2.06x |
 | MINORITY AFFAIRS | 41 | 1.95x |
-| PERSONNEL, PUBLIC GRIEVANCES AND PENSIONS | 10 | 1.92x |
 | DEFENCE | 13 | 1.78x |
 | EDUCATION | 167 | 1.52x |
 | AGRICULTURE AND FARMERS WELFARE | 164 | 1.52x |
 | JAL SHAKTI | 116 | 1.48x |
+| PETROLEUM AND NATURAL GAS | 63 | 1.41x |
 
 ## Recurring subject-line topics
 

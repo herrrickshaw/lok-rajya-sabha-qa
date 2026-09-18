@@ -3,7 +3,7 @@
 **Total Parliament Questions:** 89  
 **Lok Sabha:** 28 · **Rajya Sabha:** 61
 
-**Knowledge-graph community:** 2 (see `docs/ANALYSIS.md` for what the communities mean)
+**Knowledge-graph community:** 1 (see `docs/ANALYSIS.md` for what the communities mean)
 
 **Starred vs. unstarred:** 7 starred / 82 unstarred (7.9% starred — starred questions get an oral answer and floor follow-up; each MP may ask only one per sitting day).
 
@@ -13,7 +13,7 @@ Ministries this party asks about disproportionately more than its overall share 
 
 | Ministry | Questions | Lift |
 |---|---:|---:|
-| ROAD TRANSPORT & HIGH WAYS | 10 | 8.61x |
+| ROAD TRANSPORT AND HIGHWAYS | 13 | 4.21x |
 
 ## Recurring subject-line topics
 

@@ -218,6 +218,7 @@
     <button role="tab" data-tab="ministries" aria-selected="false">Ministries &amp; States</button>
     <button role="tab" data-tab="topics" aria-selected="false">Topics</button>
     <button role="tab" data-tab="graph" aria-selected="false">Knowledge Graph</button>
+    <button role="tab" data-tab="pib" aria-selected="false">vs. PIB</button>
   </nav>
 </header>
 
@@ -372,6 +373,45 @@
     </div>
   </section>
 
+  <section class="tab" id="tab-pib">
+    <h2>Questions vs. press releases</h2>
+    <p class="lede">The PQ text itself is a data source, not just something to count. Compared against every PIB (Press Information Bureau) press release from the same window <span id="pib-since-note"></span>: which ministries and named schemes draw heavy parliamentary scrutiny relative to how much government proactively self-publicizes them &mdash; and where the two barely overlap at all.</p>
+
+    <div class="caveat" id="pib-caveat"></div>
+
+    <div class="panel">
+      <h3>Ministry: PQ questions per PIB release</h3>
+      <p class="note-inline" style="margin-bottom:12px">High = heavily questioned relative to how much the ministry publicizes itself; low = the reverse (heavy self-promotion, comparatively little PQ pressure). Minister-in-charge from a sibling directory (igod.gov.in who's-who), not this dataset's own APIs. Sort any column.</p>
+      <div class="table-scroll">
+        <table id="pib-ministry-table">
+          <thead><tr>
+            <th data-key="ministry" data-type="str">Ministry<span class="arrow">▾</span></th>
+            <th data-key="minister" data-type="str">Minister-in-charge<span class="arrow">▾</span></th>
+            <th data-key="pq_questions" data-type="num" class="num">PQ questions<span class="arrow">▾</span></th>
+            <th data-key="pib_releases" data-type="num" class="num">PIB releases<span class="arrow">▾</span></th>
+            <th data-key="ratio" data-type="num" class="num" aria-sort="descending">PQ per PIB release<span class="arrow">▾</span></th>
+          </tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3>Named schemes: raised in Parliament vs named in a PIB headline</h3>
+      <p class="note-inline" style="margin-bottom:12px">Scheme/programme names extracted directly from PQ subject lines (Lok Sabha) and full question text (Rajya Sabha), matched against PIB release <em>titles</em> in the same window &mdash; a floor on PIB coverage, not a ceiling: a release can cover a scheme without naming it in the headline.</p>
+      <div class="table-scroll">
+        <table id="pib-scheme-table">
+          <thead><tr>
+            <th data-key="term" data-type="str">Scheme / programme<span class="arrow">▾</span></th>
+            <th data-key="pq_mentions" data-type="num" class="num" aria-sort="descending">PQ mentions<span class="arrow">▾</span></th>
+            <th data-key="pib_release_mentions" data-type="num" class="num">PIB title mentions<span class="arrow">▾</span></th>
+          </tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
   <footer>
     <div id="foot-note"></div>
     <p>Sources: sansad.in (<code>api_ls</code> question &amp; member APIs) and rsdoc.nic.in (Rajya Sabha question search), cross-referenced against both houses' current and former member rosters for party and state. Party names reconciled across the two chambers' independent abbreviation conventions where they diverged (e.g. Shiv Sena (UBT), YSRCP, NCP (SP)). Full methodology, raw data and the graph-analysis scripts are in the repository this page ships with.</p>
@@ -381,12 +421,14 @@
 
 <script id="app-data" type="application/json">{{DATA_JSON}}</script>
 <script id="graph-data" type="application/json">{{GRAPH_JSON}}</script>
+<script id="pib-data" type="application/json">{{PIB_JSON}}</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
 <script>
 (function(){
   "use strict";
   var DATA = JSON.parse(document.getElementById('app-data').textContent);
   var GRAPH = JSON.parse(document.getElementById('graph-data').textContent);
+  var PIB = JSON.parse(document.getElementById('pib-data').textContent);
 
   var fmt = new Intl.NumberFormat('en-IN');
   function esc(s){ return String(s==null?'':s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
@@ -399,6 +441,7 @@
       document.querySelectorAll('section.tab').forEach(function(s){ s.classList.remove('active'); });
       document.getElementById('tab-'+btn.dataset.tab).classList.add('active');
       if (btn.dataset.tab === 'graph' && !window.__kgRendered) { renderKGraph(); window.__kgRendered = true; }
+      if (btn.dataset.tab === 'pib' && !window.__pibRendered) { renderPIB(); window.__pibRendered = true; }
     });
   });
 
@@ -677,6 +720,34 @@
       '<span class="item"><span class="sw" style="background:var(--gold)"></span>Ministry</span>' +
       commColors.map(function(c,i){ return '<span class="item"><span class="sw" style="background:'+c+'"></span>Party community '+(i+1)+'</span>'; }).join('') +
       '<span class="item">Edge width ∝ lift (how disproportionate the focus is)</span>';
+  }
+
+  // ---------- vs. PIB tab ----------
+  function renderPIB(){
+    document.getElementById('pib-since-note').textContent = '(' + PIB.since + ' – present)';
+    document.getElementById('pib-caveat').innerHTML =
+      '<b>Read before citing a number from this tab:</b> ' + esc(PIB.note);
+
+    var minRows = (PIB.ministry_comparison || []).map(function(r){
+      return {
+        ministry: r.ministry,
+        minister: r.minister_in_charge || '—',
+        pq_questions: r.pq_questions,
+        pib_releases: r.pib_releases_since_2024_06,
+        ratio: r.pq_per_pib_release == null ? -1 : r.pq_per_pib_release,
+      };
+    }).filter(function(r){ return r.pib_releases > 0; });
+    makeSortable(document.getElementById('pib-ministry-table'), minRows, function(r){
+      return '<tr><td>'+esc(r.ministry)+'</td><td>'+esc(r.minister)+'</td><td class="num tabular">'+fmt.format(r.pq_questions)+'</td>' +
+        '<td class="num tabular">'+fmt.format(r.pib_releases)+'</td>' +
+        '<td class="num tabular">'+r.ratio.toFixed(2)+'x</td></tr>';
+    }, 'ratio', 'desc');
+
+    var schemeRows = PIB.scheme_comparison || [];
+    makeSortable(document.getElementById('pib-scheme-table'), schemeRows, function(r){
+      return '<tr><td>'+esc(r.term)+'</td><td class="num tabular">'+fmt.format(r.pq_mentions)+'</td>' +
+        '<td class="num tabular">'+fmt.format(r.pib_release_mentions)+'</td></tr>';
+    }, 'pq_mentions', 'desc');
   }
 
   // ---------- Footer ----------

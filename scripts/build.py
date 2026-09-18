@@ -81,14 +81,25 @@ def canonical_state(name: str) -> str:
     return STATE_ALIASES.get(collapsed.upper(), collapsed) or "Unknown"
 
 
+# Beyond case/spacing, LS and RS spell a couple of ministries differently
+# enough that a plain uppercase-and-collapse misses the merge.
+MINISTRY_ALIASES = {
+    # keys are post-normalization (after ',' and '&' handling above)
+    "ROAD TRANSPORT AND HIGH WAYS": "ROAD TRANSPORT AND HIGHWAYS",
+    "COMMUNICATION": "COMMUNICATIONS",
+}
+
+
 def canonical_ministry(name: str) -> str:
     """LS ('ministry') and RS ('min_name') fields differ in case/spacing for the
     same ministry (e.g. 'HOUSING AND URBAN AFFAIRS' vs 'Housing and Urban
     Affairs'), which would otherwise fragment ministry-level counts."""
     if not name:
         return "Unknown"
-    collapsed = re.sub(r"\s+", " ", name.strip())
-    return collapsed.upper() or "Unknown"
+    normalized = re.sub(r",\s*", ", ", name.strip())  # "Personnel,Public..." vs "Personnel, Public..." must merge
+    normalized = re.sub(r"\s*&\s*", " AND ", normalized)  # "Law & Justice" vs "Law and Justice" must merge
+    collapsed = re.sub(r"\s+", " ", normalized).upper() or "Unknown"
+    return MINISTRY_ALIASES.get(collapsed, collapsed)
 
 
 TAG_RE = re.compile(r"<[^>]+>")

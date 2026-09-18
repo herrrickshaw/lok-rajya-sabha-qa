@@ -13,9 +13,9 @@ Ministries this party asks about disproportionately more than its overall share 
 
 | Ministry | Questions | Lift |
 |---|---:|---:|
-| ROAD TRANSPORT & HIGH WAYS | 16 | 4.14x |
 | CHEMICALS AND FERTILIZERS | 12 | 1.95x |
 | MICRO, SMALL AND MEDIUM ENTERPRISES | 10 | 1.77x |
+| ROAD TRANSPORT AND HIGHWAYS | 16 | 1.56x |
 | ENVIRONMENT, FOREST AND CLIMATE CHANGE | 14 | 1.55x |
 | HOUSING AND URBAN AFFAIRS | 14 | 1.54x |
 | HEALTH AND FAMILY WELFARE | 22 | 1.24x |

@@ -14,10 +14,10 @@ Ministries this party asks about disproportionately more than its overall share 
 | Ministry | Questions | Lift |
 |---|---:|---:|
 | INFORMATION AND BROADCASTING | 42 | 2.11x |
-| PERSONNEL, PUBLIC GRIEVANCES AND PENSIONS | 12 | 2.11x |
 | EXTERNAL AFFAIRS | 84 | 1.91x |
 | FINANCE | 166 | 1.72x |
 | MINORITY AFFAIRS | 39 | 1.70x |
+| PERSONNEL, PUBLIC GRIEVANCES AND PENSIONS | 22 | 1.68x |
 | DEVELOPMENT OF NORTH EASTERN REGION | 12 | 1.59x |
 | STATISTICS AND PROGRAMME IMPLEMENTATION | 20 | 1.49x |
 | HOME AFFAIRS | 65 | 1.44x |

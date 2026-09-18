@@ -3,7 +3,7 @@
 **Total Parliament Questions:** 686  
 **Lok Sabha:** 317 · **Rajya Sabha:** 369
 
-**Knowledge-graph community:** 2 (see `docs/ANALYSIS.md` for what the communities mean)
+**Knowledge-graph community:** 3 (see `docs/ANALYSIS.md` for what the communities mean)
 
 **Starred vs. unstarred:** 62 starred / 624 unstarred (9.0% starred — starred questions get an oral answer and floor follow-up; each MP may ask only one per sitting day).
 
@@ -17,10 +17,10 @@ Ministries this party asks about disproportionately more than its overall share 
 | HOME AFFAIRS | 20 | 1.65x |
 | RAILWAYS | 54 | 1.61x |
 | HOUSING AND URBAN AFFAIRS | 32 | 1.52x |
-| COMMUNICATIONS | 13 | 1.42x |
 | CIVIL AVIATION | 32 | 1.30x |
 | ENVIRONMENT, FOREST AND CLIMATE CHANGE | 26 | 1.24x |
-| ROAD TRANSPORT AND HIGHWAYS | 18 | 1.21x |
+| COMMUNICATIONS | 16 | 1.24x |
+| HEALTH AND FAMILY WELFARE | 49 | 1.20x |
 
 ## Recurring subject-line topics
 

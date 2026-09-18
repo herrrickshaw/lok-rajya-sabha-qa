@@ -36,6 +36,7 @@ Per Rules 32-54 of the Lok Sabha's Rules of Procedure (Rules 47-50 in the Rajya 
 | AGRICULTURE AND FARMERS WELFARE | 2,754 |
 | FINANCE | 2,253 |
 | CIVIL AVIATION | 2,129 |
+| ROAD TRANSPORT AND HIGHWAYS | 2,061 |
 | JAL SHAKTI | 1,997 |
 | HOUSING AND URBAN AFFAIRS | 1,823 |
 | ENVIRONMENT, FOREST AND CLIMATE CHANGE | 1,809 |
@@ -43,7 +44,6 @@ Per Rules 32-54 of the Lok Sabha's Rules of Procedure (Rules 47-50 in the Rajya 
 | RURAL DEVELOPMENT | 1,389 |
 | COMMERCE AND INDUSTRY | 1,356 |
 | CONSUMER AFFAIRS, FOOD AND PUBLIC DISTRIBUTION | 1,332 |
-| ROAD TRANSPORT AND HIGHWAYS | 1,286 |
 | WOMEN AND CHILD DEVELOPMENT | 1,271 |
 
 ## Top states by their MPs' question volume
@@ -74,9 +74,9 @@ The flat rankings above answer "who asks the most" and "about what, in aggregate
 
 **2. Which parties cluster together by what they ask about**, independent of size or stated ideology — Louvain community detection on party-ministry lift vectors (not raw counts, which are swamped by every party's shared interest in Health/Railways/Education) finds:
 
-- **Community 1** (13 parties, a left- and minority-interest bloc): AIMIM, AITC, ASP (KR), BAP, CPI, CPI(M), CPI(ML)(L), IUML, RLM, RSP, SAD, SP, VCK
-- **Community 2** (24 parties, a broad mainstream bloc containing both the ruling party and the principal opposition): AAP, AIADMK, BJD, BJP, DMK, INC, IND., J&KNC, JD(S), JD(U), JSP, KC(M), KEC, LJSP(RV), MDMK, NCP, NCP(SP), NOM., RJD, RLD, SHS(UBT), SS, TDP, YSRCP
-- **Community 3** (8 parties, a smaller regional-development cluster): AGP, AJSU, JMM, PMK, RLP, SKM, UPPL, Unknown
+- **Community 1** (18 parties, a left- and minority-interest bloc): AIMIM, AITC, AJSU, ASP (KR), BAP, CPI, CPI(M), CPI(ML)(L), IUML, J&KNC, JMM, LJSP(RV), PMK, RJD, RLM, RLP, SAD, SP
+- **Community 2** (4 parties, a broad mainstream bloc containing both the ruling party and the principal opposition): AGP, SKM, UPPL, Unknown
+- **Community 3** (23 parties, a smaller regional-development cluster): AAP, AIADMK, BJD, BJP, DMK, INC, IND., JD(S), JD(U), JSP, KC(M), KEC, MDMK, NCP, NCP(SP), NOM., RLD, RSP, SHS(UBT), SS, TDP, VCK, YSRCP
 - **Community 4** (1 parties, outlier(s) whose profile doesn't resemble any cluster closely enough): BRS
 
 **3. Where MPs cross party lines** — Lok Sabha questions are occasionally tabled jointly by several MPs; a handful of those pairings cross party lines. Top cross-party co-asking pairs:
@@ -94,9 +94,87 @@ The flat rankings above answer "who asks the most" and "about what, in aggregate
 | Shri Mohite Patil Dhairyasheel Rajsinh | NCP(SP) | Shri Sanjay Dina Patil | SS | 179 |
 | Dr. Amol Ramsing Kolhe | NCP(SP) | Shri Sanjay Dina Patil | SS | 178 |
 
+## Parliament questions as a text source, cross-checked against PIB
+
+Treating the PQ corpus as real text (not just metadata rows) rather than only counting it opens a
+direct comparison against what ministries proactively publish through the Press Information Bureau
+over the same window (June 2024 – present, PIB index refreshed to match). Two cuts:
+
+**Ministry level — PQ questions per PIB release.** A high ratio means a ministry draws a lot of
+parliamentary scrutiny relative to how much it self-publicizes; a low ratio means the opposite —
+heavy self-promotion, comparatively little PQ pressure.
+
+| Ministry | PQ questions | PIB releases | PQ per PIB release |
+|---|---:|---:|---:|
+| EXTERNAL AFFAIRS | 1,026 | 2 | 513.0x |
+| CIVIL AVIATION | 2,129 | 188 | 11.3x |
+| HOUSING AND URBAN AFFAIRS | 1,823 | 303 | 6.0x |
+| EDUCATION | 2,802 | 506 | 5.5x |
+| RAILWAYS | 2,900 | 570 | 5.1x |
+| PETROLEUM AND NATURAL GAS | 1,138 | 257 | 4.4x |
+| HEALTH AND FAMILY WELFARE | 3,550 | 809 | 4.4x |
+| ROAD TRANSPORT AND HIGHWAYS | 2,061 | 471 | 4.4x |
+
+*(most self-publicized relative to PQ scrutiny — low end of the same ratio)*
+
+| Ministry | PQ questions | PIB releases | PQ per PIB release |
+|---|---:|---:|---:|
+| DEFENCE | 186 | 2234 | 0.08x |
+| SCIENCE AND TECHNOLOGY | 430 | 1418 | 0.30x |
+| PERSONNEL, PUBLIC GRIEVANCES AND PENSIONS | 305 | 808 | 0.38x |
+| INFORMATION AND BROADCASTING | 465 | 974 | 0.48x |
+| PARLIAMENTARY AFFAIRS | 67 | 139 | 0.48x |
+| STATISTICS AND PROGRAMME IMPLEMENTATION | 314 | 480 | 0.65x |
+| HOME AFFAIRS | 1,051 | 1147 | 0.92x |
+| STEEL | 334 | 349 | 0.96x |
+
+*Note: External Affairs' near-zero PIB count (2 releases) is a known gap in the underlying PIB index
+for that ministry specifically, not a real signal — see caveats below.*
+
+**Named scheme/programme level.** Scheme and programme names extracted directly from PQ subject
+lines and (for Rajya Sabha) full question text via pattern-matching (`Pradhan Mantri ... Yojana`,
+`... Mission`, `... Abhiyan`, `PM-<X>` acronyms), then checked for whether that exact term also
+appears in a PIB release *title* in the same window:
+
+| Scheme/programme (from PQ text) | PQ mentions | PIB release-title mentions |
+|---|---:|---:|
+| Jal Jeevan Mission | 376 | 68 |
+| PMAY-U | 315 | 14 |
+| Pradhan Mantri Awas Yojana | 303 | 19 |
+| PMAY-G | 249 | 32 |
+| PM-KISAN | 206 | 37 |
+| Pradhan Mantri Jan Arogya Yojana | 191 | 8 |
+| Pradhan Mantri Kaushal Vikas Yojana | 188 | 9 |
+| Pradhan Mantri Fasal Bima Yojana | 182 | 13 |
+| National Mission | 175 | 56 |
+| Smart Cities Mission | 164 | 8 |
+| PM-KUSUM | 155 | 7 |
+| Pradhan Mantri Gram Sadak Yojana | 152 | 13 |
+
+*PQ-scrutinised terms with no matching PIB release title in the same window:*
+
+- Samagra Shiksha Abhiyan (81 PQ mentions)
+- PM-SGMBY (65 PQ mentions)
+- PM-SHRI (60 PQ mentions)
+- Atal Mission (27 PQ mentions)
+- PM-SVANidhi (26 PQ mentions)
+- Pradhan Mantri Swasthya Suraksha Yojana (24 PQ mentions)
+- Pradhan Mantri Gramin Sadak Yojana (24 PQ mentions)
+- Nagar Van Yojana (20 PQ mentions)
+
+This is a **title-text match, not a content match** — a PIB release can genuinely cover a scheme
+without using its exact name (or using a different abbreviation) in the headline, so the PQ-only
+list above is a floor, not proof of zero coverage. Several of these (PM-SGMBY, PM-SHRI) are
+abbreviations PQ text uses that PIB's own headlines likely spell out differently — check
+`data/processed/pib_scheme_comparison.csv` and the full-text PDF before citing a specific scheme as
+uncovered.
+
 ## Known gaps
 
 - **Lok Sabha question/answer full text is not in this dataset.** The `api_ls` listing endpoint used to fetch all 34,720 LS questions only exposes the subject line, not the question or answer body — those live only in per-question PDFs (a different URL per question, with a random filename suffix on the 18th LS). Fetching and OCR'ing ~34,700 PDFs was out of scope for this pass; `docs/parties/*.md` and the topic tab work from subject-line text only for the Lok Sabha side.
 - **Rajya Sabha has full question text** (`question_text` in `rs_questions` / `all_questions`) but **not answer text** — `rsdoc.nic.in` returns `ans_text: null` for every record; answers are PDF-only there too (`answer_pdf_url`).
 - 138 of 34,720 Lok Sabha questions (0.4%) could not be matched to a roster member by name (honorific variants and, in a couple of cases, MPs who left office without a public former-member record) and are excluded from party/state breakdowns.
 - Party attribution for a jointly-tabled Lok Sabha question uses the first-listed (lead) member only, to avoid one question inflating multiple parties' counts.
+- **The PIB comparison's Ministry of External Affairs count (2 releases since June 2024) is a data gap, not reality** — MEA is one of PIB's most active posters; the underlying index (`pib_index.sqlite`, built for a separate project) under-captures MEA specifically throughout its history, not just this window. Treat MEA's row in `pib_ministry_comparison.csv` as missing, not low.
+- The scheme/topic-vs-PIB comparison matches on release **titles only** via substring search, not full release body text — a real undercount of PIB coverage, especially for acronym-heavy PQ terms (e.g. PM-SGMBY, PM-SHRI) that PIB headlines likely spell out in full.
+- "Ministry of Planning" and the one "Prime Minister" ministry-label row genuinely have ~0 matching PIB releases in this window — not a matching bug, just a near-dormant PIB presence for Planning and a mislabelled single row for PM.

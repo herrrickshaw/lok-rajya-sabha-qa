@@ -7,6 +7,12 @@ ministry, state and topic — plus a knowledge-graph layer on top that surfaces
 each party's *signature* ministries, which parties cluster together by what they
 ask about, and the rare MPs who co-sign questions across party lines.
 
+A further layer treats the question text itself as a data source rather than
+just something to count, and checks it against what ministries proactively
+publish through the Press Information Bureau over the same window — which
+ministries and named schemes draw heavy parliamentary scrutiny relative to how
+much they self-publicize, and where the two barely overlap.
+
 **Dashboard:** https://claude.ai/artifact/P81z1Qnfur4XS2uvgMakEr
 **Workbook:** `Lok_Rajya_Sabha_PQ_Analysis.xlsx`
 **Database:** `data/pq_ledger.duckdb`
@@ -31,6 +37,7 @@ facts against a reliable secondary source, not as data.)
 | `sansad.in` `api_ls` | All 18th Lok Sabha questions (34,720): subject, ministry, asking member(s), type, date, session — no full question/answer text, only the per-question PDF | Undocumented JSON API, found in the Next.js client bundle |
 | `sansad.in` `api_ls`/`api_rs` member endpoints | Both houses' current *and* former member rosters: party, state, constituency | Undocumented JSON API |
 | `rsdoc.nic.in` `Question/Search_Questions` | All Rajya Sabha questions for sessions 265–271 (24,661): full question text, ministry, MP code, type, date — answer text is `null` for every record; answers are PDF-only | Raw parametrised-SQL `whereclause` query param |
+| PIB (Press Information Bureau) press-release index | 124,857 releases, 2017–present, by ministry, refreshed to match this dataset's window (June 2024–present) | **External** — built for a separate project (`india-trade-sector-policy-recommendations/scripts/pib_index.py`), not part of this repo's own fetch scripts. `scripts/compare_pib.py` reads that project's `data/pib_index.sqlite` by local path; anyone reproducing this outside that environment needs an equivalent PIB index (see that script's docstring for the release-listing endpoint it scrapes) |
 
 None of these are documented public APIs — see the inline comments in
 `scripts/build.py` for the exact endpoints and how they were found (mining the
@@ -54,13 +61,18 @@ python3 scripts/build.py          # -> data/processed/*.csv, site/data.json
 # 3. Knowledge-graph analysis
 python3 scripts/build_graph.py    # -> data/processed/kg_*.csv, graph.graphml, site/graph.json
 
-# 4. Render the dashboard
+# 4. Compare against PIB press releases (needs the external PIB index, see
+#    the Data sources table below — skip this step if you don't have it;
+#    site/pib.json just needs to exist, even as {}, for step 5 to render)
+python3 scripts/compare_pib.py    # -> data/processed/pib_*.csv, site/pib.json
+
+# 5. Render the dashboard
 python3 scripts/render_site.py    # -> site/index.html
 
-# 5. Load everything into DuckDB + write markdown summaries
+# 6. Load everything into DuckDB + write markdown summaries
 python3 scripts/build_db.py       # -> data/pq_ledger.duckdb, docs/ANALYSIS.md, docs/parties/*.md
 
-# 6. Build the Excel workbook
+# 7. Build the Excel workbook
 python3 scripts/build_xlsx.py     # -> Lok_Rajya_Sabha_PQ_Analysis.xlsx
 ```
 
@@ -111,6 +123,45 @@ The dashboard's "Knowledge Graph" tab renders the signature-ministry network
 as an interactive force-directed graph (D3); `data/processed/graph.graphml`
 has the full graph for Gephi/Cytoscape.
 
+## Questions vs. press releases (vs. PIB)
+
+The dashboard's "vs. PIB" tab and `data/processed/pib_*.csv` compare the PQ
+corpus — treated as real text, not just metadata rows — against PIB (Press
+Information Bureau) press releases from the same window:
+
+- **Ministry level**: PQ questions per PIB release, plus the current
+  minister-in-charge (joined from `india-govt-yellow-pages`'s igod.gov.in
+  who's-who scrape) — completing the accountability chain this repo already
+  draws (Party → MP → Question → Ministry) one link further, to the minister
+  actually on the hook for an answer. External Affairs draws by far the most
+  PQ scrutiny relative to its PIB output (513x) — though see the caveat
+  below; Defence is the opposite extreme (0.08x — heavily self-publicized,
+  comparatively little formal questioning).
+- **Named scheme/programme level**: scheme names extracted from PQ subject
+  lines / full question text, checked against PIB release *titles* in the
+  same window — which schemes get parliamentary scrutiny with essentially no
+  matching PIB headline (Samagra Shiksha Abhiyan, PM-SGMBY, PM-SHRI…) versus
+  which show up heavily in both (Jal Jeevan Mission, PM-KISAN, PMAY).
+
+Full tables: `docs/ANALYSIS.md`, `pib_ministry_comparison.csv` /
+`pib_scheme_comparison.csv`, or the `pib_ministry_comparison` /
+`pib_scheme_comparison` DuckDB tables.
+
+**Comparable data sources surveyed but not (yet) integrated** — other
+ministry-level sources on this machine that could extend this further:
+MeitY/DoT/DPIIT publish full scheme content behind a headless `wp-json` CMS
+API on otherwise JS-shell sites (`<site>/cms/wp-json/wp/v2/schemes_and_services`);
+PARIVESH (`parivesh.nic.in`) has an open, no-auth bulk endpoint for
+environment/forest clearance proposals — a natural cross-check for
+Environment/Forest-ministry PQs; NITI Aayog's India Climate & Energy
+Dashboard (`iced.niti.gov.in`, AES-encrypted API) has official coal/energy/
+GHG series for Coal- and Environment-ministry PQ fact-checking; a prior PLI
+beneficiary-roster harvest (Lok/Rajya Sabha Q&A + PIB, `LEAD_LIST.md` in
+`india-trade-sector-policy-recommendations`) already has verified per-scheme
+company rosters for many of the exact schemes this repo's topic extraction
+surfaces (PLI, Semiconductor Mission, etc.). None of these are wired in here
+— they're a menu for a follow-up pass, not a claim that this repo uses them.
+
 ## Known gaps
 
 - **Lok Sabha question/answer full text isn't in this dataset.** The listing
@@ -128,3 +179,14 @@ has the full graph for Gephi/Cytoscape.
 - Ministry-level is the topic granularity for the headline rankings; the
   "Topics" tab / `topic_keywords.csv` layer a lighter subject-line keyword
   extraction on top for a finer (if noisier) cut.
+- **The PIB comparison's External Affairs count (2 releases since June 2024)
+  is a data gap in the sibling index, not reality** — MEA is one of PIB's
+  most active posters; that index under-captures MEA specifically across its
+  whole 2017–present history, not just this window.
+- **Scheme-vs-PIB matching is release-title text only**, a floor on PIB
+  coverage not a ceiling — acronym-heavy PQ terms (PM-SGMBY, PM-SHRI) likely
+  appear in PIB headlines spelled out differently.
+- **Minister-in-charge is a point-in-time snapshot from a sibling repo's
+  scrape** (`india-govt-yellow-pages`), not refreshed by anything in this
+  repo — a reshuffle after that scrape won't be reflected here. 4 of 56
+  ministries have no matched minister row.

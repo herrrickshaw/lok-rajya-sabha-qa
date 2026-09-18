@@ -3,7 +3,7 @@
 **Total Parliament Questions:** 1,018  
 **Lok Sabha:** 851 · **Rajya Sabha:** 167
 
-**Knowledge-graph community:** 2 (see `docs/ANALYSIS.md` for what the communities mean)
+**Knowledge-graph community:** 3 (see `docs/ANALYSIS.md` for what the communities mean)
 
 **Starred vs. unstarred:** 83 starred / 935 unstarred (8.2% starred — starred questions get an oral answer and floor follow-up; each MP may ask only one per sitting day).
 
@@ -13,9 +13,9 @@ Ministries this party asks about disproportionately more than its overall share 
 
 | Ministry | Questions | Lift |
 |---|---:|---:|
-| ROAD TRANSPORT AND HIGHWAYS | 41 | 1.86x |
 | RAILWAYS | 79 | 1.59x |
 | TOURISM | 27 | 1.46x |
+| ROAD TRANSPORT AND HIGHWAYS | 50 | 1.42x |
 | FISHERIES, ANIMAL HUSBANDRY AND DAIRYING | 23 | 1.31x |
 | PETROLEUM AND NATURAL GAS | 25 | 1.28x |
 | EXTERNAL AFFAIRS | 22 | 1.25x |
