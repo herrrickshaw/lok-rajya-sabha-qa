@@ -419,6 +419,7 @@
           <thead><tr>
             <th data-key="grade" data-type="str" aria-sort="ascending">Grade<span class="arrow">▾</span></th>
             <th data-key="scheme" data-type="str">Scheme<span class="arrow">▾</span></th>
+            <th data-key="minister" data-type="str">Minister-in-charge<span class="arrow">▾</span></th>
             <th data-key="pq_mentions" data-type="num" class="num">PQ mentions<span class="arrow">▾</span></th>
             <th data-key="outlay" data-type="num" class="num">Outlay (₹cr)<span class="arrow">▾</span></th>
             <th data-key="disbursed_pct" data-type="num" class="num">Disbursed<span class="arrow">▾</span></th>
@@ -11279,6 +11280,7 @@
     {
       "scheme": "PLI Pharmaceuticals (formulations)",
       "pq_ministry": "CHEMICALS AND FERTILIZERS",
+      "minister_in_charge": "Shri Jagat Prakash Nadda",
       "ministry_total_pq": 1235,
       "scheme_pq_mentions": 7,
       "outlay_rs_cr": 15000,
@@ -11290,6 +11292,7 @@
     {
       "scheme": "Electronics (LSEM + IT Hardware)",
       "pq_ministry": "ELECTRONICS AND INFORMATION TECHNOLOGY",
+      "minister_in_charge": "",
       "ministry_total_pq": 971,
       "scheme_pq_mentions": 9,
       "outlay_rs_cr": 11324,
@@ -11301,6 +11304,7 @@
     {
       "scheme": "PLI Bulk Drugs (KSMs/APIs)",
       "pq_ministry": "CHEMICALS AND FERTILIZERS",
+      "minister_in_charge": "Shri Jagat Prakash Nadda",
       "ministry_total_pq": 1235,
       "scheme_pq_mentions": 34,
       "outlay_rs_cr": 6940,
@@ -11312,6 +11316,7 @@
     {
       "scheme": "PLI Medical Devices",
       "pq_ministry": "CHEMICALS AND FERTILIZERS",
+      "minister_in_charge": "Shri Jagat Prakash Nadda",
       "ministry_total_pq": 1235,
       "scheme_pq_mentions": 5,
       "outlay_rs_cr": 3420,
@@ -11323,6 +11328,7 @@
     {
       "scheme": "PLI Food Processing",
       "pq_ministry": "FOOD PROCESSING INDUSTRIES",
+      "minister_in_charge": "Shri Chirag Paswan",
       "ministry_total_pq": 770,
       "scheme_pq_mentions": 29,
       "outlay_rs_cr": 10900,
@@ -11334,6 +11340,7 @@
     {
       "scheme": "PLI Telecom & Networking",
       "pq_ministry": "COMMUNICATIONS",
+      "minister_in_charge": "Shri Jyotiraditya M. Scindia",
       "ministry_total_pq": 1120,
       "scheme_pq_mentions": 11,
       "outlay_rs_cr": 12195,
@@ -11345,6 +11352,7 @@
     {
       "scheme": "PLI White Goods (ACs & LEDs)",
       "pq_ministry": "COMMERCE AND INDUSTRY",
+      "minister_in_charge": "Shri Piyush Goyal",
       "ministry_total_pq": 1356,
       "scheme_pq_mentions": 2,
       "outlay_rs_cr": 6238,
@@ -11356,6 +11364,7 @@
     {
       "scheme": "PLI Solar PV Modules",
       "pq_ministry": "NEW AND RENEWABLE ENERGY",
+      "minister_in_charge": "Shri Pralhad Joshi",
       "ministry_total_pq": 995,
       "scheme_pq_mentions": 20,
       "outlay_rs_cr": 24000,
@@ -11367,6 +11376,7 @@
     {
       "scheme": "PLI Drones",
       "pq_ministry": "CIVIL AVIATION",
+      "minister_in_charge": "Shri Kinjarapu Rammohan Naidu",
       "ministry_total_pq": 2129,
       "scheme_pq_mentions": 9,
       "outlay_rs_cr": 120,
@@ -11378,6 +11388,7 @@
     {
       "scheme": "PLI Automobile & Auto Components",
       "pq_ministry": "HEAVY INDUSTRIES",
+      "minister_in_charge": "Shri H. D. Kumaraswamy",
       "ministry_total_pq": 406,
       "scheme_pq_mentions": 28,
       "outlay_rs_cr": 25938,
@@ -11389,6 +11400,7 @@
     {
       "scheme": "PLI Specialty Steel",
       "pq_ministry": "STEEL",
+      "minister_in_charge": "Shri H. D. Kumaraswamy",
       "ministry_total_pq": 334,
       "scheme_pq_mentions": 14,
       "outlay_rs_cr": 6322,
@@ -11400,6 +11412,7 @@
     {
       "scheme": "PLI Textiles (MMF/technical)",
       "pq_ministry": "TEXTILES",
+      "minister_in_charge": "Shri Giriraj Singh",
       "ministry_total_pq": 699,
       "scheme_pq_mentions": 17,
       "outlay_rs_cr": 10683,
@@ -11411,6 +11424,7 @@
     {
       "scheme": "PLI ACC Battery Storage",
       "pq_ministry": "HEAVY INDUSTRIES",
+      "minister_in_charge": "Shri H. D. Kumaraswamy",
       "ministry_total_pq": 406,
       "scheme_pq_mentions": 11,
       "outlay_rs_cr": 18100,
@@ -11758,6 +11772,7 @@
         grade: r.grade,
         gradeRank: gradeRank[r.grade] != null ? gradeRank[r.grade] : 99,
         scheme: r.scheme,
+        minister: r.minister_in_charge || '—',
         pq_mentions: r.scheme_pq_mentions,
         outlay: r.outlay_rs_cr,
         disbursed_pct: r.disbursed_pct,
@@ -11765,7 +11780,7 @@
     });
     var pliTable = document.getElementById('pli-table');
     var pliSort = makeSortable(pliTable, pliRows, function(r){
-      return '<tr><td><b>'+esc(r.grade)+'</b></td><td>'+esc(r.scheme)+'</td>' +
+      return '<tr><td><b>'+esc(r.grade)+'</b></td><td>'+esc(r.scheme)+'</td><td>'+esc(r.minister)+'</td>' +
         '<td class="num tabular">'+fmt.format(r.pq_mentions)+'</td>' +
         '<td class="num tabular">'+fmt.format(r.outlay)+'</td>' +
         '<td class="num tabular">'+(r.disbursed_pct==null?'—':r.disbursed_pct.toFixed(1)+'%')+'</td></tr>';

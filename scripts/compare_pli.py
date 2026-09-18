@@ -16,11 +16,18 @@ snapshot (retrieved 2026-07-19) of
 india-trade-sector-policy-recommendations/data/pli_report_card_2026-07-19.json,
 included directly (it's 21KB) rather than referenced by external path, unlike
 the much larger PIB press-release index in compare_pib.py.
+
+The minister-in-charge for each scheme's administering ministry comes from
+the same ministry_registry.py used by compare_pib.py -- this integration
+didn't need to write its own igod-matching code, which is the whole point of
+having one registry instead of one bespoke join per script.
 """
 import csv
 import json
 import re
 from pathlib import Path
+
+from ministry_registry import load_registry
 
 ROOT = Path(__file__).resolve().parent.parent
 PROC = ROOT / "data" / "processed"
@@ -90,17 +97,19 @@ def main():
     rs_rows = read_csv("rs_questions_enriched.csv")
     corpus = [r["subject"] for r in ls_rows] + [r["subject"] for r in rs_rows] + [r.get("question_text") for r in rs_rows]
 
-    ministry_pq_totals = {r["ministry"]: int(r["questions"]) for r in read_csv("ministry_summary.csv")}
+    registry = load_registry()
 
     rows = []
     for scheme, ministry, patterns in SCHEME_MAP:
         gc = grade_by_scheme.get(scheme, {})
         pq_mentions = count_mentions(patterns, corpus)
+        rec = registry.get(ministry)
         rows.append(
             {
                 "scheme": scheme,
                 "pq_ministry": ministry,
-                "ministry_total_pq": ministry_pq_totals.get(ministry, 0),
+                "minister_in_charge": rec.minister_name if rec else "",
+                "ministry_total_pq": rec.pq_total_questions if rec else 0,
                 "scheme_pq_mentions": pq_mentions,
                 "outlay_rs_cr": gc.get("outlay_rs_cr"),
                 "disbursed_rs_cr": gc.get("disbursed_rs_cr"),
@@ -113,7 +122,7 @@ def main():
     grade_order = {"A": 0, "A-": 1, "B": 2, "B-": 3, "C": 4, "C+": 4, "D": 6, "D+": 5, "F": 7}
     rows.sort(key=lambda r: grade_order.get(r["grade"], 99))
 
-    fieldnames = ["scheme", "pq_ministry", "ministry_total_pq", "scheme_pq_mentions", "outlay_rs_cr", "disbursed_rs_cr", "disbursed_pct", "grade", "grade_evidence"]
+    fieldnames = ["scheme", "pq_ministry", "minister_in_charge", "ministry_total_pq", "scheme_pq_mentions", "outlay_rs_cr", "disbursed_rs_cr", "disbursed_pct", "grade", "grade_evidence"]
     with open(PROC / "pli_scheme_scrutiny.csv", "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=fieldnames)
         w.writeheader()

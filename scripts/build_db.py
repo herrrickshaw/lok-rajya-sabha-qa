@@ -318,12 +318,13 @@ def build_markdown(con):
         "flowing, not just approved. Joined against how often PQ text specifically names each",
         "scheme (`scripts/compare_pli.py`, keyword patterns per scheme — a conservative undercount):",
         "",
-        "| Grade | Scheme | PQ mentions | Outlay (₹cr) | Disbursed |",
-        "|---|---|---:|---:|---:|",
+        "| Grade | Scheme | Minister-in-charge | PQ mentions | Outlay (₹cr) | Disbursed |",
+        "|---|---|---|---:|---:|---:|",
     ]
     for r in pli_rows:
         disb = f"{float(r['disbursed_pct']):.1f}%" if r.get("disbursed_pct") else "—"
-        lines.append(f"| {r['grade']} | {r['scheme']} | {r['scheme_pq_mentions']} | {r['outlay_rs_cr']} | {disb} |")
+        minister = r.get("minister_in_charge") or "—"
+        lines.append(f"| {r['grade']} | {r['scheme']} | {minister} | {r['scheme_pq_mentions']} | {r['outlay_rs_cr']} | {disb} |")
     lines += [
         "",
         "The two worst grades (D and F) are not the two most heavily questioned — **PLI ACC Battery",

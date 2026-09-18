@@ -178,21 +178,21 @@ Incentive sub-schemes A–F on whether the government's own incentive money is a
 flowing, not just approved. Joined against how often PQ text specifically names each
 scheme (`scripts/compare_pli.py`, keyword patterns per scheme — a conservative undercount):
 
-| Grade | Scheme | PQ mentions | Outlay (₹cr) | Disbursed |
-|---|---|---:|---:|---:|
-| A | PLI Pharmaceuticals (formulations) | 7 | 15000 | 36.2% |
-| A- | Electronics (LSEM + IT Hardware) | 9 | 11324 | 137.3% |
-| B | PLI Bulk Drugs (KSMs/APIs) | 34 | 6940 | 0.8% |
-| B | PLI Medical Devices | 5 | 3420 | 4.6% |
-| B | PLI Food Processing | 29 | 10900 | 9.9% |
-| B | PLI Telecom & Networking | 11 | 12195 | 9.6% |
-| B- | PLI White Goods (ACs & LEDs) | 2 | 6238 | 4.5% |
-| B- | PLI Solar PV Modules | 20 | 24000 | 0.0% |
-| C+ | PLI Drones | 9 | 120 | 25.0% |
-| D+ | PLI Automobile & Auto Components | 28 | 25938 | 9.2% |
-| D | PLI Specialty Steel | 14 | 6322 | 0.8% |
-| D | PLI Textiles (MMF/technical) | 17 | 10683 | 0.5% |
-| F | PLI ACC Battery Storage | 11 | 18100 | 0.0% |
+| Grade | Scheme | Minister-in-charge | PQ mentions | Outlay (₹cr) | Disbursed |
+|---|---|---|---:|---:|---:|
+| A | PLI Pharmaceuticals (formulations) | Shri Jagat Prakash Nadda | 7 | 15000 | 36.2% |
+| A- | Electronics (LSEM + IT Hardware) | — | 9 | 11324 | 137.3% |
+| B | PLI Bulk Drugs (KSMs/APIs) | Shri Jagat Prakash Nadda | 34 | 6940 | 0.8% |
+| B | PLI Medical Devices | Shri Jagat Prakash Nadda | 5 | 3420 | 4.6% |
+| B | PLI Food Processing | Shri Chirag Paswan | 29 | 10900 | 9.9% |
+| B | PLI Telecom & Networking | Shri Jyotiraditya M. Scindia | 11 | 12195 | 9.6% |
+| B- | PLI White Goods (ACs & LEDs) | Shri Piyush Goyal | 2 | 6238 | 4.5% |
+| B- | PLI Solar PV Modules | Shri Pralhad Joshi | 20 | 24000 | 0.0% |
+| C+ | PLI Drones | Shri Kinjarapu Rammohan Naidu | 9 | 120 | 25.0% |
+| D+ | PLI Automobile & Auto Components | Shri H. D. Kumaraswamy | 28 | 25938 | 9.2% |
+| D | PLI Specialty Steel | Shri H. D. Kumaraswamy | 14 | 6322 | 0.8% |
+| D | PLI Textiles (MMF/technical) | Shri Giriraj Singh | 17 | 10683 | 0.5% |
+| F | PLI ACC Battery Storage | Shri H. D. Kumaraswamy | 11 | 18100 | 0.0% |
 
 The two worst grades (D and F) are not the two most heavily questioned — **PLI ACC Battery
 Storage (F, ₹18,100cr outlay, 0% disbursed) draws only 11 PQ mentions**, and **PLI White

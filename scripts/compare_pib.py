@@ -15,6 +15,12 @@ Two comparisons:
      in the same window: is this scheme showing up in both, PQ-only
      (scrutinised but not much self-publicized), or PIB-only (the reverse)?
 
+Ministry identity (which PIB label / minister a PQ ministry resolves to) is
+resolved once, for every source, in ministry_registry.py -- see that file's
+docstring for why (the Netflix-API-evolution lesson: one aggregation layer
+per identity, not one bespoke join per caller). This script is a thin
+consumer of that registry.
+
 Source: PIB index built for a separate project
 (india-trade-sector-policy-recommendations/scripts/pib_index.py ->
 data/pib_index.sqlite), 124,857 releases 2017-01-01 to present, refreshed as
@@ -24,109 +30,30 @@ import csv
 import json
 import re
 import sqlite3
-from collections import Counter, defaultdict
+from collections import Counter
 from pathlib import Path
+
+from ministry_registry import PIB_DB, SINCE, load_registry, read_csv
 
 ROOT = Path(__file__).resolve().parent.parent
 PROC = ROOT / "data" / "processed"
 SITE = ROOT / "site"
-PIB_DB = Path("/Users/umashankar/india-trade-sector-policy-recommendations/data/pib_index.sqlite")
-# Ministry -> current Minister-in-charge, built for a sibling project on top
-# of the same PIB index + igod.gov.in who's-who scrape. Completes the
-# accountability chain this repo already draws (Party -> MP -> Question ->
-# Ministry) one link further: -> the minister actually answering it.
-MINISTER_CONTACTS_CSV = Path("/Users/umashankar/india-govt-yellow-pages/data/pib_ministry_contacts.csv")
-SINCE = "2024-06-01"
-
-# PQ ministry name (as used throughout this repo) -> PIB ministry label(s) to
-# sum. Most are a direct normalized match (handled generically below); this
-# covers the cases where Parliament's ministry taxonomy and PIB's diverge --
-# a combined ministry (Jal Shakti) split across PIB's two constituent
-# departments, and a ministry PIB lists by its sub-departments only.
-MANUAL_ALIASES = {
-    # Ministry of Jal Shakti (2019-) is a single PIB label post-2024; the old
-    # pre-merger department labels only appear in historical (pre-2019) rows
-    # and are deliberately NOT included here.
-    "CHEMICALS AND FERTILIZERS": [
-        "Ministry of Chemicals and Fertilizers",
-        "Ministry of Chemicals and Fertilizers - Department of Chemicals and Petrochemicals",
-        "Ministry of Chemicals and Fertilizers - Department of Fertilizers",
-        "Ministry of Chemicals and Fertilizers - Department of Pharmaceuticals",
-    ],
-    "ATOMIC ENERGY": ["Department of Atomic Energy"],
-    "SPACE": ["Department of Space"],
-    "ELECTRONICS AND INFORMATION TECHNOLOGY": ["Ministry of Electronics & IT"],
-    "COMMUNICATION": ["Ministry of Communications"],
-    "DEVELOPMENT OF NORTH EASTERN REGION": ["Ministry of Development of North-East Region"],
-}
 
 
-def normalize(label):
-    if not label:
-        return ""
-    s = label.strip()
-    s = re.sub(r"^(Ministry of|Department of)\s+", "", s, flags=re.I)
-    s = s.split(" - ")[0]  # drop sub-department suffix for the generic path
-    s = s.replace("&", "AND")
-    s = re.sub(r"[,.]", " ", s)  # comma/period become a space, not deleted -- "Micro,Small" must not fuse into "MicroSmall"
-    s = re.sub(r"\s+", " ", s).strip().upper()
-    return s
-
-
-def read_csv(name):
-    with open(PROC / name, newline="", encoding="utf-8") as f:
-        return list(csv.DictReader(f))
-
-
-def load_minister_lookup():
-    """ministry (our normalized form) -> (name, designation) of the senior-most minister, from a sibling repo's igod/PIB-sourced who's-who."""
-    if not MINISTER_CONTACTS_CSV.exists():
-        return {}
-    rank = {"Minister": 0, "Minister of State (Independent Charge)": 1, "Minister of State": 2}
-    best = {}
-    with open(MINISTER_CONTACTS_CSV, newline="", encoding="utf-8") as f:
-        for row in csv.DictReader(f):
-            name, designation = row.get("contact_name", "").strip(), row.get("designation", "").strip()
-            if not name:
-                continue
-            key = normalize(row["ministry"])
-            score = rank.get(designation, 3)
-            if key not in best or score < best[key][2]:
-                best[key] = (name, designation, score)
-    return {k: (v[0], v[1]) for k, v in best.items()}
-
-
-def ministry_comparison(con):
-    ministry_summary = read_csv("ministry_summary.csv")
-    minister_lookup = load_minister_lookup()
-    cur = con.cursor()
-    cur.execute("SELECT ministry, COUNT(*) FROM pib_items WHERE date >= ? AND kind='release' GROUP BY ministry", (SINCE,))
-    pib_counts_raw = dict(cur.fetchall())
-
-    pib_norm_counts = Counter()
-    for label, cnt in pib_counts_raw.items():
-        pib_norm_counts[normalize(label)] += cnt
-
+def ministry_comparison(registry):
     rows = []
     matched_minister = 0
-    for m in ministry_summary:
-        ministry = m["ministry"]
-        pq_count = int(m["questions"])
-        if ministry in MANUAL_ALIASES:
-            pib_count = sum(pib_counts_raw.get(lbl, 0) for lbl in MANUAL_ALIASES[ministry])
-        else:
-            pib_count = pib_norm_counts.get(normalize(ministry), 0)
-        ratio = round(pq_count / pib_count, 3) if pib_count else None
-        minister_name, minister_designation = minister_lookup.get(normalize(ministry), ("", ""))
-        if minister_name:
+    for rec in registry.values():
+        ratio = round(rec.pq_total_questions / rec.pib_releases_since_2024_06, 3) if rec.pib_releases_since_2024_06 else None
+        if rec.minister_name:
             matched_minister += 1
         rows.append(
             {
-                "ministry": ministry,
-                "minister_in_charge": minister_name,
-                "minister_designation": minister_designation,
-                "pq_questions": pq_count,
-                "pib_releases_since_2024_06": pib_count,
+                "ministry": rec.pq_ministry,
+                "minister_in_charge": rec.minister_name,
+                "minister_designation": rec.minister_designation,
+                "pq_questions": rec.pq_total_questions,
+                "pib_releases_since_2024_06": rec.pib_releases_since_2024_06,
                 "pq_per_pib_release": ratio,
             }
         )
@@ -216,8 +143,9 @@ def scheme_comparison(con):
 def main():
     if not PIB_DB.exists():
         raise SystemExit(f"PIB index not found at {PIB_DB}")
+    registry = load_registry()
+    ministry_rows = ministry_comparison(registry)
     con = sqlite3.connect(str(PIB_DB))
-    ministry_rows = ministry_comparison(con)
     scheme_rows = scheme_comparison(con)
     con.close()
 

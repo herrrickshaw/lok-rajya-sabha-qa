@@ -419,6 +419,7 @@
           <thead><tr>
             <th data-key="grade" data-type="str" aria-sort="ascending">Grade<span class="arrow">▾</span></th>
             <th data-key="scheme" data-type="str">Scheme<span class="arrow">▾</span></th>
+            <th data-key="minister" data-type="str">Minister-in-charge<span class="arrow">▾</span></th>
             <th data-key="pq_mentions" data-type="num" class="num">PQ mentions<span class="arrow">▾</span></th>
             <th data-key="outlay" data-type="num" class="num">Outlay (₹cr)<span class="arrow">▾</span></th>
             <th data-key="disbursed_pct" data-type="num" class="num">Disbursed<span class="arrow">▾</span></th>
@@ -777,6 +778,7 @@
         grade: r.grade,
         gradeRank: gradeRank[r.grade] != null ? gradeRank[r.grade] : 99,
         scheme: r.scheme,
+        minister: r.minister_in_charge || '—',
         pq_mentions: r.scheme_pq_mentions,
         outlay: r.outlay_rs_cr,
         disbursed_pct: r.disbursed_pct,
@@ -784,7 +786,7 @@
     });
     var pliTable = document.getElementById('pli-table');
     var pliSort = makeSortable(pliTable, pliRows, function(r){
-      return '<tr><td><b>'+esc(r.grade)+'</b></td><td>'+esc(r.scheme)+'</td>' +
+      return '<tr><td><b>'+esc(r.grade)+'</b></td><td>'+esc(r.scheme)+'</td><td>'+esc(r.minister)+'</td>' +
         '<td class="num tabular">'+fmt.format(r.pq_mentions)+'</td>' +
         '<td class="num tabular">'+fmt.format(r.outlay)+'</td>' +
         '<td class="num tabular">'+(r.disbursed_pct==null?'—':r.disbursed_pct.toFixed(1)+'%')+'</td></tr>';

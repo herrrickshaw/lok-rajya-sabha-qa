@@ -37,9 +37,30 @@ facts against a reliable secondary source, not as data.)
 | `sansad.in` `api_ls` | All 18th Lok Sabha questions (34,720): subject, ministry, asking member(s), type, date, session — no full question/answer text, only the per-question PDF | Undocumented JSON API, found in the Next.js client bundle |
 | `sansad.in` `api_ls`/`api_rs` member endpoints | Both houses' current *and* former member rosters: party, state, constituency | Undocumented JSON API |
 | `rsdoc.nic.in` `Question/Search_Questions` | All Rajya Sabha questions for sessions 265–271 (24,661): full question text, ministry, MP code, type, date — answer text is `null` for every record; answers are PDF-only | Raw parametrised-SQL `whereclause` query param |
-| PIB (Press Information Bureau) press-release index | 124,857 releases, 2017–present, by ministry, refreshed to match this dataset's window (June 2024–present) | **External** — built for a separate project (`india-trade-sector-policy-recommendations/scripts/pib_index.py`), not part of this repo's own fetch scripts. `scripts/compare_pib.py` reads that project's `data/pib_index.sqlite` by local path; anyone reproducing this outside that environment needs an equivalent PIB index (see that script's docstring for the release-listing endpoint it scrapes) |
+| PIB (Press Information Bureau) press-release index | 124,857 releases, 2017–present, by ministry, refreshed to match this dataset's window (June 2024–present) | **External** — built for a separate project (`india-trade-sector-policy-recommendations/scripts/pib_index.py`), not part of this repo's own fetch scripts. `scripts/ministry_registry.py` reads that project's `data/pib_index.sqlite` by local path; anyone reproducing this outside that environment needs an equivalent PIB index (see that script's docstring for the release-listing endpoint it scrapes) |
 | PLI disbursal report card | 13 PLI sub-schemes graded A–F on incentive disbursal, PIB-sourced | **Included** — `data/external/pli_report_card.json`, a copied 21KB snapshot from the same sibling project (small enough to ship directly, unlike the PIB index) |
-| Ministry-official directory (minister-in-charge) | Current minister/designation per ministry | **External** — `india-govt-yellow-pages/data/pib_ministry_contacts.csv`, read by local path in `scripts/compare_pib.py`; not copied in (it's a live-updated scrape, a snapshot would go stale) |
+| Ministry-official directory (minister-in-charge) | Current minister/designation per ministry | **External** — `india-govt-yellow-pages/data/pib_ministry_contacts.csv`, read by local path in `scripts/ministry_registry.py`; not copied in (it's a live-updated scrape, a snapshot would go stale) |
+
+### Architecture: one ministry registry, not one join per script
+
+`compare_pib.py` and `compare_pli.py` each started out independently
+matching ministry names against PIB and igod — the same shape of problem
+that pushed Netflix's client-facing API from direct per-service calls
+towards a single aggregation layer (see ByteByteGo, ["Evolution of the
+Netflix API Architecture"](https://bytebytego.com/guides/evolution-of-the-netflix-api-architecture/):
+monolith → direct access → gateway aggregation layer → federated gateway —
+each stage exists because *N* callers independently re-deriving the same
+join stops scaling). `scripts/ministry_registry.py` is the data-pipeline
+equivalent: it resolves every PQ ministry's identity against every wired
+external source exactly once (`build_registry()`), writes the result to
+`data/external/ministry_registry.json`, and every consumer — `compare_pib.py`
+for the PIB/minister join, `compare_pli.py` for the PLI-scheme minister
+lookup — reads that instead of re-deriving its own `normalize()`/alias
+table. It also carries integration *hooks* (not yet wired up) for the three
+surveyed-but-unintegrated sources below — `WP_JSON_MINISTRIES`,
+`PARIVESH_MINISTRIES`, `NITI_ICED_MINISTRIES` — so a future
+`compare_meity.py` or `compare_parivesh.py` looks up its target ministries
+from the registry rather than rediscovering the mapping.
 
 None of these are documented public APIs — see the inline comments in
 `scripts/build.py` for the exact endpoints and how they were found (mining the
@@ -63,23 +84,26 @@ python3 scripts/build.py          # -> data/processed/*.csv, site/data.json
 # 3. Knowledge-graph analysis
 python3 scripts/build_graph.py    # -> data/processed/kg_*.csv, graph.graphml, site/graph.json
 
-# 4. Compare against PIB press releases (needs the external PIB index, see
-#    the Data sources table below — skip this step if you don't have it;
-#    site/pib.json just needs to exist, even as {}, for step 5 to render)
-python3 scripts/compare_pib.py    # -> data/processed/pib_*.csv, site/pib.json
+# 4. Build the ministry registry (needs the external PIB index + minister
+#    directory, see the Data sources table — skip if you don't have them;
+#    compare_pib.py/compare_pli.py call this automatically if it's missing,
+#    but running it explicitly first is clearer)
+python3 scripts/ministry_registry.py   # -> data/external/ministry_registry.json
 
-# 5. Render the dashboard
+# 5. Compare against PIB press releases and the PLI disbursal report card
+#    (site/pib.json / site/pli.json just need to exist, even as {}, for the
+#    next step to render if you skip either of these)
+python3 scripts/compare_pib.py    # -> data/processed/pib_*.csv, site/pib.json
+python3 scripts/compare_pli.py    # -> data/processed/pli_scheme_scrutiny.csv, site/pli.json
+
+# 6. Render the dashboard
 python3 scripts/render_site.py    # -> site/index.html
 
-# 6. Load everything into DuckDB + write markdown summaries
+# 7. Load everything into DuckDB + write markdown summaries
 python3 scripts/build_db.py       # -> data/pq_ledger.duckdb, docs/ANALYSIS.md, docs/parties/*.md
 
-# 7. Build the Excel workbook
+# 8. Build the Excel workbook
 python3 scripts/build_xlsx.py     # -> Lok_Rajya_Sabha_PQ_Analysis.xlsx
-
-# 8. Join the PLI disbursal report card (run before step 5, so the vs.-PIB
-#    tab's PLI table has data -- included here at the end only for readability)
-python3 scripts/compare_pli.py    # -> data/processed/pli_scheme_scrutiny.csv, site/pli.json
 ```
 
 Requires `networkx` and `duckdb` (both pure-Python-installable; no `scipy` —
