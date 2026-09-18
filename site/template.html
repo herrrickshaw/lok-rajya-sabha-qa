@@ -1,0 +1,687 @@
+<title>Sansad Ledger</title>
+<meta name="description" content="Which parties, ministries, states and topics dominate Parliament Questions in the 18th Lok Sabha and Rajya Sabha, plus a knowledge-graph read on who focuses on what.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+  :root{
+    --paper:#f4f1e8;
+    --paper-raised:#fffdf7;
+    --ink:#1d1a14;
+    --ink-soft:#5a5548;
+    --line:#ddd6c4;
+    --ls:#1f7a4d;
+    --ls-soft:#e4efe6;
+    --rs:#9c2b3d;
+    --rs-soft:#f4e4e3;
+    --gold:#a9812f;
+    --gold-soft:#f1e7cd;
+    --comm-0:#2f6690;
+    --comm-1:#6b6456;
+    --comm-2:#b05a2e;
+    --comm-3:#7a4f9c;
+    --shadow: 0 1px 2px rgba(29,26,20,.06), 0 6px 20px -8px rgba(29,26,20,.18);
+    --font-display:'Newsreader', Georgia, 'Times New Roman', serif;
+    --font-body:'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono:'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#181511;
+      --paper-raised:#211d17;
+      --ink:#efe9db;
+      --ink-soft:#b4ab97;
+      --line:#3a3428;
+      --ls:#4caf7d;
+      --ls-soft:#1d2b23;
+      --rs:#e2707d;
+      --rs-soft:#332021;
+      --gold:#d8b563;
+      --gold-soft:#2e2818;
+      --comm-0:#6ba3cf;
+      --comm-1:#a39d8c;
+      --comm-2:#e08a5a;
+      --comm-3:#b08adb;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 24px -8px rgba(0,0,0,.5);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#181511;
+    --paper-raised:#211d17;
+    --ink:#efe9db;
+    --ink-soft:#b4ab97;
+    --line:#3a3428;
+    --ls:#4caf7d;
+    --ls-soft:#1d2b23;
+    --rs:#e2707d;
+    --rs-soft:#332021;
+    --gold:#d8b563;
+    --gold-soft:#2e2818;
+    --comm-0:#6ba3cf;
+    --comm-1:#a39d8c;
+    --comm-2:#e08a5a;
+    --comm-3:#b08adb;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 24px -8px rgba(0,0,0,.5);
+  }
+
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:var(--font-body); padding-inline:16px; padding-block:0 32px;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit}
+  ::selection{background:var(--gold-soft)}
+  .wrap{max-width:1080px; margin:0 auto}
+  .tabular{font-variant-numeric:tabular-nums; font-family:var(--font-mono)}
+
+  header.top{
+    position:sticky; top:env(safe-area-inset-top,0px); z-index:20;
+    background:color-mix(in srgb, var(--paper) 92%, transparent);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+    padding-block:14px 0;
+    margin-inline:-16px; padding-inline:16px;
+  }
+  .top-row{display:flex; align-items:baseline; justify-content:space-between; gap:12px; max-width:1080px; margin:0 auto}
+  .brand{display:flex; align-items:baseline; gap:10px; min-width:0}
+  .brand .mark{font-family:var(--font-display); font-weight:600; font-size:1.5rem; letter-spacing:-.01em; white-space:nowrap}
+  .brand .mark .rs{color:var(--rs)} .brand .mark .amp{color:var(--gold); font-style:italic} .brand .mark .ls{color:var(--ls)}
+  .brand .sub{font-size:.72rem; color:var(--ink-soft); white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+  nav.tabs{
+    display:flex; gap:2px; overflow-x:auto; max-width:1080px; margin:12px auto 0; padding-bottom:0;
+    scrollbar-width:none;
+  }
+  nav.tabs::-webkit-scrollbar{display:none}
+  nav.tabs button{
+    appearance:none; border:none; background:transparent; color:var(--ink-soft);
+    font-family:var(--font-body); font-weight:600; font-size:.82rem; letter-spacing:.01em;
+    padding:9px 13px; border-radius:8px 8px 0 0; cursor:pointer; white-space:nowrap;
+    border-bottom:2px solid transparent;
+  }
+  nav.tabs button:hover{color:var(--ink)}
+  nav.tabs button[aria-selected="true"]{color:var(--ink); border-bottom-color:var(--gold)}
+  nav.tabs button:focus-visible{outline:2px solid var(--gold); outline-offset:2px}
+
+  main{padding-top:22px}
+  section.tab{display:none}
+  section.tab.active{display:block}
+
+  h1{font-family:var(--font-display); font-weight:600; font-size:1.7rem; margin:0 0 4px; text-wrap:balance}
+  h2{font-family:var(--font-display); font-weight:600; font-size:1.28rem; margin:0 0 4px; text-wrap:balance}
+  h3{font-family:var(--font-body); font-weight:600; font-size:.86rem; text-transform:uppercase; letter-spacing:.06em; color:var(--ink-soft); margin:0 0 10px}
+  p.lede{color:var(--ink-soft); font-size:.95rem; max-width:62ch; margin:0 0 20px; line-height:1.55}
+  .panel{
+    background:var(--paper-raised); border:1px solid var(--line); border-radius:12px;
+    padding:18px; margin-bottom:16px; box-shadow:var(--shadow);
+  }
+  .grid{display:grid; gap:14px}
+  .grid.cols-2{grid-template-columns:1fr 1fr}
+  .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+  .grid.cols-4{grid-template-columns:repeat(4,1fr)}
+  @media (max-width:760px){
+    .grid.cols-2, .grid.cols-3, .grid.cols-4{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:520px){
+    .grid.cols-2, .grid.cols-3, .grid.cols-4{grid-template-columns:1fr}
+    .brand .sub{display:none}
+  }
+
+  .stat{padding:14px 16px}
+  .stat .n{font-family:var(--font-mono); font-weight:600; font-size:1.6rem; line-height:1.1}
+  .stat .l{font-size:.74rem; color:var(--ink-soft); text-transform:uppercase; letter-spacing:.05em; margin-top:4px}
+  .stat.ls .n{color:var(--ls)} .stat.rs .n{color:var(--rs)}
+
+  .barlist{display:flex; flex-direction:column; gap:7px}
+  .barrow{display:grid; grid-template-columns:150px 1fr 56px; align-items:center; gap:10px; font-size:.83rem}
+  .barrow .lbl{overflow:hidden; text-overflow:ellipsis; white-space:nowrap; color:var(--ink)}
+  .barrow .track{position:relative; height:16px; background:var(--line); border-radius:4px; overflow:hidden}
+  .barrow .fill{position:absolute; inset:0 auto 0 0; border-radius:4px}
+  .barrow .val{font-family:var(--font-mono); text-align:right; color:var(--ink-soft); font-size:.78rem}
+  @media (max-width:520px){ .barrow{grid-template-columns:96px 1fr 46px} }
+
+  table{width:100%; border-collapse:collapse; font-size:.83rem}
+  th,td{text-align:left; padding:7px 10px; border-bottom:1px solid var(--line)}
+  th{
+    font-size:.68rem; text-transform:uppercase; letter-spacing:.05em; color:var(--ink-soft);
+    cursor:pointer; user-select:none; white-space:nowrap; position:sticky; top:0; background:var(--paper-raised);
+  }
+  th:hover{color:var(--ink)}
+  th .arrow{opacity:.4; font-size:.7em; margin-left:2px}
+  th[aria-sort="ascending"] .arrow, th[aria-sort="descending"] .arrow{opacity:1; color:var(--gold)}
+  td.num, th.num{text-align:right; font-family:var(--font-mono)}
+  tbody tr:hover{background:var(--gold-soft)}
+  .table-scroll{overflow-x:auto; border:1px solid var(--line); border-radius:10px}
+  .table-scroll table{margin:0}
+  .table-scroll th,.table-scroll td{border-bottom:1px solid var(--line)}
+  .table-scroll thead th{border-bottom:1px solid var(--line)}
+
+  .pill{display:inline-flex; align-items:center; gap:5px; padding:3px 9px; border-radius:99px; font-size:.72rem; font-weight:600; white-space:nowrap}
+  .pill.ls{background:var(--ls-soft); color:var(--ls)}
+  .pill.rs{background:var(--rs-soft); color:var(--rs)}
+  .pill.dot{padding-left:7px}
+  .pill .sw{width:7px; height:7px; border-radius:50%; display:inline-block}
+
+  .controls{display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin-bottom:12px}
+  select, input[type="search"]{
+    font-family:var(--font-body); font-size:.82rem; padding:7px 10px; border-radius:8px;
+    border:1px solid var(--line); background:var(--paper); color:var(--ink);
+  }
+  input[type="search"]{min-width:180px}
+  .chip-btn{
+    font-family:var(--font-body); font-size:.78rem; font-weight:600; padding:6px 11px;
+    border-radius:99px; border:1px solid var(--line); background:var(--paper); color:var(--ink-soft); cursor:pointer;
+  }
+  .chip-btn[aria-pressed="true"]{background:var(--ink); color:var(--paper); border-color:var(--ink)}
+
+  .community-card{border:1px solid var(--line); border-radius:10px; padding:14px; background:var(--paper)}
+  .community-card .head{display:flex; align-items:center; gap:8px; margin-bottom:8px}
+  .community-card .swatch{width:11px; height:11px; border-radius:3px; flex:none}
+  .community-card .title{font-weight:600; font-size:.88rem}
+  .community-card .note{font-size:.78rem; color:var(--ink-soft); margin:0 0 10px; line-height:1.5}
+  .party-chips{display:flex; flex-wrap:wrap; gap:5px}
+  .party-chip{
+    font-family:var(--font-mono); font-size:.72rem; padding:3px 8px; border-radius:6px;
+    background:var(--paper-raised); border:1px solid var(--line);
+  }
+
+  .kw-cloud{display:flex; flex-wrap:wrap; gap:7px 9px; align-items:baseline}
+  .kw{font-family:var(--font-display); color:var(--ink)}
+
+  .topic-select-row{display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin-bottom:14px}
+
+  footer{margin-top:30px; padding-top:16px; border-top:1px solid var(--line); font-size:.76rem; color:var(--ink-soft); line-height:1.6}
+  footer a{color:var(--gold); text-decoration:underline}
+
+  .graph-wrap{border:1px solid var(--line); border-radius:10px; overflow:hidden; background:var(--paper)}
+  svg text{font-family:var(--font-body); fill:var(--ink)}
+  .legend{display:flex; gap:14px; flex-wrap:wrap; font-size:.76rem; color:var(--ink-soft); margin-top:10px}
+  .legend .item{display:flex; align-items:center; gap:6px}
+  .legend .sw{width:10px; height:10px; border-radius:3px}
+
+  .note-inline{font-size:.78rem; color:var(--ink-soft); margin-top:8px; line-height:1.5}
+  .caveat{background:var(--gold-soft); border:1px solid var(--line); border-radius:10px; padding:12px 14px; font-size:.82rem; line-height:1.55; margin-bottom:16px}
+  .caveat b{color:var(--ink)}
+</style>
+
+<div class="wrap">
+<header class="top">
+  <div class="top-row">
+    <div class="brand">
+      <span class="mark"><span class="ls">Lok</span><span class="amp">&amp;</span><span class="rs">Rajya</span> Sabha</span>
+      <span class="sub">Parliament Questions, 18th Lok Sabha term</span>
+    </div>
+  </div>
+  <nav class="tabs" role="tablist" aria-label="Sections">
+    <button role="tab" data-tab="overview" aria-selected="true">Overview</button>
+    <button role="tab" data-tab="parties" aria-selected="false">Parties</button>
+    <button role="tab" data-tab="ministries" aria-selected="false">Ministries &amp; States</button>
+    <button role="tab" data-tab="topics" aria-selected="false">Topics</button>
+    <button role="tab" data-tab="graph" aria-selected="false">Knowledge Graph</button>
+  </nav>
+</header>
+
+<main>
+
+  <section class="tab active" id="tab-overview">
+    <h1>Who's asking Parliament what</h1>
+    <p class="lede">Every starred and unstarred question tabled in the Lok Sabha since the 18th Lok Sabha convened, and in the Rajya Sabha over the matching sessions, matched to the asking MP's party and state. <span id="ov-totals-sentence"></span></p>
+
+    <div class="grid cols-4" id="ov-stats"></div>
+
+    <div class="grid cols-2">
+      <div class="panel">
+        <h3>Top parties by total questions</h3>
+        <div class="barlist" id="ov-party-bars"></div>
+      </div>
+      <div class="panel">
+        <h3>Top ministries by total questions</h3>
+        <div class="barlist" id="ov-ministry-bars"></div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3>Lok Sabha vs Rajya Sabha, by party</h3>
+      <div class="barlist" id="ov-chamber-split"></div>
+      <p class="note-inline">Bar segments show each party's Lok Sabha share (green, left) and Rajya Sabha share (maroon, right) of its own total &mdash; not a comparison of raw volume between the two houses.</p>
+    </div>
+  </section>
+
+  <section class="tab" id="tab-parties">
+    <h2>Party ranking</h2>
+    <p class="lede">Ranked by total questions raised, Lok Sabha and Rajya Sabha combined. Sort any column; search to find a party.</p>
+    <div class="controls">
+      <input type="search" id="party-search" placeholder="Search party…">
+    </div>
+    <div class="table-scroll">
+      <table id="party-table">
+        <thead><tr>
+          <th data-key="rank" data-type="num">#<span class="arrow">▾</span></th>
+          <th data-key="party" data-type="str">Party<span class="arrow">▾</span></th>
+          <th data-key="lok_sabha_questions" data-type="num" class="num">Lok Sabha<span class="arrow">▾</span></th>
+          <th data-key="rajya_sabha_questions" data-type="num" class="num">Rajya Sabha<span class="arrow">▾</span></th>
+          <th data-key="total_questions" data-type="num" class="num" aria-sort="descending">Total<span class="arrow">▾</span></th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="tab" id="tab-ministries">
+    <h2>Ministries &amp; states</h2>
+    <p class="lede">Ministry-level topic grouping (how Parliament itself categorises PQs), and the state each asking MP represents.</p>
+
+    <div class="grid cols-2">
+      <div class="panel">
+        <h3>All ministries, by questions received</h3>
+        <div class="table-scroll" style="max-height:420px; overflow-y:auto">
+          <table id="ministry-table">
+            <thead><tr><th data-key="rank" data-type="num">#</th><th data-key="ministry" data-type="str">Ministry</th><th data-key="questions" data-type="num" class="num" aria-sort="descending">Questions</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="panel">
+        <h3>All states, by their MPs' questions</h3>
+        <div class="table-scroll" style="max-height:420px; overflow-y:auto">
+          <table id="state-table">
+            <thead><tr><th data-key="rank" data-type="num">#</th><th data-key="state" data-type="str">State / UT</th><th data-key="questions" data-type="num" class="num" aria-sort="descending">Questions</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3>Party focus, by ministry &mdash; pick a party</h3>
+      <div class="controls">
+        <select id="pm-party-select"></select>
+      </div>
+      <div class="barlist" id="pm-bars"></div>
+    </div>
+
+    <div class="panel">
+      <h3>Starred vs. unstarred, by party</h3>
+      <p class="note-inline" style="margin-top:-4px; margin-bottom:12px">A <b>starred</b> question requires an oral answer and a follow-up in the House; an <b>unstarred</b> question gets only a written reply. A high starred share signals a party pressing for the floor exchange, not just the paper record.</p>
+      <div class="table-scroll">
+        <table id="type-table">
+          <thead><tr>
+            <th data-key="party" data-type="str">Party<span class="arrow">▾</span></th>
+            <th data-key="starred" data-type="num" class="num">Starred<span class="arrow">▾</span></th>
+            <th data-key="unstarred" data-type="num" class="num">Unstarred<span class="arrow">▾</span></th>
+            <th data-key="starred_share" data-type="num" class="num" aria-sort="descending">Starred share<span class="arrow">▾</span></th>
+          </tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="tab" id="tab-topics">
+    <h2>What they actually ask about</h2>
+    <p class="lede">Ministry gives the official category; this is a finer cut &mdash; the most distinctive words and phrases in question subject lines, after stripping boilerplate ("scheme", "government", "status"…). Size shows frequency.</p>
+    <div class="topic-select-row">
+      <label for="topic-party-select" style="font-size:.82rem; color:var(--ink-soft)">Party:</label>
+      <select id="topic-party-select"></select>
+    </div>
+    <div class="panel">
+      <div class="kw-cloud" id="topic-cloud"></div>
+    </div>
+  </section>
+
+  <section class="tab" id="tab-graph">
+    <h2>Reading this as a graph</h2>
+    <p class="lede">Treat every MP, party, ministry and topic as a node and every question as an edge, and three questions become answerable that a flat pivot table can't reach: which ministries are a party's genuine <em>signature</em> rather than just its biggest by volume; which parties cluster together purely by what they ask about, regardless of stated ideology; and where MPs cross party lines to co-sign a question.</p>
+
+    <div class="grid cols-4" id="kg-stats"></div>
+
+    <div class="panel">
+      <h3>Signature ministries &mdash; party focus network</h3>
+      <p class="note-inline" style="margin-bottom:12px">Each edge is a party&ndash;ministry pair where that party asks <em>disproportionately more</em> than its overall share of questions would predict (lift &ge; 1.5, at least 15 questions) &mdash; not just its biggest ministries by raw count. Party nodes are coloured by the community they fall into below. Drag nodes; hover for detail.</p>
+      <div class="graph-wrap"><svg id="kg-svg" viewBox="0 0 1000 620" style="width:100%; height:auto; display:block"></svg></div>
+      <div class="legend" id="kg-legend"></div>
+    </div>
+
+    <div class="panel">
+      <h3>Party communities &mdash; who clusters with whom, by what they ask</h3>
+      <p class="note-inline" style="margin-bottom:14px">Louvain community detection on party&ndash;ministry <em>lift</em> vectors (cosine similarity &gt; 0.15, parties with &ge;30 questions only): two parties land together when their relative emphasis across ministries is similar, independent of how many questions either asks in total.</p>
+      <div class="grid cols-2" id="kg-communities"></div>
+    </div>
+
+    <div class="grid cols-2">
+      <div class="panel">
+        <h3>Ministries most often probed by the same MP</h3>
+        <p class="note-inline" style="margin-top:-4px; margin-bottom:10px">Thematic linkage independent of party: which two ministries does one MP tend to ask about together across their PQs?</p>
+        <div class="table-scroll" style="max-height:360px; overflow-y:auto">
+          <table id="cooc-table">
+            <thead><tr><th>Ministry A</th><th>Ministry B</th><th class="num">Shared MPs</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="panel">
+        <h3>Cross-party co-asking</h3>
+        <p class="note-inline" style="margin-top:-4px; margin-bottom:10px">Lok Sabha questions are occasionally tabled jointly by several MPs. These pairs crossed party lines to do it &mdash; the rare bipartisan edges in the graph.</p>
+        <div class="table-scroll" style="max-height:360px; overflow-y:auto">
+          <table id="bridge-table">
+            <thead><tr><th>MP</th><th>Party</th><th>MP</th><th>Party</th><th class="num">Joint Qs</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div id="foot-note"></div>
+    <p>Sources: sansad.in (<code>api_ls</code> question &amp; member APIs) and rsdoc.nic.in (Rajya Sabha question search), cross-referenced against both houses' current and former member rosters for party and state. Party names reconciled across the two chambers' independent abbreviation conventions where they diverged (e.g. Shiv Sena (UBT), YSRCP, NCP (SP)). Full methodology, raw data and the graph-analysis scripts are in the repository this page ships with.</p>
+  </footer>
+</div>
+</main>
+
+<script id="app-data" type="application/json">{{DATA_JSON}}</script>
+<script id="graph-data" type="application/json">{{GRAPH_JSON}}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+(function(){
+  "use strict";
+  var DATA = JSON.parse(document.getElementById('app-data').textContent);
+  var GRAPH = JSON.parse(document.getElementById('graph-data').textContent);
+
+  var fmt = new Intl.NumberFormat('en-IN');
+  function esc(s){ return String(s==null?'':s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+
+  // ---------- Tabs ----------
+  var tabButtons = Array.prototype.slice.call(document.querySelectorAll('nav.tabs button'));
+  tabButtons.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      tabButtons.forEach(function(b){ b.setAttribute('aria-selected', b===btn ? 'true':'false'); });
+      document.querySelectorAll('section.tab').forEach(function(s){ s.classList.remove('active'); });
+      document.getElementById('tab-'+btn.dataset.tab).classList.add('active');
+      if (btn.dataset.tab === 'graph' && !window.__kgRendered) { renderKGraph(); window.__kgRendered = true; }
+    });
+  });
+
+  // ---------- Overview ----------
+  (function(){
+    var t = DATA.totals;
+    document.getElementById('ov-totals-sentence').textContent =
+      fmt.format(t.combined) + ' questions in all — ' + fmt.format(t.lok_sabha) + ' in the Lok Sabha, ' + fmt.format(t.rajya_sabha) + ' in the Rajya Sabha — spanning ' +
+      DATA.party_summary.length + ' parties across ' + DATA.ministry_summary.length + ' ministries and ' + DATA.state_summary.length + ' states and union territories.';
+
+    var stats = [
+      {n: fmt.format(t.combined), l:'Total PQs', cls:''},
+      {n: fmt.format(t.lok_sabha), l:'Lok Sabha', cls:'ls'},
+      {n: fmt.format(t.rajya_sabha), l:'Rajya Sabha', cls:'rs'},
+      {n: DATA.party_summary.length, l:'Parties represented', cls:''},
+    ];
+    document.getElementById('ov-stats').innerHTML = stats.map(function(s){
+      return '<div class="panel stat '+s.cls+'"><div class="n tabular">'+s.n+'</div><div class="l">'+s.l+'</div></div>';
+    }).join('');
+
+    function bars(container, items, key, labelKey, color, top){
+      var max = Math.max.apply(null, items.slice(0, top).map(function(i){ return i[key]; }));
+      container.innerHTML = items.slice(0, top).map(function(i){
+        var pct = max ? (100*i[key]/max) : 0;
+        return '<div class="barrow"><span class="lbl" title="'+esc(i[labelKey])+'">'+esc(i[labelKey])+'</span>' +
+          '<span class="track"><span class="fill" style="width:'+pct.toFixed(1)+'%; background:'+color+'"></span></span>' +
+          '<span class="val tabular">'+fmt.format(i[key])+'</span></div>';
+      }).join('');
+    }
+    bars(document.getElementById('ov-party-bars'), DATA.party_summary, 'total_questions', 'party', 'var(--gold)', 12);
+    bars(document.getElementById('ov-ministry-bars'), DATA.ministry_summary, 'questions', 'ministry', 'var(--comm-0)', 12);
+
+    var split = DATA.party_summary.slice(0, 14);
+    document.getElementById('ov-chamber-split').innerHTML = split.map(function(p){
+      var total = p.total_questions || 1;
+      var lsPct = 100*p.lok_sabha_questions/total, rsPct = 100*p.rajya_sabha_questions/total;
+      return '<div class="barrow"><span class="lbl" title="'+esc(p.party)+'">'+esc(p.party)+'</span>' +
+        '<span class="track"><span class="fill" style="width:'+lsPct.toFixed(1)+'%; background:var(--ls)"></span>' +
+        '<span class="fill" style="left:'+lsPct.toFixed(1)+'%; width:'+rsPct.toFixed(1)+'%; background:var(--rs)"></span></span>' +
+        '<span class="val tabular">'+fmt.format(total)+'</span></div>';
+    }).join('');
+  })();
+
+  // ---------- Sortable table helper ----------
+  function makeSortable(tableEl, rows, renderRow, defaultKey, defaultDir){
+    var state = {key: defaultKey, dir: defaultDir || 'desc'};
+    function sortRows(){
+      var ths = tableEl.querySelectorAll('th[data-key]');
+      var type = 'str';
+      ths.forEach(function(th){ if (th.dataset.key === state.key) type = th.dataset.type; });
+      var sorted = rows.slice().sort(function(a,b){
+        var av = a[state.key], bv = b[state.key];
+        if (type === 'num'){ av = +av||0; bv = +bv||0; return state.dir==='asc' ? av-bv : bv-av; }
+        av = String(av||''); bv = String(bv||'');
+        return state.dir==='asc' ? av.localeCompare(bv) : bv.localeCompare(av);
+      });
+      return sorted;
+    }
+    function render(){
+      var sorted = sortRows();
+      var tbody = tableEl.querySelector('tbody');
+      tbody.innerHTML = sorted.map(function(r, i){ return renderRow(r, i); }).join('');
+      tableEl.querySelectorAll('th[data-key]').forEach(function(th){
+        th.removeAttribute('aria-sort');
+        if (th.dataset.key === state.key) th.setAttribute('aria-sort', state.dir==='asc'?'ascending':'descending');
+      });
+    }
+    tableEl.querySelectorAll('th[data-key]').forEach(function(th){
+      th.addEventListener('click', function(){
+        if (state.key === th.dataset.key){ state.dir = state.dir==='asc'?'desc':'asc'; }
+        else { state.key = th.dataset.key; state.dir = th.dataset.type==='num' ? 'desc':'asc'; }
+        render();
+      });
+    });
+    render();
+    return { rerender: render, getRows: function(){ return rows; } };
+  }
+
+  // ---------- Parties tab ----------
+  var partyRows = DATA.party_summary.map(function(p, i){
+    return { rank: i+1, party: p.party, lok_sabha_questions: p.lok_sabha_questions, rajya_sabha_questions: p.rajya_sabha_questions, total_questions: p.total_questions };
+  });
+  var partyTable = document.getElementById('party-table');
+  var partySortable = makeSortable(partyTable, partyRows, function(r){
+    return '<tr><td class="num tabular">'+r.rank+'</td><td>'+esc(r.party)+'</td>' +
+      '<td class="num tabular">'+fmt.format(r.lok_sabha_questions)+'</td>' +
+      '<td class="num tabular">'+fmt.format(r.rajya_sabha_questions)+'</td>' +
+      '<td class="num tabular"><b>'+fmt.format(r.total_questions)+'</b></td></tr>';
+  }, 'total_questions', 'desc');
+  document.getElementById('party-search').addEventListener('input', function(e){
+    var q = e.target.value.toLowerCase();
+    var tbody = partyTable.querySelector('tbody');
+    Array.prototype.forEach.call(tbody.children, function(tr){
+      tr.style.display = tr.children[1].textContent.toLowerCase().indexOf(q) === -1 ? 'none' : '';
+    });
+  });
+
+  // ---------- Ministries & States tab ----------
+  var ministryRows = DATA.ministry_summary.map(function(m,i){ return {rank:i+1, ministry:m.ministry, questions:m.questions}; });
+  makeSortable(document.getElementById('ministry-table'), ministryRows, function(r){
+    return '<tr><td class="num tabular">'+r.rank+'</td><td>'+esc(r.ministry)+'</td><td class="num tabular">'+fmt.format(r.questions)+'</td></tr>';
+  }, 'questions', 'desc');
+
+  var stateRows = DATA.state_summary.map(function(s,i){ return {rank:i+1, state:s.state, questions:s.questions}; });
+  makeSortable(document.getElementById('state-table'), stateRows, function(r){
+    return '<tr><td class="num tabular">'+r.rank+'</td><td>'+esc(r.state)+'</td><td class="num tabular">'+fmt.format(r.questions)+'</td></tr>';
+  }, 'questions', 'desc');
+
+  (function(){
+    var sel = document.getElementById('pm-party-select');
+    var pmRows = DATA.party_ministry_matrix.rows;
+    var ministries = DATA.party_ministry_matrix.ministries;
+    sel.innerHTML = pmRows.map(function(r){ return '<option value="'+esc(r.party)+'">'+esc(r.party)+'</option>'; }).join('');
+    function render(){
+      var row = pmRows.find(function(r){ return r.party === sel.value; }) || pmRows[0];
+      var items = ministries.map(function(m, i){ return {ministry:m, v:row.values[i]}; })
+        .filter(function(x){ return x.v > 0; }).sort(function(a,b){ return b.v-a.v; }).slice(0, 15);
+      var max = Math.max.apply(null, items.map(function(i){ return i.v; }));
+      document.getElementById('pm-bars').innerHTML = items.map(function(i){
+        var pct = max ? 100*i.v/max : 0;
+        return '<div class="barrow"><span class="lbl" title="'+esc(i.ministry)+'">'+esc(i.ministry)+'</span>' +
+          '<span class="track"><span class="fill" style="width:'+pct.toFixed(1)+'%; background:var(--gold)"></span></span>' +
+          '<span class="val tabular">'+fmt.format(i.v)+'</span></div>';
+      }).join('');
+    }
+    sel.addEventListener('change', render);
+    sel.value = pmRows[0] ? pmRows[0].party : '';
+    render();
+  })();
+
+  (function(){
+    var types = DATA.party_type_matrix.types;
+    var starredIdx = types.findIndex(function(t){ return t.indexOf('STARRED') === 0; });
+    var unstarredIdx = types.findIndex(function(t){ return t.indexOf('UNSTARRED') === 0; });
+    var rows = DATA.party_type_matrix.rows.map(function(r){
+      var starred = starredIdx>=0 ? (r[types[starredIdx]]||0) : 0;
+      var unstarred = unstarredIdx>=0 ? (r[types[unstarredIdx]]||0) : 0;
+      var total = starred+unstarred;
+      return { party:r.party, starred:starred, unstarred:unstarred, starred_share: total ? starred/total : 0 };
+    }).filter(function(r){ return (r.starred+r.unstarred) >= 10; });
+    makeSortable(document.getElementById('type-table'), rows, function(r){
+      return '<tr><td>'+esc(r.party)+'</td><td class="num tabular">'+fmt.format(r.starred)+'</td>' +
+        '<td class="num tabular">'+fmt.format(r.unstarred)+'</td>' +
+        '<td class="num tabular">'+(100*r.starred_share).toFixed(1)+'%</td></tr>';
+    }, 'starred_share', 'desc');
+  })();
+
+  // ---------- Topics tab ----------
+  (function(){
+    var sel = document.getElementById('topic-party-select');
+    var partyKeys = Object.keys(DATA.party_topics).sort(function(a,b){
+      var ta = DATA.party_summary.find(function(p){return p.party===a}), tb = DATA.party_summary.find(function(p){return p.party===b});
+      return (tb?tb.total_questions:0) - (ta?ta.total_questions:0);
+    });
+    var opts = ['<option value="__ALL__">All parties (overall)</option>'].concat(
+      partyKeys.map(function(p){ return '<option value="'+esc(p)+'">'+esc(p)+'</option>'; })
+    );
+    sel.innerHTML = opts.join('');
+    function render(){
+      var terms = sel.value === '__ALL__' ? DATA.overall_topics : (DATA.party_topics[sel.value] || []);
+      if (!terms.length){ document.getElementById('topic-cloud').innerHTML = '<p class="note-inline">Not enough subject-line data for this party yet.</p>'; return; }
+      var max = terms[0].count, min = terms[terms.length-1].count;
+      document.getElementById('topic-cloud').innerHTML = terms.map(function(t){
+        var scale = max===min ? 1.4 : (0.85 + 1.35*(t.count-min)/(max-min));
+        return '<span class="kw" style="font-size:'+scale.toFixed(2)+'rem" title="'+t.count+' mentions">'+esc(t.term)+'</span>';
+      }).join(' ');
+    }
+    sel.addEventListener('change', render);
+    render();
+  })();
+
+  // ---------- Knowledge graph tab ----------
+  function renderKGraph(){
+    var s = GRAPH.stats;
+    document.getElementById('kg-stats').innerHTML = [
+      {n: fmt.format(s.nodes), l:'Graph nodes'},
+      {n: fmt.format(s.edges), l:'Graph edges'},
+      {n: fmt.format(s.ministries), l:'Ministry nodes'},
+      {n: fmt.format(s.cross_party_coasking_pairs), l:'Cross-party MP pairs'},
+    ].map(function(x){ return '<div class="panel stat"><div class="n tabular">'+x.n+'</div><div class="l">'+x.l+'</div></div>'; }).join('');
+
+    // Communities -> color + interpretive note
+    var commMeta = {};
+    var commNotes = [
+      "Left and minority-interest bloc — CPI(M), CPI, IUML, AIMIM, SAD, VCK, AITC, SP and allies. These parties share a relative emphasis profile even though they range from a national party to several state-specific ones.",
+      "Broad mainstream bloc — includes both BJP and the principal opposition INC alongside most large regional parties (DMK, TDP, YSRCP, BJD, JD(U)…). Statistically similar emphasis patterns despite opposing politics: the two biggest parties simply cover the full ministry spread proportionally.",
+      "Smaller regional-development cluster — JMM, RLP, AJSU, AGP, SKM, UPPL and similar state-focused outfits, leaning toward infrastructure and local-development portfolios.",
+      "Singleton outlier — its ministry-emphasis profile doesn't resemble any other party closely enough to cluster."
+    ];
+    (GRAPH.party_communities || []).forEach(function(row){ commMeta[row.party] = row.community; });
+    var byComm = {};
+    (GRAPH.party_communities || []).forEach(function(row){ (byComm[row.community] = byComm[row.community]||[]).push(row); });
+    var commColors = ['var(--comm-0)','var(--comm-1)','var(--comm-2)','var(--comm-3)'];
+    document.getElementById('kg-communities').innerHTML = Object.keys(byComm).sort(function(a,b){return a-b}).map(function(c){
+      var parties = byComm[c].sort(function(a,b){ return b.questions-a.questions; });
+      var color = commColors[c % commColors.length];
+      return '<div class="community-card"><div class="head"><span class="swatch" style="background:'+color+'"></span>' +
+        '<span class="title">Community '+(+c+1)+' &middot; '+parties.length+' part'+(parties.length===1?'y':'ies')+'</span></div>' +
+        '<p class="note">'+(commNotes[c] || '')+'</p>' +
+        '<div class="party-chips">'+parties.map(function(p){ return '<span class="party-chip">'+esc(p.party)+'</span>'; }).join('')+'</div></div>';
+    }).join('');
+
+    // Co-occurrence table
+    document.getElementById('cooc-table').querySelector('tbody').innerHTML =
+      (GRAPH.ministry_cooccurrence_top||[]).slice(0,30).map(function(r){
+        return '<tr><td>'+esc(r.ministry_a)+'</td><td>'+esc(r.ministry_b)+'</td><td class="num tabular">'+fmt.format(r.shared_mps)+'</td></tr>';
+      }).join('');
+
+    // Bridges table
+    document.getElementById('bridge-table').querySelector('tbody').innerHTML =
+      (GRAPH.cross_party_bridges_top||[]).slice(0,30).map(function(r){
+        return '<tr><td>'+esc(r.mp_a)+'</td><td>'+esc(r.party_a)+'</td><td>'+esc(r.mp_b)+'</td><td>'+esc(r.party_b)+'</td><td class="num tabular">'+fmt.format(r.joint_questions)+'</td></tr>';
+      }).join('');
+
+    // ---- D3 force graph: signature ministries (party <-> ministry, high lift) ----
+    var edges = (GRAPH.signature_ministries || []).filter(function(e){ return e.lift >= 1.5; });
+    var partyNodeIds = {}, ministryNodeIds = {};
+    var nodes = [];
+    edges.forEach(function(e){
+      if (!partyNodeIds[e.party]){
+        partyNodeIds[e.party] = 'p:'+e.party;
+        nodes.push({ id:'p:'+e.party, type:'party', label:e.party, community: commMeta[e.party] != null ? commMeta[e.party] : 1, size: (DATA.party_summary.find(function(p){return p.party===e.party})||{}).total_questions || 20 });
+      }
+      if (!ministryNodeIds[e.ministry]){
+        ministryNodeIds[e.ministry] = 'm:'+e.ministry;
+        nodes.push({ id:'m:'+e.ministry, type:'ministry', label:e.ministry, size: (DATA.ministry_summary.find(function(m){return m.ministry===e.ministry})||{}).questions || 20 });
+      }
+    });
+    var links = edges.map(function(e){ return { source:'p:'+e.party, target:'m:'+e.ministry, lift:e.lift, questions:e.questions }; });
+
+    var svg = d3.select('#kg-svg');
+    var W = 1000, H = 620;
+    var sizeScale = d3.scaleSqrt().domain([1, d3.max(nodes, function(n){return n.size;}) || 1]).range([4, 26]);
+
+    var sim = d3.forceSimulation(nodes)
+      .force('link', d3.forceLink(links).id(function(d){return d.id;}).distance(70).strength(0.35))
+      .force('charge', d3.forceManyBody().strength(-130))
+      .force('center', d3.forceCenter(W/2, H/2))
+      .force('collide', d3.forceCollide().radius(function(d){ return sizeScale(d.size) + 14; }));
+
+    var g = svg.append('g');
+    svg.call(d3.zoom().scaleExtent([0.4,3]).on('zoom', function(ev){ g.attr('transform', ev.transform); }));
+
+    var link = g.append('g').selectAll('line').data(links).join('line')
+      .attr('stroke', 'var(--line)').attr('stroke-width', function(d){ return Math.min(4, 0.6 + d.lift/2); })
+      .attr('stroke-opacity', 0.7);
+
+    var node = g.append('g').selectAll('g').data(nodes).join('g')
+      .attr('cursor','grab')
+      .call(d3.drag()
+        .on('start', function(ev,d){ if(!ev.active) sim.alphaTarget(0.25).restart(); d.fx=d.x; d.fy=d.y; })
+        .on('drag', function(ev,d){ d.fx=ev.x; d.fy=ev.y; })
+        .on('end', function(ev,d){ if(!ev.active) sim.alphaTarget(0); d.fx=null; d.fy=null; }));
+
+    node.append('circle')
+      .attr('r', function(d){ return sizeScale(d.size); })
+      .attr('fill', function(d){ return d.type==='ministry' ? 'var(--gold)' : commColors[(d.community||0) % commColors.length]; })
+      .attr('fill-opacity', function(d){ return d.type==='ministry' ? 0.85 : 0.9; })
+      .attr('stroke', 'var(--paper-raised)').attr('stroke-width', 1.5);
+
+    node.append('title').text(function(d){ return d.label; });
+
+    node.append('text')
+      .text(function(d){ return d.label.length > 20 ? d.label.slice(0,18)+'…' : d.label; })
+      .attr('font-size', 9.5)
+      .attr('dy', function(d){ return sizeScale(d.size) + 10; })
+      .attr('text-anchor','middle');
+
+    sim.on('tick', function(){
+      link.attr('x1', function(d){return d.source.x;}).attr('y1', function(d){return d.source.y;})
+          .attr('x2', function(d){return d.target.x;}).attr('y2', function(d){return d.target.y;});
+      node.attr('transform', function(d){ return 'translate('+d.x+','+d.y+')'; });
+    });
+
+    document.getElementById('kg-legend').innerHTML =
+      '<span class="item"><span class="sw" style="background:var(--gold)"></span>Ministry</span>' +
+      commColors.map(function(c,i){ return '<span class="item"><span class="sw" style="background:'+c+'"></span>Party community '+(i+1)+'</span>'; }).join('') +
+      '<span class="item">Edge width ∝ lift (how disproportionate the focus is)</span>';
+  }
+
+  // ---------- Footer ----------
+  document.getElementById('foot-note').textContent = DATA.generated_note +
+    ' Primary-asker attribution: a Lok Sabha question with multiple listed members is credited to the first-listed (lead) member only, to avoid double-counting one question across several parties. ' +
+    fmt.format(DATA.totals.unmatched_ls) + ' of ' + fmt.format(DATA.totals.lok_sabha) + ' Lok Sabha questions (' + (100*DATA.totals.unmatched_ls/DATA.totals.lok_sabha).toFixed(1) + '%) could not be matched to a roster member and are excluded from party/state breakdowns.';
+})();
+</script>

@@ -1,0 +1,413 @@
+node,type,label,pagerank
+party:BJP,party,BJP,0.12073
+party:INC,party,INC,0.058862
+party:DMK,party,DMK,0.023538
+ministry:HEALTH AND FAMILY WELFARE,ministry,HEALTH AND FAMILY WELFARE,0.019679
+party:AITC,party,AITC,0.016548
+party:SP,party,SP,0.016279
+party:TDP,party,TDP,0.016231
+ministry:RAILWAYS,ministry,RAILWAYS,0.015792
+ministry:EDUCATION,ministry,EDUCATION,0.015592
+ministry:AGRICULTURE AND FARMERS WELFARE,ministry,AGRICULTURE AND FARMERS WELFARE,0.014818
+ministry:FINANCE,ministry,FINANCE,0.012438
+ministry:CIVIL AVIATION,ministry,CIVIL AVIATION,0.011567
+ministry:JAL SHAKTI,ministry,JAL SHAKTI,0.011363
+"ministry:ENVIRONMENT, FOREST AND CLIMATE CHANGE",ministry,"ENVIRONMENT, FOREST AND CLIMATE CHANGE",0.010777
+party:YSRCP,party,YSRCP,0.009988
+ministry:HOUSING AND URBAN AFFAIRS,ministry,HOUSING AND URBAN AFFAIRS,0.009976
+party:BJD,party,BJD,0.00902
+ministry:LABOUR AND EMPLOYMENT,ministry,LABOUR AND EMPLOYMENT,0.008974
+party:TMC(M),party,TMC(M),0.008948
+party:SS,party,SS,0.008841
+party:CPI(M),party,CPI(M),0.008636
+party:IND.,party,IND.,0.008621
+ministry:RURAL DEVELOPMENT,ministry,RURAL DEVELOPMENT,0.007991
+ministry:COMMERCE AND INDUSTRY,ministry,COMMERCE AND INDUSTRY,0.007921
+party:JD(U),party,JD(U),0.007554
+"ministry:CONSUMER AFFAIRS, FOOD AND PUBLIC DISTRIBUTION",ministry,"CONSUMER AFFAIRS, FOOD AND PUBLIC DISTRIBUTION",0.007552
+ministry:WOMEN AND CHILD DEVELOPMENT,ministry,WOMEN AND CHILD DEVELOPMENT,0.007411
+ministry:ROAD TRANSPORT AND HIGHWAYS,ministry,ROAD TRANSPORT AND HIGHWAYS,0.007366
+ministry:EXTERNAL AFFAIRS,ministry,EXTERNAL AFFAIRS,0.006902
+ministry:CHEMICALS AND FERTILIZERS,ministry,CHEMICALS AND FERTILIZERS,0.006877
+party:AAP,party,AAP,0.006653
+ministry:PETROLEUM AND NATURAL GAS,ministry,PETROLEUM AND NATURAL GAS,0.006569
+party:AIADMK,party,AIADMK,0.006491
+ministry:AYUSH,ministry,AYUSH,0.006303
+"ministry:MICRO, SMALL AND MEDIUM ENTERPRISES",ministry,"MICRO, SMALL AND MEDIUM ENTERPRISES",0.006152
+party:NCP(SP),party,NCP(SP),0.006056
+party:SHS(UBT),party,SHS(UBT),0.006018
+ministry:SOCIAL JUSTICE AND EMPOWERMENT,ministry,SOCIAL JUSTICE AND EMPOWERMENT,0.006008
+ministry:TOURISM,ministry,TOURISM,0.005979
+ministry:CULTURE,ministry,CULTURE,0.00589
+ministry:ELECTRONICS AND INFORMATION TECHNOLOGY,ministry,ELECTRONICS AND INFORMATION TECHNOLOGY,0.005843
+ministry:HOME AFFAIRS,ministry,HOME AFFAIRS,0.005724
+ministry:YOUTH AFFAIRS AND SPORTS,ministry,YOUTH AFFAIRS AND SPORTS,0.005661
+party:IUML,party,IUML,0.005607
+"ministry:FISHERIES, ANIMAL HUSBANDRY AND DAIRYING",ministry,"FISHERIES, ANIMAL HUSBANDRY AND DAIRYING",0.005574
+topic:tamil nadu,topic,tamil nadu,0.005524
+ministry:NEW AND RENEWABLE ENERGY,ministry,NEW AND RENEWABLE ENERGY,0.005452
+party:AJSU,party,AJSU,0.005139
+party:RJD,party,RJD,0.00504
+ministry:POWER,ministry,POWER,0.004998
+ministry:TRIBAL AFFAIRS,ministry,TRIBAL AFFAIRS,0.004946
+party:CPI,party,CPI,0.00488
+ministry:SKILL DEVELOPMENT AND ENTREPRENEURSHIP,ministry,SKILL DEVELOPMENT AND ENTREPRENEURSHIP,0.004846
+ministry:ROAD TRANSPORT & HIGH WAYS,ministry,ROAD TRANSPORT & HIGH WAYS,0.004701
+party:KC(M),party,KC(M),0.004668
+party:SAD,party,SAD,0.00461
+ministry:COMMUNICATIONS,ministry,COMMUNICATIONS,0.0046
+party:ZPM,party,ZPM,0.004553
+party:UPPL,party,UPPL,0.004531
+party:MNF,party,MNF,0.004473
+party:NOM.,party,NOM.,0.004411
+party:PMK,party,PMK,0.004254
+party:BAP,party,BAP,0.004237
+"ministry:PORTS, SHIPPING AND WATERWAYS",ministry,"PORTS, SHIPPING AND WATERWAYS",0.004174
+ministry:FOOD PROCESSING INDUSTRIES,ministry,FOOD PROCESSING INDUSTRIES,0.004171
+ministry:CORPORATE AFFAIRS,ministry,CORPORATE AFFAIRS,0.004132
+party:RLP,party,RLP,0.004105
+party:J&KNC,party,J&KNC,0.004044
+party:JSP,party,JSP,0.004042
+party:NCP,party,NCP,0.00393
+ministry:TEXTILES,ministry,TEXTILES,0.00392
+topic:andhra pradesh,topic,andhra pradesh,0.00388
+ministry:COAL,ministry,COAL,0.003871
+ministry:COOPERATION,ministry,COOPERATION,0.003824
+party:LJSP(RV),party,LJSP(RV),0.003734
+party:JD(S),party,JD(S),0.003733
+party:RSP,party,RSP,0.003681
+party:CPI(ML)(L),party,CPI(ML)(L),0.003666
+party:ASP (KR),party,ASP (KR),0.003501
+party:BRS,party,BRS,0.003466
+party:DMDK,party,DMDK,0.003384
+party:AGP,party,AGP,0.003379
+party:SKM,party,SKM,0.003309
+ministry:MINORITY AFFAIRS,ministry,MINORITY AFFAIRS,0.003286
+party:MNM,party,MNM,0.003252
+ministry:PANCHAYATI RAJ,ministry,PANCHAYATI RAJ,0.003247
+party:MDMK,party,MDMK,0.003172
+party:JMM,party,JMM,0.003156
+ministry:INFORMATION AND BROADCASTING,ministry,INFORMATION AND BROADCASTING,0.003065
+ministry:LAW AND JUSTICE,ministry,LAW AND JUSTICE,0.00298
+party:VCK,party,VCK,0.00296
+party:AIMIM,party,AIMIM,0.002863
+party:RLD,party,RLD,0.002839
+topic:uttar pradesh,topic,uttar pradesh,0.00281
+party:Unknown,party,Unknown,0.002727
+party:RLM,party,RLM,0.002681
+ministry:MINES,ministry,MINES,0.002646
+ministry:ATOMIC ENERGY,ministry,ATOMIC ENERGY,0.002618
+ministry:EARTH SCIENCES,ministry,EARTH SCIENCES,0.002605
+ministry:HEAVY INDUSTRIES,ministry,HEAVY INDUSTRIES,0.002463
+party:KEC,party,KEC,0.002455
+ministry:LAW & JUSTICE,ministry,LAW & JUSTICE,0.002454
+ministry:SCIENCE AND TECHNOLOGY,ministry,SCIENCE AND TECHNOLOGY,0.002449
+topic:implementation,topic,implementation,0.002165
+topic:development,topic,development,0.002147
+ministry:STEEL,ministry,STEEL,0.002041
+topic:country,topic,country,0.00204
+ministry:STATISTICS AND PROGRAMME IMPLEMENTATION,ministry,STATISTICS AND PROGRAMME IMPLEMENTATION,0.002023
+ministry:COMMUNICATION,ministry,COMMUNICATION,0.002013
+topic:west bengal,topic,west bengal,0.001853
+topic:pradhan mantri,topic,pradhan mantri,0.001814
+topic:impact,topic,impact,0.001795
+ministry:PLANNING,ministry,PLANNING,0.001755
+ministry:SPACE,ministry,SPACE,0.001585
+topic:mizoram,topic,mizoram,0.001576
+ministry:DEVELOPMENT OF NORTH EASTERN REGION,ministry,DEVELOPMENT OF NORTH EASTERN REGION,0.001504
+topic:assam,topic,assam,0.001475
+topic:promotion,topic,promotion,0.001383
+ministry:DEFENCE,ministry,DEFENCE,0.001382
+topic:sector,topic,sector,0.001368
+topic:projects,topic,projects,0.001328
+topic:digital,topic,digital,0.001298
+topic:himachal pradesh,topic,himachal pradesh,0.001291
+topic:kerala,topic,kerala,0.00127
+topic:funds,topic,funds,0.001249
+topic:skill development,topic,skill development,0.001198
+topic:jharkhand,topic,jharkhand,0.001192
+"ministry:PERSONNEL,PUBLIC GRIEVANCES AND PENSIONS",ministry,"PERSONNEL,PUBLIC GRIEVANCES AND PENSIONS",0.001185
+topic:punjab,topic,punjab,0.001163
+"ministry:PERSONNEL, PUBLIC GRIEVANCES AND PENSIONS",ministry,"PERSONNEL, PUBLIC GRIEVANCES AND PENSIONS",0.001148
+topic:rajasthan,topic,rajasthan,0.00113
+topic:new,topic,new,0.001105
+topic:north eastern,topic,north eastern,0.001046
+topic:karnataka,topic,karnataka,0.00104
+topic:safety,topic,safety,0.000986
+topic:health,topic,health,0.000981
+topic:eastern region,topic,eastern region,0.000962
+topic:renewable energy,topic,renewable energy,0.000961
+topic:mission,topic,mission,0.00096
+topic:construction,topic,construction,0.000957
+topic:madhya pradesh,topic,madhya pradesh,0.000932
+topic:bihar,topic,bihar,0.000929
+topic:financial assistance,topic,financial assistance,0.000927
+topic:railway,topic,railway,0.000922
+topic:rural areas,topic,rural areas,0.000914
+topic:water,topic,water,0.000883
+topic:infrastructure,topic,infrastructure,0.000858
+topic:food processing,topic,food processing,0.000842
+topic:content,topic,content,0.000839
+topic:aired,topic,aired,0.000839
+topic:ott,topic,ott,0.000839
+topic:platforms,topic,platforms,0.000839
+topic:harmful,topic,harmful,0.000839
+topic:effects,topic,effects,0.000839
+topic:social,topic,social,0.000839
+topic:media,topic,media,0.000839
+topic:children,topic,children,0.000839
+topic:adolescents,topic,adolescents,0.000839
+topic:arrest,topic,arrest,0.000839
+topic:fishermen,topic,fishermen,0.000839
+topic:railway line,topic,railway line,0.000831
+topic:policy,topic,policy,0.000812
+topic:women,topic,women,0.000809
+topic:upgradation,topic,upgradation,0.000785
+topic:establishment,topic,establishment,0.000782
+topic:farmers,topic,farmers,0.000779
+topic:jammu kashmir,topic,jammu kashmir,0.000777
+topic:programme,topic,programme,0.000776
+topic:kolar,topic,kolar,0.000761
+topic:tribal,topic,tribal,0.000754
+topic:production,topic,production,0.000735
+topic:ayush,topic,ayush,0.000701
+topic:cooperative societies,topic,cooperative societies,0.000698
+topic:expansion,topic,expansion,0.000688
+ministry:PARLIAMENTARY AFFAIRS,ministry,PARLIAMENTARY AFFAIRS,0.000687
+topic:welfare,topic,welfare,0.000674
+topic:states,topic,states,0.000671
+topic:medical,topic,medical,0.00067
+topic:progress,topic,progress,0.000668
+topic:employment,topic,employment,0.000651
+topic:indian,topic,indian,0.000636
+topic:beneficiaries,topic,beneficiaries,0.000635
+topic:increase,topic,increase,0.000633
+topic:services,topic,services,0.000613
+topic:companies,topic,companies,0.000611
+topic:tamil,topic,tamil,0.000607
+topic:nadu,topic,nadu,0.000607
+topic:ladakh,topic,ladakh,0.000604
+topic:projects tamil,topic,projects tamil,0.000601
+topic:projects andhra,topic,projects andhra,0.000598
+topic:maharashtra,topic,maharashtra,0.000596
+topic:railway station,topic,railway station,0.000592
+topic:data,topic,data,0.000582
+topic:special,topic,special,0.000581
+topic:system,topic,system,0.00058
+topic:cases,topic,cases,0.000573
+topic:jal jeevan,topic,jal jeevan,0.000573
+topic:baghpat,topic,baghpat,0.000572
+topic:workers,topic,workers,0.000572
+topic:daman diu,topic,daman diu,0.000567
+topic:jeevan mission,topic,jeevan mission,0.000564
+topic:climate change,topic,climate change,0.000564
+topic:region,topic,region,0.00056
+topic:sikkim,topic,sikkim,0.00056
+topic:urban,topic,urban,0.000558
+topic:drinking water,topic,drinking water,0.000556
+topic:oil,topic,oil,0.000553
+topic:depot,topic,depot,0.000553
+topic:agricultural,topic,agricultural,0.000552
+topic:coal,topic,coal,0.000549
+topic:allocation,topic,allocation,0.000549
+topic:airport,topic,airport,0.000545
+topic:vuakmual,topic,vuakmual,0.000545
+topic:churachandpur,topic,churachandpur,0.000545
+topic:hospital,topic,hospital,0.000545
+topic:college,topic,college,0.000545
+topic:manipur,topic,manipur,0.000545
+topic:noc,topic,noc,0.000545
+topic:installation,topic,installation,0.000545
+topic:indian fishermen,topic,indian fishermen,0.000545
+topic:sri,topic,sri,0.000545
+topic:mgnregs,topic,mgnregs,0.000544
+topic:road,topic,road,0.00054
+topic:initiatives,topic,initiatives,0.000538
+topic:review,topic,review,0.000535
+topic:areas,topic,areas,0.000528
+topic:training,topic,training,0.000523
+topic:schools,topic,schools,0.000518
+topic:srinagar,topic,srinagar,0.000516
+topic:tunnel,topic,tunnel,0.000516
+topic:trains,topic,trains,0.000515
+topic:facilities,topic,facilities,0.000515
+topic:centres,topic,centres,0.000511
+topic:technology,topic,technology,0.00051
+topic:bodoland territorial,topic,bodoland territorial,0.000509
+topic:decline,topic,decline,0.000504
+topic:vacancies ministry,topic,vacancies ministry,0.000501
+topic:mumbai,topic,mumbai,0.000501
+topic:projects odisha,topic,projects odisha,0.000501
+topic:support,topic,support,0.0005
+topic:against,topic,against,0.0005
+topic:food,topic,food,0.0005
+topic:setting,topic,setting,0.0005
+topic:financial,topic,financial,0.000496
+topic:yojana,topic,yojana,0.000496
+topic:organic,topic,organic,0.000495
+topic:territorial region,topic,territorial region,0.000493
+topic:groundwater,topic,groundwater,0.000493
+topic:tirupati,topic,tirupati,0.000492
+topic:ner,topic,ner,0.00049
+topic:youth,topic,youth,0.000489
+topic:infrastructure odisha,topic,infrastructure odisha,0.000488
+topic:development odisha,topic,development odisha,0.000488
+topic:bhubaneswar,topic,bhubaneswar,0.000488
+topic:airports,topic,airports,0.000488
+topic:shortage,topic,shortage,0.000487
+topic:self,topic,self,0.000486
+topic:express,topic,express,0.000486
+topic:project,topic,project,0.000485
+topic:salem,topic,salem,0.000485
+topic:cauvery,topic,cauvery,0.000485
+topic:fertilizers,topic,fertilizers,0.000485
+topic:lanka,topic,lanka,0.000485
+topic:kollam,topic,kollam,0.000484
+topic:quality,topic,quality,0.000484
+topic:budget,topic,budget,0.000483
+topic:communities,topic,communities,0.000483
+topic:land,topic,land,0.000481
+topic:coal mining,topic,coal mining,0.000477
+topic:inclusion,topic,inclusion,0.000477
+topic:giridih,topic,giridih,0.000477
+topic:steel,topic,steel,0.000477
+topic:central,topic,central,0.000476
+topic:nagaur,topic,nagaur,0.000475
+topic:regulation,topic,regulation,0.000474
+topic:products,topic,products,0.000473
+topic:revenue,topic,revenue,0.000471
+topic:through,topic,through,0.000469
+topic:rural,topic,rural,0.000467
+topic:expenditure,topic,expenditure,0.000467
+topic:non,topic,non,0.000467
+topic:cyber,topic,cyber,0.000466
+topic:tourism,topic,tourism,0.000465
+topic:north,topic,north,0.000462
+topic:study,topic,study,0.000462
+topic:operational,topic,operational,0.000459
+topic:navic,topic,navic,0.000459
+topic:constellation,topic,constellation,0.000459
+topic:emerging,topic,emerging,0.000459
+topic:technologies,topic,technologies,0.000459
+topic:improvements,topic,improvements,0.000459
+topic:highways,topic,highways,0.000459
+topic:mining,topic,mining,0.000459
+topic:ginger,topic,ginger,0.000458
+topic:hub,topic,hub,0.000458
+topic:sasci,topic,sasci,0.000458
+topic:works,topic,works,0.000458
+topic:ministry,topic,ministry,0.000458
+topic:metro rail,topic,metro rail,0.000455
+topic:infrastructure tamil,topic,infrastructure tamil,0.000455
+topic:msmes,topic,msmes,0.000455
+topic:sikar,topic,sikar,0.000454
+topic:post,topic,post,0.000452
+topic:offices,topic,offices,0.000452
+topic:district,topic,district,0.000452
+topic:closure,topic,closure,0.000452
+topic:gold,topic,gold,0.000452
+topic:coastal,topic,coastal,0.000452
+topic:drug,topic,drug,0.000451
+topic:kishtwar,topic,kishtwar,0.000451
+topic:jamui,topic,jamui,0.000451
+topic:crisis,topic,crisis,0.00045
+topic:tea,topic,tea,0.000448
+topic:education,topic,education,0.000446
+topic:rising cases,topic,rising cases,0.000445
+topic:international,topic,international,0.000445
+topic:domestic,topic,domestic,0.000445
+topic:trade,topic,trade,0.000445
+topic:industrial,topic,industrial,0.000445
+topic:management,topic,management,0.000445
+topic:nagar haveli,topic,nagar haveli,0.000444
+topic:irregularities,topic,irregularities,0.000444
+topic:stubble burning,topic,stubble burning,0.000441
+topic:sikhs,topic,sikhs,0.000441
+topic:procurement,topic,procurement,0.000441
+topic:pension,topic,pension,0.000441
+topic:shirdi,topic,shirdi,0.000441
+topic:measures,topic,measures,0.00044
+topic:environmental,topic,environmental,0.000439
+topic:community,topic,community,0.000439
+topic:list,topic,list,0.000439
+topic:lack,topic,lack,0.000439
+topic:strengthening,topic,strengthening,0.000439
+topic:use,topic,use,0.000439
+topic:students,topic,students,0.000439
+topic:dadra nagar,topic,dadra nagar,0.000438
+topic:kargil,topic,kargil,0.000438
+topic:udaipur,topic,udaipur,0.000437
+topic:gram,topic,gram,0.000437
+topic:anganwadi,topic,anganwadi,0.000437
+topic:scs sts,topic,scs sts,0.000436
+topic:forest,topic,forest,0.000435
+topic:pollution,topic,pollution,0.000434
+topic:employees,topic,employees,0.000432
+topic:protection,topic,protection,0.000431
+topic:bhiwandi,topic,bhiwandi,0.00043
+topic:assistance,topic,assistance,0.00043
+topic:machilipatnam,topic,machilipatnam,0.00043
+topic:nhpc,topic,nhpc,0.000429
+topic:north east,topic,north east,0.000429
+topic:nomadic,topic,nomadic,0.000429
+topic:heritage,topic,heritage,0.000427
+topic:research,topic,research,0.000427
+topic:tag,topic,tag,0.000427
+topic:methi,topic,methi,0.000427
+topic:loans,topic,loans,0.000427
+topic:act,topic,act,0.000427
+topic:railway projects,topic,railway projects,0.000427
+topic:guwahati,topic,guwahati,0.000427
+topic:kendriya,topic,kendriya,0.000427
+topic:vidyalayas,topic,vidyalayas,0.000427
+topic:people,topic,people,0.000427
+topic:international airport,topic,international airport,0.000425
+topic:life,topic,life,0.000425
+topic:satellite,topic,satellite,0.000425
+topic:based,topic,based,0.000425
+topic:internet,topic,internet,0.000425
+topic:multi,topic,multi,0.000425
+topic:rising incidence,topic,rising incidence,0.000425
+topic:drug trafficking,topic,drug trafficking,0.000425
+topic:weather forecasting,topic,weather forecasting,0.000425
+topic:rising,topic,rising,0.000425
+topic:public,topic,public,0.000419
+topic:export,topic,export,0.000419
+topic:vijayawada,topic,vijayawada,0.000419
+topic:csr funds,topic,csr funds,0.000419
+topic:scheduled areas,topic,scheduled areas,0.000419
+topic:banswara dungarpur,topic,banswara dungarpur,0.000419
+topic:projects maharashtra,topic,projects maharashtra,0.000418
+topic:power,topic,power,0.000417
+topic:vacancies,topic,vacancies,0.000417
+topic:traditional fisherfolk,topic,traditional fisherfolk,0.000416
+topic:asha workers,topic,asha workers,0.000416
+topic:utilisation,topic,utilisation,0.000416
+topic:border,topic,border,0.000416
+topic:wheat,topic,wheat,0.000416
+topic:mission tamil,topic,mission tamil,0.000414
+topic:train,topic,train,0.000413
+topic:stoppage,topic,stoppage,0.000413
+topic:thiruverumbur,topic,thiruverumbur,0.000413
+topic:proposal,topic,proposal,0.000412
+topic:rail,topic,rail,0.000412
+topic:performance,topic,performance,0.000412
+topic:growing,topic,growing,0.000412
+topic:uttar,topic,uttar,0.000412
+topic:pradesh,topic,pradesh,0.000412
+topic:between,topic,between,0.000412
+topic:assessment,topic,assessment,0.000411
+topic:complaints,topic,complaints,0.000411
+topic:waqf,topic,waqf,0.00041
+topic:unclaimed,topic,unclaimed,0.00041
+topic:public sector,topic,public sector,0.00041
+topic:rate,topic,rate,0.00041
+topic:plan,topic,plan,0.000407
+topic:capacity,topic,capacity,0.000407
+topic:bijnor,topic,bijnor,0.000401
+topic:processing,topic,processing,0.000401
+topic:thermal power,topic,thermal power,0.000395
+topic:rules,topic,rules,0.000395
+topic:crude oil,topic,crude oil,0.000392
+topic:among,topic,among,0.000392
+ministry:PRIME MINISTER,ministry,PRIME MINISTER,0.000371

@@ -1,0 +1,643 @@
+party,term,count
+ALL,tamil nadu,951
+ALL,andhra pradesh,753
+ALL,uttar pradesh,527
+ALL,pradhan mantri,405
+ALL,west bengal,348
+ALL,skill development,296
+ALL,renewable energy,237
+ALL,food processing,230
+ALL,financial assistance,228
+ALL,himachal pradesh,225
+ALL,rural areas,222
+ALL,railway line,181
+ALL,railway station,174
+ALL,madhya pradesh,169
+ALL,jal jeevan,166
+ALL,jeevan mission,161
+ALL,vande bharat,150
+ALL,north eastern,149
+ALL,allocation funds,147
+ALL,railway stations,133
+ALL,cooperative societies,133
+ALL,higher education,133
+ALL,drinking water,129
+ALL,climate change,128
+ALL,railway projects,122
+ALL,samagra shiksha,121
+ALL,infrastructure development,119
+ALL,social security,106
+ALL,employment generation,105
+ALL,smart cities,105
+INC,tamil nadu,80
+INC,pradhan mantri,50
+INC,jal jeevan,49
+INC,jeevan mission,47
+INC,skill development,45
+INC,drinking water,45
+INC,financial assistance,42
+INC,renewable energy,41
+INC,review,40
+INC,railway station,39
+INC,railway line,39
+INC,rural areas,36
+BJP,west bengal,236
+BJP,himachal pradesh,222
+BJP,uttar pradesh,215
+BJP,pradhan mantri,201
+BJP,madhya pradesh,136
+BJP,skill development,132
+BJP,food processing,107
+BJP,renewable energy,101
+BJP,rural areas,95
+BJP,financial assistance,92
+BJP,cooperative societies,80
+BJP,railway line,72
+NCP(SP),implementation,19
+NCP(SP),promotion,17
+NCP(SP),digital,14
+NCP(SP),impact,13
+NCP(SP),mission,12
+NCP(SP),funds,12
+NCP(SP),sector,12
+NCP(SP),construction,12
+NCP(SP),bhiwandi,11
+NCP(SP),training,11
+NCP(SP),projects maharashtra,9
+NCP(SP),quality,9
+TDP,andhra pradesh,477
+TDP,projects andhra,34
+TDP,welfare,24
+TDP,establishment,24
+TDP,regulation,23
+TDP,pradhan mantri,21
+TDP,upgradation,21
+TDP,production,21
+TDP,beneficiaries,19
+TDP,msmes,19
+TDP,progress,19
+TDP,country,17
+DMK,tamil nadu,586
+DMK,projects tamil,52
+DMK,policy,26
+DMK,pradhan mantri,24
+DMK,increase,24
+DMK,establishment,23
+DMK,mgnregs,21
+DMK,skill development,20
+DMK,metro rail,20
+DMK,infrastructure tamil,20
+DMK,progress,20
+DMK,upgradation,20
+IUML,tamil nadu,54
+IUML,development,21
+IUML,implementation,20
+IUML,safety,13
+IUML,promotion,12
+IUML,mission,12
+IUML,country,11
+IUML,cases,11
+IUML,funds,11
+IUML,indian,11
+IUML,digital,10
+IUML,support,10
+IND.,ladakh,39
+IND.,daman diu,33
+IND.,bihar,20
+IND.,impact,19
+IND.,implementation,17
+IND.,assam,17
+IND.,financial,14
+IND.,nagar haveli,13
+IND.,women,13
+IND.,dadra nagar,12
+IND.,digital,12
+IND.,kargil,12
+SS,implementation,37
+SS,sector,28
+SS,mumbai,25
+SS,promotion,21
+SS,farmers,20
+SS,health,19
+SS,system,18
+SS,digital,17
+SS,education,15
+SS,policy,15
+SS,shirdi,14
+SS,impact,13
+SKM,region,6
+SKM,sikkim,6
+SKM,organic,4
+SKM,climate change,3
+SKM,employment,3
+SKM,north,3
+SKM,impact,3
+SKM,development,3
+SKM,areas,3
+SKM,promotion,3
+SKM,study,3
+SKM,implementation,2
+SP,uttar pradesh,261
+SP,through,21
+SP,trains,18
+SP,programme,17
+SP,expansion,16
+SP,special,16
+SP,irregularities,16
+SP,lack,15
+SP,strengthening,15
+SP,use,15
+SP,students,15
+SP,country,15
+AITC,west bengal,103
+AITC,vacancies ministry,28
+AITC,implementation,26
+AITC,system,24
+AITC,expenditure,21
+AITC,data,21
+AITC,non,21
+AITC,welfare,19
+AITC,digital,19
+AITC,agricultural,19
+AITC,companies,18
+AITC,coal,17
+CPI(M),country,27
+CPI(M),impact,25
+CPI(M),implementation,20
+CPI(M),revenue,19
+CPI(M),rajasthan,17
+CPI(M),sikar,16
+CPI(M),states,16
+CPI(M),mgnregs,15
+CPI(M),tamil nadu,12
+CPI(M),safety,12
+CPI(M),construction,12
+CPI(M),employees,12
+AGP,assam,17
+AGP,north eastern,11
+AGP,eastern region,9
+AGP,development,7
+AGP,ner,6
+AGP,states,5
+AGP,new,4
+AGP,tea,4
+AGP,infrastructure,4
+AGP,railway projects,3
+AGP,guwahati,3
+AGP,production,3
+JD(U),farmers,23
+JD(U),construction,21
+JD(U),mission,17
+JD(U),promotion,17
+JD(U),sector,17
+JD(U),production,16
+JD(U),implementation,14
+JD(U),setting,14
+JD(U),programme,14
+JD(U),impact,13
+JD(U),technology,13
+JD(U),increase,12
+LJSP(RV),bihar,23
+LJSP(RV),jamui,10
+LJSP(RV),programme,7
+LJSP(RV),development,7
+LJSP(RV),projects,6
+LJSP(RV),welfare,6
+LJSP(RV),promotion,6
+LJSP(RV),construction,5
+LJSP(RV),workers,5
+LJSP(RV),plan,5
+LJSP(RV),infrastructure,5
+LJSP(RV),capacity,5
+VCK,tamil nadu,8
+VCK,production,8
+VCK,development,6
+VCK,women,5
+VCK,products,5
+VCK,companies,5
+VCK,tourism,5
+VCK,health,4
+VCK,farmers,4
+VCK,data,4
+VCK,crude oil,3
+VCK,among,3
+JSP,andhra pradesh,24
+JSP,coastal,8
+JSP,development,8
+JSP,infrastructure,7
+JSP,assistance,6
+JSP,implementation,6
+JSP,centres,6
+JSP,machilipatnam,6
+JSP,water,5
+JSP,export,5
+JSP,tourism,5
+JSP,vijayawada,5
+RLP,rajasthan,24
+RLP,nagaur,7
+RLP,agricultural,6
+RLP,funds,6
+RLP,railway,5
+RLP,research,4
+RLP,development,4
+RLP,projects,4
+RLP,tag,4
+RLP,methi,4
+RLP,loans,4
+RLP,act,4
+KEC,kerala,6
+KEC,sector,5
+KEC,impact,4
+KEC,development,3
+KEC,proposal,2
+KEC,rail,2
+KEC,performance,2
+KEC,states,2
+KEC,railway,2
+KEC,land,2
+KEC,implementation,2
+KEC,growing,2
+MDMK,tamil nadu,20
+MDMK,establishment,6
+MDMK,international airport,5
+MDMK,railway station,5
+MDMK,trains,5
+MDMK,farmers,5
+MDMK,express,4
+MDMK,promotion,4
+MDMK,upgradation,4
+MDMK,train,4
+MDMK,stoppage,4
+MDMK,thiruverumbur,4
+AIMIM,impact,8
+AIMIM,pension,5
+AIMIM,indian,5
+AIMIM,beneficiaries,4
+AIMIM,cases,3
+AIMIM,health,3
+AIMIM,funds,3
+AIMIM,waqf,3
+AIMIM,shortage,3
+AIMIM,unclaimed,3
+AIMIM,rules,2
+AIMIM,tribal,2
+AJSU,jharkhand,22
+AJSU,facilities,4
+AJSU,coal mining,3
+AJSU,companies,3
+AJSU,inclusion,3
+AJSU,giridih,3
+AJSU,steel,3
+AJSU,new,3
+AJSU,development,3
+AJSU,environmental,2
+AJSU,community,2
+AJSU,list,2
+ASP (KR),budget,5
+ASP (KR),beneficiaries,5
+ASP (KR),communities,5
+ASP (KR),impact,4
+ASP (KR),funds,4
+ASP (KR),scs sts,3
+ASP (KR),initiatives,3
+ASP (KR),ayush,3
+ASP (KR),rural,2
+ASP (KR),uttar,2
+ASP (KR),pradesh,2
+ASP (KR),between,2
+AAP,impact,24
+AAP,country,23
+AAP,implementation,21
+AAP,support,14
+AAP,promotion,13
+AAP,measures,13
+AAP,funds,12
+AAP,policy,12
+AAP,pollution,12
+AAP,water,11
+AAP,safety,10
+AAP,initiatives,9
+UPPL,assam,25
+UPPL,north eastern,21
+UPPL,eastern region,19
+UPPL,bodoland territorial,9
+UPPL,projects,9
+UPPL,territorial region,8
+UPPL,development,7
+UPPL,programme,5
+UPPL,management,5
+UPPL,north east,4
+UPPL,nomadic,4
+UPPL,states,4
+SHS(UBT),impact,18
+SHS(UBT),women,17
+SHS(UBT),safety,15
+SHS(UBT),water,14
+SHS(UBT),farmers,14
+SHS(UBT),data,13
+SHS(UBT),country,12
+SHS(UBT),implementation,11
+SHS(UBT),protection,11
+SHS(UBT),workers,10
+SHS(UBT),rising,10
+SHS(UBT),urban,10
+YSRCP,andhra pradesh,192
+YSRCP,tirupati,25
+YSRCP,country,24
+YSRCP,coal,20
+YSRCP,impact,19
+YSRCP,sector,18
+YSRCP,digital,18
+YSRCP,indian,16
+YSRCP,schools,15
+YSRCP,urban,15
+YSRCP,technology,15
+YSRCP,projects andhra,14
+JD(S),karnataka,10
+JD(S),kolar,9
+JD(S),employment,3
+JD(S),ayush,3
+JD(S),funds,3
+JD(S),new,2
+JD(S),post,2
+JD(S),offices,2
+JD(S),district,2
+JD(S),implementation,2
+JD(S),closure,2
+JD(S),gold,2
+BAP,rajasthan,16
+BAP,construction,7
+BAP,udaipur,4
+BAP,gram,4
+BAP,express,4
+BAP,anganwadi,4
+BAP,workers,4
+BAP,allocation,4
+BAP,yojana,4
+BAP,csr funds,3
+BAP,scheduled areas,3
+BAP,banswara dungarpur,3
+RJD,development,12
+RJD,implementation,11
+RJD,health,11
+RJD,central,10
+RJD,sector,10
+RJD,medical,9
+RJD,infrastructure,9
+RJD,cases,8
+RJD,water,8
+RJD,vacancies,8
+RJD,construction,7
+RJD,financial,7
+CPI,kerala,30
+CPI,country,24
+CPI,development,17
+CPI,funds,11
+CPI,power,7
+CPI,indian,7
+CPI,public sector,6
+CPI,rate,6
+CPI,railway,6
+CPI,increase,6
+CPI,central,6
+CPI,promotion,6
+J&KNC,jammu kashmir,19
+J&KNC,projects,8
+J&KNC,srinagar,7
+J&KNC,tunnel,7
+J&KNC,railway,5
+J&KNC,drug,4
+J&KNC,kishtwar,4
+J&KNC,medical,3
+J&KNC,policy,3
+J&KNC,nhpc,3
+J&KNC,funds,3
+J&KNC,allocation,3
+JMM,tribal,18
+JMM,health,9
+JMM,services,8
+JMM,sector,8
+JMM,development,7
+JMM,pradhan mantri,6
+JMM,expansion,6
+JMM,promotion,6
+JMM,women,6
+JMM,railway,6
+JMM,employment,6
+JMM,mining,5
+RLD,uttar pradesh,20
+RLD,baghpat,17
+RLD,railway,6
+RLD,development,5
+RLD,promotion,5
+RLD,ayush,5
+RLD,setting,5
+RLD,health,4
+RLD,programme,4
+RLD,projects,3
+RLD,bijnor,3
+RLD,processing,3
+RSP,kerala,21
+RSP,development,9
+RSP,kollam,7
+RSP,health,7
+RSP,crisis,5
+RSP,railway,4
+RSP,water,4
+RSP,land,4
+RSP,sector,4
+RSP,traditional fisherfolk,3
+RSP,asha workers,3
+RSP,utilisation,3
+CPI(ML)(L),bihar,10
+CPI(ML)(L),mission,7
+CPI(ML)(L),funds,6
+CPI(ML)(L),forest,6
+CPI(ML)(L),pradhan mantri,5
+CPI(ML)(L),yojana,5
+CPI(ML)(L),development,5
+CPI(ML)(L),against,5
+CPI(ML)(L),mining,4
+CPI(ML)(L),assessment,4
+CPI(ML)(L),allocation,4
+CPI(ML)(L),complaints,4
+SAD,punjab,31
+SAD,groundwater,5
+SAD,health,4
+SAD,stubble burning,3
+SAD,decline,3
+SAD,schools,3
+SAD,against,3
+SAD,sikhs,3
+SAD,procurement,3
+SAD,women,3
+SAD,border,2
+SAD,wheat,2
+ZPM,mizoram,9
+ZPM,tribal,2
+ZPM,projects,2
+ZPM,oil,2
+ZPM,depot,2
+ZPM,digital,2
+ZPM,ginger,1
+ZPM,hub,1
+ZPM,sasci,1
+ZPM,funds,1
+ZPM,works,1
+ZPM,ministry,1
+NCP,maharashtra,21
+NCP,infrastructure,12
+NCP,projects,9
+NCP,sector,8
+NCP,development,7
+NCP,railway,7
+NCP,shortage,7
+NCP,areas,6
+NCP,quality,6
+NCP,public,5
+NCP,policy,5
+NCP,rural,5
+Unknown,assam,24
+Unknown,north eastern,11
+Unknown,eastern region,10
+Unknown,projects,8
+Unknown,development,5
+Unknown,digital,5
+Unknown,infrastructure,4
+Unknown,mission,4
+Unknown,food processing,3
+Unknown,thermal power,3
+Unknown,centres,3
+Unknown,workers,3
+BJD,projects odisha,22
+BJD,special,22
+BJD,expansion,22
+BJD,infrastructure odisha,20
+BJD,development odisha,20
+BJD,bhubaneswar,20
+BJD,digital,18
+BJD,country,16
+BJD,safety,15
+BJD,training,15
+BJD,road,13
+BJD,industrial,13
+DMDK,mission,4
+DMDK,progress,2
+DMDK,services,2
+DMDK,self,2
+DMDK,implementation,2
+DMDK,tamil,2
+DMDK,nadu,2
+DMDK,life,1
+DMDK,satellite,1
+DMDK,based,1
+DMDK,internet,1
+DMDK,multi,1
+AIADMK,tamil nadu,178
+AIADMK,promotion,16
+AIADMK,pradhan mantri,13
+AIADMK,airports,11
+AIADMK,mission tamil,9
+AIADMK,expansion,9
+AIADMK,services,9
+AIADMK,welfare,9
+AIADMK,production,9
+AIADMK,centres,9
+AIADMK,cases,9
+AIADMK,increase,9
+NOM.,karnataka,26
+NOM.,kerala,19
+NOM.,promotion,13
+NOM.,development,9
+NOM.,country,9
+NOM.,women,9
+NOM.,water,8
+NOM.,ayush,8
+NOM.,projects,8
+NOM.,products,7
+NOM.,heritage,7
+NOM.,food,6
+KC(M),country,17
+KC(M),climate change,5
+KC(M),cyber,5
+KC(M),rising cases,4
+KC(M),food,4
+KC(M),international,4
+KC(M),domestic,4
+KC(M),trade,4
+KC(M),safety,4
+KC(M),rising incidence,3
+KC(M),drug trafficking,3
+KC(M),weather forecasting,3
+MNM,tamil nadu,5
+MNM,implementation,2
+MNM,operational,1
+MNM,navic,1
+MNM,constellation,1
+MNM,impact,1
+MNM,emerging,1
+MNM,technologies,1
+MNM,road,1
+MNM,safety,1
+MNM,improvements,1
+MNM,highways,1
+PMK,indian fishermen,3
+PMK,new,3
+PMK,sri,3
+PMK,project,2
+PMK,salem,2
+PMK,cauvery,2
+PMK,water,2
+PMK,fertilizers,2
+PMK,sector,2
+PMK,lanka,2
+PMK,tamil,2
+PMK,nadu,2
+RLM,country,7
+RLM,establishment,4
+RLM,bihar,4
+RLM,construction,4
+RLM,youth,4
+RLM,new,3
+RLM,decline,2
+RLM,kendriya,2
+RLM,vidyalayas,2
+RLM,people,2
+RLM,programme,2
+RLM,airports,2
+BRS,implementation,16
+BRS,impact,14
+BRS,development,14
+BRS,digital,13
+BRS,safety,9
+BRS,policy,8
+BRS,infrastructure,8
+BRS,sector,8
+BRS,urban,8
+BRS,projects,7
+BRS,initiatives,7
+BRS,country,7
+MNF,mizoram,2
+MNF,new,1
+MNF,airport,1
+MNF,vuakmual,1
+MNF,upgradation,1
+MNF,churachandpur,1
+MNF,hospital,1
+MNF,medical,1
+MNF,college,1
+MNF,manipur,1
+MNF,noc,1
+MNF,installation,1
+TMC(M),content,1
+TMC(M),aired,1
+TMC(M),ott,1
+TMC(M),platforms,1
+TMC(M),harmful,1
+TMC(M),effects,1
+TMC(M),social,1
+TMC(M),media,1
+TMC(M),children,1
+TMC(M),adolescents,1
+TMC(M),arrest,1
+TMC(M),fishermen,1

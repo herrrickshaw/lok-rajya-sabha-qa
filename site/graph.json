@@ -1,0 +1,1426 @@
+{
+  "stats": {
+    "nodes": 1162,
+    "edges": 25448,
+    "parties": 46,
+    "ministries": 60,
+    "mps": 712,
+    "cross_party_coasking_pairs": 7428
+  },
+  "signature_ministries": [
+    {
+      "party": "NOM.",
+      "ministry": "CULTURE",
+      "questions": 29,
+      "ministry_total": 1069,
+      "party_total": 285,
+      "lift": 5.652
+    },
+    {
+      "party": "BJD",
+      "ministry": "LAW & JUSTICE",
+      "questions": 37,
+      "ministry_total": 426,
+      "party_total": 1019,
+      "lift": 5.061
+    },
+    {
+      "party": "BRS",
+      "ministry": "ROAD TRANSPORT & HIGH WAYS",
+      "questions": 16,
+      "ministry_total": 775,
+      "party_total": 296,
+      "lift": 4.142
+    },
+    {
+      "party": "IUML",
+      "ministry": "MINORITY AFFAIRS",
+      "questions": 21,
+      "ministry_total": 535,
+      "party_total": 682,
+      "lift": 3.418
+    },
+    {
+      "party": "BJD",
+      "ministry": "AYUSH",
+      "questions": 55,
+      "ministry_total": 1138,
+      "party_total": 1019,
+      "lift": 2.816
+    },
+    {
+      "party": "YSRCP",
+      "ministry": "ATOMIC ENERGY",
+      "questions": 26,
+      "ministry_total": 437,
+      "party_total": 1271,
+      "lift": 2.78
+    },
+    {
+      "party": "MDMK",
+      "ministry": "RAILWAYS",
+      "questions": 20,
+      "ministry_total": 2900,
+      "party_total": 150,
+      "lift": 2.73
+    },
+    {
+      "party": "CPI(M)",
+      "ministry": "MINORITY AFFAIRS",
+      "questions": 27,
+      "ministry_total": 535,
+      "party_total": 1102,
+      "lift": 2.719
+    },
+    {
+      "party": "TDP",
+      "ministry": "PORTS, SHIPPING AND WATERWAYS",
+      "questions": 73,
+      "ministry_total": 769,
+      "party_total": 2178,
+      "lift": 2.588
+    },
+    {
+      "party": "BJD",
+      "ministry": "ROAD TRANSPORT & HIGH WAYS",
+      "questions": 34,
+      "ministry_total": 775,
+      "party_total": 1019,
+      "lift": 2.557
+    },
+    {
+      "party": "CPI",
+      "ministry": "LABOUR AND EMPLOYMENT",
+      "questions": 27,
+      "ministry_total": 1570,
+      "party_total": 412,
+      "lift": 2.479
+    },
+    {
+      "party": "AIADMK",
+      "ministry": "COMMUNICATIONS",
+      "questions": 22,
+      "ministry_total": 795,
+      "party_total": 697,
+      "lift": 2.358
+    },
+    {
+      "party": "IND.",
+      "ministry": "ELECTRONICS AND INFORMATION TECHNOLOGY",
+      "questions": 37,
+      "ministry_total": 971,
+      "party_total": 971,
+      "lift": 2.33
+    },
+    {
+      "party": "TDP",
+      "ministry": "PLANNING",
+      "questions": 20,
+      "ministry_total": 235,
+      "party_total": 2178,
+      "lift": 2.32
+    },
+    {
+      "party": "AIADMK",
+      "ministry": "ROAD TRANSPORT & HIGH WAYS",
+      "questions": 21,
+      "ministry_total": 775,
+      "party_total": 697,
+      "lift": 2.309
+    },
+    {
+      "party": "BJD",
+      "ministry": "COAL",
+      "questions": 26,
+      "ministry_total": 661,
+      "party_total": 1019,
+      "lift": 2.292
+    },
+    {
+      "party": "CPI",
+      "ministry": "EXTERNAL AFFAIRS",
+      "questions": 16,
+      "ministry_total": 1026,
+      "party_total": 412,
+      "lift": 2.248
+    },
+    {
+      "party": "SP",
+      "ministry": "PERSONNEL,PUBLIC GRIEVANCES AND PENSIONS",
+      "questions": 15,
+      "ministry_total": 172,
+      "party_total": 2331,
+      "lift": 2.222
+    },
+    {
+      "party": "BJD",
+      "ministry": "MINORITY AFFAIRS",
+      "questions": 20,
+      "ministry_total": 535,
+      "party_total": 1019,
+      "lift": 2.178
+    },
+    {
+      "party": "TDP",
+      "ministry": "FISHERIES, ANIMAL HUSBANDRY AND DAIRYING",
+      "questions": 80,
+      "ministry_total": 1021,
+      "party_total": 2178,
+      "lift": 2.136
+    },
+    {
+      "party": "IUML",
+      "ministry": "EXTERNAL AFFAIRS",
+      "questions": 25,
+      "ministry_total": 1026,
+      "party_total": 682,
+      "lift": 2.122
+    },
+    {
+      "party": "YSRCP",
+      "ministry": "COMMUNICATIONS",
+      "questions": 36,
+      "ministry_total": 795,
+      "party_total": 1271,
+      "lift": 2.116
+    },
+    {
+      "party": "AITC",
+      "ministry": "INFORMATION AND BROADCASTING",
+      "questions": 42,
+      "ministry_total": 465,
+      "party_total": 2544,
+      "lift": 2.108
+    },
+    {
+      "party": "CPI(M)",
+      "ministry": "EXTERNAL AFFAIRS",
+      "questions": 40,
+      "ministry_total": 1026,
+      "party_total": 1102,
+      "lift": 2.101
+    },
+    {
+      "party": "TDP",
+      "ministry": "MICRO, SMALL AND MEDIUM ENTERPRISES",
+      "questions": 87,
+      "ministry_total": 1131,
+      "party_total": 2178,
+      "lift": 2.097
+    },
+    {
+      "party": "CPI(M)",
+      "ministry": "FINANCE",
+      "questions": 87,
+      "ministry_total": 2253,
+      "party_total": 1102,
+      "lift": 2.081
+    },
+    {
+      "party": "SP",
+      "ministry": "PLANNING",
+      "questions": 19,
+      "ministry_total": 235,
+      "party_total": 2331,
+      "lift": 2.06
+    },
+    {
+      "party": "SHS(UBT)",
+      "ministry": "EXTERNAL AFFAIRS",
+      "questions": 24,
+      "ministry_total": 1026,
+      "party_total": 686,
+      "lift": 2.025
+    },
+    {
+      "party": "NCP(SP)",
+      "ministry": "AYUSH",
+      "questions": 27,
+      "ministry_total": 1138,
+      "party_total": 704,
+      "lift": 2.001
+    },
+    {
+      "party": "BJD",
+      "ministry": "COMMUNICATIONS",
+      "questions": 27,
+      "ministry_total": 795,
+      "party_total": 1019,
+      "lift": 1.979
+    },
+    {
+      "party": "SP",
+      "ministry": "MINORITY AFFAIRS",
+      "questions": 41,
+      "ministry_total": 535,
+      "party_total": 2331,
+      "lift": 1.952
+    },
+    {
+      "party": "AITC",
+      "ministry": "EXTERNAL AFFAIRS",
+      "questions": 84,
+      "ministry_total": 1026,
+      "party_total": 2544,
+      "lift": 1.911
+    },
+    {
+      "party": "TDP",
+      "ministry": "SCIENCE AND TECHNOLOGY",
+      "questions": 30,
+      "ministry_total": 430,
+      "party_total": 2178,
+      "lift": 1.902
+    },
+    {
+      "party": "BJP",
+      "ministry": "PARLIAMENTARY AFFAIRS",
+      "questions": 49,
+      "ministry_total": 67,
+      "party_total": 22881,
+      "lift": 1.898
+    },
+    {
+      "party": "YSRCP",
+      "ministry": "PORTS, SHIPPING AND WATERWAYS",
+      "questions": 31,
+      "ministry_total": 769,
+      "party_total": 1271,
+      "lift": 1.883
+    },
+    {
+      "party": "SS",
+      "ministry": "ROAD TRANSPORT AND HIGHWAYS",
+      "questions": 46,
+      "ministry_total": 1286,
+      "party_total": 1132,
+      "lift": 1.876
+    },
+    {
+      "party": "JD(U)",
+      "ministry": "ROAD TRANSPORT AND HIGHWAYS",
+      "questions": 41,
+      "ministry_total": 1286,
+      "party_total": 1018,
+      "lift": 1.86
+    },
+    {
+      "party": "NOM.",
+      "ministry": "EDUCATION",
+      "questions": 25,
+      "ministry_total": 2802,
+      "party_total": 285,
+      "lift": 1.859
+    },
+    {
+      "party": "TDP",
+      "ministry": "SKILL DEVELOPMENT AND ENTREPRENEURSHIP",
+      "questions": 60,
+      "ministry_total": 882,
+      "party_total": 2178,
+      "lift": 1.855
+    },
+    {
+      "party": "TDP",
+      "ministry": "SPACE",
+      "questions": 16,
+      "ministry_total": 238,
+      "party_total": 2178,
+      "lift": 1.833
+    },
+    {
+      "party": "AAP",
+      "ministry": "EXTERNAL AFFAIRS",
+      "questions": 25,
+      "ministry_total": 1026,
+      "party_total": 790,
+      "lift": 1.832
+    },
+    {
+      "party": "IND.",
+      "ministry": "ENVIRONMENT, FOREST AND CLIMATE CHANGE",
+      "questions": 54,
+      "ministry_total": 1809,
+      "party_total": 971,
+      "lift": 1.826
+    },
+    {
+      "party": "SS",
+      "ministry": "ATOMIC ENERGY",
+      "questions": 15,
+      "ministry_total": 437,
+      "party_total": 1132,
+      "lift": 1.801
+    },
+    {
+      "party": "CPI",
+      "ministry": "FINANCE",
+      "questions": 28,
+      "ministry_total": 2253,
+      "party_total": 412,
+      "lift": 1.791
+    },
+    {
+      "party": "IUML",
+      "ministry": "FISHERIES, ANIMAL HUSBANDRY AND DAIRYING",
+      "questions": 21,
+      "ministry_total": 1021,
+      "party_total": 682,
+      "lift": 1.791
+    },
+    {
+      "party": "YSRCP",
+      "ministry": "ELECTRONICS AND INFORMATION TECHNOLOGY",
+      "questions": 37,
+      "ministry_total": 971,
+      "party_total": 1271,
+      "lift": 1.78
+    },
+    {
+      "party": "CPI(M)",
+      "ministry": "PETROLEUM AND NATURAL GAS",
+      "questions": 37,
+      "ministry_total": 1138,
+      "party_total": 1102,
+      "lift": 1.752
+    },
+    {
+      "party": "JSP",
+      "ministry": "AGRICULTURE AND FARMERS WELFARE",
+      "questions": 18,
+      "ministry_total": 2754,
+      "party_total": 222,
+      "lift": 1.748
+    },
+    {
+      "party": "NCP(SP)",
+      "ministry": "AGRICULTURE AND FARMERS WELFARE",
+      "questions": 57,
+      "ministry_total": 2754,
+      "party_total": 704,
+      "lift": 1.746
+    },
+    {
+      "party": "AAP",
+      "ministry": "ROAD TRANSPORT & HIGH WAYS",
+      "questions": 18,
+      "ministry_total": 775,
+      "party_total": 790,
+      "lift": 1.746
+    },
+    {
+      "party": "TDP",
+      "ministry": "ELECTRONICS AND INFORMATION TECHNOLOGY",
+      "questions": 62,
+      "ministry_total": 971,
+      "party_total": 2178,
+      "lift": 1.741
+    },
+    {
+      "party": "AIADMK",
+      "ministry": "HOUSING AND URBAN AFFAIRS",
+      "questions": 37,
+      "ministry_total": 1823,
+      "party_total": 697,
+      "lift": 1.729
+    },
+    {
+      "party": "BJD",
+      "ministry": "CIVIL AVIATION",
+      "questions": 63,
+      "ministry_total": 2129,
+      "party_total": 1019,
+      "lift": 1.724
+    },
+    {
+      "party": "AITC",
+      "ministry": "FINANCE",
+      "questions": 166,
+      "ministry_total": 2253,
+      "party_total": 2544,
+      "lift": 1.72
+    },
+    {
+      "party": "NCP(SP)",
+      "ministry": "ROAD TRANSPORT AND HIGHWAYS",
+      "questions": 26,
+      "ministry_total": 1286,
+      "party_total": 704,
+      "lift": 1.705
+    },
+    {
+      "party": "AITC",
+      "ministry": "MINORITY AFFAIRS",
+      "questions": 39,
+      "ministry_total": 535,
+      "party_total": 2544,
+      "lift": 1.702
+    },
+    {
+      "party": "TDP",
+      "ministry": "NEW AND RENEWABLE ENERGY",
+      "questions": 62,
+      "ministry_total": 995,
+      "party_total": 2178,
+      "lift": 1.699
+    },
+    {
+      "party": "IND.",
+      "ministry": "POWER",
+      "questions": 23,
+      "ministry_total": 830,
+      "party_total": 971,
+      "lift": 1.695
+    },
+    {
+      "party": "AIADMK",
+      "ministry": "CIVIL AVIATION",
+      "questions": 42,
+      "ministry_total": 2129,
+      "party_total": 697,
+      "lift": 1.681
+    },
+    {
+      "party": "YSRCP",
+      "ministry": "CHEMICALS AND FERTILIZERS",
+      "questions": 44,
+      "ministry_total": 1235,
+      "party_total": 1271,
+      "lift": 1.665
+    }
+  ],
+  "pagerank_top": [
+    {
+      "node": "party:BJP",
+      "type": "party",
+      "label": "BJP",
+      "pagerank": 0.12073
+    },
+    {
+      "node": "party:INC",
+      "type": "party",
+      "label": "INC",
+      "pagerank": 0.058862
+    },
+    {
+      "node": "party:DMK",
+      "type": "party",
+      "label": "DMK",
+      "pagerank": 0.023538
+    },
+    {
+      "node": "ministry:HEALTH AND FAMILY WELFARE",
+      "type": "ministry",
+      "label": "HEALTH AND FAMILY WELFARE",
+      "pagerank": 0.019679
+    },
+    {
+      "node": "party:AITC",
+      "type": "party",
+      "label": "AITC",
+      "pagerank": 0.016548
+    },
+    {
+      "node": "party:SP",
+      "type": "party",
+      "label": "SP",
+      "pagerank": 0.016279
+    },
+    {
+      "node": "party:TDP",
+      "type": "party",
+      "label": "TDP",
+      "pagerank": 0.016231
+    },
+    {
+      "node": "ministry:RAILWAYS",
+      "type": "ministry",
+      "label": "RAILWAYS",
+      "pagerank": 0.015792
+    },
+    {
+      "node": "ministry:EDUCATION",
+      "type": "ministry",
+      "label": "EDUCATION",
+      "pagerank": 0.015592
+    },
+    {
+      "node": "ministry:AGRICULTURE AND FARMERS WELFARE",
+      "type": "ministry",
+      "label": "AGRICULTURE AND FARMERS WELFARE",
+      "pagerank": 0.014818
+    },
+    {
+      "node": "ministry:FINANCE",
+      "type": "ministry",
+      "label": "FINANCE",
+      "pagerank": 0.012438
+    },
+    {
+      "node": "ministry:CIVIL AVIATION",
+      "type": "ministry",
+      "label": "CIVIL AVIATION",
+      "pagerank": 0.011567
+    },
+    {
+      "node": "ministry:JAL SHAKTI",
+      "type": "ministry",
+      "label": "JAL SHAKTI",
+      "pagerank": 0.011363
+    },
+    {
+      "node": "ministry:ENVIRONMENT, FOREST AND CLIMATE CHANGE",
+      "type": "ministry",
+      "label": "ENVIRONMENT, FOREST AND CLIMATE CHANGE",
+      "pagerank": 0.010777
+    },
+    {
+      "node": "party:YSRCP",
+      "type": "party",
+      "label": "YSRCP",
+      "pagerank": 0.009988
+    },
+    {
+      "node": "ministry:HOUSING AND URBAN AFFAIRS",
+      "type": "ministry",
+      "label": "HOUSING AND URBAN AFFAIRS",
+      "pagerank": 0.009976
+    },
+    {
+      "node": "party:BJD",
+      "type": "party",
+      "label": "BJD",
+      "pagerank": 0.00902
+    },
+    {
+      "node": "ministry:LABOUR AND EMPLOYMENT",
+      "type": "ministry",
+      "label": "LABOUR AND EMPLOYMENT",
+      "pagerank": 0.008974
+    },
+    {
+      "node": "party:TMC(M)",
+      "type": "party",
+      "label": "TMC(M)",
+      "pagerank": 0.008948
+    },
+    {
+      "node": "party:SS",
+      "type": "party",
+      "label": "SS",
+      "pagerank": 0.008841
+    },
+    {
+      "node": "party:CPI(M)",
+      "type": "party",
+      "label": "CPI(M)",
+      "pagerank": 0.008636
+    },
+    {
+      "node": "party:IND.",
+      "type": "party",
+      "label": "IND.",
+      "pagerank": 0.008621
+    },
+    {
+      "node": "ministry:RURAL DEVELOPMENT",
+      "type": "ministry",
+      "label": "RURAL DEVELOPMENT",
+      "pagerank": 0.007991
+    },
+    {
+      "node": "ministry:COMMERCE AND INDUSTRY",
+      "type": "ministry",
+      "label": "COMMERCE AND INDUSTRY",
+      "pagerank": 0.007921
+    },
+    {
+      "node": "party:JD(U)",
+      "type": "party",
+      "label": "JD(U)",
+      "pagerank": 0.007554
+    },
+    {
+      "node": "ministry:CONSUMER AFFAIRS, FOOD AND PUBLIC DISTRIBUTION",
+      "type": "ministry",
+      "label": "CONSUMER AFFAIRS, FOOD AND PUBLIC DISTRIBUTION",
+      "pagerank": 0.007552
+    },
+    {
+      "node": "ministry:WOMEN AND CHILD DEVELOPMENT",
+      "type": "ministry",
+      "label": "WOMEN AND CHILD DEVELOPMENT",
+      "pagerank": 0.007411
+    },
+    {
+      "node": "ministry:ROAD TRANSPORT AND HIGHWAYS",
+      "type": "ministry",
+      "label": "ROAD TRANSPORT AND HIGHWAYS",
+      "pagerank": 0.007366
+    },
+    {
+      "node": "ministry:EXTERNAL AFFAIRS",
+      "type": "ministry",
+      "label": "EXTERNAL AFFAIRS",
+      "pagerank": 0.006902
+    },
+    {
+      "node": "ministry:CHEMICALS AND FERTILIZERS",
+      "type": "ministry",
+      "label": "CHEMICALS AND FERTILIZERS",
+      "pagerank": 0.006877
+    },
+    {
+      "node": "party:AAP",
+      "type": "party",
+      "label": "AAP",
+      "pagerank": 0.006653
+    },
+    {
+      "node": "ministry:PETROLEUM AND NATURAL GAS",
+      "type": "ministry",
+      "label": "PETROLEUM AND NATURAL GAS",
+      "pagerank": 0.006569
+    },
+    {
+      "node": "party:AIADMK",
+      "type": "party",
+      "label": "AIADMK",
+      "pagerank": 0.006491
+    },
+    {
+      "node": "ministry:AYUSH",
+      "type": "ministry",
+      "label": "AYUSH",
+      "pagerank": 0.006303
+    },
+    {
+      "node": "ministry:MICRO, SMALL AND MEDIUM ENTERPRISES",
+      "type": "ministry",
+      "label": "MICRO, SMALL AND MEDIUM ENTERPRISES",
+      "pagerank": 0.006152
+    },
+    {
+      "node": "party:NCP(SP)",
+      "type": "party",
+      "label": "NCP(SP)",
+      "pagerank": 0.006056
+    },
+    {
+      "node": "party:SHS(UBT)",
+      "type": "party",
+      "label": "SHS(UBT)",
+      "pagerank": 0.006018
+    },
+    {
+      "node": "ministry:SOCIAL JUSTICE AND EMPOWERMENT",
+      "type": "ministry",
+      "label": "SOCIAL JUSTICE AND EMPOWERMENT",
+      "pagerank": 0.006008
+    },
+    {
+      "node": "ministry:TOURISM",
+      "type": "ministry",
+      "label": "TOURISM",
+      "pagerank": 0.005979
+    },
+    {
+      "node": "ministry:CULTURE",
+      "type": "ministry",
+      "label": "CULTURE",
+      "pagerank": 0.00589
+    }
+  ],
+  "party_communities": [
+    {
+      "community": 0,
+      "party": "AITC",
+      "questions": 2544,
+      "community_size": 13
+    },
+    {
+      "community": 0,
+      "party": "SP",
+      "questions": 2331,
+      "community_size": 13
+    },
+    {
+      "community": 0,
+      "party": "CPI(M)",
+      "questions": 1102,
+      "community_size": 13
+    },
+    {
+      "community": 0,
+      "party": "IUML",
+      "questions": 682,
+      "community_size": 13
+    },
+    {
+      "community": 0,
+      "party": "CPI",
+      "questions": 412,
+      "community_size": 13
+    },
+    {
+      "community": 0,
+      "party": "VCK",
+      "questions": 215,
+      "community_size": 13
+    },
+    {
+      "community": 0,
+      "party": "CPI(ML)(L)",
+      "questions": 200,
+      "community_size": 13
+    },
+    {
+      "community": 0,
+      "party": "BAP",
+      "questions": 138,
+      "community_size": 13
+    },
+    {
+      "community": 0,
+      "party": "AIMIM",
+      "questions": 114,
+      "community_size": 13
+    },
+    {
+      "community": 0,
+      "party": "RSP",
+      "questions": 108,
+      "community_size": 13
+    },
+    {
+      "community": 0,
+      "party": "SAD",
+      "questions": 87,
+      "community_size": 13
+    },
+    {
+      "community": 0,
+      "party": "ASP (KR)",
+      "questions": 85,
+      "community_size": 13
+    },
+    {
+      "community": 0,
+      "party": "RLM",
+      "questions": 35,
+      "community_size": 13
+    },
+    {
+      "community": 1,
+      "party": "BJP",
+      "questions": 22881,
+      "community_size": 24
+    },
+    {
+      "community": 1,
+      "party": "INC",
+      "questions": 11184,
+      "community_size": 24
+    },
+    {
+      "community": 1,
+      "party": "DMK",
+      "questions": 3537,
+      "community_size": 24
+    },
+    {
+      "community": 1,
+      "party": "TDP",
+      "questions": 2178,
+      "community_size": 24
+    },
+    {
+      "community": 1,
+      "party": "YSRCP",
+      "questions": 1271,
+      "community_size": 24
+    },
+    {
+      "community": 1,
+      "party": "SS",
+      "questions": 1132,
+      "community_size": 24
+    },
+    {
+      "community": 1,
+      "party": "BJD",
+      "questions": 1019,
+      "community_size": 24
+    },
+    {
+      "community": 1,
+      "party": "JD(U)",
+      "questions": 1018,
+      "community_size": 24
+    },
+    {
+      "community": 1,
+      "party": "IND.",
+      "questions": 971,
+      "community_size": 24
+    },
+    {
+      "community": 1,
+      "party": "AAP",
+      "questions": 790,
+      "community_size": 24
+    },
+    {
+      "community": 1,
+      "party": "NCP(SP)",
+      "questions": 704,
+      "community_size": 24
+    },
+    {
+      "community": 1,
+      "party": "AIADMK",
+      "questions": 697,
+      "community_size": 24
+    },
+    {
+      "community": 1,
+      "party": "SHS(UBT)",
+      "questions": 686,
+      "community_size": 24
+    },
+    {
+      "community": 1,
+      "party": "RJD",
+      "questions": 537,
+      "community_size": 24
+    },
+    {
+      "community": 1,
+      "party": "NOM.",
+      "questions": 285,
+      "community_size": 24
+    },
+    {
+      "community": 1,
+      "party": "LJSP(RV)",
+      "questions": 276,
+      "community_size": 24
+    },
+    {
+      "community": 1,
+      "party": "JSP",
+      "questions": 222,
+      "community_size": 24
+    },
+    {
+      "community": 1,
+      "party": "NCP",
+      "questions": 205,
+      "community_size": 24
+    },
+    {
+      "community": 1,
+      "party": "MDMK",
+      "questions": 150,
+      "community_size": 24
+    },
+    {
+      "community": 1,
+      "party": "KC(M)",
+      "questions": 135,
+      "community_size": 24
+    },
+    {
+      "community": 1,
+      "party": "RLD",
+      "questions": 117,
+      "community_size": 24
+    },
+    {
+      "community": 1,
+      "party": "J&KNC",
+      "questions": 89,
+      "community_size": 24
+    },
+    {
+      "community": 1,
+      "party": "KEC",
+      "questions": 53,
+      "community_size": 24
+    },
+    {
+      "community": 1,
+      "party": "JD(S)",
+      "questions": 30,
+      "community_size": 24
+    },
+    {
+      "community": 2,
+      "party": "JMM",
+      "questions": 192,
+      "community_size": 8
+    },
+    {
+      "community": 2,
+      "party": "RLP",
+      "questions": 145,
+      "community_size": 8
+    },
+    {
+      "community": 2,
+      "party": "Unknown",
+      "questions": 142,
+      "community_size": 8
+    },
+    {
+      "community": 2,
+      "party": "UPPL",
+      "questions": 119,
+      "community_size": 8
+    },
+    {
+      "community": 2,
+      "party": "AJSU",
+      "questions": 63,
+      "community_size": 8
+    },
+    {
+      "community": 2,
+      "party": "AGP",
+      "questions": 61,
+      "community_size": 8
+    },
+    {
+      "community": 2,
+      "party": "SKM",
+      "questions": 44,
+      "community_size": 8
+    },
+    {
+      "community": 2,
+      "party": "PMK",
+      "questions": 33,
+      "community_size": 8
+    },
+    {
+      "community": 3,
+      "party": "BRS",
+      "questions": 296,
+      "community_size": 1
+    }
+  ],
+  "ministry_cooccurrence_top": [
+    {
+      "ministry_a": "HEALTH AND FAMILY WELFARE",
+      "ministry_b": "RAILWAYS",
+      "shared_mps": 558
+    },
+    {
+      "ministry_a": "AGRICULTURE AND FARMERS WELFARE",
+      "ministry_b": "HEALTH AND FAMILY WELFARE",
+      "shared_mps": 556
+    },
+    {
+      "ministry_a": "EDUCATION",
+      "ministry_b": "HEALTH AND FAMILY WELFARE",
+      "shared_mps": 553
+    },
+    {
+      "ministry_a": "EDUCATION",
+      "ministry_b": "RAILWAYS",
+      "shared_mps": 540
+    },
+    {
+      "ministry_a": "AGRICULTURE AND FARMERS WELFARE",
+      "ministry_b": "RAILWAYS",
+      "shared_mps": 539
+    },
+    {
+      "ministry_a": "HEALTH AND FAMILY WELFARE",
+      "ministry_b": "JAL SHAKTI",
+      "shared_mps": 528
+    },
+    {
+      "ministry_a": "AGRICULTURE AND FARMERS WELFARE",
+      "ministry_b": "EDUCATION",
+      "shared_mps": 527
+    },
+    {
+      "ministry_a": "AGRICULTURE AND FARMERS WELFARE",
+      "ministry_b": "JAL SHAKTI",
+      "shared_mps": 517
+    },
+    {
+      "ministry_a": "CIVIL AVIATION",
+      "ministry_b": "HEALTH AND FAMILY WELFARE",
+      "shared_mps": 516
+    },
+    {
+      "ministry_a": "JAL SHAKTI",
+      "ministry_b": "RAILWAYS",
+      "shared_mps": 515
+    },
+    {
+      "ministry_a": "EDUCATION",
+      "ministry_b": "JAL SHAKTI",
+      "shared_mps": 508
+    },
+    {
+      "ministry_a": "CIVIL AVIATION",
+      "ministry_b": "RAILWAYS",
+      "shared_mps": 501
+    },
+    {
+      "ministry_a": "ENVIRONMENT, FOREST AND CLIMATE CHANGE",
+      "ministry_b": "HEALTH AND FAMILY WELFARE",
+      "shared_mps": 496
+    },
+    {
+      "ministry_a": "CIVIL AVIATION",
+      "ministry_b": "EDUCATION",
+      "shared_mps": 495
+    },
+    {
+      "ministry_a": "HEALTH AND FAMILY WELFARE",
+      "ministry_b": "HOUSING AND URBAN AFFAIRS",
+      "shared_mps": 495
+    },
+    {
+      "ministry_a": "AGRICULTURE AND FARMERS WELFARE",
+      "ministry_b": "CIVIL AVIATION",
+      "shared_mps": 494
+    },
+    {
+      "ministry_a": "FINANCE",
+      "ministry_b": "HEALTH AND FAMILY WELFARE",
+      "shared_mps": 494
+    },
+    {
+      "ministry_a": "FINANCE",
+      "ministry_b": "RAILWAYS",
+      "shared_mps": 484
+    },
+    {
+      "ministry_a": "ENVIRONMENT, FOREST AND CLIMATE CHANGE",
+      "ministry_b": "RAILWAYS",
+      "shared_mps": 483
+    },
+    {
+      "ministry_a": "AGRICULTURE AND FARMERS WELFARE",
+      "ministry_b": "FINANCE",
+      "shared_mps": 481
+    },
+    {
+      "ministry_a": "HEALTH AND FAMILY WELFARE",
+      "ministry_b": "RURAL DEVELOPMENT",
+      "shared_mps": 479
+    },
+    {
+      "ministry_a": "AGRICULTURE AND FARMERS WELFARE",
+      "ministry_b": "ENVIRONMENT, FOREST AND CLIMATE CHANGE",
+      "shared_mps": 477
+    },
+    {
+      "ministry_a": "EDUCATION",
+      "ministry_b": "FINANCE",
+      "shared_mps": 476
+    },
+    {
+      "ministry_a": "AGRICULTURE AND FARMERS WELFARE",
+      "ministry_b": "HOUSING AND URBAN AFFAIRS",
+      "shared_mps": 476
+    },
+    {
+      "ministry_a": "HEALTH AND FAMILY WELFARE",
+      "ministry_b": "LABOUR AND EMPLOYMENT",
+      "shared_mps": 475
+    },
+    {
+      "ministry_a": "EDUCATION",
+      "ministry_b": "ENVIRONMENT, FOREST AND CLIMATE CHANGE",
+      "shared_mps": 472
+    },
+    {
+      "ministry_a": "EDUCATION",
+      "ministry_b": "HOUSING AND URBAN AFFAIRS",
+      "shared_mps": 472
+    },
+    {
+      "ministry_a": "HOUSING AND URBAN AFFAIRS",
+      "ministry_b": "RAILWAYS",
+      "shared_mps": 469
+    },
+    {
+      "ministry_a": "CONSUMER AFFAIRS, FOOD AND PUBLIC DISTRIBUTION",
+      "ministry_b": "HEALTH AND FAMILY WELFARE",
+      "shared_mps": 468
+    },
+    {
+      "ministry_a": "AGRICULTURE AND FARMERS WELFARE",
+      "ministry_b": "RURAL DEVELOPMENT",
+      "shared_mps": 467
+    },
+    {
+      "ministry_a": "CIVIL AVIATION",
+      "ministry_b": "JAL SHAKTI",
+      "shared_mps": 467
+    },
+    {
+      "ministry_a": "LABOUR AND EMPLOYMENT",
+      "ministry_b": "RAILWAYS",
+      "shared_mps": 466
+    },
+    {
+      "ministry_a": "RAILWAYS",
+      "ministry_b": "RURAL DEVELOPMENT",
+      "shared_mps": 464
+    },
+    {
+      "ministry_a": "AGRICULTURE AND FARMERS WELFARE",
+      "ministry_b": "LABOUR AND EMPLOYMENT",
+      "shared_mps": 462
+    },
+    {
+      "ministry_a": "HEALTH AND FAMILY WELFARE",
+      "ministry_b": "WOMEN AND CHILD DEVELOPMENT",
+      "shared_mps": 460
+    },
+    {
+      "ministry_a": "CONSUMER AFFAIRS, FOOD AND PUBLIC DISTRIBUTION",
+      "ministry_b": "RAILWAYS",
+      "shared_mps": 459
+    },
+    {
+      "ministry_a": "FINANCE",
+      "ministry_b": "JAL SHAKTI",
+      "shared_mps": 458
+    },
+    {
+      "ministry_a": "EDUCATION",
+      "ministry_b": "RURAL DEVELOPMENT",
+      "shared_mps": 457
+    },
+    {
+      "ministry_a": "AGRICULTURE AND FARMERS WELFARE",
+      "ministry_b": "CONSUMER AFFAIRS, FOOD AND PUBLIC DISTRIBUTION",
+      "shared_mps": 456
+    },
+    {
+      "ministry_a": "EDUCATION",
+      "ministry_b": "LABOUR AND EMPLOYMENT",
+      "shared_mps": 455
+    }
+  ],
+  "cross_party_bridges_top": [
+    {
+      "mp_a": "Shri Dhairyasheel Sambhajirao Mane",
+      "party_a": "SS",
+      "mp_b": "Shri Sudheer Gupta",
+      "party_b": "BJP",
+      "joint_questions": 207
+    },
+    {
+      "mp_a": "Prof. Varsha Eknath Gaikwad",
+      "party_a": "INC",
+      "mp_b": "Smt. Supriya Sule",
+      "party_b": "NCP(SP)",
+      "joint_questions": 206
+    },
+    {
+      "mp_a": "Prof. Varsha Eknath Gaikwad",
+      "party_a": "INC",
+      "mp_b": "Shri Sanjay Dina Patil",
+      "party_b": "SS",
+      "joint_questions": 205
+    },
+    {
+      "mp_a": "Shri Shrirang Appa Chandu Barne",
+      "party_a": "SS",
+      "mp_b": "Smt. Bharti Pardhi",
+      "party_b": "BJP",
+      "joint_questions": 204
+    },
+    {
+      "mp_a": "Prof. Varsha Eknath Gaikwad",
+      "party_a": "INC",
+      "mp_b": "Shri Mohite Patil Dhairyasheel Rajsinh",
+      "party_b": "NCP(SP)",
+      "joint_questions": 200
+    },
+    {
+      "mp_a": "Dr. Amol Ramsing Kolhe",
+      "party_a": "NCP(SP)",
+      "mp_b": "Prof. Varsha Eknath Gaikwad",
+      "party_b": "INC",
+      "joint_questions": 199
+    },
+    {
+      "mp_a": "Prof. Varsha Eknath Gaikwad",
+      "party_a": "INC",
+      "mp_b": "Shri Bhaskar Murlidhar Bhagare",
+      "party_b": "NCP(SP)",
+      "joint_questions": 193
+    },
+    {
+      "mp_a": "Shri Sanjay Dina Patil",
+      "party_a": "SS",
+      "mp_b": "Smt. Supriya Sule",
+      "party_b": "NCP(SP)",
+      "joint_questions": 181
+    },
+    {
+      "mp_a": "Shri Mohite Patil Dhairyasheel Rajsinh",
+      "party_a": "NCP(SP)",
+      "mp_b": "Shri Sanjay Dina Patil",
+      "party_b": "SS",
+      "joint_questions": 179
+    },
+    {
+      "mp_a": "Dr. Amol Ramsing Kolhe",
+      "party_a": "NCP(SP)",
+      "mp_b": "Shri Sanjay Dina Patil",
+      "party_b": "SS",
+      "joint_questions": 178
+    },
+    {
+      "mp_a": "Shri Bhaskar Murlidhar Bhagare",
+      "party_a": "NCP(SP)",
+      "mp_b": "Shri Sanjay Dina Patil",
+      "party_b": "SS",
+      "joint_questions": 178
+    },
+    {
+      "mp_a": "Shri Bhumare Sandipanrao Asaram",
+      "party_a": "SS",
+      "mp_b": "Shri Gyaneshwar Patil",
+      "party_b": "BJP",
+      "joint_questions": 164
+    },
+    {
+      "mp_a": "Shri C N Annadurai",
+      "party_a": "DMK",
+      "mp_b": "Shri Navaskani K",
+      "party_b": "IUML",
+      "joint_questions": 151
+    },
+    {
+      "mp_a": "Shri Chavan Ravindra Vasantrao",
+      "party_a": "INC",
+      "mp_b": "Shri Sudheer Gupta",
+      "party_b": "BJP",
+      "joint_questions": 148
+    },
+    {
+      "mp_a": "Dr. Shivaji Bandappa Kalge",
+      "party_a": "INC",
+      "mp_b": "Shri Bhumare Sandipanrao Asaram",
+      "party_b": "SS",
+      "joint_questions": 142
+    },
+    {
+      "mp_a": "Shri Chavan Ravindra Vasantrao",
+      "party_a": "INC",
+      "mp_b": "Shri Dhairyasheel Sambhajirao Mane",
+      "party_b": "SS",
+      "joint_questions": 141
+    },
+    {
+      "mp_a": "Shri Navaskani K",
+      "party_a": "IUML",
+      "mp_b": "Shri Selvam G",
+      "party_b": "DMK",
+      "joint_questions": 139
+    },
+    {
+      "mp_a": "Shri Bhumare Sandipanrao Asaram",
+      "party_a": "SS",
+      "mp_b": "Smt. Delkar Kalaben Mohanbhai",
+      "party_b": "BJP",
+      "joint_questions": 127
+    },
+    {
+      "mp_a": "Dr. Shivaji Bandappa Kalge",
+      "party_a": "INC",
+      "mp_b": "Shri Gyaneshwar Patil",
+      "party_b": "BJP",
+      "joint_questions": 123
+    },
+    {
+      "mp_a": "Dr. Shivaji Bandappa Kalge",
+      "party_a": "INC",
+      "mp_b": "Shri Nilesh Dnyandev Lanke",
+      "party_b": "NCP(SP)",
+      "joint_questions": 118
+    },
+    {
+      "mp_a": "Prof. Varsha Eknath Gaikwad",
+      "party_a": "INC",
+      "mp_b": "Shri Nilesh Dnyandev Lanke",
+      "party_b": "NCP(SP)",
+      "joint_questions": 116
+    },
+    {
+      "mp_a": "Shri Nilesh Dnyandev Lanke",
+      "party_a": "NCP(SP)",
+      "mp_b": "Shri Sanjay Dina Patil",
+      "party_b": "SS",
+      "joint_questions": 114
+    },
+    {
+      "mp_a": "Shri Bhumare Sandipanrao Asaram",
+      "party_a": "SS",
+      "mp_b": "Shri Nilesh Dnyandev Lanke",
+      "party_b": "NCP(SP)",
+      "joint_questions": 105
+    },
+    {
+      "mp_a": "Shri Naresh Ganpat Mhaske",
+      "party_a": "SS",
+      "mp_b": "Smt. Shambhavi",
+      "party_b": "LJSP(RV)",
+      "joint_questions": 104
+    },
+    {
+      "mp_a": "Shri Ravindra Dattaram Waikar",
+      "party_a": "SS",
+      "mp_b": "Smt. Bharti Pardhi",
+      "party_b": "BJP",
+      "joint_questions": 97
+    },
+    {
+      "mp_a": "Dr. Shrikant Eknath Shinde",
+      "party_a": "SS",
+      "mp_b": "Smt. Shambhavi",
+      "party_b": "LJSP(RV)",
+      "joint_questions": 97
+    },
+    {
+      "mp_a": "Shri Naresh Ganpat Mhaske",
+      "party_a": "SS",
+      "mp_b": "Smt. Bharti Pardhi",
+      "party_b": "BJP",
+      "joint_questions": 94
+    },
+    {
+      "mp_a": "Prof. Varsha Eknath Gaikwad",
+      "party_a": "INC",
+      "mp_b": "Shri Bajrang Manohar Sonwane",
+      "party_b": "NCP(SP)",
+      "joint_questions": 94
+    },
+    {
+      "mp_a": "Shri Bajrang Manohar Sonwane",
+      "party_a": "NCP(SP)",
+      "mp_b": "Shri Sanjay Dina Patil",
+      "party_b": "SS",
+      "joint_questions": 93
+    },
+    {
+      "mp_a": "Dr. Shrikant Eknath Shinde",
+      "party_a": "SS",
+      "mp_b": "Smt. Bharti Pardhi",
+      "party_b": "BJP",
+      "joint_questions": 92
+    }
+  ]
+}
