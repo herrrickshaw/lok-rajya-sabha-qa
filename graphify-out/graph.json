@@ -1,0 +1,6328 @@
+{
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "failed_sources": [
+    "/Users/umashankar/lok-rajya-sabha-qa/data/raw/ls_questions.json",
+    "/Users/umashankar/lok-rajya-sabha-qa/data/raw/parivesh_proposals.json",
+    "/Users/umashankar/lok-rajya-sabha-qa/data/raw/rs_members_former.json",
+    "/Users/umashankar/lok-rajya-sabha-qa/data/raw/rs_questions_raw.json"
+  ],
+  "extracted_sources": [
+    "/Users/umashankar/lok-rajya-sabha-qa/data/external/ministry_registry.json",
+    "/Users/umashankar/lok-rajya-sabha-qa/data/external/pli_report_card.json",
+    "/Users/umashankar/lok-rajya-sabha-qa/data/raw/ls_members.json",
+    "/Users/umashankar/lok-rajya-sabha-qa/data/raw/ls_questions.json",
+    "/Users/umashankar/lok-rajya-sabha-qa/data/raw/parivesh_proposals.json",
+    "/Users/umashankar/lok-rajya-sabha-qa/data/raw/rs_members.json",
+    "/Users/umashankar/lok-rajya-sabha-qa/data/raw/rs_members_former.json",
+    "/Users/umashankar/lok-rajya-sabha-qa/data/raw/rs_questions_raw.json",
+    "/Users/umashankar/lok-rajya-sabha-qa/data/raw/wp_json_schemes.json",
+    "/Users/umashankar/lok-rajya-sabha-qa/scripts/build.py",
+    "/Users/umashankar/lok-rajya-sabha-qa/scripts/build_db.py",
+    "/Users/umashankar/lok-rajya-sabha-qa/scripts/build_graph.py",
+    "/Users/umashankar/lok-rajya-sabha-qa/scripts/build_xlsx.py",
+    "/Users/umashankar/lok-rajya-sabha-qa/scripts/compare_parivesh.py",
+    "/Users/umashankar/lok-rajya-sabha-qa/scripts/compare_pib.py",
+    "/Users/umashankar/lok-rajya-sabha-qa/scripts/compare_pli.py",
+    "/Users/umashankar/lok-rajya-sabha-qa/scripts/compare_wp_json_schemes.py",
+    "/Users/umashankar/lok-rajya-sabha-qa/scripts/ministry_registry.py",
+    "/Users/umashankar/lok-rajya-sabha-qa/scripts/render_site.py",
+    "/Users/umashankar/lok-rajya-sabha-qa/site/data.json",
+    "/Users/umashankar/lok-rajya-sabha-qa/site/graph.json",
+    "/Users/umashankar/lok-rajya-sabha-qa/site/meity.json",
+    "/Users/umashankar/lok-rajya-sabha-qa/site/parivesh.json",
+    "/Users/umashankar/lok-rajya-sabha-qa/site/pib.json",
+    "/Users/umashankar/lok-rajya-sabha-qa/site/pli.json",
+    "/Users/umashankar/lok-rajya-sabha-qa/README.md",
+    "/Users/umashankar/lok-rajya-sabha-qa/docs/ANALYSIS.md",
+    "/Users/umashankar/lok-rajya-sabha-qa/docs/parties/aap.md",
+    "/Users/umashankar/lok-rajya-sabha-qa/docs/parties/agp.md",
+    "/Users/umashankar/lok-rajya-sabha-qa/docs/parties/aiadmk.md",
+    "/Users/umashankar/lok-rajya-sabha-qa/docs/parties/aimim.md",
+    "/Users/umashankar/lok-rajya-sabha-qa/docs/parties/aitc.md",
+    "/Users/umashankar/lok-rajya-sabha-qa/docs/parties/ajsu.md",
+    "/Users/umashankar/lok-rajya-sabha-qa/docs/parties/asp-kr.md",
+    "/Users/umashankar/lok-rajya-sabha-qa/docs/parties/bap.md",
+    "/Users/umashankar/lok-rajya-sabha-qa/docs/parties/bjd.md",
+    "/Users/umashankar/lok-rajya-sabha-qa/docs/parties/bjp.md",
+    "/Users/umashankar/lok-rajya-sabha-qa/docs/parties/brs.md",
+    "/Users/umashankar/lok-rajya-sabha-qa/docs/parties/cpi-m.md",
+    "/Users/umashankar/lok-rajya-sabha-qa/docs/parties/cpi-ml-l.md",
+    "/Users/umashankar/lok-rajya-sabha-qa/docs/parties/cpi.md",
+    "/Users/umashankar/lok-rajya-sabha-qa/docs/parties/dmk.md",
+    "/Users/umashankar/lok-rajya-sabha-qa/docs/parties/inc.md",
+    "/Users/umashankar/lok-rajya-sabha-qa/docs/parties/ind.md",
+    "/Users/umashankar/lok-rajya-sabha-qa/docs/parties/iuml.md",
+    "/Users/umashankar/lok-rajya-sabha-qa/docs/parties/j-knc.md",
+    "/Users/umashankar/lok-rajya-sabha-qa/docs/parties/jd-u.md",
+    "/Users/umashankar/lok-rajya-sabha-qa/docs/parties/jmm.md",
+    "/Users/umashankar/lok-rajya-sabha-qa/docs/parties/jsp.md",
+    "/Users/umashankar/lok-rajya-sabha-qa/docs/parties/kc-m.md",
+    "/Users/umashankar/lok-rajya-sabha-qa/docs/parties/kec.md",
+    "/Users/umashankar/lok-rajya-sabha-qa/docs/parties/ljsp-rv.md",
+    "/Users/umashankar/lok-rajya-sabha-qa/docs/parties/mdmk.md",
+    "/Users/umashankar/lok-rajya-sabha-qa/docs/parties/ncp-sp.md",
+    "/Users/umashankar/lok-rajya-sabha-qa/docs/parties/ncp.md",
+    "/Users/umashankar/lok-rajya-sabha-qa/docs/parties/nom.md",
+    "/Users/umashankar/lok-rajya-sabha-qa/docs/parties/rjd.md",
+    "/Users/umashankar/lok-rajya-sabha-qa/docs/parties/rld.md",
+    "/Users/umashankar/lok-rajya-sabha-qa/docs/parties/rlp.md",
+    "/Users/umashankar/lok-rajya-sabha-qa/docs/parties/rsp.md",
+    "/Users/umashankar/lok-rajya-sabha-qa/docs/parties/sad.md",
+    "/Users/umashankar/lok-rajya-sabha-qa/docs/parties/shs-ubt.md",
+    "/Users/umashankar/lok-rajya-sabha-qa/docs/parties/sp.md",
+    "/Users/umashankar/lok-rajya-sabha-qa/docs/parties/ss.md",
+    "/Users/umashankar/lok-rajya-sabha-qa/docs/parties/tdp.md",
+    "/Users/umashankar/lok-rajya-sabha-qa/docs/parties/uppl.md",
+    "/Users/umashankar/lok-rajya-sabha-qa/docs/parties/vck.md",
+    "/Users/umashankar/lok-rajya-sabha-qa/docs/parties/ysrcp.md"
+  ],
+  "nodes": [
+    {
+      "id": "scripts_build",
+      "label": "build.py",
+      "file_type": "code",
+      "source_file": "scripts/build.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_build_canonical_party",
+      "label": "canonical_party()",
+      "file_type": "code",
+      "source_file": "scripts/build.py",
+      "source_location": "L59",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_build_canonical_state",
+      "label": "canonical_state()",
+      "file_type": "code",
+      "source_file": "scripts/build.py",
+      "source_location": "L77",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_build_canonical_ministry",
+      "label": "canonical_ministry()",
+      "file_type": "code",
+      "source_file": "scripts/build.py",
+      "source_location": "L93",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_build_strip_html",
+      "label": "strip_html()",
+      "file_type": "code",
+      "source_file": "scripts/build.py",
+      "source_location": "L108",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_build_normalize_name",
+      "label": "normalize_name()",
+      "file_type": "code",
+      "source_file": "scripts/build.py",
+      "source_location": "L116",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_build_load_ls_member_index",
+      "label": "load_ls_member_index()",
+      "file_type": "code",
+      "source_file": "scripts/build.py",
+      "source_location": "L126",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_build_fuzzy_match",
+      "label": "fuzzy_match()",
+      "file_type": "code",
+      "source_file": "scripts/build.py",
+      "source_location": "L150",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_build_load_rs_member_index",
+      "label": "load_rs_member_index()",
+      "file_type": "code",
+      "source_file": "scripts/build.py",
+      "source_location": "L174",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_build_build_ls",
+      "label": "build_ls()",
+      "file_type": "code",
+      "source_file": "scripts/build.py",
+      "source_location": "L190",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_build_build_rs",
+      "label": "build_rs()",
+      "file_type": "code",
+      "source_file": "scripts/build.py",
+      "source_location": "L228",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_build_write_csv",
+      "label": "write_csv()",
+      "file_type": "code",
+      "source_file": "scripts/build.py",
+      "source_location": "L262",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_build_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "scripts/build.py",
+      "source_location": "L269",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_build_main_tokenize",
+      "label": "tokenize()",
+      "file_type": "code",
+      "source_file": "scripts/build.py",
+      "source_location": "L395",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_build_main_top_terms",
+      "label": "top_terms()",
+      "file_type": "code",
+      "source_file": "scripts/build.py",
+      "source_location": "L399",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_build_rationale_1",
+      "label": "Build party-wise / ministry-wise rankings of Parliament Questions (PQs) for the…",
+      "file_type": "rationale",
+      "source_file": "scripts/build.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_build_rationale_94",
+      "label": "LS ('ministry') and RS ('min_name') fields differ in case/spacing for the same…",
+      "file_type": "rationale",
+      "source_file": "scripts/build.py",
+      "source_location": "L94",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_build_rationale_151",
+      "label": "Fallback for honorific variants / middle-name mismatches: pick the roster entry…",
+      "file_type": "rationale",
+      "source_file": "scripts/build.py",
+      "source_location": "L151",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_build_db",
+      "label": "build_db.py",
+      "file_type": "code",
+      "source_file": "scripts/build_db.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_build_db_read_csv",
+      "label": "read_csv()",
+      "file_type": "code",
+      "source_file": "scripts/build_db.py",
+      "source_location": "L24",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_build_db_load_table",
+      "label": "load_table()",
+      "file_type": "code",
+      "source_file": "scripts/build_db.py",
+      "source_location": "L32",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_build_db_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "scripts/build_db.py",
+      "source_location": "L42",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_build_db_build_markdown",
+      "label": "build_markdown()",
+      "file_type": "code",
+      "source_file": "scripts/build_db.py",
+      "source_location": "L108",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_build_db_build_markdown_slugify",
+      "label": "slugify()",
+      "file_type": "code",
+      "source_file": "scripts/build_db.py",
+      "source_location": "L129",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_build_db_rationale_1",
+      "label": "Load the enriched PQ data, summaries, and knowledge-graph outputs into a single…",
+      "file_type": "rationale",
+      "source_file": "scripts/build_db.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_build_graph",
+      "label": "build_graph.py",
+      "file_type": "code",
+      "source_file": "scripts/build_graph.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_build_graph_pagerank_power_iteration",
+      "label": "pagerank_power_iteration()",
+      "file_type": "code",
+      "source_file": "scripts/build_graph.py",
+      "source_location": "L52",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_build_graph_read_csv",
+      "label": "read_csv()",
+      "file_type": "code",
+      "source_file": "scripts/build_graph.py",
+      "source_location": "L94",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_build_graph_write_csv",
+      "label": "write_csv()",
+      "file_type": "code",
+      "source_file": "scripts/build_graph.py",
+      "source_location": "L99",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_build_graph_load_all_rows",
+      "label": "load_all_rows()",
+      "file_type": "code",
+      "source_file": "scripts/build_graph.py",
+      "source_location": "L106",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_build_graph_load_topics",
+      "label": "load_topics()",
+      "file_type": "code",
+      "source_file": "scripts/build_graph.py",
+      "source_location": "L112",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_build_graph_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "scripts/build_graph.py",
+      "source_location": "L123",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_build_graph_main_add_node",
+      "label": "add_node()",
+      "file_type": "code",
+      "source_file": "scripts/build_graph.py",
+      "source_location": "L129",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_build_graph_rationale_1",
+      "label": "Build a heterogeneous knowledge graph over the enriched PQ dataset and run a…",
+      "file_type": "rationale",
+      "source_file": "scripts/build_graph.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_build_graph_rationale_53",
+      "label": "Pure-Python power-iteration PageRank (avoids the scipy dependency that…",
+      "file_type": "rationale",
+      "source_file": "scripts/build_graph.py",
+      "source_location": "L53",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_build_graph_rationale_113",
+      "label": "party -> [(term, count), ...] from build.py's topic_keywords.csv, excluding the…",
+      "file_type": "rationale",
+      "source_file": "scripts/build_graph.py",
+      "source_location": "L113",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_build_xlsx",
+      "label": "build_xlsx.py",
+      "file_type": "code",
+      "source_file": "scripts/build_xlsx.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_build_xlsx_df",
+      "label": "df()",
+      "file_type": "code",
+      "source_file": "scripts/build_xlsx.py",
+      "source_location": "L23",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_build_xlsx_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "scripts/build_xlsx.py",
+      "source_location": "L30",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_build_xlsx_rationale_1",
+      "label": "Build the delivered .xlsx workbook: raw enriched question rows plus pivot-style…",
+      "file_type": "rationale",
+      "source_file": "scripts/build_xlsx.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_compare_parivesh",
+      "label": "compare_parivesh.py",
+      "file_type": "code",
+      "source_file": "scripts/compare_parivesh.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_compare_parivesh_fetch_proposals",
+      "label": "fetch_proposals()",
+      "file_type": "code",
+      "source_file": "scripts/compare_parivesh.py",
+      "source_location": "L62",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_compare_parivesh_load_proposals",
+      "label": "load_proposals()",
+      "file_type": "code",
+      "source_file": "scripts/compare_parivesh.py",
+      "source_location": "L76",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_compare_parivesh_normalize_state",
+      "label": "normalize_state()",
+      "file_type": "code",
+      "source_file": "scripts/compare_parivesh.py",
+      "source_location": "L87",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_compare_parivesh_extract_company",
+      "label": "extract_company()",
+      "file_type": "code",
+      "source_file": "scripts/compare_parivesh.py",
+      "source_location": "L102",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_compare_parivesh_extract_activity",
+      "label": "extract_activity()",
+      "file_type": "code",
+      "source_file": "scripts/compare_parivesh.py",
+      "source_location": "L121",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_compare_parivesh_build_corpus",
+      "label": "build_corpus()",
+      "file_type": "code",
+      "source_file": "scripts/compare_parivesh.py",
+      "source_location": "L132",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_compare_parivesh_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "scripts/compare_parivesh.py",
+      "source_location": "L138",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_compare_parivesh_rationale_1",
+      "label": "Wire in PARIVESH (the central Environmental Clearance proposal register)…",
+      "file_type": "rationale",
+      "source_file": "scripts/compare_parivesh.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_compare_parivesh_rationale_103",
+      "label": "Most PARIVESH project names follow \"<description> by [M/s] <Company> [at/for/,…",
+      "file_type": "rationale",
+      "source_file": "scripts/compare_parivesh.py",
+      "source_location": "L103",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_compare_pib",
+      "label": "compare_pib.py",
+      "file_type": "code",
+      "source_file": "scripts/compare_pib.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_compare_pib_ministry_comparison",
+      "label": "ministry_comparison()",
+      "file_type": "code",
+      "source_file": "scripts/compare_pib.py",
+      "source_location": "L43",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_compare_pib_extract_schemes",
+      "label": "extract_schemes()",
+      "file_type": "code",
+      "source_file": "scripts/compare_pib.py",
+      "source_location": "L84",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_compare_pib_scheme_comparison",
+      "label": "scheme_comparison()",
+      "file_type": "code",
+      "source_file": "scripts/compare_pib.py",
+      "source_location": "L95",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_compare_pib_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "scripts/compare_pib.py",
+      "source_location": "L143",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_compare_pib_rationale_1",
+      "label": "Treat the PQ corpus as a real text source and cross-reference it against PIB…",
+      "file_type": "rationale",
+      "source_file": "scripts/compare_pib.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_compare_pli",
+      "label": "compare_pli.py",
+      "file_type": "code",
+      "source_file": "scripts/compare_pli.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_compare_pli_read_csv",
+      "label": "read_csv()",
+      "file_type": "code",
+      "source_file": "scripts/compare_pli.py",
+      "source_location": "L74",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_compare_pli_count_mentions",
+      "label": "count_mentions()",
+      "file_type": "code",
+      "source_file": "scripts/compare_pli.py",
+      "source_location": "L79",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_compare_pli_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "scripts/compare_pli.py",
+      "source_location": "L90",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_compare_pli_rationale_1",
+      "label": "Integrate the PLI (Production Linked Incentive) beneficiary/disbursal report…",
+      "file_type": "rationale",
+      "source_file": "scripts/compare_pli.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_compare_wp_json_schemes",
+      "label": "compare_wp_json_schemes.py",
+      "file_type": "code",
+      "source_file": "scripts/compare_wp_json_schemes.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_compare_wp_json_schemes_schemeitem",
+      "label": "SchemeItem",
+      "file_type": "code",
+      "source_file": "scripts/compare_wp_json_schemes.py",
+      "source_location": "L56",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_compare_wp_json_schemes_strip_html",
+      "label": "strip_html()",
+      "file_type": "code",
+      "source_file": "scripts/compare_wp_json_schemes.py",
+      "source_location": "L64",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_compare_wp_json_schemes_fetch_wp_core",
+      "label": "fetch_wp_core()",
+      "file_type": "code",
+      "source_file": "scripts/compare_wp_json_schemes.py",
+      "source_location": "L68",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_compare_wp_json_schemes_fetch_post_page",
+      "label": "fetch_post_page()",
+      "file_type": "code",
+      "source_file": "scripts/compare_wp_json_schemes.py",
+      "source_location": "L88",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_compare_wp_json_schemes_fetch_all_schemes",
+      "label": "fetch_all_schemes()",
+      "file_type": "code",
+      "source_file": "scripts/compare_wp_json_schemes.py",
+      "source_location": "L119",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_compare_wp_json_schemes_load_all_schemes",
+      "label": "load_all_schemes()",
+      "file_type": "code",
+      "source_file": "scripts/compare_wp_json_schemes.py",
+      "source_location": "L140",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_compare_wp_json_schemes_significant_words",
+      "label": "_significant_words()",
+      "file_type": "code",
+      "source_file": "scripts/compare_wp_json_schemes.py",
+      "source_location": "L168",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_compare_wp_json_schemes_derive_pattern",
+      "label": "derive_pattern()",
+      "file_type": "code",
+      "source_file": "scripts/compare_wp_json_schemes.py",
+      "source_location": "L179",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_compare_wp_json_schemes_extract_outlay",
+      "label": "extract_outlay()",
+      "file_type": "code",
+      "source_file": "scripts/compare_wp_json_schemes.py",
+      "source_location": "L206",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_compare_wp_json_schemes_months_since",
+      "label": "months_since()",
+      "file_type": "code",
+      "source_file": "scripts/compare_wp_json_schemes.py",
+      "source_location": "L216",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_compare_wp_json_schemes_build_corpus",
+      "label": "build_corpus()",
+      "file_type": "code",
+      "source_file": "scripts/compare_wp_json_schemes.py",
+      "source_location": "L224",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_compare_wp_json_schemes_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "scripts/compare_wp_json_schemes.py",
+      "source_location": "L230",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_compare_wp_json_schemes_rationale_1",
+      "label": "Wire in every ministry's headless-WordPress scheme catalogue that…",
+      "file_type": "rationale",
+      "source_file": "scripts/compare_wp_json_schemes.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_compare_wp_json_schemes_rationale_141",
+      "label": "Prefer a live fetch; fall back to the cached raw dump per ministry if any…",
+      "file_type": "rationale",
+      "source_file": "scripts/compare_wp_json_schemes.py",
+      "source_location": "L141",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_compare_wp_json_schemes_rationale_180",
+      "label": "A scheme's parenthetical acronym if it's genuinely scheme-specific (the WHOLE…",
+      "file_type": "rationale",
+      "source_file": "scripts/compare_wp_json_schemes.py",
+      "source_location": "L180",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_ministry_registry",
+      "label": "ministry_registry.py",
+      "file_type": "code",
+      "source_file": "scripts/ministry_registry.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_ministry_registry_ministryrecord",
+      "label": "MinistryRecord",
+      "file_type": "code",
+      "source_file": "scripts/ministry_registry.py",
+      "source_location": "L106",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_ministry_registry_normalize",
+      "label": "normalize()",
+      "file_type": "code",
+      "source_file": "scripts/ministry_registry.py",
+      "source_location": "L118",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_ministry_registry_read_csv",
+      "label": "read_csv()",
+      "file_type": "code",
+      "source_file": "scripts/ministry_registry.py",
+      "source_location": "L132",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_ministry_registry_resolve_pib_label",
+      "label": "_resolve_pib_label()",
+      "file_type": "code",
+      "source_file": "scripts/ministry_registry.py",
+      "source_location": "L137",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_ministry_registry_load_minister_lookup",
+      "label": "_load_minister_lookup()",
+      "file_type": "code",
+      "source_file": "scripts/ministry_registry.py",
+      "source_location": "L150",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_ministry_registry_build_registry",
+      "label": "build_registry()",
+      "file_type": "code",
+      "source_file": "scripts/ministry_registry.py",
+      "source_location": "L167",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_ministry_registry_load_registry",
+      "label": "load_registry()",
+      "file_type": "code",
+      "source_file": "scripts/ministry_registry.py",
+      "source_location": "L215",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_ministry_registry_rationale_1",
+      "label": "Single ministry-identity registry, shared by every script in this repo that…",
+      "file_type": "rationale",
+      "source_file": "scripts/ministry_registry.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_ministry_registry_rationale_119",
+      "label": "Shared normalization for matching a ministry label from any external source…",
+      "file_type": "rationale",
+      "source_file": "scripts/ministry_registry.py",
+      "source_location": "L119",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_ministry_registry_rationale_138",
+      "label": "Return (chosen PIB label(s) as a display string, summed release count).",
+      "file_type": "rationale",
+      "source_file": "scripts/ministry_registry.py",
+      "source_location": "L138",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_ministry_registry_rationale_168",
+      "label": "Resolve every PQ ministry's identity across all wired sources and write the…",
+      "file_type": "rationale",
+      "source_file": "scripts/ministry_registry.py",
+      "source_location": "L168",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_ministry_registry_rationale_216",
+      "label": "Load the generated registry, building it first if it doesn't exist yet.",
+      "file_type": "rationale",
+      "source_file": "scripts/ministry_registry.py",
+      "source_location": "L216",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_render_site",
+      "label": "render_site.py",
+      "file_type": "code",
+      "source_file": "scripts/render_site.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_render_site_rationale_1",
+      "label": "Inject data.json / graph.json into site/template.html -> site/index.html.",
+      "file_type": "rationale",
+      "source_file": "scripts/render_site.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "readme",
+      "label": "README.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "readme_lok_rajya_sabha_parliament_questions_ledger",
+      "label": "Lok & Rajya Sabha — Parliament Questions Ledger",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "readme_what_a_parliament_question_is",
+      "label": "What a Parliament Question is",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "README.md",
+      "source_location": "L21",
+      "_origin": "ast"
+    },
+    {
+      "id": "readme_data_sources",
+      "label": "Data sources",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "README.md",
+      "source_location": "L33",
+      "_origin": "ast"
+    },
+    {
+      "id": "readme_architecture_one_ministry_registry_not_one_join_per_script",
+      "label": "Architecture: one ministry registry, not one join per script",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "README.md",
+      "source_location": "L46",
+      "_origin": "ast"
+    },
+    {
+      "id": "readme_reproducing_it",
+      "label": "Reproducing it",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "README.md",
+      "source_location": "L93",
+      "_origin": "ast"
+    },
+    {
+      "id": "readme_querying_the_database",
+      "label": "Querying the database",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "README.md",
+      "source_location": "L137",
+      "_origin": "ast"
+    },
+    {
+      "id": "readme_knowledge_graph_approach",
+      "label": "Knowledge-graph approach",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "README.md",
+      "source_location": "L152",
+      "_origin": "ast"
+    },
+    {
+      "id": "readme_questions_vs_press_releases_vs_pib",
+      "label": "Questions vs. press releases (vs. PIB)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "README.md",
+      "source_location": "L180",
+      "_origin": "ast"
+    },
+    {
+      "id": "readme_pli_scheme_scrutiny_vs_actual_disbursal",
+      "label": "PLI scheme scrutiny vs. actual disbursal",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "README.md",
+      "source_location": "L204",
+      "_origin": "ast"
+    },
+    {
+      "id": "readme_ministry_scheme_catalogues_vs_pq_scrutiny_and_staleness",
+      "label": "Ministry scheme catalogues vs. PQ scrutiny and staleness",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "README.md",
+      "source_location": "L224",
+      "_origin": "ast"
+    },
+    {
+      "id": "readme_parivesh_environmental_clearances_vs_pq_scrutiny_by_state",
+      "label": "PARIVESH environmental clearances vs. PQ scrutiny, by state",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "README.md",
+      "source_location": "L248",
+      "_origin": "ast"
+    },
+    {
+      "id": "readme_known_gaps",
+      "label": "Known gaps",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "README.md",
+      "source_location": "L289",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_analysis",
+      "label": "ANALYSIS.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": "docs/ANALYSIS.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_analysis_parliament_questions_18th_lok_sabha_term_analysis",
+      "label": "Parliament Questions, 18th Lok Sabha term — analysis",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/ANALYSIS.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_analysis_what_a_parliament_question_actually_is",
+      "label": "What a Parliament Question actually is",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/ANALYSIS.md",
+      "source_location": "L5",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_analysis_top_parties_by_total_questions",
+      "label": "Top parties by total questions",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/ANALYSIS.md",
+      "source_location": "L9",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_analysis_top_ministries_by_questions_received",
+      "label": "Top ministries by questions received",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/ANALYSIS.md",
+      "source_location": "L29",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_analysis_top_states_by_their_mps_question_volume",
+      "label": "Top states by their MPs' question volume",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/ANALYSIS.md",
+      "source_location": "L49",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_analysis_knowledge_graph_findings",
+      "label": "Knowledge-graph findings",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/ANALYSIS.md",
+      "source_location": "L69",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_analysis_parliament_questions_as_a_text_source_cross_checked_against_pib",
+      "label": "Parliament questions as a text source, cross-checked against PIB",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/ANALYSIS.md",
+      "source_location": "L97",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_analysis_pli_schemes_scrutiny_vs_actual_disbursal",
+      "label": "PLI schemes — scrutiny vs. actual disbursal",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/ANALYSIS.md",
+      "source_location": "L172",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_analysis_ministry_scheme_catalogues_vs_pq_scrutiny",
+      "label": "Ministry scheme catalogues vs. PQ scrutiny",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/ANALYSIS.md",
+      "source_location": "L204",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_analysis_parivesh_environmental_clearances_vs_pq_scrutiny",
+      "label": "PARIVESH environmental clearances vs. PQ scrutiny",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/ANALYSIS.md",
+      "source_location": "L242",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_analysis_known_gaps",
+      "label": "Known gaps",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/ANALYSIS.md",
+      "source_location": "L280",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_aap",
+      "label": "aap.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": "docs/parties/aap.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_aap_aap",
+      "label": "AAP",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/aap.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_aap_signature_ministries",
+      "label": "Signature ministries",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/aap.md",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_aap_recurring_subject_line_topics",
+      "label": "Recurring subject-line topics",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/aap.md",
+      "source_location": "L25",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_agp",
+      "label": "agp.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": "docs/parties/agp.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_agp_agp",
+      "label": "AGP",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/agp.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_agp_signature_ministries",
+      "label": "Signature ministries",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/agp.md",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_agp_recurring_subject_line_topics",
+      "label": "Recurring subject-line topics",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/agp.md",
+      "source_location": "L18",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_aiadmk",
+      "label": "aiadmk.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": "docs/parties/aiadmk.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_aiadmk_aiadmk",
+      "label": "AIADMK",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/aiadmk.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_aiadmk_signature_ministries",
+      "label": "Signature ministries",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/aiadmk.md",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_aiadmk_recurring_subject_line_topics",
+      "label": "Recurring subject-line topics",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/aiadmk.md",
+      "source_location": "L25",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_aimim",
+      "label": "aimim.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": "docs/parties/aimim.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_aimim_aimim",
+      "label": "AIMIM",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/aimim.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_aimim_signature_ministries",
+      "label": "Signature ministries",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/aimim.md",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_aimim_recurring_subject_line_topics",
+      "label": "Recurring subject-line topics",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/aimim.md",
+      "source_location": "L18",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_aitc",
+      "label": "aitc.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": "docs/parties/aitc.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_aitc_aitc",
+      "label": "AITC",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/aitc.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_aitc_signature_ministries",
+      "label": "Signature ministries",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/aitc.md",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_aitc_recurring_subject_line_topics",
+      "label": "Recurring subject-line topics",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/aitc.md",
+      "source_location": "L25",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_ajsu",
+      "label": "ajsu.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": "docs/parties/ajsu.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_ajsu_ajsu",
+      "label": "AJSU",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/ajsu.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_ajsu_recurring_subject_line_topics",
+      "label": "Recurring subject-line topics",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/ajsu.md",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_asp_kr",
+      "label": "asp-kr.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": "docs/parties/asp-kr.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_asp_kr_asp_kr",
+      "label": "ASP (KR)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/asp-kr.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_asp_kr_recurring_subject_line_topics",
+      "label": "Recurring subject-line topics",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/asp-kr.md",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_bap",
+      "label": "bap.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": "docs/parties/bap.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_bap_bap",
+      "label": "BAP",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/bap.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_bap_signature_ministries",
+      "label": "Signature ministries",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/bap.md",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_bap_recurring_subject_line_topics",
+      "label": "Recurring subject-line topics",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/bap.md",
+      "source_location": "L18",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_bjd",
+      "label": "bjd.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": "docs/parties/bjd.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_bjd_bjd",
+      "label": "BJD",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/bjd.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_bjd_signature_ministries",
+      "label": "Signature ministries",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/bjd.md",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_bjd_recurring_subject_line_topics",
+      "label": "Recurring subject-line topics",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/bjd.md",
+      "source_location": "L25",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_bjp",
+      "label": "bjp.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": "docs/parties/bjp.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_bjp_bjp",
+      "label": "BJP",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/bjp.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_bjp_signature_ministries",
+      "label": "Signature ministries",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/bjp.md",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_bjp_recurring_subject_line_topics",
+      "label": "Recurring subject-line topics",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/bjp.md",
+      "source_location": "L25",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_brs",
+      "label": "brs.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": "docs/parties/brs.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_brs_brs",
+      "label": "BRS",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/brs.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_brs_signature_ministries",
+      "label": "Signature ministries",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/brs.md",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_brs_recurring_subject_line_topics",
+      "label": "Recurring subject-line topics",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/brs.md",
+      "source_location": "L25",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_cpi_m",
+      "label": "cpi-m.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": "docs/parties/cpi-m.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_cpi_m_cpi_m",
+      "label": "CPI(M)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/cpi-m.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_cpi_m_signature_ministries",
+      "label": "Signature ministries",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/cpi-m.md",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_cpi_m_recurring_subject_line_topics",
+      "label": "Recurring subject-line topics",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/cpi-m.md",
+      "source_location": "L25",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_cpi_ml_l",
+      "label": "cpi-ml-l.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": "docs/parties/cpi-ml-l.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_cpi_ml_l_cpi_ml_l",
+      "label": "CPI(ML)(L)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/cpi-ml-l.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_cpi_ml_l_signature_ministries",
+      "label": "Signature ministries",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/cpi-ml-l.md",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_cpi_ml_l_recurring_subject_line_topics",
+      "label": "Recurring subject-line topics",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/cpi-ml-l.md",
+      "source_location": "L22",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_cpi",
+      "label": "cpi.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": "docs/parties/cpi.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_cpi_cpi",
+      "label": "CPI",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/cpi.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_cpi_signature_ministries",
+      "label": "Signature ministries",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/cpi.md",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_cpi_recurring_subject_line_topics",
+      "label": "Recurring subject-line topics",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/cpi.md",
+      "source_location": "L25",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_dmk",
+      "label": "dmk.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": "docs/parties/dmk.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_dmk_dmk",
+      "label": "DMK",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/dmk.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_dmk_signature_ministries",
+      "label": "Signature ministries",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/dmk.md",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_dmk_recurring_subject_line_topics",
+      "label": "Recurring subject-line topics",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/dmk.md",
+      "source_location": "L25",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_inc",
+      "label": "inc.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": "docs/parties/inc.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_inc_inc",
+      "label": "INC",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/inc.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_inc_signature_ministries",
+      "label": "Signature ministries",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/inc.md",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_inc_recurring_subject_line_topics",
+      "label": "Recurring subject-line topics",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/inc.md",
+      "source_location": "L25",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_ind",
+      "label": "ind.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": "docs/parties/ind.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_ind_ind",
+      "label": "IND.",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/ind.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_ind_signature_ministries",
+      "label": "Signature ministries",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/ind.md",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_ind_recurring_subject_line_topics",
+      "label": "Recurring subject-line topics",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/ind.md",
+      "source_location": "L25",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_iuml",
+      "label": "iuml.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": "docs/parties/iuml.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_iuml_iuml",
+      "label": "IUML",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/iuml.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_iuml_signature_ministries",
+      "label": "Signature ministries",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/iuml.md",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_iuml_recurring_subject_line_topics",
+      "label": "Recurring subject-line topics",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/iuml.md",
+      "source_location": "L25",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_j_knc",
+      "label": "j-knc.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": "docs/parties/j-knc.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_j_knc_j_knc",
+      "label": "J&KNC",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/j-knc.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_j_knc_signature_ministries",
+      "label": "Signature ministries",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/j-knc.md",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_j_knc_recurring_subject_line_topics",
+      "label": "Recurring subject-line topics",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/j-knc.md",
+      "source_location": "L18",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_jd_u",
+      "label": "jd-u.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": "docs/parties/jd-u.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_jd_u_jd_u",
+      "label": "JD(U)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/jd-u.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_jd_u_signature_ministries",
+      "label": "Signature ministries",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/jd-u.md",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_jd_u_recurring_subject_line_topics",
+      "label": "Recurring subject-line topics",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/jd-u.md",
+      "source_location": "L25",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_jmm",
+      "label": "jmm.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": "docs/parties/jmm.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_jmm_jmm",
+      "label": "JMM",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/jmm.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_jmm_signature_ministries",
+      "label": "Signature ministries",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/jmm.md",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_jmm_recurring_subject_line_topics",
+      "label": "Recurring subject-line topics",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/jmm.md",
+      "source_location": "L22",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_jsp",
+      "label": "jsp.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": "docs/parties/jsp.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_jsp_jsp",
+      "label": "JSP",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/jsp.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_jsp_signature_ministries",
+      "label": "Signature ministries",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/jsp.md",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_jsp_recurring_subject_line_topics",
+      "label": "Recurring subject-line topics",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/jsp.md",
+      "source_location": "L22",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_kc_m",
+      "label": "kc-m.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": "docs/parties/kc-m.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_kc_m_kc_m",
+      "label": "KC(M)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/kc-m.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_kc_m_signature_ministries",
+      "label": "Signature ministries",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/kc-m.md",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_kc_m_recurring_subject_line_topics",
+      "label": "Recurring subject-line topics",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/kc-m.md",
+      "source_location": "L18",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_kec",
+      "label": "kec.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": "docs/parties/kec.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_kec_kec",
+      "label": "KEC",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/kec.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_kec_recurring_subject_line_topics",
+      "label": "Recurring subject-line topics",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/kec.md",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_ljsp_rv",
+      "label": "ljsp-rv.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": "docs/parties/ljsp-rv.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_ljsp_rv_ljsp_rv",
+      "label": "LJSP(RV)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/ljsp-rv.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_ljsp_rv_signature_ministries",
+      "label": "Signature ministries",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/ljsp-rv.md",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_ljsp_rv_recurring_subject_line_topics",
+      "label": "Recurring subject-line topics",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/ljsp-rv.md",
+      "source_location": "L23",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_mdmk",
+      "label": "mdmk.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": "docs/parties/mdmk.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_mdmk_mdmk",
+      "label": "MDMK",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/mdmk.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_mdmk_signature_ministries",
+      "label": "Signature ministries",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/mdmk.md",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_mdmk_recurring_subject_line_topics",
+      "label": "Recurring subject-line topics",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/mdmk.md",
+      "source_location": "L19",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_ncp_sp",
+      "label": "ncp-sp.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": "docs/parties/ncp-sp.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_ncp_sp_ncp_sp",
+      "label": "NCP(SP)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/ncp-sp.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_ncp_sp_signature_ministries",
+      "label": "Signature ministries",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/ncp-sp.md",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_ncp_sp_recurring_subject_line_topics",
+      "label": "Recurring subject-line topics",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/ncp-sp.md",
+      "source_location": "L25",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_ncp",
+      "label": "ncp.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": "docs/parties/ncp.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_ncp_ncp",
+      "label": "NCP",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/ncp.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_ncp_signature_ministries",
+      "label": "Signature ministries",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/ncp.md",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_ncp_recurring_subject_line_topics",
+      "label": "Recurring subject-line topics",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/ncp.md",
+      "source_location": "L23",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_nom",
+      "label": "nom.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": "docs/parties/nom.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_nom_nom",
+      "label": "NOM.",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/nom.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_nom_signature_ministries",
+      "label": "Signature ministries",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/nom.md",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_nom_recurring_subject_line_topics",
+      "label": "Recurring subject-line topics",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/nom.md",
+      "source_location": "L24",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_rjd",
+      "label": "rjd.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": "docs/parties/rjd.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_rjd_rjd",
+      "label": "RJD",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/rjd.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_rjd_signature_ministries",
+      "label": "Signature ministries",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/rjd.md",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_rjd_recurring_subject_line_topics",
+      "label": "Recurring subject-line topics",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/rjd.md",
+      "source_location": "L25",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_rld",
+      "label": "rld.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": "docs/parties/rld.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_rld_rld",
+      "label": "RLD",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/rld.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_rld_signature_ministries",
+      "label": "Signature ministries",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/rld.md",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_rld_recurring_subject_line_topics",
+      "label": "Recurring subject-line topics",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/rld.md",
+      "source_location": "L18",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_rlp",
+      "label": "rlp.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": "docs/parties/rlp.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_rlp_rlp",
+      "label": "RLP",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/rlp.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_rlp_signature_ministries",
+      "label": "Signature ministries",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/rlp.md",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_rlp_recurring_subject_line_topics",
+      "label": "Recurring subject-line topics",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/rlp.md",
+      "source_location": "L19",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_rsp",
+      "label": "rsp.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": "docs/parties/rsp.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_rsp_rsp",
+      "label": "RSP",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/rsp.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_rsp_signature_ministries",
+      "label": "Signature ministries",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/rsp.md",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_rsp_recurring_subject_line_topics",
+      "label": "Recurring subject-line topics",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/rsp.md",
+      "source_location": "L18",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_sad",
+      "label": "sad.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": "docs/parties/sad.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_sad_sad",
+      "label": "SAD",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/sad.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_sad_signature_ministries",
+      "label": "Signature ministries",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/sad.md",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_sad_recurring_subject_line_topics",
+      "label": "Recurring subject-line topics",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/sad.md",
+      "source_location": "L19",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_shs_ubt",
+      "label": "shs-ubt.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": "docs/parties/shs-ubt.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_shs_ubt_shs_ubt",
+      "label": "SHS(UBT)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/shs-ubt.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_shs_ubt_signature_ministries",
+      "label": "Signature ministries",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/shs-ubt.md",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_shs_ubt_recurring_subject_line_topics",
+      "label": "Recurring subject-line topics",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/shs-ubt.md",
+      "source_location": "L25",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_sp",
+      "label": "sp.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": "docs/parties/sp.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_sp_sp",
+      "label": "SP",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/sp.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_sp_signature_ministries",
+      "label": "Signature ministries",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/sp.md",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_sp_recurring_subject_line_topics",
+      "label": "Recurring subject-line topics",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/sp.md",
+      "source_location": "L25",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_ss",
+      "label": "ss.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": "docs/parties/ss.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_ss_ss",
+      "label": "SS",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/ss.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_ss_signature_ministries",
+      "label": "Signature ministries",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/ss.md",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_ss_recurring_subject_line_topics",
+      "label": "Recurring subject-line topics",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/ss.md",
+      "source_location": "L25",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_tdp",
+      "label": "tdp.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": "docs/parties/tdp.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_tdp_tdp",
+      "label": "TDP",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/tdp.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_tdp_signature_ministries",
+      "label": "Signature ministries",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/tdp.md",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_tdp_recurring_subject_line_topics",
+      "label": "Recurring subject-line topics",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/tdp.md",
+      "source_location": "L25",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_uppl",
+      "label": "uppl.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": "docs/parties/uppl.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_uppl_uppl",
+      "label": "UPPL",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/uppl.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_uppl_signature_ministries",
+      "label": "Signature ministries",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/uppl.md",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_uppl_recurring_subject_line_topics",
+      "label": "Recurring subject-line topics",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/uppl.md",
+      "source_location": "L18",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_vck",
+      "label": "vck.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": "docs/parties/vck.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_vck_vck",
+      "label": "VCK",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/vck.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_vck_signature_ministries",
+      "label": "Signature ministries",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/vck.md",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_vck_recurring_subject_line_topics",
+      "label": "Recurring subject-line topics",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/vck.md",
+      "source_location": "L22",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_ysrcp",
+      "label": "ysrcp.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": "docs/parties/ysrcp.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_ysrcp_ysrcp",
+      "label": "YSRCP",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/ysrcp.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_ysrcp_signature_ministries",
+      "label": "Signature ministries",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/ysrcp.md",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_parties_ysrcp_recurring_subject_line_topics",
+      "label": "Recurring subject-line topics",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/parties/ysrcp.md",
+      "source_location": "L25",
+      "_origin": "ast"
+    }
+  ],
+  "links": [
+    {
+      "source": "scripts_build",
+      "target": "json",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build",
+      "target": "re",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build.py",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build",
+      "target": "csv",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build.py",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build.py",
+      "source_location": "L26",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build",
+      "target": "collections",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build.py",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build",
+      "target": "scripts_build_canonical_party",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build.py",
+      "source_location": "L59",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build",
+      "target": "scripts_build_canonical_state",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build.py",
+      "source_location": "L77",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build",
+      "target": "scripts_build_canonical_ministry",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build.py",
+      "source_location": "L93",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build",
+      "target": "scripts_build_strip_html",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build.py",
+      "source_location": "L108",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build",
+      "target": "scripts_build_normalize_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build.py",
+      "source_location": "L116",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build",
+      "target": "scripts_build_load_ls_member_index",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build.py",
+      "source_location": "L126",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build",
+      "target": "scripts_build_fuzzy_match",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build.py",
+      "source_location": "L150",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build",
+      "target": "scripts_build_load_rs_member_index",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build.py",
+      "source_location": "L174",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build",
+      "target": "scripts_build_build_ls",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build.py",
+      "source_location": "L190",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build",
+      "target": "scripts_build_build_rs",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build.py",
+      "source_location": "L228",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build",
+      "target": "scripts_build_write_csv",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build.py",
+      "source_location": "L262",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build",
+      "target": "scripts_build_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build.py",
+      "source_location": "L269",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_main",
+      "target": "scripts_build_main_tokenize",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build.py",
+      "source_location": "L395",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_main",
+      "target": "scripts_build_main_top_terms",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build.py",
+      "source_location": "L399",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_load_ls_member_index",
+      "target": "scripts_build_canonical_party",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build.py",
+      "source_location": "L131",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_load_ls_member_index",
+      "target": "scripts_build_canonical_state",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build.py",
+      "source_location": "L135",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_load_ls_member_index",
+      "target": "scripts_build_normalize_name",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build.py",
+      "source_location": "L142",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_fuzzy_match",
+      "target": "scripts_build_normalize_name",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build.py",
+      "source_location": "L154",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_load_rs_member_index",
+      "target": "scripts_build_canonical_party",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build.py",
+      "source_location": "L182",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_load_rs_member_index",
+      "target": "scripts_build_canonical_state",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build.py",
+      "source_location": "L184",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_build_ls",
+      "target": "scripts_build_normalize_name",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build.py",
+      "source_location": "L199",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_build_ls",
+      "target": "scripts_build_fuzzy_match",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build.py",
+      "source_location": "L200",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_build_ls",
+      "target": "scripts_build_canonical_ministry",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build.py",
+      "source_location": "L213",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_build_rs",
+      "target": "scripts_build_canonical_ministry",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build.py",
+      "source_location": "L247",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_build_rs",
+      "target": "scripts_build_strip_html",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build.py",
+      "source_location": "L254",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_main",
+      "target": "scripts_build_load_ls_member_index",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build.py",
+      "source_location": "L270",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_main",
+      "target": "scripts_build_load_rs_member_index",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build.py",
+      "source_location": "L271",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_main",
+      "target": "scripts_build_build_ls",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build.py",
+      "source_location": "L273",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_main",
+      "target": "scripts_build_build_rs",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build.py",
+      "source_location": "L274",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_main",
+      "target": "scripts_build_write_csv",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build.py",
+      "source_location": "L281",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_main",
+      "target": "scripts_build_main_top_terms",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build.py",
+      "source_location": "L413",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_main_top_terms",
+      "target": "scripts_build_main_tokenize",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build.py",
+      "source_location": "L403",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_rationale_1",
+      "target": "scripts_build",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_rationale_94",
+      "target": "scripts_build_canonical_ministry",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build.py",
+      "source_location": "L94",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_rationale_151",
+      "target": "scripts_build_fuzzy_match",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build.py",
+      "source_location": "L151",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_db",
+      "target": "csv",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build_db.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_db",
+      "target": "re",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build_db.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_db",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build_db.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_db",
+      "target": "collections",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build_db.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_db",
+      "target": "duckdb",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build_db.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_db",
+      "target": "scripts_build_db_read_csv",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build_db.py",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_db",
+      "target": "scripts_build_db_load_table",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build_db.py",
+      "source_location": "L32",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_db",
+      "target": "scripts_build_db_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build_db.py",
+      "source_location": "L42",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_db",
+      "target": "scripts_build_db_build_markdown",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build_db.py",
+      "source_location": "L108",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_db_build_markdown",
+      "target": "scripts_build_db_build_markdown_slugify",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build_db.py",
+      "source_location": "L129",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_db_main",
+      "target": "scripts_build_db_load_table",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build_db.py",
+      "source_location": "L47",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_db_main",
+      "target": "scripts_build_db_build_markdown",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build_db.py",
+      "source_location": "L105",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_db_build_markdown",
+      "target": "scripts_build_db_read_csv",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build_db.py",
+      "source_location": "L109",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_db_build_markdown",
+      "target": "scripts_build_db_build_markdown_slugify",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build_db.py",
+      "source_location": "L140",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_db_rationale_1",
+      "target": "scripts_build_db",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build_db.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_graph",
+      "target": "csv",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build_graph.py",
+      "source_location": "L42",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_graph",
+      "target": "json",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build_graph.py",
+      "source_location": "L43",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_graph",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build_graph.py",
+      "source_location": "L44",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_graph",
+      "target": "collections",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build_graph.py",
+      "source_location": "L45",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_graph",
+      "target": "itertools",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build_graph.py",
+      "source_location": "L46",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_graph",
+      "target": "networkx",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build_graph.py",
+      "source_location": "L48",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_graph",
+      "target": "networkx_algorithms_community",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build_graph.py",
+      "source_location": "L49",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_graph",
+      "target": "scripts_build_graph_pagerank_power_iteration",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build_graph.py",
+      "source_location": "L52",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_graph",
+      "target": "scripts_build_graph_read_csv",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build_graph.py",
+      "source_location": "L94",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_graph",
+      "target": "scripts_build_graph_write_csv",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build_graph.py",
+      "source_location": "L99",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_graph",
+      "target": "scripts_build_graph_load_all_rows",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build_graph.py",
+      "source_location": "L106",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_graph",
+      "target": "scripts_build_graph_load_topics",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build_graph.py",
+      "source_location": "L112",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_graph",
+      "target": "scripts_build_graph_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build_graph.py",
+      "source_location": "L123",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_graph_main",
+      "target": "scripts_build_graph_main_add_node",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build_graph.py",
+      "source_location": "L129",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_graph_load_all_rows",
+      "target": "scripts_build_graph_read_csv",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build_graph.py",
+      "source_location": "L107",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_graph_load_topics",
+      "target": "scripts_build_graph_read_csv",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build_graph.py",
+      "source_location": "L114",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_graph_main",
+      "target": "scripts_build_graph_load_all_rows",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build_graph.py",
+      "source_location": "L124",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_graph_main",
+      "target": "scripts_build_graph_load_topics",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build_graph.py",
+      "source_location": "L125",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_graph_main",
+      "target": "scripts_build_graph_main_add_node",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build_graph.py",
+      "source_location": "L149",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_graph_main",
+      "target": "scripts_build_graph_write_csv",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build_graph.py",
+      "source_location": "L223",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_graph_main",
+      "target": "scripts_build_graph_pagerank_power_iteration",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build_graph.py",
+      "source_location": "L237",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_graph_rationale_1",
+      "target": "scripts_build_graph",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build_graph.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_graph_rationale_53",
+      "target": "scripts_build_graph_pagerank_power_iteration",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build_graph.py",
+      "source_location": "L53",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_graph_rationale_113",
+      "target": "scripts_build_graph_load_topics",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build_graph.py",
+      "source_location": "L113",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_xlsx",
+      "target": "csv",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build_xlsx.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_xlsx",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build_xlsx.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_xlsx",
+      "target": "pandas",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build_xlsx.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_xlsx",
+      "target": "openpyxl",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build_xlsx.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_xlsx",
+      "target": "openpyxl_styles",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build_xlsx.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_xlsx",
+      "target": "openpyxl_utils",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build_xlsx.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_xlsx",
+      "target": "scripts_build_xlsx_df",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build_xlsx.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_xlsx",
+      "target": "scripts_build_xlsx_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build_xlsx.py",
+      "source_location": "L30",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_xlsx_main",
+      "target": "scripts_build_xlsx_df",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build_xlsx.py",
+      "source_location": "L32",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_xlsx_rationale_1",
+      "target": "scripts_build_xlsx",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build_xlsx.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_parivesh",
+      "target": "csv",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_parivesh.py",
+      "source_location": "L38",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_parivesh",
+      "target": "json",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_parivesh.py",
+      "source_location": "L39",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_parivesh",
+      "target": "re",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_parivesh.py",
+      "source_location": "L40",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_parivesh",
+      "target": "urllib_request",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_parivesh.py",
+      "source_location": "L41",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_parivesh",
+      "target": "collections",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_parivesh.py",
+      "source_location": "L42",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_parivesh",
+      "target": "datetime",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_parivesh.py",
+      "source_location": "L43",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_parivesh",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_parivesh.py",
+      "source_location": "L44",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_parivesh",
+      "target": "scripts_ministry_registry",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_parivesh.py",
+      "source_location": "L46",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_parivesh",
+      "target": "scripts_compare_parivesh_fetch_proposals",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_parivesh.py",
+      "source_location": "L62",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_parivesh",
+      "target": "scripts_compare_parivesh_load_proposals",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_parivesh.py",
+      "source_location": "L76",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_parivesh",
+      "target": "scripts_compare_parivesh_normalize_state",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_parivesh.py",
+      "source_location": "L87",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_parivesh",
+      "target": "scripts_compare_parivesh_extract_company",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_parivesh.py",
+      "source_location": "L102",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_parivesh",
+      "target": "scripts_compare_parivesh_extract_activity",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_parivesh.py",
+      "source_location": "L121",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_parivesh",
+      "target": "scripts_compare_parivesh_build_corpus",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_parivesh.py",
+      "source_location": "L132",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_parivesh",
+      "target": "scripts_compare_parivesh_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_parivesh.py",
+      "source_location": "L138",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_parivesh_load_proposals",
+      "target": "scripts_compare_parivesh_fetch_proposals",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_parivesh.py",
+      "source_location": "L78",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_parivesh_main",
+      "target": "scripts_compare_parivesh_load_proposals",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_parivesh.py",
+      "source_location": "L139",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_parivesh_main",
+      "target": "scripts_compare_parivesh_normalize_state",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_parivesh.py",
+      "source_location": "L157",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_parivesh_main",
+      "target": "scripts_compare_parivesh_extract_activity",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_parivesh.py",
+      "source_location": "L174",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_parivesh_main",
+      "target": "scripts_compare_parivesh_build_corpus",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_parivesh.py",
+      "source_location": "L183",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_parivesh_main",
+      "target": "scripts_compare_parivesh_extract_company",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_parivesh.py",
+      "source_location": "L188",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_parivesh_rationale_1",
+      "target": "scripts_compare_parivesh",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_parivesh.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_parivesh_rationale_103",
+      "target": "scripts_compare_parivesh_extract_company",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_parivesh.py",
+      "source_location": "L103",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_pib",
+      "target": "csv",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_pib.py",
+      "source_location": "L29",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_pib",
+      "target": "json",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_pib.py",
+      "source_location": "L30",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_pib",
+      "target": "re",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_pib.py",
+      "source_location": "L31",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_pib",
+      "target": "sqlite3",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_pib.py",
+      "source_location": "L32",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_pib",
+      "target": "collections",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_pib.py",
+      "source_location": "L33",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_pib",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_pib.py",
+      "source_location": "L34",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_pib",
+      "target": "scripts_ministry_registry",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_pib.py",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_pib",
+      "target": "scripts_compare_pib_ministry_comparison",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_pib.py",
+      "source_location": "L43",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_pib",
+      "target": "scripts_compare_pib_extract_schemes",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_pib.py",
+      "source_location": "L84",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_pib",
+      "target": "scripts_compare_pib_scheme_comparison",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_pib.py",
+      "source_location": "L95",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_pib",
+      "target": "scripts_compare_pib_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_pib.py",
+      "source_location": "L143",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_pib_scheme_comparison",
+      "target": "scripts_compare_pib_extract_schemes",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_pib.py",
+      "source_location": "L98",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_pib_main",
+      "target": "scripts_compare_pib_ministry_comparison",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_pib.py",
+      "source_location": "L147",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_pib_main",
+      "target": "scripts_compare_pib_scheme_comparison",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_pib.py",
+      "source_location": "L149",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_pib_rationale_1",
+      "target": "scripts_compare_pib",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_pib.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_pli",
+      "target": "csv",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_pli.py",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_pli",
+      "target": "json",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_pli.py",
+      "source_location": "L26",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_pli",
+      "target": "re",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_pli.py",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_pli",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_pli.py",
+      "source_location": "L28",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_pli",
+      "target": "scripts_ministry_registry",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_pli.py",
+      "source_location": "L30",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_pli",
+      "target": "scripts_compare_pli_read_csv",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_pli.py",
+      "source_location": "L74",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_pli",
+      "target": "scripts_compare_pli_count_mentions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_pli.py",
+      "source_location": "L79",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_pli",
+      "target": "scripts_compare_pli_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_pli.py",
+      "source_location": "L90",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_pli_main",
+      "target": "scripts_compare_pli_read_csv",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_pli.py",
+      "source_location": "L96",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_pli_main",
+      "target": "scripts_compare_pli_count_mentions",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_pli.py",
+      "source_location": "L105",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_pli_rationale_1",
+      "target": "scripts_compare_pli",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_pli.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_wp_json_schemes",
+      "target": "csv",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_wp_json_schemes.py",
+      "source_location": "L26",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_wp_json_schemes",
+      "target": "json",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_wp_json_schemes.py",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_wp_json_schemes",
+      "target": "re",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_wp_json_schemes.py",
+      "source_location": "L28",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_wp_json_schemes",
+      "target": "urllib_request",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_wp_json_schemes.py",
+      "source_location": "L29",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_wp_json_schemes",
+      "target": "collections",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_wp_json_schemes.py",
+      "source_location": "L30",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_wp_json_schemes",
+      "target": "dataclasses",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_wp_json_schemes.py",
+      "source_location": "L31",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_wp_json_schemes",
+      "target": "datetime",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_wp_json_schemes.py",
+      "source_location": "L32",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_wp_json_schemes",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_wp_json_schemes.py",
+      "source_location": "L33",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_wp_json_schemes",
+      "target": "scripts_ministry_registry",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_wp_json_schemes.py",
+      "source_location": "L35",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_wp_json_schemes",
+      "target": "scripts_compare_wp_json_schemes_schemeitem",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_wp_json_schemes.py",
+      "source_location": "L56",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_wp_json_schemes",
+      "target": "scripts_compare_wp_json_schemes_strip_html",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_wp_json_schemes.py",
+      "source_location": "L64",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_wp_json_schemes",
+      "target": "scripts_compare_wp_json_schemes_fetch_wp_core",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_wp_json_schemes.py",
+      "source_location": "L68",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_wp_json_schemes",
+      "target": "scripts_compare_wp_json_schemes_fetch_post_page",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_wp_json_schemes.py",
+      "source_location": "L88",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_wp_json_schemes",
+      "target": "scripts_compare_wp_json_schemes_fetch_all_schemes",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_wp_json_schemes.py",
+      "source_location": "L119",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_wp_json_schemes",
+      "target": "scripts_compare_wp_json_schemes_load_all_schemes",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_wp_json_schemes.py",
+      "source_location": "L140",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_wp_json_schemes",
+      "target": "scripts_compare_wp_json_schemes_significant_words",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_wp_json_schemes.py",
+      "source_location": "L168",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_wp_json_schemes",
+      "target": "scripts_compare_wp_json_schemes_derive_pattern",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_wp_json_schemes.py",
+      "source_location": "L179",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_wp_json_schemes",
+      "target": "scripts_compare_wp_json_schemes_extract_outlay",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_wp_json_schemes.py",
+      "source_location": "L206",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_wp_json_schemes",
+      "target": "scripts_compare_wp_json_schemes_months_since",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_wp_json_schemes.py",
+      "source_location": "L216",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_wp_json_schemes",
+      "target": "scripts_compare_wp_json_schemes_build_corpus",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_wp_json_schemes.py",
+      "source_location": "L224",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_wp_json_schemes",
+      "target": "scripts_compare_wp_json_schemes_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_wp_json_schemes.py",
+      "source_location": "L230",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_wp_json_schemes_fetch_wp_core",
+      "target": "scripts_compare_wp_json_schemes_schemeitem",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_wp_json_schemes.py",
+      "source_location": "L77",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_wp_json_schemes_fetch_wp_core",
+      "target": "scripts_compare_wp_json_schemes_strip_html",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_wp_json_schemes.py",
+      "source_location": "L81",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_wp_json_schemes_fetch_post_page",
+      "target": "scripts_compare_wp_json_schemes_schemeitem",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_wp_json_schemes.py",
+      "source_location": "L105",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_wp_json_schemes_fetch_post_page",
+      "target": "scripts_compare_wp_json_schemes_strip_html",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_wp_json_schemes.py",
+      "source_location": "L109",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_wp_json_schemes_load_all_schemes",
+      "target": "scripts_compare_wp_json_schemes_fetch_all_schemes",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_wp_json_schemes.py",
+      "source_location": "L144",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_wp_json_schemes_load_all_schemes",
+      "target": "scripts_compare_wp_json_schemes_schemeitem",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_wp_json_schemes.py",
+      "source_location": "L154",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_wp_json_schemes_load_all_schemes",
+      "target": "scripts_compare_wp_json_schemes_strip_html",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_wp_json_schemes.py",
+      "source_location": "L154",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_wp_json_schemes_derive_pattern",
+      "target": "scripts_compare_wp_json_schemes_significant_words",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_wp_json_schemes.py",
+      "source_location": "L199",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_wp_json_schemes_main",
+      "target": "scripts_compare_wp_json_schemes_load_all_schemes",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_wp_json_schemes.py",
+      "source_location": "L232",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_wp_json_schemes_main",
+      "target": "scripts_compare_wp_json_schemes_build_corpus",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_wp_json_schemes.py",
+      "source_location": "L236",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_wp_json_schemes_main",
+      "target": "scripts_compare_wp_json_schemes_derive_pattern",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_wp_json_schemes.py",
+      "source_location": "L241",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_wp_json_schemes_main",
+      "target": "scripts_compare_wp_json_schemes_months_since",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_wp_json_schemes.py",
+      "source_location": "L248",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_wp_json_schemes_main",
+      "target": "scripts_compare_wp_json_schemes_extract_outlay",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_wp_json_schemes.py",
+      "source_location": "L249",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_wp_json_schemes",
+      "target": "scripts_compare_wp_json_schemes_fetch_wp_core",
+      "relation": "indirect_call",
+      "context": "collection",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "scripts/compare_wp_json_schemes.py",
+      "source_location": "L116",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_wp_json_schemes",
+      "target": "scripts_compare_wp_json_schemes_fetch_post_page",
+      "relation": "indirect_call",
+      "context": "collection",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "scripts/compare_wp_json_schemes.py",
+      "source_location": "L116",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_wp_json_schemes_rationale_1",
+      "target": "scripts_compare_wp_json_schemes",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_wp_json_schemes.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_wp_json_schemes_rationale_141",
+      "target": "scripts_compare_wp_json_schemes_load_all_schemes",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_wp_json_schemes.py",
+      "source_location": "L141",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_wp_json_schemes_rationale_180",
+      "target": "scripts_compare_wp_json_schemes_derive_pattern",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_wp_json_schemes.py",
+      "source_location": "L180",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_ministry_registry",
+      "target": "csv",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/ministry_registry.py",
+      "source_location": "L30",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_ministry_registry",
+      "target": "json",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/ministry_registry.py",
+      "source_location": "L31",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_ministry_registry",
+      "target": "re",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/ministry_registry.py",
+      "source_location": "L32",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_ministry_registry",
+      "target": "sqlite3",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/ministry_registry.py",
+      "source_location": "L33",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_ministry_registry",
+      "target": "collections",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/ministry_registry.py",
+      "source_location": "L34",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_ministry_registry",
+      "target": "dataclasses",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/ministry_registry.py",
+      "source_location": "L35",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_ministry_registry",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/ministry_registry.py",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_ministry_registry",
+      "target": "scripts_ministry_registry_ministryrecord",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/ministry_registry.py",
+      "source_location": "L106",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_ministry_registry",
+      "target": "scripts_ministry_registry_normalize",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/ministry_registry.py",
+      "source_location": "L118",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_ministry_registry",
+      "target": "scripts_ministry_registry_read_csv",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/ministry_registry.py",
+      "source_location": "L132",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_ministry_registry",
+      "target": "scripts_ministry_registry_resolve_pib_label",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/ministry_registry.py",
+      "source_location": "L137",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_ministry_registry",
+      "target": "scripts_ministry_registry_load_minister_lookup",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/ministry_registry.py",
+      "source_location": "L150",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_ministry_registry",
+      "target": "scripts_ministry_registry_build_registry",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/ministry_registry.py",
+      "source_location": "L167",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_ministry_registry",
+      "target": "scripts_ministry_registry_load_registry",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/ministry_registry.py",
+      "source_location": "L215",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_ministry_registry_resolve_pib_label",
+      "target": "scripts_ministry_registry_normalize",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/ministry_registry.py",
+      "source_location": "L143",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_ministry_registry_load_minister_lookup",
+      "target": "scripts_ministry_registry_normalize",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/ministry_registry.py",
+      "source_location": "L160",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_ministry_registry_build_registry",
+      "target": "scripts_ministry_registry_read_csv",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/ministry_registry.py",
+      "source_location": "L172",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_ministry_registry_build_registry",
+      "target": "scripts_ministry_registry_load_minister_lookup",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/ministry_registry.py",
+      "source_location": "L173",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_ministry_registry_build_registry",
+      "target": "scripts_ministry_registry_normalize",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/ministry_registry.py",
+      "source_location": "L183",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_ministry_registry_build_registry",
+      "target": "scripts_ministry_registry_resolve_pib_label",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/ministry_registry.py",
+      "source_location": "L188",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_ministry_registry_build_registry",
+      "target": "scripts_ministry_registry_ministryrecord",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/ministry_registry.py",
+      "source_location": "L190",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_ministry_registry_load_registry",
+      "target": "scripts_ministry_registry_build_registry",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/ministry_registry.py",
+      "source_location": "L218",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_ministry_registry_load_registry",
+      "target": "scripts_ministry_registry_ministryrecord",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/ministry_registry.py",
+      "source_location": "L220",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_ministry_registry_rationale_1",
+      "target": "scripts_ministry_registry",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/ministry_registry.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_ministry_registry_rationale_119",
+      "target": "scripts_ministry_registry_normalize",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/ministry_registry.py",
+      "source_location": "L119",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_ministry_registry_rationale_138",
+      "target": "scripts_ministry_registry_resolve_pib_label",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/ministry_registry.py",
+      "source_location": "L138",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_ministry_registry_rationale_168",
+      "target": "scripts_ministry_registry_build_registry",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/ministry_registry.py",
+      "source_location": "L168",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_ministry_registry_rationale_216",
+      "target": "scripts_ministry_registry_load_registry",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/ministry_registry.py",
+      "source_location": "L216",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_render_site",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/render_site.py",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_render_site_rationale_1",
+      "target": "scripts_render_site",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/render_site.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "readme",
+      "target": "readme_lok_rajya_sabha_parliament_questions_ledger",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "readme_lok_rajya_sabha_parliament_questions_ledger",
+      "target": "readme_what_a_parliament_question_is",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "readme_lok_rajya_sabha_parliament_questions_ledger",
+      "target": "readme_data_sources",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L33",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "readme_data_sources",
+      "target": "readme_architecture_one_ministry_registry_not_one_join_per_script",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L46",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "readme_lok_rajya_sabha_parliament_questions_ledger",
+      "target": "readme_reproducing_it",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L93",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "readme_lok_rajya_sabha_parliament_questions_ledger",
+      "target": "readme_querying_the_database",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L137",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "readme_lok_rajya_sabha_parliament_questions_ledger",
+      "target": "readme_knowledge_graph_approach",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L152",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "readme_lok_rajya_sabha_parliament_questions_ledger",
+      "target": "readme_questions_vs_press_releases_vs_pib",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L180",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "readme_questions_vs_press_releases_vs_pib",
+      "target": "readme_pli_scheme_scrutiny_vs_actual_disbursal",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L204",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "readme_questions_vs_press_releases_vs_pib",
+      "target": "readme_ministry_scheme_catalogues_vs_pq_scrutiny_and_staleness",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L224",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "readme_questions_vs_press_releases_vs_pib",
+      "target": "readme_parivesh_environmental_clearances_vs_pq_scrutiny_by_state",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L248",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "readme_lok_rajya_sabha_parliament_questions_ledger",
+      "target": "readme_known_gaps",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L289",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_analysis",
+      "target": "docs_analysis_parliament_questions_18th_lok_sabha_term_analysis",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/ANALYSIS.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_analysis_parliament_questions_18th_lok_sabha_term_analysis",
+      "target": "docs_analysis_what_a_parliament_question_actually_is",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/ANALYSIS.md",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_analysis_parliament_questions_18th_lok_sabha_term_analysis",
+      "target": "docs_analysis_top_parties_by_total_questions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/ANALYSIS.md",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_analysis_parliament_questions_18th_lok_sabha_term_analysis",
+      "target": "docs_analysis_top_ministries_by_questions_received",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/ANALYSIS.md",
+      "source_location": "L29",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_analysis_parliament_questions_18th_lok_sabha_term_analysis",
+      "target": "docs_analysis_top_states_by_their_mps_question_volume",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/ANALYSIS.md",
+      "source_location": "L49",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_analysis_parliament_questions_18th_lok_sabha_term_analysis",
+      "target": "docs_analysis_knowledge_graph_findings",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/ANALYSIS.md",
+      "source_location": "L69",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_analysis_parliament_questions_18th_lok_sabha_term_analysis",
+      "target": "docs_analysis_parliament_questions_as_a_text_source_cross_checked_against_pib",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/ANALYSIS.md",
+      "source_location": "L97",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_analysis_parliament_questions_18th_lok_sabha_term_analysis",
+      "target": "docs_analysis_pli_schemes_scrutiny_vs_actual_disbursal",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/ANALYSIS.md",
+      "source_location": "L172",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_analysis_parliament_questions_18th_lok_sabha_term_analysis",
+      "target": "docs_analysis_ministry_scheme_catalogues_vs_pq_scrutiny",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/ANALYSIS.md",
+      "source_location": "L204",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_analysis_parliament_questions_18th_lok_sabha_term_analysis",
+      "target": "docs_analysis_parivesh_environmental_clearances_vs_pq_scrutiny",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/ANALYSIS.md",
+      "source_location": "L242",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_analysis_parliament_questions_18th_lok_sabha_term_analysis",
+      "target": "docs_analysis_known_gaps",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/ANALYSIS.md",
+      "source_location": "L280",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_aap",
+      "target": "docs_parties_aap_aap",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/aap.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_aap_aap",
+      "target": "docs_parties_aap_signature_ministries",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/aap.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_aap_aap",
+      "target": "docs_parties_aap_recurring_subject_line_topics",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/aap.md",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_agp",
+      "target": "docs_parties_agp_agp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/agp.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_agp_agp",
+      "target": "docs_parties_agp_signature_ministries",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/agp.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_agp_agp",
+      "target": "docs_parties_agp_recurring_subject_line_topics",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/agp.md",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_aiadmk",
+      "target": "docs_parties_aiadmk_aiadmk",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/aiadmk.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_aiadmk_aiadmk",
+      "target": "docs_parties_aiadmk_signature_ministries",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/aiadmk.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_aiadmk_aiadmk",
+      "target": "docs_parties_aiadmk_recurring_subject_line_topics",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/aiadmk.md",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_aimim",
+      "target": "docs_parties_aimim_aimim",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/aimim.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_aimim_aimim",
+      "target": "docs_parties_aimim_signature_ministries",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/aimim.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_aimim_aimim",
+      "target": "docs_parties_aimim_recurring_subject_line_topics",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/aimim.md",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_aitc",
+      "target": "docs_parties_aitc_aitc",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/aitc.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_aitc_aitc",
+      "target": "docs_parties_aitc_signature_ministries",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/aitc.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_aitc_aitc",
+      "target": "docs_parties_aitc_recurring_subject_line_topics",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/aitc.md",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_ajsu",
+      "target": "docs_parties_ajsu_ajsu",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/ajsu.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_ajsu_ajsu",
+      "target": "docs_parties_ajsu_recurring_subject_line_topics",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/ajsu.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_asp_kr",
+      "target": "docs_parties_asp_kr_asp_kr",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/asp-kr.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_asp_kr_asp_kr",
+      "target": "docs_parties_asp_kr_recurring_subject_line_topics",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/asp-kr.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_bap",
+      "target": "docs_parties_bap_bap",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/bap.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_bap_bap",
+      "target": "docs_parties_bap_signature_ministries",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/bap.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_bap_bap",
+      "target": "docs_parties_bap_recurring_subject_line_topics",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/bap.md",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_bjd",
+      "target": "docs_parties_bjd_bjd",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/bjd.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_bjd_bjd",
+      "target": "docs_parties_bjd_signature_ministries",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/bjd.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_bjd_bjd",
+      "target": "docs_parties_bjd_recurring_subject_line_topics",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/bjd.md",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_bjp",
+      "target": "docs_parties_bjp_bjp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/bjp.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_bjp_bjp",
+      "target": "docs_parties_bjp_signature_ministries",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/bjp.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_bjp_bjp",
+      "target": "docs_parties_bjp_recurring_subject_line_topics",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/bjp.md",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_brs",
+      "target": "docs_parties_brs_brs",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/brs.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_brs_brs",
+      "target": "docs_parties_brs_signature_ministries",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/brs.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_brs_brs",
+      "target": "docs_parties_brs_recurring_subject_line_topics",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/brs.md",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_cpi_m",
+      "target": "docs_parties_cpi_m_cpi_m",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/cpi-m.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_cpi_m_cpi_m",
+      "target": "docs_parties_cpi_m_signature_ministries",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/cpi-m.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_cpi_m_cpi_m",
+      "target": "docs_parties_cpi_m_recurring_subject_line_topics",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/cpi-m.md",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_cpi_ml_l",
+      "target": "docs_parties_cpi_ml_l_cpi_ml_l",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/cpi-ml-l.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_cpi_ml_l_cpi_ml_l",
+      "target": "docs_parties_cpi_ml_l_signature_ministries",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/cpi-ml-l.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_cpi_ml_l_cpi_ml_l",
+      "target": "docs_parties_cpi_ml_l_recurring_subject_line_topics",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/cpi-ml-l.md",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_cpi",
+      "target": "docs_parties_cpi_cpi",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/cpi.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_cpi_cpi",
+      "target": "docs_parties_cpi_signature_ministries",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/cpi.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_cpi_cpi",
+      "target": "docs_parties_cpi_recurring_subject_line_topics",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/cpi.md",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_dmk",
+      "target": "docs_parties_dmk_dmk",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/dmk.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_dmk_dmk",
+      "target": "docs_parties_dmk_signature_ministries",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/dmk.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_dmk_dmk",
+      "target": "docs_parties_dmk_recurring_subject_line_topics",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/dmk.md",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_inc",
+      "target": "docs_parties_inc_inc",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/inc.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_inc_inc",
+      "target": "docs_parties_inc_signature_ministries",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/inc.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_inc_inc",
+      "target": "docs_parties_inc_recurring_subject_line_topics",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/inc.md",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_ind",
+      "target": "docs_parties_ind_ind",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/ind.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_ind_ind",
+      "target": "docs_parties_ind_signature_ministries",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/ind.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_ind_ind",
+      "target": "docs_parties_ind_recurring_subject_line_topics",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/ind.md",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_iuml",
+      "target": "docs_parties_iuml_iuml",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/iuml.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_iuml_iuml",
+      "target": "docs_parties_iuml_signature_ministries",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/iuml.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_iuml_iuml",
+      "target": "docs_parties_iuml_recurring_subject_line_topics",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/iuml.md",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_j_knc",
+      "target": "docs_parties_j_knc_j_knc",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/j-knc.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_j_knc_j_knc",
+      "target": "docs_parties_j_knc_signature_ministries",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/j-knc.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_j_knc_j_knc",
+      "target": "docs_parties_j_knc_recurring_subject_line_topics",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/j-knc.md",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_jd_u",
+      "target": "docs_parties_jd_u_jd_u",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/jd-u.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_jd_u_jd_u",
+      "target": "docs_parties_jd_u_signature_ministries",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/jd-u.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_jd_u_jd_u",
+      "target": "docs_parties_jd_u_recurring_subject_line_topics",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/jd-u.md",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_jmm",
+      "target": "docs_parties_jmm_jmm",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/jmm.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_jmm_jmm",
+      "target": "docs_parties_jmm_signature_ministries",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/jmm.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_jmm_jmm",
+      "target": "docs_parties_jmm_recurring_subject_line_topics",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/jmm.md",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_jsp",
+      "target": "docs_parties_jsp_jsp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/jsp.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_jsp_jsp",
+      "target": "docs_parties_jsp_signature_ministries",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/jsp.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_jsp_jsp",
+      "target": "docs_parties_jsp_recurring_subject_line_topics",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/jsp.md",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_kc_m",
+      "target": "docs_parties_kc_m_kc_m",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/kc-m.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_kc_m_kc_m",
+      "target": "docs_parties_kc_m_signature_ministries",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/kc-m.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_kc_m_kc_m",
+      "target": "docs_parties_kc_m_recurring_subject_line_topics",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/kc-m.md",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_kec",
+      "target": "docs_parties_kec_kec",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/kec.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_kec_kec",
+      "target": "docs_parties_kec_recurring_subject_line_topics",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/kec.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_ljsp_rv",
+      "target": "docs_parties_ljsp_rv_ljsp_rv",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/ljsp-rv.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_ljsp_rv_ljsp_rv",
+      "target": "docs_parties_ljsp_rv_signature_ministries",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/ljsp-rv.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_ljsp_rv_ljsp_rv",
+      "target": "docs_parties_ljsp_rv_recurring_subject_line_topics",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/ljsp-rv.md",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_mdmk",
+      "target": "docs_parties_mdmk_mdmk",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/mdmk.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_mdmk_mdmk",
+      "target": "docs_parties_mdmk_signature_ministries",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/mdmk.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_mdmk_mdmk",
+      "target": "docs_parties_mdmk_recurring_subject_line_topics",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/mdmk.md",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_ncp_sp",
+      "target": "docs_parties_ncp_sp_ncp_sp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/ncp-sp.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_ncp_sp_ncp_sp",
+      "target": "docs_parties_ncp_sp_signature_ministries",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/ncp-sp.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_ncp_sp_ncp_sp",
+      "target": "docs_parties_ncp_sp_recurring_subject_line_topics",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/ncp-sp.md",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_ncp",
+      "target": "docs_parties_ncp_ncp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/ncp.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_ncp_ncp",
+      "target": "docs_parties_ncp_signature_ministries",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/ncp.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_ncp_ncp",
+      "target": "docs_parties_ncp_recurring_subject_line_topics",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/ncp.md",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_nom",
+      "target": "docs_parties_nom_nom",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/nom.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_nom_nom",
+      "target": "docs_parties_nom_signature_ministries",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/nom.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_nom_nom",
+      "target": "docs_parties_nom_recurring_subject_line_topics",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/nom.md",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_rjd",
+      "target": "docs_parties_rjd_rjd",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/rjd.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_rjd_rjd",
+      "target": "docs_parties_rjd_signature_ministries",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/rjd.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_rjd_rjd",
+      "target": "docs_parties_rjd_recurring_subject_line_topics",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/rjd.md",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_rld",
+      "target": "docs_parties_rld_rld",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/rld.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_rld_rld",
+      "target": "docs_parties_rld_signature_ministries",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/rld.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_rld_rld",
+      "target": "docs_parties_rld_recurring_subject_line_topics",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/rld.md",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_rlp",
+      "target": "docs_parties_rlp_rlp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/rlp.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_rlp_rlp",
+      "target": "docs_parties_rlp_signature_ministries",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/rlp.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_rlp_rlp",
+      "target": "docs_parties_rlp_recurring_subject_line_topics",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/rlp.md",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_rsp",
+      "target": "docs_parties_rsp_rsp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/rsp.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_rsp_rsp",
+      "target": "docs_parties_rsp_signature_ministries",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/rsp.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_rsp_rsp",
+      "target": "docs_parties_rsp_recurring_subject_line_topics",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/rsp.md",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_sad",
+      "target": "docs_parties_sad_sad",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/sad.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_sad_sad",
+      "target": "docs_parties_sad_signature_ministries",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/sad.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_sad_sad",
+      "target": "docs_parties_sad_recurring_subject_line_topics",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/sad.md",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_shs_ubt",
+      "target": "docs_parties_shs_ubt_shs_ubt",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/shs-ubt.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_shs_ubt_shs_ubt",
+      "target": "docs_parties_shs_ubt_signature_ministries",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/shs-ubt.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_shs_ubt_shs_ubt",
+      "target": "docs_parties_shs_ubt_recurring_subject_line_topics",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/shs-ubt.md",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_sp",
+      "target": "docs_parties_sp_sp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/sp.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_sp_sp",
+      "target": "docs_parties_sp_signature_ministries",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/sp.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_sp_sp",
+      "target": "docs_parties_sp_recurring_subject_line_topics",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/sp.md",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_ss",
+      "target": "docs_parties_ss_ss",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/ss.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_ss_ss",
+      "target": "docs_parties_ss_signature_ministries",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/ss.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_ss_ss",
+      "target": "docs_parties_ss_recurring_subject_line_topics",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/ss.md",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_tdp",
+      "target": "docs_parties_tdp_tdp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/tdp.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_tdp_tdp",
+      "target": "docs_parties_tdp_signature_ministries",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/tdp.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_tdp_tdp",
+      "target": "docs_parties_tdp_recurring_subject_line_topics",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/tdp.md",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_uppl",
+      "target": "docs_parties_uppl_uppl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/uppl.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_uppl_uppl",
+      "target": "docs_parties_uppl_signature_ministries",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/uppl.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_uppl_uppl",
+      "target": "docs_parties_uppl_recurring_subject_line_topics",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/uppl.md",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_vck",
+      "target": "docs_parties_vck_vck",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/vck.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_vck_vck",
+      "target": "docs_parties_vck_signature_ministries",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/vck.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_vck_vck",
+      "target": "docs_parties_vck_recurring_subject_line_topics",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/vck.md",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_ysrcp",
+      "target": "docs_parties_ysrcp_ysrcp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/ysrcp.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_ysrcp_ysrcp",
+      "target": "docs_parties_ysrcp_signature_ministries",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/ysrcp.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_parties_ysrcp_ysrcp",
+      "target": "docs_parties_ysrcp_recurring_subject_line_topics",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/parties/ysrcp.md",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_parivesh",
+      "target": "scripts_ministry_registry_read_csv",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_parivesh.py",
+      "source_location": "L46",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_pib",
+      "target": "scripts_ministry_registry_load_registry",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_pib.py",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_pib",
+      "target": "scripts_ministry_registry_read_csv",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_pib.py",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_pli",
+      "target": "scripts_ministry_registry_load_registry",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_pli.py",
+      "source_location": "L30",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_wp_json_schemes",
+      "target": "scripts_ministry_registry_load_registry",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_wp_json_schemes.py",
+      "source_location": "L35",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_wp_json_schemes",
+      "target": "scripts_ministry_registry_read_csv",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_wp_json_schemes.py",
+      "source_location": "L35",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_parivesh_build_corpus",
+      "target": "scripts_ministry_registry_read_csv",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_parivesh.py",
+      "source_location": "L133",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_parivesh_main",
+      "target": "scripts_ministry_registry_read_csv",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_parivesh.py",
+      "source_location": "L148",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_pib_scheme_comparison",
+      "target": "scripts_ministry_registry_read_csv",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_pib.py",
+      "source_location": "L97",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_pib_main",
+      "target": "scripts_ministry_registry_load_registry",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_pib.py",
+      "source_location": "L146",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_pli_main",
+      "target": "scripts_ministry_registry_load_registry",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_pli.py",
+      "source_location": "L100",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_wp_json_schemes_build_corpus",
+      "target": "scripts_ministry_registry_read_csv",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_wp_json_schemes.py",
+      "source_location": "L225",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_compare_wp_json_schemes_main",
+      "target": "scripts_ministry_registry_load_registry",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/compare_wp_json_schemes.py",
+      "source_location": "L237",
+      "weight": 1.0,
+      "_origin": "ast"
+    }
+  ],
+  "directed": false
+}
