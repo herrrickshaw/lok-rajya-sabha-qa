@@ -1,5 +1,9 @@
 # Lok & Rajya Sabha — Parliament Questions Ledger
 
+<!-- how-to-use-with-ai -->
+> **New here?** See [How to use this repo with AI (Claude, Gemini, ChatGPT)](HOW_TO_USE_WITH_AI.md) — clone it, paste it into an AI tool, and ask in plain English.
+
+
 Who asks Parliament what. Every Lok Sabha question since the 18th Lok Sabha convened
 (June 2024) and every Rajya Sabha question over the matching sessions (265–271),
 matched to the asking MP's party and state, ranked and cross-tabbed by party,
