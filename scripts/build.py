@@ -126,7 +126,7 @@ def normalize_name(name: str) -> str:
 def load_ls_member_index():
     members = json.loads((RAW / "ls_members.json").read_text())
     index = {}
-    word_index = defaultdict(list)  # word -> list of normalized-name keys, for fuzzy fallback
+    word_index = defaultdict(set)  # word -> normalized-name keys (a set: a key indexed twice must not double its overlap)
     for m in members:
         party = canonical_party(m.get("partySname") or m.get("partyFname") or "Unknown")
         record = {
@@ -143,7 +143,7 @@ def load_ls_member_index():
             index[norm] = record
             for w in set(norm.split()):
                 if len(w) > 2:
-                    word_index[w].append(norm)
+                    word_index[w].add(norm)
     return index, word_index
 
 
