@@ -5,31 +5,68 @@ analysis summary.
 
 Run after build.py and build_graph.py.
 """
-import csv
+from __future__ import annotations
+
 import re
-from pathlib import Path
+import sys
 from collections import defaultdict
+from pathlib import Path
+from typing import Dict, List
 
 import duckdb
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
+from csv_io import read_csv_path  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 PROC = ROOT / "data" / "processed"
 DB_PATH = ROOT / "data" / "pq_ledger.duckdb"
 DOCS = ROOT / "docs"
 PARTY_DOCS = DOCS / "parties"
-DOCS.mkdir(exist_ok=True)
-PARTY_DOCS.mkdir(exist_ok=True)
+
+# (DuckDB table, source CSV in data/processed) -- loaded in this order; a missing CSV is skipped.
+TABLES = [
+    ("ls_questions", "ls_questions_enriched.csv"),
+    ("rs_questions", "rs_questions_enriched.csv"),
+    ("party_summary", "party_summary.csv"),
+    ("ministry_summary", "ministry_summary.csv"),
+    ("state_summary", "state_summary.csv"),
+    ("party_ministry_matrix_wide", "party_ministry_matrix.csv"),
+    ("party_type_matrix_wide", "party_type_matrix.csv"),
+    ("state_party_matrix_wide", "state_party_matrix.csv"),
+    ("state_ministry_matrix_wide", "state_ministry_matrix.csv"),
+    ("topic_keywords", "topic_keywords.csv"),
+    ("unmatched_members", "unmatched_members.csv"),
+    ("kg_party_ministry_lift", "kg_party_ministry_lift.csv"),
+    ("kg_pagerank", "kg_pagerank.csv"),
+    ("kg_party_communities", "kg_party_communities.csv"),
+    ("kg_ministry_cooccurrence", "kg_ministry_cooccurrence.csv"),
+    ("kg_mp_coasking_bridges", "kg_mp_coasking_bridges.csv"),
+    ("pib_ministry_comparison", "pib_ministry_comparison.csv"),
+    ("pib_scheme_comparison", "pib_scheme_comparison.csv"),
+    ("pli_scheme_scrutiny", "pli_scheme_scrutiny.csv"),
+    ("ministry_scheme_scrutiny", "ministry_scheme_scrutiny.csv"),
+    ("parivesh_state_comparison", "parivesh_state_comparison.csv"),
+    ("parivesh_activity_summary", "parivesh_activity_summary.csv"),
+    ("parivesh_mega_projects", "parivesh_mega_projects.csv"),
+]
+
+MIN_BRIEF_QUESTIONS = 50     # parties below this get no per-party brief
+MIN_SIGNATURE_QUESTIONS = 10  # a ministry needs this many questions to count as a party's signature
+MIN_STARRED_SAMPLE = 10       # show the starred/unstarred line only above this many questions
 
 
-def read_csv(name):
+def read_csv(name: str) -> List[Dict[str, str]]:
+    """Rows of ``data/processed/<name>``, or [] if that CSV does not exist."""
     path = PROC / name
     if not path.exists():
         return []
-    with open(path, newline="", encoding="utf-8") as f:
-        return list(csv.DictReader(f))
+    return read_csv_path(path)
 
 
-def load_table(con, name, csv_name):
+def load_table(con, name: str, csv_name: str) -> None:
+    """(Re)create table ``name`` from a processed CSV; no-op when the CSV is absent."""
     if not (PROC / csv_name).exists():
         return
     con.execute(f"DROP TABLE IF EXISTS {name}")
@@ -39,34 +76,16 @@ def load_table(con, name, csv_name):
     )
 
 
-def main():
+def main() -> None:
+    """Rebuild data/pq_ledger.duckdb from processed CSVs, then regenerate docs/*.md."""
+    DOCS.mkdir(exist_ok=True)
+    PARTY_DOCS.mkdir(exist_ok=True)
     if DB_PATH.exists():
         DB_PATH.unlink()
     con = duckdb.connect(str(DB_PATH))
 
-    load_table(con, "ls_questions", "ls_questions_enriched.csv")
-    load_table(con, "rs_questions", "rs_questions_enriched.csv")
-    load_table(con, "party_summary", "party_summary.csv")
-    load_table(con, "ministry_summary", "ministry_summary.csv")
-    load_table(con, "state_summary", "state_summary.csv")
-    load_table(con, "party_ministry_matrix_wide", "party_ministry_matrix.csv")
-    load_table(con, "party_type_matrix_wide", "party_type_matrix.csv")
-    load_table(con, "state_party_matrix_wide", "state_party_matrix.csv")
-    load_table(con, "state_ministry_matrix_wide", "state_ministry_matrix.csv")
-    load_table(con, "topic_keywords", "topic_keywords.csv")
-    load_table(con, "unmatched_members", "unmatched_members.csv")
-    load_table(con, "kg_party_ministry_lift", "kg_party_ministry_lift.csv")
-    load_table(con, "kg_pagerank", "kg_pagerank.csv")
-    load_table(con, "kg_party_communities", "kg_party_communities.csv")
-    load_table(con, "kg_ministry_cooccurrence", "kg_ministry_cooccurrence.csv")
-    load_table(con, "kg_mp_coasking_bridges", "kg_mp_coasking_bridges.csv")
-    load_table(con, "pib_ministry_comparison", "pib_ministry_comparison.csv")
-    load_table(con, "pib_scheme_comparison", "pib_scheme_comparison.csv")
-    load_table(con, "pli_scheme_scrutiny", "pli_scheme_scrutiny.csv")
-    load_table(con, "ministry_scheme_scrutiny", "ministry_scheme_scrutiny.csv")
-    load_table(con, "parivesh_state_comparison", "parivesh_state_comparison.csv")
-    load_table(con, "parivesh_activity_summary", "parivesh_activity_summary.csv")
-    load_table(con, "parivesh_mega_projects", "parivesh_mega_projects.csv")
+    for table, csv_name in TABLES:
+        load_table(con, table, csv_name)
 
     # A single tidy view across both chambers -- the "queries and answers" table.
     con.execute(
@@ -102,19 +121,16 @@ def main():
     con.close()
     print("Wrote", DB_PATH)
 
-    build_markdown(con=None)
+    build_markdown()
 
 
-def build_markdown(con):
+def write_party_briefs() -> List[str]:
+    """Write one docs/parties/<slug>.md per party with enough questions; return the briefed party names."""
     party_summary = {r["party"]: r for r in read_csv("party_summary.csv")}
     lift_rows = read_csv("kg_party_ministry_lift.csv")
     communities = read_csv("kg_party_communities.csv")
     topic_rows = read_csv("topic_keywords.csv")
     type_matrix = read_csv("party_type_matrix.csv")
-    bridges = read_csv("kg_mp_coasking_bridges.csv")
-    pagerank = read_csv("kg_pagerank.csv")
-    ministry_summary = read_csv("ministry_summary.csv")
-    state_summary = read_csv("state_summary.csv")
 
     community_by_party = {r["party"]: r["community"] for r in communities}
     lift_by_party = defaultdict(list)
@@ -134,12 +150,12 @@ def build_markdown(con):
     briefed = []
     for party, s in sorted(party_summary.items(), key=lambda kv: -int(kv[1]["total_questions"])):
         total = int(s["total_questions"])
-        if total < 50 or party == "Unknown":
+        if total < MIN_BRIEF_QUESTIONS or party == "Unknown":
             continue
         briefed.append(party)
         slug = slugify(party)
         signature = sorted(
-            [r for r in lift_by_party.get(party, []) if int(r["questions"]) >= 10],
+            [r for r in lift_by_party.get(party, []) if int(r["questions"]) >= MIN_SIGNATURE_QUESTIONS],
             key=lambda r: -float(r["lift"]),
         )[:8]
         topics = sorted(topics_by_party.get(party, []), key=lambda r: -int(r["count"]))[:12]
@@ -158,7 +174,7 @@ def build_markdown(con):
         ]
         if comm is not None:
             lines += [f"**Knowledge-graph community:** {int(comm)+1} (see `docs/ANALYSIS.md` for what the communities mean)", ""]
-        if starred + unstarred >= 10:
+        if starred + unstarred >= MIN_STARRED_SAMPLE:
             lines += [
                 f"**Starred vs. unstarred:** {starred:,} starred / {unstarred:,} unstarred ({starred_share:.1f}% starred — "
                 "starred questions get an oral answer and floor follow-up; each MP may ask only one per sitting day).",
@@ -173,12 +189,21 @@ def build_markdown(con):
         if topics:
             lines += ["## Recurring subject-line topics", "", ", ".join(f"{r['term']} ({r['count']})" for r in topics), ""]
         (PARTY_DOCS / f"{slug}.md").write_text("\n".join(lines))
+    return briefed
+
+
+def write_analysis(n_briefed: int) -> None:
+    """Write docs/ANALYSIS.md (rankings, KG findings, PIB/PLI/scheme/PARIVESH cross-checks, known gaps)."""
+    party_summary = {r["party"]: r for r in read_csv("party_summary.csv")}
+    communities = read_csv("kg_party_communities.csv")
+    bridges = read_csv("kg_mp_coasking_bridges.csv")
+    ministry_summary = read_csv("ministry_summary.csv")
+    state_summary = read_csv("state_summary.csv")
 
     # ---- Overall analysis ----
     top_parties = sorted(party_summary.values(), key=lambda r: -int(r["total_questions"]))[:15]
     top_ministries = sorted(ministry_summary, key=lambda r: -int(r["questions"]))[:15]
     top_states = sorted(state_summary, key=lambda r: -int(r["questions"]))[:15]
-    top_pagerank_ministries = [r for r in pagerank if r["type"] == "ministry"][:10]
     top_bridges = sorted(bridges, key=lambda r: -int(r["joint_questions"]))[:10]
     pib_ministry = read_csv("pib_ministry_comparison.csv")
     pli_rows = read_csv("pli_scheme_scrutiny.csv")
@@ -368,7 +393,7 @@ def build_markdown(con):
         "(semiconductor/electronics-component manufacturing promotion) and the Large Scale",
         "Electronics Manufacturing component of the PLI program, both genuinely verified zero (not a",
         "matching artifact — checked directly against the raw corpus). Either PQs about these use",
-        f"language this heuristic doesn't catch, or they draw essentially no scheme-specific",
+        "language this heuristic doesn't catch, or they draw essentially no scheme-specific",
         f"parliamentary attention. **{stale_sites} of {len(scheme_site_rows)}** haven't been touched",
         "on their own ministry's site in over a year — operationalizing what the ministry-site-access",
         "research had only asserted qualitatively (frozen, present-tense scheme pages). By ministry: "
@@ -468,7 +493,12 @@ def build_markdown(con):
         "",
     ]
     (DOCS / "ANALYSIS.md").write_text("\n".join(lines))
-    print(f"Wrote docs/ANALYSIS.md and {len(briefed)} party briefs in docs/parties/")
+    print(f"Wrote docs/ANALYSIS.md and {n_briefed} party briefs in docs/parties/")
+
+
+def build_markdown() -> None:
+    """Write docs/parties/*.md and docs/ANALYSIS.md from the processed CSVs."""
+    write_analysis(len(write_party_briefs()))
 
 
 if __name__ == "__main__":
