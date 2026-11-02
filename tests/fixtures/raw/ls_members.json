@@ -1,0 +1,34 @@
+[
+ {
+  "mpFirstLastName": "Anil Kumar",
+  "mpLastFirstName": "Kumar Anil",
+  "partySname": "BJP",
+  "partyFname": "Bharatiya Janata Party",
+  "stateName": "Uttar Pradesh",
+  "constName": "Agra"
+ },
+ {
+  "mpFirstLastName": "Meera Nair",
+  "mpLastFirstName": "Nair Meera",
+  "partySname": "INC",
+  "partyFname": "Indian National Congress",
+  "stateName": "Keralam",
+  "constName": "Kochi"
+ },
+ {
+  "mpFirstLastName": "Sanjay Rao Patil",
+  "mpLastFirstName": "Patil Sanjay Rao",
+  "partySname": "SHSUBT",
+  "partyFname": "Shiv Sena (UBT)",
+  "stateName": "Maharashtra",
+  "constName": "Pune"
+ },
+ {
+  "mpFirstLastName": "Lakshmi Devi",
+  "mpLastFirstName": "Devi Lakshmi",
+  "partySname": "DMK",
+  "partyFname": "Dravida Munnetra Kazhagam",
+  "stateName": "NCT of Delhi",
+  "constName": "New Delhi"
+ }
+]
