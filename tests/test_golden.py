@@ -52,3 +52,18 @@ def test_build_db_smoke(tmp_path, monkeypatch):
     con = duckdb.connect(str(tmp_path / "t.duckdb"), read_only=True)
     assert con.execute("select count(*) from all_questions").fetchone()[0] == 24
     assert (tmp_path / "docs" / "ANALYSIS.md").exists()
+
+
+def test_build_markdown_matches_committed_docs(tmp_path, monkeypatch):
+    """ANALYSIS.md (all sections) and every party brief regenerate byte-identically from data/processed."""
+    repo = Path(__file__).resolve().parent.parent
+    monkeypatch.setattr(build_db, "PROC", repo / "data" / "processed")
+    monkeypatch.setattr(build_db, "DOCS", tmp_path)
+    monkeypatch.setattr(build_db, "PARTY_DOCS", tmp_path / "parties")
+    (tmp_path / "parties").mkdir()
+    build_db.build_markdown()
+    assert (tmp_path / "ANALYSIS.md").read_bytes() == (repo / "docs" / "ANALYSIS.md").read_bytes()
+    names = sorted(p.name for p in (repo / "docs" / "parties").iterdir())
+    assert sorted(p.name for p in (tmp_path / "parties").iterdir()) == names
+    for n in names:
+        assert (tmp_path / "parties" / n).read_bytes() == (repo / "docs" / "parties" / n).read_bytes(), n

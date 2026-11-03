@@ -192,31 +192,10 @@ def write_party_briefs() -> List[str]:
     return briefed
 
 
-def write_analysis(n_briefed: int) -> None:
-    """Write docs/ANALYSIS.md (rankings, KG findings, PIB/PLI/scheme/PARIVESH cross-checks, known gaps)."""
-    party_summary = {r["party"]: r for r in read_csv("party_summary.csv")}
-    communities = read_csv("kg_party_communities.csv")
-    bridges = read_csv("kg_mp_coasking_bridges.csv")
-    ministry_summary = read_csv("ministry_summary.csv")
-    state_summary = read_csv("state_summary.csv")
-
-    # ---- Overall analysis ----
-    top_parties = sorted(party_summary.values(), key=lambda r: -int(r["total_questions"]))[:15]
-    top_ministries = sorted(ministry_summary, key=lambda r: -int(r["questions"]))[:15]
-    top_states = sorted(state_summary, key=lambda r: -int(r["questions"]))[:15]
-    top_bridges = sorted(bridges, key=lambda r: -int(r["joint_questions"]))[:10]
-    pib_ministry = read_csv("pib_ministry_comparison.csv")
-    pli_rows = read_csv("pli_scheme_scrutiny.csv")
-    scheme_site_rows = read_csv("ministry_scheme_scrutiny.csv")
-    parivesh_state_rows = read_csv("parivesh_state_comparison.csv")
-    parivesh_mega_rows = read_csv("parivesh_mega_projects.csv")
-    pib_scheme = read_csv("pib_scheme_comparison.csv")
-
-    by_comm = defaultdict(list)
-    for r in communities:
-        by_comm[int(r["community"])].append(r["party"])
-
-    lines = [
+def _rankings_section(top_parties: List[dict], top_ministries: List[dict], top_states: List[dict]) -> List[str]:
+    """Title, PQ primer, and the top-party / ministry / state ranking tables."""
+    lines: List[str] = []
+    lines += [
         "# Parliament Questions, 18th Lok Sabha term — analysis",
         "",
         "Source data: `sansad.in` (`api_ls`) for Lok Sabha, `rsdoc.nic.in` for Rajya Sabha (sessions 265-271, "
@@ -250,6 +229,12 @@ def write_analysis(n_briefed: int) -> None:
     for s in top_states:
         lines.append(f"| {s['state']} | {int(s['questions']):,} |")
 
+    return lines
+
+
+def _kg_section(by_comm: Dict[int, List[str]], top_bridges: List[dict]) -> List[str]:
+    """Knowledge-graph findings: party-ministry lift, party communities, cross-party co-asking pairs."""
+    lines: List[str] = []
     lines += [
         "",
         "## Knowledge-graph findings",
@@ -290,6 +275,12 @@ def write_analysis(n_briefed: int) -> None:
     for b in top_bridges:
         lines.append(f"| {b['mp_a']} | {b['party_a']} | {b['mp_b']} | {b['party_b']} | {b['joint_questions']} |")
 
+    return lines
+
+
+def _pib_section(pib_ministry: List[dict], pib_scheme: List[dict]) -> List[str]:
+    """PQ text vs PIB releases, at ministry and named-scheme level."""
+    lines: List[str] = []
     lines += [
         "",
         "## Parliament questions as a text source, cross-checked against PIB",
@@ -340,6 +331,14 @@ def write_analysis(n_briefed: int) -> None:
         "abbreviations PQ text uses that PIB's own headlines likely spell out differently — check",
         "`data/processed/pib_scheme_comparison.csv` and the full-text PDF before citing a specific scheme as",
         "uncovered.",
+    ]
+    return lines
+
+
+def _pli_section(pli_rows: List[dict]) -> List[str]:
+    """PLI scheme scrutiny vs actual disbursal."""
+    lines: List[str] = []
+    lines += [
         "",
         "## PLI schemes — scrutiny vs. actual disbursal",
         "",
@@ -365,6 +364,14 @@ def write_analysis(n_briefed: int) -> None:
         "relative to the scale of the shortfall. PLI Bulk Drugs (B grade but only 0.8% disbursed on",
         "₹6,940cr) is the most-scrutinised scheme in the table (34 mentions), consistent with it",
         "being a live China-dependency policy flashpoint independent of its own disbursal grade.",
+    ]
+    return lines
+
+
+def _scheme_catalogue_section(scheme_site_rows: List[dict]) -> List[str]:
+    """Ministry scheme catalogues (MeitY/DoT/DPIIT) vs PQ scrutiny."""
+    lines: List[str] = []
+    lines += [
         "",
         "## Ministry scheme catalogues vs. PQ scrutiny",
         "",
@@ -402,6 +409,14 @@ def write_analysis(n_briefed: int) -> None:
             for m in ministries_covered
         )
         + ".",
+    ]
+    return lines
+
+
+def _parivesh_section(parivesh_state_rows: List[dict], parivesh_mega_rows: List[dict]) -> List[str]:
+    """PARIVESH environmental clearances vs PQ scrutiny."""
+    lines: List[str] = []
+    lines += [
         "",
         "## PARIVESH environmental clearances vs. PQ scrutiny",
         "",
@@ -443,55 +458,89 @@ def write_analysis(n_briefed: int) -> None:
         "DVC-CIL, Evonith Metallics — are mentioned by company name anywhere in the PQ corpus in this "
         "window. Individual mega-project scrutiny by name appears essentially absent, in contrast to "
         "how PLI scheme beneficiaries surface in PQ text (see the PLI section above).",
-        "",
-        "## Known gaps",
-        "",
-        "- **Lok Sabha question/answer full text is not in this dataset.** The `api_ls` listing endpoint used to "
-        "fetch all 34,720 LS questions only exposes the subject line, not the question or answer body — those "
-        "live only in per-question PDFs (a different URL per question, with a random filename suffix on the "
-        "18th LS). Fetching and OCR'ing ~34,700 PDFs was out of scope for this pass; `docs/parties/*.md` and "
-        "the topic tab work from subject-line text only for the Lok Sabha side.",
-        "- **Rajya Sabha has full question text** (`question_text` in `rs_questions` / `all_questions`) but "
-        "**not answer text** — `rsdoc.nic.in` returns `ans_text: null` for every record; answers are PDF-only "
-        "there too (`answer_pdf_url`).",
-        f"- {138} of 34,720 Lok Sabha questions (0.4%) could not be matched to a roster member by name (honorific "
-        "variants and, in a couple of cases, MPs who left office without a public former-member record) and are "
-        "excluded from party/state breakdowns.",
-        "- Party attribution for a jointly-tabled Lok Sabha question uses the first-listed (lead) member only, "
-        "to avoid one question inflating multiple parties' counts.",
-        "- **The PIB comparison's Ministry of External Affairs count (2 releases since June 2024) is a data "
-        "gap, not reality** — MEA is one of PIB's most active posters; the underlying index "
-        "(`pib_index.sqlite`, built for a separate project) under-captures MEA specifically throughout its "
-        "history, not just this window. Treat MEA's row in `pib_ministry_comparison.csv` as missing, not low.",
-        "- The scheme/topic-vs-PIB comparison matches on release **titles only** via substring search, not full "
-        "release body text — a real undercount of PIB coverage, especially for acronym-heavy PQ terms (e.g. "
-        "PM-SGMBY, PM-SHRI) that PIB headlines likely spell out in full.",
-        "- \"Ministry of Planning\" and the one \"Prime Minister\" ministry-label row genuinely have ~0 matching "
-        "PIB releases in this window — not a matching bug, just a near-dormant PIB presence for Planning and "
-        "a mislabelled single row for PM.",
-        "- **PLI scheme_pq_mentions is a keyword-pattern count, not a verified extraction** — a PQ about a "
-        "scheme that doesn't use one of the matched phrases (e.g. asks about \"Advanced Chemistry Cell "
-        "manufacturing\" without saying \"ACC Battery\") is missed. Treat these counts as a lower bound.",
-        "- **MeitY/DoT/DPIIT scheme matching is auto-derived per scheme** (parenthetical acronym if genuinely "
-        "scheme-specific, else the title's distinguishing words after \"for\"/\"of\") rather than hand-curated "
-        "like the PLI table — lower precision. Two \"PLI for IT Hardware\" entries (1.0 and 2.0) get identical "
-        "counts because PQ text can't be told which version it means; this is a real ambiguity in the source "
-        "data, not a bug.",
-        "- **`months_since_update` is time since that ministry's CMS last touched the scheme's page**, not "
-        "evidence the scheme itself is inactive — a scheme can be fully live with a stale page, or vice versa.",
-        "- **DoT and DPIIT use a different, undocumented \"post-page\" API route from MeitY's standard WP REST "
-        "route** — both were verified live rather than assumed to match MeitY's shape (an earlier assumption "
-        "that they did was wrong). If either ministry's site changes its API again, `compare_wp_json_schemes.py` "
-        "needs re-verifying against the live site, not just a retry.",
-        "- **PARIVESH covers Environmental Clearance (EC) only** — every record returned by "
-        "`getProposals` had `workgroup_name: \"Environmental Clearance\"`; Forest Clearance (FC) proposals, "
-        "if they exist on a different route, aren't included here.",
-        "- **PARIVESH mega-project company extraction is a \"by [M/s] Company\" pattern match**, not NER — "
-        "titles that name no company, or that lead with the company instead of trailing it (e.g. \"Newzone "
-        "India Pvt Limited proposed expansion...\"), come back with no company and are excluded from the "
-        "mention check rather than falsely counted as unmentioned.",
-        "",
     ]
+    return lines
+
+
+# Static 'Known gaps' section appended to docs/ANALYSIS.md.
+_KNOWN_GAPS = [
+    "",
+    "## Known gaps",
+    "",
+    "- **Lok Sabha question/answer full text is not in this dataset.** The `api_ls` listing endpoint used to "
+    "fetch all 34,720 LS questions only exposes the subject line, not the question or answer body — those "
+    "live only in per-question PDFs (a different URL per question, with a random filename suffix on the "
+    "18th LS). Fetching and OCR'ing ~34,700 PDFs was out of scope for this pass; `docs/parties/*.md` and "
+    "the topic tab work from subject-line text only for the Lok Sabha side.",
+    "- **Rajya Sabha has full question text** (`question_text` in `rs_questions` / `all_questions`) but "
+    "**not answer text** — `rsdoc.nic.in` returns `ans_text: null` for every record; answers are PDF-only "
+    "there too (`answer_pdf_url`).",
+    f"- {138} of 34,720 Lok Sabha questions (0.4%) could not be matched to a roster member by name (honorific "
+    "variants and, in a couple of cases, MPs who left office without a public former-member record) and are "
+    "excluded from party/state breakdowns.",
+    "- Party attribution for a jointly-tabled Lok Sabha question uses the first-listed (lead) member only, "
+    "to avoid one question inflating multiple parties' counts.",
+    "- **The PIB comparison's Ministry of External Affairs count (2 releases since June 2024) is a data "
+    "gap, not reality** — MEA is one of PIB's most active posters; the underlying index "
+    "(`pib_index.sqlite`, built for a separate project) under-captures MEA specifically throughout its "
+    "history, not just this window. Treat MEA's row in `pib_ministry_comparison.csv` as missing, not low.",
+    "- The scheme/topic-vs-PIB comparison matches on release **titles only** via substring search, not full "
+    "release body text — a real undercount of PIB coverage, especially for acronym-heavy PQ terms (e.g. "
+    "PM-SGMBY, PM-SHRI) that PIB headlines likely spell out in full.",
+    "- \"Ministry of Planning\" and the one \"Prime Minister\" ministry-label row genuinely have ~0 matching "
+    "PIB releases in this window — not a matching bug, just a near-dormant PIB presence for Planning and "
+    "a mislabelled single row for PM.",
+    "- **PLI scheme_pq_mentions is a keyword-pattern count, not a verified extraction** — a PQ about a "
+    "scheme that doesn't use one of the matched phrases (e.g. asks about \"Advanced Chemistry Cell "
+    "manufacturing\" without saying \"ACC Battery\") is missed. Treat these counts as a lower bound.",
+    "- **MeitY/DoT/DPIIT scheme matching is auto-derived per scheme** (parenthetical acronym if genuinely "
+    "scheme-specific, else the title's distinguishing words after \"for\"/\"of\") rather than hand-curated "
+    "like the PLI table — lower precision. Two \"PLI for IT Hardware\" entries (1.0 and 2.0) get identical "
+    "counts because PQ text can't be told which version it means; this is a real ambiguity in the source "
+    "data, not a bug.",
+    "- **`months_since_update` is time since that ministry's CMS last touched the scheme's page**, not "
+    "evidence the scheme itself is inactive — a scheme can be fully live with a stale page, or vice versa.",
+    "- **DoT and DPIIT use a different, undocumented \"post-page\" API route from MeitY's standard WP REST "
+    "route** — both were verified live rather than assumed to match MeitY's shape (an earlier assumption "
+    "that they did was wrong). If either ministry's site changes its API again, `compare_wp_json_schemes.py` "
+    "needs re-verifying against the live site, not just a retry.",
+    "- **PARIVESH covers Environmental Clearance (EC) only** — every record returned by "
+    "`getProposals` had `workgroup_name: \"Environmental Clearance\"`; Forest Clearance (FC) proposals, "
+    "if they exist on a different route, aren't included here.",
+    "- **PARIVESH mega-project company extraction is a \"by [M/s] Company\" pattern match**, not NER — "
+    "titles that name no company, or that lead with the company instead of trailing it (e.g. \"Newzone "
+    "India Pvt Limited proposed expansion...\"), come back with no company and are excluded from the "
+    "mention check rather than falsely counted as unmentioned.",
+    "",
+]
+
+
+def write_analysis(n_briefed: int) -> None:
+    """Write docs/ANALYSIS.md (rankings, KG findings, PIB/PLI/scheme/PARIVESH cross-checks, known gaps)."""
+    party_summary = {r["party"]: r for r in read_csv("party_summary.csv")}
+    communities = read_csv("kg_party_communities.csv")
+    bridges = read_csv("kg_mp_coasking_bridges.csv")
+    ministry_summary = read_csv("ministry_summary.csv")
+    state_summary = read_csv("state_summary.csv")
+
+    top_parties = sorted(party_summary.values(), key=lambda r: -int(r["total_questions"]))[:15]
+    top_ministries = sorted(ministry_summary, key=lambda r: -int(r["questions"]))[:15]
+    top_states = sorted(state_summary, key=lambda r: -int(r["questions"]))[:15]
+    top_bridges = sorted(bridges, key=lambda r: -int(r["joint_questions"]))[:10]
+
+    by_comm = defaultdict(list)
+    for r in communities:
+        by_comm[int(r["community"])].append(r["party"])
+
+    lines = (
+        _rankings_section(top_parties, top_ministries, top_states)
+        + _kg_section(by_comm, top_bridges)
+        + _pib_section(read_csv("pib_ministry_comparison.csv"), read_csv("pib_scheme_comparison.csv"))
+        + _pli_section(read_csv("pli_scheme_scrutiny.csv"))
+        + _scheme_catalogue_section(read_csv("ministry_scheme_scrutiny.csv"))
+        + _parivesh_section(read_csv("parivesh_state_comparison.csv"), read_csv("parivesh_mega_projects.csv"))
+        + _KNOWN_GAPS
+    )
     (DOCS / "ANALYSIS.md").write_text("\n".join(lines))
     print(f"Wrote docs/ANALYSIS.md and {n_briefed} party briefs in docs/parties/")
 
