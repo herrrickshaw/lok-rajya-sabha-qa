@@ -61,4 +61,6 @@ def test_main_matches_golden(tmp_path, monkeypatch, capsys):
         assert p.read_bytes() == (GOLDEN / p.name).read_bytes(), p.name
     assert (site / "parivesh.json").read_bytes() == (GOLDEN / "parivesh.json").read_bytes()
     assert printed == (GOLDEN / "stdout.txt").read_text()
-    assert sorted(p.name for p in out.iterdir()) == ["parivesh_activity_summary.csv", "parivesh_mega_projects.csv", "parivesh_state_comparison.csv"]
+    assert sorted(p.name for p in out.iterdir()) == [
+        "parivesh_activity_summary.csv", "parivesh_mega_projects.csv", "parivesh_state_comparison.csv",
+    ]
