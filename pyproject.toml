@@ -21,3 +21,7 @@ extend-exclude = [".venv"]
 select = ["E", "F", "W"]
 # Legacy scripts not yet refactored (Phase 2) -- keep lint green without rewriting them here.
 per-file-ignores = { "scripts/compare_*.py" = ["F", "E"], "scripts/build_xlsx.py" = ["F", "E"], "scripts/ministry_registry.py" = ["E"], "scripts/render_site.py" = ["E"], "scripts/build_db.py" = ["E501"] }
+
+[tool.setuptools]
+# Scripts are run from scripts/; nothing to package. Stops flat-layout auto-discovery of site/ and data/.
+py-modules = []
