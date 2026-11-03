@@ -1,0 +1,8 @@
+PARIVESH: 4 distinct EC proposals since 2024-06-01 (2 in a 'granted' status)
+ENVIRONMENT, FOREST AND CLIMATE CHANGE: 50 PQs, 12.5x PQ per EC proposal
+Mega-project spot-check: 2/3 largest EC proposals name a company; 1 of those are mentioned somewhere in PQ text
+  Gujarat              ec=   1  env_pq=  10
+  Goa                  ec=   1  env_pq=   3
+  Dadra and Nagar Haveli and Daman and Diu ec=   1  env_pq=   0
+  Unknown              ec=   1  env_pq=   0
+  Kerala               ec=   0  env_pq=   0

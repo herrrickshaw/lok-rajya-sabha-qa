@@ -1,0 +1,4 @@
+project_name,company,state,investment_cost_rs,status,start_date,company_mentioned_in_pq
+dup should be replaced,,Gujarat,6000000000.0,EC Granted,2024-07-02,
+Port work by Beta Ports Pvt Ltd,Beta Ports Pvt Ltd,Dadra and Nagar Haveli and Daman and Diu,2000000000.0,Under Examination,2024-08-01,True
+Mine by Gamma Mining,Gamma Mining,Unknown,1000000000.0,Granted,2024-09-09,False

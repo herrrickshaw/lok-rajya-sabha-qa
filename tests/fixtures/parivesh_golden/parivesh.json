@@ -1,0 +1,78 @@
+{
+  "since": "2024-06-01",
+  "ministry": "ENVIRONMENT, FOREST AND CLIMATE CHANGE",
+  "ministry_pq": 50,
+  "total_ec_proposals": 4,
+  "granted_count": 2,
+  "pq_per_ec_proposal": 12.5,
+  "state_rows": [
+    {
+      "state": "Gujarat",
+      "environment_pqs": 10,
+      "ec_proposals": 1,
+      "pq_per_ec_proposal": 10.0
+    },
+    {
+      "state": "Goa",
+      "environment_pqs": 3,
+      "ec_proposals": 1,
+      "pq_per_ec_proposal": 3.0
+    },
+    {
+      "state": "Dadra and Nagar Haveli and Daman and Diu",
+      "environment_pqs": 0,
+      "ec_proposals": 1,
+      "pq_per_ec_proposal": 0.0
+    },
+    {
+      "state": "Unknown",
+      "environment_pqs": 0,
+      "ec_proposals": 1,
+      "pq_per_ec_proposal": 0.0
+    },
+    {
+      "state": "Kerala",
+      "environment_pqs": 0,
+      "ec_proposals": 0,
+      "pq_per_ec_proposal": null
+    }
+  ],
+  "top_activities": [
+    {
+      "activity": "Metallurgical",
+      "ec_proposals": 1
+    }
+  ],
+  "mega_projects": [
+    {
+      "project_name": "dup should be replaced",
+      "company": "",
+      "state": "Gujarat",
+      "investment_cost_rs": 6000000000.0,
+      "status": "EC Granted",
+      "start_date": "2024-07-02",
+      "company_mentioned_in_pq": null
+    },
+    {
+      "project_name": "Port work by Beta Ports Pvt Ltd",
+      "company": "Beta Ports Pvt Ltd",
+      "state": "Dadra and Nagar Haveli and Daman and Diu",
+      "investment_cost_rs": 2000000000.0,
+      "status": "Under Examination",
+      "start_date": "2024-08-01",
+      "company_mentioned_in_pq": true
+    },
+    {
+      "project_name": "Mine by Gamma Mining",
+      "company": "Gamma Mining",
+      "state": "Unknown",
+      "investment_cost_rs": 1000000000.0,
+      "status": "Granted",
+      "start_date": "2024-09-09",
+      "company_mentioned_in_pq": false
+    }
+  ],
+  "mega_projects_mentioned": 1,
+  "mega_projects_with_company": 2,
+  "note": "PARIVESH's admin_api/dashboard/getProposals, Environmental Clearance (EC) proposals only -- Forest Clearance isn't covered by this endpoint as verified. The status=Received/Granted query parameter is a no-op (confirmed byte-identical responses); granted-vs-not is classified from each proposal's own status field instead. Company names for the largest proposals are extracted from a \"by [M/s] <Company>\" clause in the project title where one exists (many titles name no company at all, or lead with the company instead of trailing it -- those show blank, not a false negative); the mention check itself is a plain substring match, a heuristic not a verified extraction."
+}
