@@ -1,0 +1,47 @@
+party,term,count
+ALL,railway safety,11
+ALL,safety measures,11
+ALL,rural health,9
+ALL,health centres,9
+ALL,pradhan mantri,3
+ALL,mantri awas,3
+ALL,awas yojana,3
+BJP,rural health,4
+BJP,health centres,4
+BJP,railway,2
+BJP,safety,2
+BJP,measures,2
+BJP,pradhan,1
+BJP,mantri,1
+BJP,awas,1
+BJP,yojana,1
+INC,railway,2
+INC,safety,2
+INC,measures,2
+INC,pradhan,1
+INC,mantri,1
+INC,awas,1
+INC,yojana,1
+SHS(UBT),railway safety,4
+SHS(UBT),safety measures,4
+SHS(UBT),rural,1
+SHS(UBT),health,1
+SHS(UBT),centres,1
+DMK,rural,1
+DMK,health,1
+DMK,centres,1
+DMK,railway,1
+DMK,safety,1
+DMK,measures,1
+Unknown,rural health,3
+Unknown,health centres,3
+Unknown,railway,1
+Unknown,safety,1
+Unknown,measures,1
+YSRCP,railway,1
+YSRCP,safety,1
+YSRCP,measures,1
+YSRCP,pradhan,1
+YSRCP,mantri,1
+YSRCP,awas,1
+YSRCP,yojana,1

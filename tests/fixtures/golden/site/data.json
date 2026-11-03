@@ -1,0 +1,579 @@
+{
+  "generated_note": "18th Lok Sabha PQs since formation (Jun 2024); Rajya Sabha sessions 265-271 (same period). Source: sansad.in / rsdoc.nic.in public APIs, member rosters cross-referenced for party and state.",
+  "party_summary": [
+    {
+      "party": "BJP",
+      "lok_sabha_questions": 5,
+      "rajya_sabha_questions": 2,
+      "total_questions": 7
+    },
+    {
+      "party": "SHS(UBT)",
+      "lok_sabha_questions": 2,
+      "rajya_sabha_questions": 3,
+      "total_questions": 5
+    },
+    {
+      "party": "Unknown",
+      "lok_sabha_questions": 3,
+      "rajya_sabha_questions": 2,
+      "total_questions": 5
+    },
+    {
+      "party": "INC",
+      "lok_sabha_questions": 3,
+      "rajya_sabha_questions": 0,
+      "total_questions": 3
+    },
+    {
+      "party": "DMK",
+      "lok_sabha_questions": 2,
+      "rajya_sabha_questions": 0,
+      "total_questions": 2
+    },
+    {
+      "party": "YSRCP",
+      "lok_sabha_questions": 0,
+      "rajya_sabha_questions": 2,
+      "total_questions": 2
+    }
+  ],
+  "ministry_summary": [
+    {
+      "ministry": "RAILWAYS",
+      "questions": 7
+    },
+    {
+      "ministry": "HEALTH AND FAMILY WELFARE",
+      "questions": 7
+    },
+    {
+      "ministry": "ROAD TRANSPORT AND HIGHWAYS",
+      "questions": 3
+    },
+    {
+      "ministry": "COMMUNICATIONS",
+      "questions": 3
+    },
+    {
+      "ministry": "HOUSING AND URBAN AFFAIRS",
+      "questions": 3
+    },
+    {
+      "ministry": "Unknown",
+      "questions": 1
+    }
+  ],
+  "state_summary": [
+    {
+      "state": "Uttar Pradesh",
+      "questions": 5
+    },
+    {
+      "state": "Maharashtra",
+      "questions": 5
+    },
+    {
+      "state": "Unknown",
+      "questions": 5
+    },
+    {
+      "state": "Delhi",
+      "questions": 4
+    },
+    {
+      "state": "Kerala",
+      "questions": 3
+    },
+    {
+      "state": "Andhra Pradesh",
+      "questions": 2
+    }
+  ],
+  "party_ministry_matrix": {
+    "ministries": [
+      "RAILWAYS",
+      "HEALTH AND FAMILY WELFARE",
+      "ROAD TRANSPORT AND HIGHWAYS",
+      "COMMUNICATIONS",
+      "HOUSING AND URBAN AFFAIRS",
+      "Unknown"
+    ],
+    "rows": [
+      {
+        "party": "BJP",
+        "values": [
+          2,
+          1,
+          0,
+          1,
+          3,
+          0
+        ]
+      },
+      {
+        "party": "SHS(UBT)",
+        "values": [
+          1,
+          3,
+          0,
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "party": "Unknown",
+        "values": [
+          1,
+          0,
+          2,
+          1,
+          0,
+          1
+        ]
+      },
+      {
+        "party": "INC",
+        "values": [
+          2,
+          1,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "party": "DMK",
+        "values": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "party": "YSRCP",
+        "values": [
+          1,
+          1,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ]
+  },
+  "state_party_matrix": {
+    "parties": [
+      "BJP",
+      "DMK",
+      "INC",
+      "SHS(UBT)",
+      "Unknown",
+      "YSRCP"
+    ],
+    "rows": [
+      {
+        "state": "Uttar Pradesh",
+        "values": [
+          5,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "state": "Maharashtra",
+        "values": [
+          0,
+          0,
+          0,
+          5,
+          0,
+          0
+        ]
+      },
+      {
+        "state": "Unknown",
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          5,
+          0
+        ]
+      },
+      {
+        "state": "Delhi",
+        "values": [
+          2,
+          2,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "state": "Kerala",
+        "values": [
+          0,
+          0,
+          3,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "state": "Andhra Pradesh",
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ]
+      }
+    ]
+  },
+  "state_ministry_matrix": {
+    "ministries": [
+      "RAILWAYS",
+      "HEALTH AND FAMILY WELFARE",
+      "ROAD TRANSPORT AND HIGHWAYS",
+      "COMMUNICATIONS",
+      "HOUSING AND URBAN AFFAIRS",
+      "Unknown"
+    ],
+    "rows": [
+      {
+        "state": "Uttar Pradesh",
+        "values": [
+          2,
+          0,
+          0,
+          1,
+          2,
+          0
+        ]
+      },
+      {
+        "state": "Maharashtra",
+        "values": [
+          1,
+          3,
+          0,
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "state": "Unknown",
+        "values": [
+          1,
+          0,
+          2,
+          1,
+          0,
+          1
+        ]
+      },
+      {
+        "state": "Delhi",
+        "values": [
+          0,
+          2,
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "state": "Kerala",
+        "values": [
+          2,
+          1,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "state": "Andhra Pradesh",
+        "values": [
+          1,
+          1,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ]
+  },
+  "party_type_matrix": {
+    "types": [
+      "STARRED",
+      "UNKNOWN",
+      "UNSTARRED"
+    ],
+    "rows": [
+      {
+        "party": "BJP",
+        "STARRED": 3,
+        "UNKNOWN": 0,
+        "UNSTARRED": 4
+      },
+      {
+        "party": "SHS(UBT)",
+        "STARRED": 5,
+        "UNKNOWN": 0,
+        "UNSTARRED": 0
+      },
+      {
+        "party": "Unknown",
+        "STARRED": 2,
+        "UNKNOWN": 1,
+        "UNSTARRED": 2
+      },
+      {
+        "party": "INC",
+        "STARRED": 0,
+        "UNKNOWN": 0,
+        "UNSTARRED": 3
+      },
+      {
+        "party": "DMK",
+        "STARRED": 0,
+        "UNKNOWN": 0,
+        "UNSTARRED": 2
+      },
+      {
+        "party": "YSRCP",
+        "STARRED": 2,
+        "UNKNOWN": 0,
+        "UNSTARRED": 0
+      }
+    ]
+  },
+  "overall_topics": [
+    {
+      "term": "railway safety",
+      "count": 11
+    },
+    {
+      "term": "safety measures",
+      "count": 11
+    },
+    {
+      "term": "rural health",
+      "count": 9
+    },
+    {
+      "term": "health centres",
+      "count": 9
+    },
+    {
+      "term": "pradhan mantri",
+      "count": 3
+    },
+    {
+      "term": "mantri awas",
+      "count": 3
+    },
+    {
+      "term": "awas yojana",
+      "count": 3
+    }
+  ],
+  "party_topics": {
+    "BJP": [
+      {
+        "term": "rural health",
+        "count": 4
+      },
+      {
+        "term": "health centres",
+        "count": 4
+      },
+      {
+        "term": "railway",
+        "count": 2
+      },
+      {
+        "term": "safety",
+        "count": 2
+      },
+      {
+        "term": "measures",
+        "count": 2
+      },
+      {
+        "term": "pradhan",
+        "count": 1
+      },
+      {
+        "term": "mantri",
+        "count": 1
+      },
+      {
+        "term": "awas",
+        "count": 1
+      },
+      {
+        "term": "yojana",
+        "count": 1
+      }
+    ],
+    "INC": [
+      {
+        "term": "railway",
+        "count": 2
+      },
+      {
+        "term": "safety",
+        "count": 2
+      },
+      {
+        "term": "measures",
+        "count": 2
+      },
+      {
+        "term": "pradhan",
+        "count": 1
+      },
+      {
+        "term": "mantri",
+        "count": 1
+      },
+      {
+        "term": "awas",
+        "count": 1
+      },
+      {
+        "term": "yojana",
+        "count": 1
+      }
+    ],
+    "SHS(UBT)": [
+      {
+        "term": "railway safety",
+        "count": 4
+      },
+      {
+        "term": "safety measures",
+        "count": 4
+      },
+      {
+        "term": "rural",
+        "count": 1
+      },
+      {
+        "term": "health",
+        "count": 1
+      },
+      {
+        "term": "centres",
+        "count": 1
+      }
+    ],
+    "DMK": [
+      {
+        "term": "rural",
+        "count": 1
+      },
+      {
+        "term": "health",
+        "count": 1
+      },
+      {
+        "term": "centres",
+        "count": 1
+      },
+      {
+        "term": "railway",
+        "count": 1
+      },
+      {
+        "term": "safety",
+        "count": 1
+      },
+      {
+        "term": "measures",
+        "count": 1
+      }
+    ],
+    "Unknown": [
+      {
+        "term": "rural health",
+        "count": 3
+      },
+      {
+        "term": "health centres",
+        "count": 3
+      },
+      {
+        "term": "railway",
+        "count": 1
+      },
+      {
+        "term": "safety",
+        "count": 1
+      },
+      {
+        "term": "measures",
+        "count": 1
+      }
+    ],
+    "YSRCP": [
+      {
+        "term": "railway",
+        "count": 1
+      },
+      {
+        "term": "safety",
+        "count": 1
+      },
+      {
+        "term": "measures",
+        "count": 1
+      },
+      {
+        "term": "pradhan",
+        "count": 1
+      },
+      {
+        "term": "mantri",
+        "count": 1
+      },
+      {
+        "term": "awas",
+        "count": 1
+      },
+      {
+        "term": "yojana",
+        "count": 1
+      }
+    ]
+  },
+  "totals": {
+    "lok_sabha": 15,
+    "rajya_sabha": 9,
+    "combined": 24,
+    "unmatched_ls": 2,
+    "unmatched_rs": 2
+  }
+}

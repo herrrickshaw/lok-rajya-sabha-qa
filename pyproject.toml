@@ -1,0 +1,27 @@
+[project]
+name = "lok-rajya-sabha-qa"
+version = "0.1.0"
+description = "Parliament Questions ledger for the 18th Lok Sabha and matching Rajya Sabha sessions"
+requires-python = ">=3.9"
+dependencies = ["networkx", "duckdb", "pandas", "openpyxl"]
+
+[project.optional-dependencies]
+dev = ["pytest", "ruff"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["scripts"]
+
+[tool.ruff]
+line-length = 140
+target-version = "py39"
+extend-exclude = [".venv"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W"]
+# Legacy scripts not yet refactored (Phase 2) -- keep lint green without rewriting them here.
+per-file-ignores = { "scripts/compare_*.py" = ["F", "E"], "scripts/build_xlsx.py" = ["F", "E"], "scripts/ministry_registry.py" = ["E"], "scripts/render_site.py" = ["E"], "scripts/build_db.py" = ["E501"] }
+
+[tool.setuptools]
+# Scripts are run from scripts/; nothing to package. Stops flat-layout auto-discovery of site/ and data/.
+py-modules = []

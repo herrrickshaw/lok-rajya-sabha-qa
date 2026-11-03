@@ -1,0 +1,591 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d6" for="edge" attr.name="weight" attr.type="long" />
+  <key id="d5" for="edge" attr.name="type" attr.type="string" />
+  <key id="d4" for="node" attr.name="chamber" attr.type="string" />
+  <key id="d3" for="node" attr.name="state" attr.type="string" />
+  <key id="d2" for="node" attr.name="party" attr.type="string" />
+  <key id="d1" for="node" attr.name="label" attr.type="string" />
+  <key id="d0" for="node" attr.name="type" attr.type="string" />
+  <graph edgedefault="directed">
+    <node id="party:BJP">
+      <data key="d0">Party</data>
+      <data key="d1">BJP</data>
+    </node>
+    <node id="ministry:RAILWAYS">
+      <data key="d0">Ministry</data>
+      <data key="d1">RAILWAYS</data>
+    </node>
+    <node id="state:Uttar Pradesh">
+      <data key="d0">State</data>
+      <data key="d1">Uttar Pradesh</data>
+    </node>
+    <node id="mp:Dr. Anil Kumar">
+      <data key="d0">MP</data>
+      <data key="d1">Dr. Anil Kumar</data>
+      <data key="d2">BJP</data>
+      <data key="d3">Uttar Pradesh</data>
+      <data key="d4">Lok Sabha</data>
+    </node>
+    <node id="party:INC">
+      <data key="d0">Party</data>
+      <data key="d1">INC</data>
+    </node>
+    <node id="ministry:HEALTH AND FAMILY WELFARE">
+      <data key="d0">Ministry</data>
+      <data key="d1">HEALTH AND FAMILY WELFARE</data>
+    </node>
+    <node id="state:Kerala">
+      <data key="d0">State</data>
+      <data key="d1">Kerala</data>
+    </node>
+    <node id="mp:Shri Meera  Nair">
+      <data key="d0">MP</data>
+      <data key="d1">Shri Meera  Nair</data>
+      <data key="d2">INC</data>
+      <data key="d3">Kerala</data>
+      <data key="d4">Lok Sabha</data>
+    </node>
+    <node id="party:SHS(UBT)">
+      <data key="d0">Party</data>
+      <data key="d1">SHS(UBT)</data>
+    </node>
+    <node id="state:Maharashtra">
+      <data key="d0">State</data>
+      <data key="d1">Maharashtra</data>
+    </node>
+    <node id="mp:Sanjay Patil">
+      <data key="d0">MP</data>
+      <data key="d1">Sanjay Patil</data>
+      <data key="d2">SHS(UBT)</data>
+      <data key="d3">Maharashtra</data>
+      <data key="d4">Lok Sabha</data>
+    </node>
+    <node id="party:DMK">
+      <data key="d0">Party</data>
+      <data key="d1">DMK</data>
+    </node>
+    <node id="ministry:ROAD TRANSPORT AND HIGHWAYS">
+      <data key="d0">Ministry</data>
+      <data key="d1">ROAD TRANSPORT AND HIGHWAYS</data>
+    </node>
+    <node id="state:Delhi">
+      <data key="d0">State</data>
+      <data key="d1">Delhi</data>
+    </node>
+    <node id="mp:Smt. Lakshmi Devi">
+      <data key="d0">MP</data>
+      <data key="d1">Smt. Lakshmi Devi</data>
+      <data key="d2">DMK</data>
+      <data key="d3">Delhi</data>
+      <data key="d4">Lok Sabha</data>
+    </node>
+    <node id="party:Unknown">
+      <data key="d0">Party</data>
+      <data key="d1">Unknown</data>
+    </node>
+    <node id="ministry:COMMUNICATIONS">
+      <data key="d0">Ministry</data>
+      <data key="d1">COMMUNICATIONS</data>
+    </node>
+    <node id="state:Unknown">
+      <data key="d0">State</data>
+      <data key="d1">Unknown</data>
+    </node>
+    <node id="mp:Nobody Known">
+      <data key="d0">MP</data>
+      <data key="d1">Nobody Known</data>
+      <data key="d2">Unknown</data>
+      <data key="d3">Unknown</data>
+      <data key="d4">Lok Sabha</data>
+    </node>
+    <node id="ministry:HOUSING AND URBAN AFFAIRS">
+      <data key="d0">Ministry</data>
+      <data key="d1">HOUSING AND URBAN AFFAIRS</data>
+    </node>
+    <node id="mp:Anil Kumar">
+      <data key="d0">MP</data>
+      <data key="d1">Anil Kumar</data>
+      <data key="d2">BJP</data>
+      <data key="d3">Uttar Pradesh</data>
+      <data key="d4">Lok Sabha</data>
+    </node>
+    <node id="ministry:Unknown">
+      <data key="d0">Ministry</data>
+      <data key="d1">Unknown</data>
+    </node>
+    <node id="mp:Unknown">
+      <data key="d0">MP</data>
+      <data key="d1">Unknown</data>
+      <data key="d2">Unknown</data>
+      <data key="d3">Unknown</data>
+      <data key="d4">Lok Sabha</data>
+    </node>
+    <node id="mp:A Rao">
+      <data key="d0">MP</data>
+      <data key="d1">A Rao</data>
+      <data key="d2">SHS(UBT)</data>
+      <data key="d3">Maharashtra</data>
+      <data key="d4">Rajya Sabha</data>
+    </node>
+    <node id="mp:B Singh">
+      <data key="d0">MP</data>
+      <data key="d1">B Singh</data>
+      <data key="d2">BJP</data>
+      <data key="d3">Delhi</data>
+      <data key="d4">Rajya Sabha</data>
+    </node>
+    <node id="party:YSRCP">
+      <data key="d0">Party</data>
+      <data key="d1">YSRCP</data>
+    </node>
+    <node id="state:Andhra Pradesh">
+      <data key="d0">State</data>
+      <data key="d1">Andhra Pradesh</data>
+    </node>
+    <node id="mp:C Reddy">
+      <data key="d0">MP</data>
+      <data key="d1">C Reddy</data>
+      <data key="d2">YSRCP</data>
+      <data key="d3">Andhra Pradesh</data>
+      <data key="d4">Rajya Sabha</data>
+    </node>
+    <node id="mp:Ghost MP">
+      <data key="d0">MP</data>
+      <data key="d1">Ghost MP</data>
+      <data key="d2">Unknown</data>
+      <data key="d3">Unknown</data>
+      <data key="d4">Rajya Sabha</data>
+    </node>
+    <node id="topic:rural health">
+      <data key="d0">Topic</data>
+      <data key="d1">rural health</data>
+    </node>
+    <node id="topic:health centres">
+      <data key="d0">Topic</data>
+      <data key="d1">health centres</data>
+    </node>
+    <node id="topic:railway">
+      <data key="d0">Topic</data>
+      <data key="d1">railway</data>
+    </node>
+    <node id="topic:safety">
+      <data key="d0">Topic</data>
+      <data key="d1">safety</data>
+    </node>
+    <node id="topic:measures">
+      <data key="d0">Topic</data>
+      <data key="d1">measures</data>
+    </node>
+    <node id="topic:pradhan">
+      <data key="d0">Topic</data>
+      <data key="d1">pradhan</data>
+    </node>
+    <node id="topic:mantri">
+      <data key="d0">Topic</data>
+      <data key="d1">mantri</data>
+    </node>
+    <node id="topic:awas">
+      <data key="d0">Topic</data>
+      <data key="d1">awas</data>
+    </node>
+    <node id="topic:yojana">
+      <data key="d0">Topic</data>
+      <data key="d1">yojana</data>
+    </node>
+    <node id="topic:railway safety">
+      <data key="d0">Topic</data>
+      <data key="d1">railway safety</data>
+    </node>
+    <node id="topic:safety measures">
+      <data key="d0">Topic</data>
+      <data key="d1">safety measures</data>
+    </node>
+    <node id="topic:rural">
+      <data key="d0">Topic</data>
+      <data key="d1">rural</data>
+    </node>
+    <node id="topic:health">
+      <data key="d0">Topic</data>
+      <data key="d1">health</data>
+    </node>
+    <node id="topic:centres">
+      <data key="d0">Topic</data>
+      <data key="d1">centres</data>
+    </node>
+    <edge source="party:BJP" target="ministry:RAILWAYS" id="FOCUSES_ON">
+      <data key="d5">FOCUSES_ON</data>
+      <data key="d6">2</data>
+    </edge>
+    <edge source="party:BJP" target="ministry:HOUSING AND URBAN AFFAIRS" id="FOCUSES_ON">
+      <data key="d5">FOCUSES_ON</data>
+      <data key="d6">3</data>
+    </edge>
+    <edge source="party:BJP" target="ministry:COMMUNICATIONS" id="FOCUSES_ON">
+      <data key="d5">FOCUSES_ON</data>
+      <data key="d6">1</data>
+    </edge>
+    <edge source="party:BJP" target="ministry:HEALTH AND FAMILY WELFARE" id="FOCUSES_ON">
+      <data key="d5">FOCUSES_ON</data>
+      <data key="d6">1</data>
+    </edge>
+    <edge source="party:BJP" target="topic:rural health" id="FOCUSES_ON_TOPIC">
+      <data key="d5">FOCUSES_ON_TOPIC</data>
+      <data key="d6">4</data>
+    </edge>
+    <edge source="party:BJP" target="topic:health centres" id="FOCUSES_ON_TOPIC">
+      <data key="d5">FOCUSES_ON_TOPIC</data>
+      <data key="d6">4</data>
+    </edge>
+    <edge source="party:BJP" target="topic:railway" id="FOCUSES_ON_TOPIC">
+      <data key="d5">FOCUSES_ON_TOPIC</data>
+      <data key="d6">2</data>
+    </edge>
+    <edge source="party:BJP" target="topic:safety" id="FOCUSES_ON_TOPIC">
+      <data key="d5">FOCUSES_ON_TOPIC</data>
+      <data key="d6">2</data>
+    </edge>
+    <edge source="party:BJP" target="topic:measures" id="FOCUSES_ON_TOPIC">
+      <data key="d5">FOCUSES_ON_TOPIC</data>
+      <data key="d6">2</data>
+    </edge>
+    <edge source="party:BJP" target="topic:pradhan" id="FOCUSES_ON_TOPIC">
+      <data key="d5">FOCUSES_ON_TOPIC</data>
+      <data key="d6">1</data>
+    </edge>
+    <edge source="party:BJP" target="topic:mantri" id="FOCUSES_ON_TOPIC">
+      <data key="d5">FOCUSES_ON_TOPIC</data>
+      <data key="d6">1</data>
+    </edge>
+    <edge source="party:BJP" target="topic:awas" id="FOCUSES_ON_TOPIC">
+      <data key="d5">FOCUSES_ON_TOPIC</data>
+      <data key="d6">1</data>
+    </edge>
+    <edge source="party:BJP" target="topic:yojana" id="FOCUSES_ON_TOPIC">
+      <data key="d5">FOCUSES_ON_TOPIC</data>
+      <data key="d6">1</data>
+    </edge>
+    <edge source="mp:Dr. Anil Kumar" target="party:BJP" id="MEMBER_OF">
+      <data key="d5">MEMBER_OF</data>
+    </edge>
+    <edge source="mp:Dr. Anil Kumar" target="state:Uttar Pradesh" id="REPRESENTS">
+      <data key="d5">REPRESENTS</data>
+    </edge>
+    <edge source="mp:Dr. Anil Kumar" target="ministry:RAILWAYS" id="ASKED">
+      <data key="d5">ASKED</data>
+      <data key="d6">2</data>
+    </edge>
+    <edge source="mp:Dr. Anil Kumar" target="ministry:HOUSING AND URBAN AFFAIRS" id="ASKED">
+      <data key="d5">ASKED</data>
+      <data key="d6">1</data>
+    </edge>
+    <edge source="party:INC" target="ministry:HEALTH AND FAMILY WELFARE" id="FOCUSES_ON">
+      <data key="d5">FOCUSES_ON</data>
+      <data key="d6">1</data>
+    </edge>
+    <edge source="party:INC" target="ministry:RAILWAYS" id="FOCUSES_ON">
+      <data key="d5">FOCUSES_ON</data>
+      <data key="d6">2</data>
+    </edge>
+    <edge source="party:INC" target="topic:railway" id="FOCUSES_ON_TOPIC">
+      <data key="d5">FOCUSES_ON_TOPIC</data>
+      <data key="d6">2</data>
+    </edge>
+    <edge source="party:INC" target="topic:safety" id="FOCUSES_ON_TOPIC">
+      <data key="d5">FOCUSES_ON_TOPIC</data>
+      <data key="d6">2</data>
+    </edge>
+    <edge source="party:INC" target="topic:measures" id="FOCUSES_ON_TOPIC">
+      <data key="d5">FOCUSES_ON_TOPIC</data>
+      <data key="d6">2</data>
+    </edge>
+    <edge source="party:INC" target="topic:pradhan" id="FOCUSES_ON_TOPIC">
+      <data key="d5">FOCUSES_ON_TOPIC</data>
+      <data key="d6">1</data>
+    </edge>
+    <edge source="party:INC" target="topic:mantri" id="FOCUSES_ON_TOPIC">
+      <data key="d5">FOCUSES_ON_TOPIC</data>
+      <data key="d6">1</data>
+    </edge>
+    <edge source="party:INC" target="topic:awas" id="FOCUSES_ON_TOPIC">
+      <data key="d5">FOCUSES_ON_TOPIC</data>
+      <data key="d6">1</data>
+    </edge>
+    <edge source="party:INC" target="topic:yojana" id="FOCUSES_ON_TOPIC">
+      <data key="d5">FOCUSES_ON_TOPIC</data>
+      <data key="d6">1</data>
+    </edge>
+    <edge source="mp:Shri Meera  Nair" target="party:INC" id="MEMBER_OF">
+      <data key="d5">MEMBER_OF</data>
+    </edge>
+    <edge source="mp:Shri Meera  Nair" target="state:Kerala" id="REPRESENTS">
+      <data key="d5">REPRESENTS</data>
+    </edge>
+    <edge source="mp:Shri Meera  Nair" target="ministry:HEALTH AND FAMILY WELFARE" id="ASKED">
+      <data key="d5">ASKED</data>
+      <data key="d6">1</data>
+    </edge>
+    <edge source="mp:Shri Meera  Nair" target="ministry:RAILWAYS" id="ASKED">
+      <data key="d5">ASKED</data>
+      <data key="d6">2</data>
+    </edge>
+    <edge source="party:SHS(UBT)" target="ministry:HEALTH AND FAMILY WELFARE" id="FOCUSES_ON">
+      <data key="d5">FOCUSES_ON</data>
+      <data key="d6">3</data>
+    </edge>
+    <edge source="party:SHS(UBT)" target="ministry:RAILWAYS" id="FOCUSES_ON">
+      <data key="d5">FOCUSES_ON</data>
+      <data key="d6">1</data>
+    </edge>
+    <edge source="party:SHS(UBT)" target="ministry:COMMUNICATIONS" id="FOCUSES_ON">
+      <data key="d5">FOCUSES_ON</data>
+      <data key="d6">1</data>
+    </edge>
+    <edge source="party:SHS(UBT)" target="topic:railway safety" id="FOCUSES_ON_TOPIC">
+      <data key="d5">FOCUSES_ON_TOPIC</data>
+      <data key="d6">4</data>
+    </edge>
+    <edge source="party:SHS(UBT)" target="topic:safety measures" id="FOCUSES_ON_TOPIC">
+      <data key="d5">FOCUSES_ON_TOPIC</data>
+      <data key="d6">4</data>
+    </edge>
+    <edge source="party:SHS(UBT)" target="topic:rural" id="FOCUSES_ON_TOPIC">
+      <data key="d5">FOCUSES_ON_TOPIC</data>
+      <data key="d6">1</data>
+    </edge>
+    <edge source="party:SHS(UBT)" target="topic:health" id="FOCUSES_ON_TOPIC">
+      <data key="d5">FOCUSES_ON_TOPIC</data>
+      <data key="d6">1</data>
+    </edge>
+    <edge source="party:SHS(UBT)" target="topic:centres" id="FOCUSES_ON_TOPIC">
+      <data key="d5">FOCUSES_ON_TOPIC</data>
+      <data key="d6">1</data>
+    </edge>
+    <edge source="mp:Sanjay Patil" target="party:SHS(UBT)" id="MEMBER_OF">
+      <data key="d5">MEMBER_OF</data>
+    </edge>
+    <edge source="mp:Sanjay Patil" target="state:Maharashtra" id="REPRESENTS">
+      <data key="d5">REPRESENTS</data>
+    </edge>
+    <edge source="mp:Sanjay Patil" target="ministry:HEALTH AND FAMILY WELFARE" id="ASKED">
+      <data key="d5">ASKED</data>
+      <data key="d6">2</data>
+    </edge>
+    <edge source="party:DMK" target="ministry:ROAD TRANSPORT AND HIGHWAYS" id="FOCUSES_ON">
+      <data key="d5">FOCUSES_ON</data>
+      <data key="d6">1</data>
+    </edge>
+    <edge source="party:DMK" target="ministry:HEALTH AND FAMILY WELFARE" id="FOCUSES_ON">
+      <data key="d5">FOCUSES_ON</data>
+      <data key="d6">1</data>
+    </edge>
+    <edge source="party:DMK" target="topic:rural" id="FOCUSES_ON_TOPIC">
+      <data key="d5">FOCUSES_ON_TOPIC</data>
+      <data key="d6">1</data>
+    </edge>
+    <edge source="party:DMK" target="topic:health" id="FOCUSES_ON_TOPIC">
+      <data key="d5">FOCUSES_ON_TOPIC</data>
+      <data key="d6">1</data>
+    </edge>
+    <edge source="party:DMK" target="topic:centres" id="FOCUSES_ON_TOPIC">
+      <data key="d5">FOCUSES_ON_TOPIC</data>
+      <data key="d6">1</data>
+    </edge>
+    <edge source="party:DMK" target="topic:railway" id="FOCUSES_ON_TOPIC">
+      <data key="d5">FOCUSES_ON_TOPIC</data>
+      <data key="d6">1</data>
+    </edge>
+    <edge source="party:DMK" target="topic:safety" id="FOCUSES_ON_TOPIC">
+      <data key="d5">FOCUSES_ON_TOPIC</data>
+      <data key="d6">1</data>
+    </edge>
+    <edge source="party:DMK" target="topic:measures" id="FOCUSES_ON_TOPIC">
+      <data key="d5">FOCUSES_ON_TOPIC</data>
+      <data key="d6">1</data>
+    </edge>
+    <edge source="mp:Smt. Lakshmi Devi" target="party:DMK" id="MEMBER_OF">
+      <data key="d5">MEMBER_OF</data>
+    </edge>
+    <edge source="mp:Smt. Lakshmi Devi" target="state:Delhi" id="REPRESENTS">
+      <data key="d5">REPRESENTS</data>
+    </edge>
+    <edge source="mp:Smt. Lakshmi Devi" target="ministry:ROAD TRANSPORT AND HIGHWAYS" id="ASKED">
+      <data key="d5">ASKED</data>
+      <data key="d6">1</data>
+    </edge>
+    <edge source="mp:Smt. Lakshmi Devi" target="ministry:HEALTH AND FAMILY WELFARE" id="ASKED">
+      <data key="d5">ASKED</data>
+      <data key="d6">1</data>
+    </edge>
+    <edge source="party:Unknown" target="ministry:COMMUNICATIONS" id="FOCUSES_ON">
+      <data key="d5">FOCUSES_ON</data>
+      <data key="d6">1</data>
+    </edge>
+    <edge source="party:Unknown" target="ministry:ROAD TRANSPORT AND HIGHWAYS" id="FOCUSES_ON">
+      <data key="d5">FOCUSES_ON</data>
+      <data key="d6">2</data>
+    </edge>
+    <edge source="party:Unknown" target="ministry:Unknown" id="FOCUSES_ON">
+      <data key="d5">FOCUSES_ON</data>
+      <data key="d6">1</data>
+    </edge>
+    <edge source="party:Unknown" target="ministry:RAILWAYS" id="FOCUSES_ON">
+      <data key="d5">FOCUSES_ON</data>
+      <data key="d6">1</data>
+    </edge>
+    <edge source="party:Unknown" target="topic:rural health" id="FOCUSES_ON_TOPIC">
+      <data key="d5">FOCUSES_ON_TOPIC</data>
+      <data key="d6">3</data>
+    </edge>
+    <edge source="party:Unknown" target="topic:health centres" id="FOCUSES_ON_TOPIC">
+      <data key="d5">FOCUSES_ON_TOPIC</data>
+      <data key="d6">3</data>
+    </edge>
+    <edge source="party:Unknown" target="topic:railway" id="FOCUSES_ON_TOPIC">
+      <data key="d5">FOCUSES_ON_TOPIC</data>
+      <data key="d6">1</data>
+    </edge>
+    <edge source="party:Unknown" target="topic:safety" id="FOCUSES_ON_TOPIC">
+      <data key="d5">FOCUSES_ON_TOPIC</data>
+      <data key="d6">1</data>
+    </edge>
+    <edge source="party:Unknown" target="topic:measures" id="FOCUSES_ON_TOPIC">
+      <data key="d5">FOCUSES_ON_TOPIC</data>
+      <data key="d6">1</data>
+    </edge>
+    <edge source="mp:Nobody Known" target="party:Unknown" id="MEMBER_OF">
+      <data key="d5">MEMBER_OF</data>
+    </edge>
+    <edge source="mp:Nobody Known" target="state:Unknown" id="REPRESENTS">
+      <data key="d5">REPRESENTS</data>
+    </edge>
+    <edge source="mp:Nobody Known" target="ministry:COMMUNICATIONS" id="ASKED">
+      <data key="d5">ASKED</data>
+      <data key="d6">1</data>
+    </edge>
+    <edge source="mp:Nobody Known" target="ministry:ROAD TRANSPORT AND HIGHWAYS" id="ASKED">
+      <data key="d5">ASKED</data>
+      <data key="d6">1</data>
+    </edge>
+    <edge source="mp:Anil Kumar" target="party:BJP" id="MEMBER_OF">
+      <data key="d5">MEMBER_OF</data>
+    </edge>
+    <edge source="mp:Anil Kumar" target="state:Uttar Pradesh" id="REPRESENTS">
+      <data key="d5">REPRESENTS</data>
+    </edge>
+    <edge source="mp:Anil Kumar" target="ministry:HOUSING AND URBAN AFFAIRS" id="ASKED">
+      <data key="d5">ASKED</data>
+      <data key="d6">1</data>
+    </edge>
+    <edge source="mp:Anil Kumar" target="ministry:COMMUNICATIONS" id="ASKED">
+      <data key="d5">ASKED</data>
+      <data key="d6">1</data>
+    </edge>
+    <edge source="mp:Unknown" target="party:Unknown" id="MEMBER_OF">
+      <data key="d5">MEMBER_OF</data>
+    </edge>
+    <edge source="mp:Unknown" target="state:Unknown" id="REPRESENTS">
+      <data key="d5">REPRESENTS</data>
+    </edge>
+    <edge source="mp:Unknown" target="ministry:Unknown" id="ASKED">
+      <data key="d5">ASKED</data>
+      <data key="d6">1</data>
+    </edge>
+    <edge source="mp:A Rao" target="party:SHS(UBT)" id="MEMBER_OF">
+      <data key="d5">MEMBER_OF</data>
+    </edge>
+    <edge source="mp:A Rao" target="state:Maharashtra" id="REPRESENTS">
+      <data key="d5">REPRESENTS</data>
+    </edge>
+    <edge source="mp:A Rao" target="ministry:RAILWAYS" id="ASKED">
+      <data key="d5">ASKED</data>
+      <data key="d6">1</data>
+    </edge>
+    <edge source="mp:A Rao" target="ministry:COMMUNICATIONS" id="ASKED">
+      <data key="d5">ASKED</data>
+      <data key="d6">1</data>
+    </edge>
+    <edge source="mp:A Rao" target="ministry:HEALTH AND FAMILY WELFARE" id="ASKED">
+      <data key="d5">ASKED</data>
+      <data key="d6">1</data>
+    </edge>
+    <edge source="mp:B Singh" target="party:BJP" id="MEMBER_OF">
+      <data key="d5">MEMBER_OF</data>
+    </edge>
+    <edge source="mp:B Singh" target="state:Delhi" id="REPRESENTS">
+      <data key="d5">REPRESENTS</data>
+    </edge>
+    <edge source="mp:B Singh" target="ministry:HEALTH AND FAMILY WELFARE" id="ASKED">
+      <data key="d5">ASKED</data>
+      <data key="d6">1</data>
+    </edge>
+    <edge source="mp:B Singh" target="ministry:HOUSING AND URBAN AFFAIRS" id="ASKED">
+      <data key="d5">ASKED</data>
+      <data key="d6">1</data>
+    </edge>
+    <edge source="party:YSRCP" target="ministry:HEALTH AND FAMILY WELFARE" id="FOCUSES_ON">
+      <data key="d5">FOCUSES_ON</data>
+      <data key="d6">1</data>
+    </edge>
+    <edge source="party:YSRCP" target="ministry:RAILWAYS" id="FOCUSES_ON">
+      <data key="d5">FOCUSES_ON</data>
+      <data key="d6">1</data>
+    </edge>
+    <edge source="party:YSRCP" target="topic:railway" id="FOCUSES_ON_TOPIC">
+      <data key="d5">FOCUSES_ON_TOPIC</data>
+      <data key="d6">1</data>
+    </edge>
+    <edge source="party:YSRCP" target="topic:safety" id="FOCUSES_ON_TOPIC">
+      <data key="d5">FOCUSES_ON_TOPIC</data>
+      <data key="d6">1</data>
+    </edge>
+    <edge source="party:YSRCP" target="topic:measures" id="FOCUSES_ON_TOPIC">
+      <data key="d5">FOCUSES_ON_TOPIC</data>
+      <data key="d6">1</data>
+    </edge>
+    <edge source="party:YSRCP" target="topic:pradhan" id="FOCUSES_ON_TOPIC">
+      <data key="d5">FOCUSES_ON_TOPIC</data>
+      <data key="d6">1</data>
+    </edge>
+    <edge source="party:YSRCP" target="topic:mantri" id="FOCUSES_ON_TOPIC">
+      <data key="d5">FOCUSES_ON_TOPIC</data>
+      <data key="d6">1</data>
+    </edge>
+    <edge source="party:YSRCP" target="topic:awas" id="FOCUSES_ON_TOPIC">
+      <data key="d5">FOCUSES_ON_TOPIC</data>
+      <data key="d6">1</data>
+    </edge>
+    <edge source="party:YSRCP" target="topic:yojana" id="FOCUSES_ON_TOPIC">
+      <data key="d5">FOCUSES_ON_TOPIC</data>
+      <data key="d6">1</data>
+    </edge>
+    <edge source="mp:C Reddy" target="party:YSRCP" id="MEMBER_OF">
+      <data key="d5">MEMBER_OF</data>
+    </edge>
+    <edge source="mp:C Reddy" target="state:Andhra Pradesh" id="REPRESENTS">
+      <data key="d5">REPRESENTS</data>
+    </edge>
+    <edge source="mp:C Reddy" target="ministry:HEALTH AND FAMILY WELFARE" id="ASKED">
+      <data key="d5">ASKED</data>
+      <data key="d6">1</data>
+    </edge>
+    <edge source="mp:C Reddy" target="ministry:RAILWAYS" id="ASKED">
+      <data key="d5">ASKED</data>
+      <data key="d6">1</data>
+    </edge>
+    <edge source="mp:Ghost MP" target="party:Unknown" id="MEMBER_OF">
+      <data key="d5">MEMBER_OF</data>
+    </edge>
+    <edge source="mp:Ghost MP" target="state:Unknown" id="REPRESENTS">
+      <data key="d5">REPRESENTS</data>
+    </edge>
+    <edge source="mp:Ghost MP" target="ministry:ROAD TRANSPORT AND HIGHWAYS" id="ASKED">
+      <data key="d5">ASKED</data>
+      <data key="d6">1</data>
+    </edge>
+    <edge source="mp:Ghost MP" target="ministry:RAILWAYS" id="ASKED">
+      <data key="d5">ASKED</data>
+      <data key="d6">1</data>
+    </edge>
+  </graph>
+</graphml>

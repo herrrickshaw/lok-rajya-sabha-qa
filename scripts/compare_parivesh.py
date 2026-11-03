@@ -135,62 +135,42 @@ def build_corpus():
     return [r["subject"] for r in ls_rows] + [r["subject"] for r in rs_rows] + [r.get("question_text") for r in rs_rows]
 
 
-def main():
-    raw = load_proposals()
+def dedupe_proposals(raw):
+    """Collapse repeat payloads: last record per proposal_no wins (order of first appearance kept)."""
     by_no = {}
     for r in raw:
-        by_no[r.get("proposal_no")] = r  # dedupe, matching the memory's warning about repeat payloads
-    proposals = list(by_no.values())
+        by_no[r.get("proposal_no")] = r
+    return list(by_no.values())
 
-    granted = [p for p in proposals if "grant" in (p.get("status") or "").lower()]
-    print(f"PARIVESH: {len(proposals)} distinct EC proposals since {SINCE} ({len(granted)} in a 'granted' status)")
 
-    ministry_pq = int(next((r["questions"] for r in read_csv("ministry_summary.csv") if r["ministry"] == PARIVESH_MINISTRY), 0))
-    ratio = round(ministry_pq / len(proposals), 3) if proposals else None
-    print(f"{PARIVESH_MINISTRY}: {ministry_pq} PQs, {ratio}x PQ per EC proposal")
-
-    # ---- State-level comparison, reusing state_ministry_matrix.csv (already built) ----
-    state_pq = {}
-    for r in read_csv("state_ministry_matrix.csv"):
-        state_pq[r["state"]] = int(r.get(PARIVESH_MINISTRY, 0) or 0)
-
+def state_comparison_rows(proposals, state_pq):
+    """Per-state EC proposal count vs Environment-ministry PQ count, sorted by proposals descending."""
     proposals_by_state = Counter(normalize_state(p.get("state_name")) for p in proposals)
-    state_rows = []
+    rows = []
     for state, pq_count in state_pq.items():
         ec_count = proposals_by_state.get(state, 0)
         state_ratio = round(pq_count / ec_count, 3) if ec_count else None
-        state_rows.append({"state": state, "environment_pqs": pq_count, "ec_proposals": ec_count, "pq_per_ec_proposal": state_ratio})
+        rows.append({"state": state, "environment_pqs": pq_count, "ec_proposals": ec_count, "pq_per_ec_proposal": state_ratio})
     # states PARIVESH has that our own state list doesn't (rare, but don't silently drop)
     for state, ec_count in proposals_by_state.items():
         if state not in state_pq:
-            state_rows.append({"state": state, "environment_pqs": 0, "ec_proposals": ec_count, "pq_per_ec_proposal": 0.0})
-    state_rows.sort(key=lambda r: -r["ec_proposals"])
-    with open(PROC / "parivesh_state_comparison.csv", "w", newline="", encoding="utf-8") as f:
-        w = csv.DictWriter(f, fieldnames=["state", "environment_pqs", "ec_proposals", "pq_per_ec_proposal"])
-        w.writeheader()
-        w.writerows(state_rows)
+            rows.append({"state": state, "environment_pqs": 0, "ec_proposals": ec_count, "pq_per_ec_proposal": 0.0})
+    rows.sort(key=lambda r: -r["ec_proposals"])
+    return rows
 
-    # ---- Activity mix (EIA-2006 schedule categories), volume only ----
-    activity_counts = Counter(extract_activity(p.get("other_property")) for p in proposals)
-    activity_counts.pop(None, None)
-    with open(PROC / "parivesh_activity_summary.csv", "w", newline="", encoding="utf-8") as f:
-        w = csv.writer(f)
-        w.writerow(["activity", "ec_proposals"])
-        for activity, cnt in activity_counts.most_common():
-            w.writerow([activity, cnt])
 
-    # ---- Spot-check: largest proposals by investment cost, PQ-mention flag ----
-    corpus = build_corpus()
-    big_proposals = sorted((p for p in proposals if p.get("investment_cost")), key=lambda p: -p["investment_cost"])[:25]
-    spotcheck_rows = []
-    for p in big_proposals:
+def mega_project_rows(proposals, corpus, n=25):
+    """The n largest proposals by investment cost, flagged for whether the company is named in PQ text."""
+    big = sorted((p for p in proposals if p.get("investment_cost")), key=lambda p: -p["investment_cost"])[:n]
+    rows = []
+    for p in big:
         name = p.get("project_name") or ""
         company = extract_company(name)
         mentioned = (
             any(company.lower() in (text or "").lower() for text in corpus)
             if company else None
         )
-        spotcheck_rows.append(
+        rows.append(
             {
                 "project_name": name,
                 "company": company or "",
@@ -201,15 +181,42 @@ def main():
                 "company_mentioned_in_pq": mentioned,
             }
         )
-    with open(PROC / "parivesh_mega_projects.csv", "w", newline="", encoding="utf-8") as f:
-        w = csv.DictWriter(f, fieldnames=["project_name", "company", "state", "investment_cost_rs", "status", "start_date", "company_mentioned_in_pq"])
+    return rows
+
+
+STATE_FIELDS = ["state", "environment_pqs", "ec_proposals", "pq_per_ec_proposal"]
+MEGA_FIELDS = ["project_name", "company", "state", "investment_cost_rs", "status", "start_date", "company_mentioned_in_pq"]
+
+PAYLOAD_NOTE = (
+    "PARIVESH's admin_api/dashboard/getProposals, Environmental Clearance (EC) proposals only "
+    "-- Forest Clearance isn't covered by this endpoint as verified. The status=Received/Granted "
+    "query parameter is a no-op (confirmed byte-identical responses); granted-vs-not is classified "
+    "from each proposal's own status field instead. Company names for the largest proposals are "
+    "extracted from a \"by [M/s] <Company>\" clause in the project title where one exists (many "
+    "titles name no company at all, or lead with the company instead of trailing it -- those show "
+    "blank, not a false negative); the mention check itself is a plain substring match, a heuristic "
+    "not a verified extraction."
+)
+
+
+def write_dict_csv(path, fieldnames, rows):
+    with open(path, "w", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=fieldnames)
         w.writeheader()
-        w.writerows(spotcheck_rows)
+        w.writerows(rows)
 
+
+def write_activity_csv(path, activity_counts):
+    with open(path, "w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f)
+        w.writerow(["activity", "ec_proposals"])
+        for activity, cnt in activity_counts.most_common():
+            w.writerow([activity, cnt])
+
+
+def build_payload(proposals, granted, ministry_pq, ratio, state_rows, activity_counts, spotcheck_rows):
     with_company = [r for r in spotcheck_rows if r["company"]]
-    mentioned_count = sum(1 for r in with_company if r["company_mentioned_in_pq"])
-
-    payload = {
+    return {
         "since": SINCE,
         "ministry": PARIVESH_MINISTRY,
         "ministry_pq": ministry_pq,
@@ -219,22 +226,41 @@ def main():
         "state_rows": state_rows,
         "top_activities": [{"activity": a, "ec_proposals": c} for a, c in activity_counts.most_common(20)],
         "mega_projects": spotcheck_rows,
-        "mega_projects_mentioned": mentioned_count,
+        "mega_projects_mentioned": sum(1 for r in with_company if r["company_mentioned_in_pq"]),
         "mega_projects_with_company": len(with_company),
-        "note": (
-            "PARIVESH's admin_api/dashboard/getProposals, Environmental Clearance (EC) proposals only "
-            "-- Forest Clearance isn't covered by this endpoint as verified. The status=Received/Granted "
-            "query parameter is a no-op (confirmed byte-identical responses); granted-vs-not is classified "
-            "from each proposal's own status field instead. Company names for the largest proposals are "
-            "extracted from a \"by [M/s] <Company>\" clause in the project title where one exists (many "
-            "titles name no company at all, or lead with the company instead of trailing it -- those show "
-            "blank, not a false negative); the mention check itself is a plain substring match, a heuristic "
-            "not a verified extraction."
-        ),
+        "note": PAYLOAD_NOTE,
     }
+
+
+def main():
+    proposals = dedupe_proposals(load_proposals())
+
+    granted = [p for p in proposals if "grant" in (p.get("status") or "").lower()]
+    print(f"PARIVESH: {len(proposals)} distinct EC proposals since {SINCE} ({len(granted)} in a 'granted' status)")
+
+    ministry_pq = int(next((r["questions"] for r in read_csv("ministry_summary.csv") if r["ministry"] == PARIVESH_MINISTRY), 0))
+    ratio = round(ministry_pq / len(proposals), 3) if proposals else None
+    print(f"{PARIVESH_MINISTRY}: {ministry_pq} PQs, {ratio}x PQ per EC proposal")
+
+    # State-level comparison, reusing state_ministry_matrix.csv (already built)
+    state_pq = {r["state"]: int(r.get(PARIVESH_MINISTRY, 0) or 0) for r in read_csv("state_ministry_matrix.csv")}
+    state_rows = state_comparison_rows(proposals, state_pq)
+    write_dict_csv(PROC / "parivesh_state_comparison.csv", STATE_FIELDS, state_rows)
+
+    # Activity mix (EIA-2006 schedule categories), volume only
+    activity_counts = Counter(extract_activity(p.get("other_property")) for p in proposals)
+    activity_counts.pop(None, None)
+    write_activity_csv(PROC / "parivesh_activity_summary.csv", activity_counts)
+
+    # Spot-check: largest proposals by investment cost, PQ-mention flag
+    spotcheck_rows = mega_project_rows(proposals, build_corpus())
+    write_dict_csv(PROC / "parivesh_mega_projects.csv", MEGA_FIELDS, spotcheck_rows)
+
+    payload = build_payload(proposals, granted, ministry_pq, ratio, state_rows, activity_counts, spotcheck_rows)
     (SITE / "parivesh.json").write_text(json.dumps(payload, indent=2))
 
-    print(f"Mega-project spot-check: {len(with_company)}/{len(spotcheck_rows)} largest EC proposals name a company; {mentioned_count} of those are mentioned somewhere in PQ text")
+    print(f"Mega-project spot-check: {payload['mega_projects_with_company']}/{len(spotcheck_rows)} largest EC proposals name a company; "
+          f"{payload['mega_projects_mentioned']} of those are mentioned somewhere in PQ text")
     for r in state_rows[:8]:
         print(f"  {r['state']:<20} ec={r['ec_proposals']:>4}  env_pq={r['environment_pqs']:>4}")
 

@@ -1,0 +1,27 @@
+node,type,label,pagerank
+party:BJP,party,BJP,0.129042
+party:SHS(UBT),party,SHS(UBT),0.096424
+party:Unknown,party,Unknown,0.078448
+party:INC,party,INC,0.070738
+party:YSRCP,party,YSRCP,0.051867
+party:DMK,party,DMK,0.051651
+ministry:HEALTH AND FAMILY WELFARE,ministry,HEALTH AND FAMILY WELFARE,0.040536
+topic:railway,topic,railway,0.038944
+topic:safety,topic,safety,0.038944
+topic:measures,topic,measures,0.038944
+ministry:RAILWAYS,ministry,RAILWAYS,0.038579
+topic:rural health,topic,rural health,0.037608
+topic:health centres,topic,health centres,0.037608
+topic:railway safety,topic,railway safety,0.026259
+topic:safety measures,topic,safety measures,0.026259
+ministry:ROAD TRANSPORT AND HIGHWAYS,ministry,ROAD TRANSPORT AND HIGHWAYS,0.020783
+ministry:COMMUNICATIONS,ministry,COMMUNICATIONS,0.020042
+topic:pradhan,topic,pradhan,0.01968
+topic:mantri,topic,mantri,0.01968
+topic:awas,topic,awas,0.01968
+topic:yojana,topic,yojana,0.01968
+ministry:HOUSING AND URBAN AFFAIRS,ministry,HOUSING AND URBAN AFFAIRS,0.018932
+topic:rural,topic,rural,0.01638
+topic:health,topic,health,0.01638
+topic:centres,topic,centres,0.01638
+ministry:Unknown,ministry,Unknown,0.010532

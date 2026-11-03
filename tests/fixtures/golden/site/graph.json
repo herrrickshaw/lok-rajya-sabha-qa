@@ -1,0 +1,233 @@
+{
+  "stats": {
+    "nodes": 43,
+    "edges": 99,
+    "parties": 0,
+    "ministries": 6,
+    "mps": 11,
+    "cross_party_coasking_pairs": 2
+  },
+  "signature_ministries": [],
+  "pagerank_top": [
+    {
+      "node": "party:BJP",
+      "type": "party",
+      "label": "BJP",
+      "pagerank": 0.129042
+    },
+    {
+      "node": "party:SHS(UBT)",
+      "type": "party",
+      "label": "SHS(UBT)",
+      "pagerank": 0.096424
+    },
+    {
+      "node": "party:Unknown",
+      "type": "party",
+      "label": "Unknown",
+      "pagerank": 0.078448
+    },
+    {
+      "node": "party:INC",
+      "type": "party",
+      "label": "INC",
+      "pagerank": 0.070738
+    },
+    {
+      "node": "party:YSRCP",
+      "type": "party",
+      "label": "YSRCP",
+      "pagerank": 0.051867
+    },
+    {
+      "node": "party:DMK",
+      "type": "party",
+      "label": "DMK",
+      "pagerank": 0.051651
+    },
+    {
+      "node": "ministry:HEALTH AND FAMILY WELFARE",
+      "type": "ministry",
+      "label": "HEALTH AND FAMILY WELFARE",
+      "pagerank": 0.040536
+    },
+    {
+      "node": "topic:railway",
+      "type": "topic",
+      "label": "railway",
+      "pagerank": 0.038944
+    },
+    {
+      "node": "topic:safety",
+      "type": "topic",
+      "label": "safety",
+      "pagerank": 0.038944
+    },
+    {
+      "node": "topic:measures",
+      "type": "topic",
+      "label": "measures",
+      "pagerank": 0.038944
+    },
+    {
+      "node": "ministry:RAILWAYS",
+      "type": "ministry",
+      "label": "RAILWAYS",
+      "pagerank": 0.038579
+    },
+    {
+      "node": "topic:rural health",
+      "type": "topic",
+      "label": "rural health",
+      "pagerank": 0.037608
+    },
+    {
+      "node": "topic:health centres",
+      "type": "topic",
+      "label": "health centres",
+      "pagerank": 0.037608
+    },
+    {
+      "node": "topic:railway safety",
+      "type": "topic",
+      "label": "railway safety",
+      "pagerank": 0.026259
+    },
+    {
+      "node": "topic:safety measures",
+      "type": "topic",
+      "label": "safety measures",
+      "pagerank": 0.026259
+    },
+    {
+      "node": "ministry:ROAD TRANSPORT AND HIGHWAYS",
+      "type": "ministry",
+      "label": "ROAD TRANSPORT AND HIGHWAYS",
+      "pagerank": 0.020783
+    },
+    {
+      "node": "ministry:COMMUNICATIONS",
+      "type": "ministry",
+      "label": "COMMUNICATIONS",
+      "pagerank": 0.020042
+    },
+    {
+      "node": "topic:pradhan",
+      "type": "topic",
+      "label": "pradhan",
+      "pagerank": 0.01968
+    },
+    {
+      "node": "topic:mantri",
+      "type": "topic",
+      "label": "mantri",
+      "pagerank": 0.01968
+    },
+    {
+      "node": "topic:awas",
+      "type": "topic",
+      "label": "awas",
+      "pagerank": 0.01968
+    },
+    {
+      "node": "topic:yojana",
+      "type": "topic",
+      "label": "yojana",
+      "pagerank": 0.01968
+    },
+    {
+      "node": "ministry:HOUSING AND URBAN AFFAIRS",
+      "type": "ministry",
+      "label": "HOUSING AND URBAN AFFAIRS",
+      "pagerank": 0.018932
+    },
+    {
+      "node": "topic:rural",
+      "type": "topic",
+      "label": "rural",
+      "pagerank": 0.01638
+    },
+    {
+      "node": "topic:health",
+      "type": "topic",
+      "label": "health",
+      "pagerank": 0.01638
+    },
+    {
+      "node": "topic:centres",
+      "type": "topic",
+      "label": "centres",
+      "pagerank": 0.01638
+    },
+    {
+      "node": "ministry:Unknown",
+      "type": "ministry",
+      "label": "Unknown",
+      "pagerank": 0.010532
+    }
+  ],
+  "party_communities": [],
+  "ministry_cooccurrence_top": [
+    {
+      "ministry_a": "HEALTH AND FAMILY WELFARE",
+      "ministry_b": "RAILWAYS",
+      "shared_mps": 3
+    },
+    {
+      "ministry_a": "HOUSING AND URBAN AFFAIRS",
+      "ministry_b": "RAILWAYS",
+      "shared_mps": 1
+    },
+    {
+      "ministry_a": "HEALTH AND FAMILY WELFARE",
+      "ministry_b": "ROAD TRANSPORT AND HIGHWAYS",
+      "shared_mps": 1
+    },
+    {
+      "ministry_a": "COMMUNICATIONS",
+      "ministry_b": "ROAD TRANSPORT AND HIGHWAYS",
+      "shared_mps": 1
+    },
+    {
+      "ministry_a": "COMMUNICATIONS",
+      "ministry_b": "HOUSING AND URBAN AFFAIRS",
+      "shared_mps": 1
+    },
+    {
+      "ministry_a": "COMMUNICATIONS",
+      "ministry_b": "HEALTH AND FAMILY WELFARE",
+      "shared_mps": 1
+    },
+    {
+      "ministry_a": "COMMUNICATIONS",
+      "ministry_b": "RAILWAYS",
+      "shared_mps": 1
+    },
+    {
+      "ministry_a": "HEALTH AND FAMILY WELFARE",
+      "ministry_b": "HOUSING AND URBAN AFFAIRS",
+      "shared_mps": 1
+    },
+    {
+      "ministry_a": "RAILWAYS",
+      "ministry_b": "ROAD TRANSPORT AND HIGHWAYS",
+      "shared_mps": 1
+    }
+  ],
+  "cross_party_bridges_top": [
+    {
+      "mp_a": "Dr. Anil Kumar",
+      "party_a": "BJP",
+      "mp_b": "Meera Nair",
+      "party_b": "Unknown",
+      "joint_questions": 2
+    },
+    {
+      "mp_a": "Meera Nair",
+      "party_a": "Unknown",
+      "mp_b": "Sanjay Patil",
+      "party_b": "SHS(UBT)",
+      "joint_questions": 1
+    }
+  ]
+}
