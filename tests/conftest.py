@@ -44,6 +44,11 @@ class _Loader(importlib.abc.Loader):
         module.__file__ = str(real)
         code = compile(real.read_text(encoding="utf-8"), str(real), "exec")
         exec(code, module.__dict__)
+        # hard-coded paths into the owner's home directory must never be read by a test
+        for attr in ("PIB_DB", "MINISTER_CONTACTS_CSV"):
+            val = getattr(module, attr, None)
+            if val is not None and str(val).startswith("/Users/"):
+                setattr(module, attr, CTX.root / "ext" / Path(str(val)).name)
 
 
 class _Finder(importlib.abc.MetaPathFinder):
