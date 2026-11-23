@@ -100,7 +100,11 @@ def test_scheme_comparison_threshold_collapse_and_pib_counts(P, repo, capsys):
     with open(repo / "data/processed/pib_scheme_comparison.csv", newline="") as f:
         assert list(csv.DictReader(f))[0].keys() == {"term", "pq_mentions", "pib_release_mentions"}
     out = capsys.readouterr().out
-    assert f"Scheme/topic terms extracted: {len(rows)}" in out and "Top PQ-only" in out and "Top overlapping" in out
+    assert f"Scheme/topic terms extracted: {len(rows)}" in out
+    pq_only_block = out.split("Top PQ-only")[1].split("Top overlapping")[0]
+    overlap_block = out.split("Top overlapping")[1]
+    assert "Swachh Mission 8" in pq_only_block and "Awas" not in pq_only_block
+    assert "Awas" in overlap_block and "pib= 1" in overlap_block and "Swachh" not in overlap_block
 
 
 def test_scheme_comparison_cutoff_is_inclusive_at_eight(P, repo):

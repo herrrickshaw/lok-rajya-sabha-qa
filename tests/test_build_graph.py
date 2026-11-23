@@ -176,3 +176,24 @@ def test_main_parties_with_no_shared_ministry_land_in_separate_communities(G, re
     comm = read_csv(repo / "data/processed/kg_party_communities.csv")
     assert {r["party"] for r in comm} == {"P1", "P2"} and {r["community_size"] for r in comm} == {"1"}
     assert len({r["community"] for r in comm}) == 2
+
+
+def test_main_communities_group_parties_with_similar_ministry_emphasis(G, repo):
+    rows = []
+    n = 0
+    plan = {"A": {"HEALTH": 60, "RAIL": 3}, "B": {"HEALTH": 58, "RAIL": 4}, "C": {"EDU": 50, "RAIL": 30}}
+    for party, mins in plan.items():
+        for ministry, cnt in mins.items():
+            for _ in range(cnt):
+                n += 1
+                rows.append(q("Lok Sabha", n, party, ministry, "Goa", f"M{party}"))
+    write_csv(repo / "data/processed/ls_questions_enriched.csv", rows, ROW_COLS)
+    write_csv(repo / "data/processed/rs_questions_enriched.csv", [], ROW_COLS)
+    write_csv(repo / "data/processed/topic_keywords.csv", [], ["party", "term", "count"])
+    G.main()
+    comm = read_csv(repo / "data/processed/kg_party_communities.csv")
+    groups = {}
+    for r in comm:
+        groups.setdefault(r["community"], set()).add(r["party"])
+    assert sorted(map(sorted, groups.values())) == [["A", "B"], ["C"]]                       # lift cosines: A-B 0.998, A-C 0.099, B-C 0.135 (< 0.15, so no edge to C)
+    assert all(r["community_size"] == str(len(groups[r["community"]])) for r in comm)

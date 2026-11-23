@@ -72,7 +72,8 @@ def processed(repo):
     write_csv(repo, "ministry_scheme_scrutiny.csv", [
         dict(ministry="MeitY", scheme="SPECS", pq_mentions=0, months_since_update=30, outlay_rs_cr_mentioned=""),
         dict(ministry="MeitY", scheme="Other", pq_mentions=5, months_since_update=2, outlay_rs_cr_mentioned=100),
-        dict(ministry="DoT", scheme="BharatNet", pq_mentions=9, months_since_update="", outlay_rs_cr_mentioned="")],
+        dict(ministry="DoT", scheme="BharatNet", pq_mentions=9, months_since_update="", outlay_rs_cr_mentioned=""),
+        dict(ministry="DoT", scheme="Exactly a year", pq_mentions=1, months_since_update=12, outlay_rs_cr_mentioned="")],
         ["ministry", "scheme", "pq_mentions", "months_since_update", "outlay_rs_cr_mentioned"])
     write_csv(repo, "parivesh_state_comparison.csv", [dict(state="Gujarat", ec_proposals=900, environment_pqs=10, pq_per_ec_proposal=""), dict(state="Goa", ec_proposals=5, environment_pqs=10, pq_per_ec_proposal=2.0)],
               ["state", "ec_proposals", "environment_pqs", "pq_per_ec_proposal"])
@@ -140,7 +141,8 @@ def test_analysis_document(DB, repo, processed):
     assert "| PM-KISAN | 12 | 0 |" not in md.split("*PQ-scrutinised")[0].split("PIB release-title mentions |")[1] and "| Awas Yojana | 9 | 4 |" in md
     assert "- PM-KISAN (12 PQ mentions)" in md
     assert "| B | PLI Drones | — | 3 | 120 | 25.0% |" in md and "| F | PLI Steel | Shri S | 0 | 0 | — |" in md
-    assert "**1 of 3 schemes across 2 ministries" in md and "**1 of 3** haven't been touched" in md
+    assert "**1 of 4 schemes across 2 ministries" in md and "**1 of 4** haven't been touched" in md
+    assert "By ministry: DoT 0/2 stale; MeitY 1/2 stale." in md                                      # exactly 12 months is not stale
     assert "| MeitY | Other | 5 | 2 | 100 |" in md and "| DoT | BharatNet | 9 | — | — |" in md
     assert md.index("| DoT | BharatNet | 9") < md.index("| MeitY | Other | 5")
     assert "| Gujarat | 900 | 10 | — |" in md and "| Goa | 5 | 10 | 2.0 |" in md

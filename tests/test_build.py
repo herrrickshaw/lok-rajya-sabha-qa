@@ -103,6 +103,14 @@ def test_fuzzy_match_threshold_and_choice(B, repo):
     assert B.fuzzy_match("Shashi Ghosh Roy Sen", index, words) is None              # 1/5 < 0.5
 
 
+def test_fuzzy_match_tie_goes_to_the_first_roster_entry(B, repo):
+    write_json(repo / "data/raw/ls_members.json", [
+        {"mpFirstLastName": "Rahul Gandhi", "partySname": "P1", "stateName": "Goa"},
+        {"mpFirstLastName": "Gandhi Rahul", "partySname": "P2", "stateName": "Goa"}])
+    index, words = B.load_ls_member_index()
+    assert B.fuzzy_match("Rahul Gandhi Jee", index, words)["party"] == "P1"             # equal Jaccard scores: earlier candidate wins
+
+
 def test_load_rs_member_index_merges_former(B, repo):
     write_json(repo / "data/raw/rs_members.json", [
         {"mpsno": 1, "partyCode": "BJP", "party": "Bharatiya Janata Party", "state": "Assam", "name": " A B "},

@@ -177,6 +177,20 @@ def test_main_without_data_exits(W, monkeypatch):
     assert "No scheme data available" in str(e.value)
 
 
+def test_main_stale_means_strictly_more_than_twelve_months(W, repo, monkeypatch):
+    import ministry_registry as R
+    eit = "ELECTRONICS AND INFORMATION TECHNOLOGY"
+    schemes = [W.SchemeItem(eit, "Alpha Scheme One", "a", "", ""), W.SchemeItem(eit, "Beta Scheme Two", "b", "", ""), W.SchemeItem(eit, "Gamma Scheme Three", "c", "", "")]
+    months = {"a": 12.0, "b": 12.1, "c": None}
+    monkeypatch.setattr(W, "months_since", lambda d: months[d])
+    monkeypatch.setattr(W, "load_all_schemes", lambda: schemes)
+    monkeypatch.setattr(W, "load_registry", lambda: {})
+    write_csv(repo, "ls_questions_enriched.csv", [dict(subject="x")], ["subject"])
+    write_csv(repo, "rs_questions_enriched.csv", [], ["subject", "question_text"])
+    W.main()
+    assert json.loads((repo / "site/meity.json").read_text())["by_ministry"][eit]["stale_count"] == 1       # only 12.1; None counts as 0
+
+
 def test_main_scores_pq_mentions_and_writes_outputs(W, repo, monkeypatch, capsys):
     import ministry_registry as R
     SI = W.SchemeItem
